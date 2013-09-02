@@ -1,0 +1,14 @@
+//
+// CIV3FLCEDIT.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+LicenseRTF TEXT_RESOURCE License.rtf
+ThanksRTF TEXT_RESOURCE Thanks.rtf
+/////////////////////////////////////////////////////////////////////////////

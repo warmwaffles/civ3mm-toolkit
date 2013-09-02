@@ -1,0 +1,340 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MFCaids - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSPC.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "MFCAIDS_EXPORTS" /D "_WINDLL" /D "_AFXDLL" /D _WIN32_WINNT=0x0401 /FR"..\Build\MFCaids\Debug/" /Fp"..\Build\MFCaids\Debug/MFCaids.pch" /Yu"stdafx.h" /Fo"..\Build\MFCaids\Debug/" /Fd"..\Build\MFCaids\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\For Ekmek\MFCaids\GraphXImage.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSPC.tmp" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSPD.tmp" with contents
+[
+Version.lib shlwapi.lib Ws2_32.lib "..\Build\GraphX\Debug\GraphX.lib" /nologo /dll /incremental:yes /pdb:"..\Build\MFCaids\Debug/MFCaids.pdb" /debug /machine:I386 /def:".\MFCaids.def" /out:"..\Build\Debug/MFCaids.dll" /implib:"..\Build\MFCaids\Debug/MFCaids.lib" /pdbtype:sept 
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\BtnST.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\ButtonX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\CivTextWrapper.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\ColourPickerXP.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\ComboZoom.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\CommandLineInfoX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\CustomizeDialog.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\DialogBarX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\DialogX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\DocXML.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\EditX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\FadeWnd.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\FileDialogX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\FormViewX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\FramePosition.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\GraphXImage.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\HyperLink.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\Label.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\ListCtrlX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\MenuMgr.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\MFCaids.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\MruMgr.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\NewMenu.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\ReBarX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\RichEditCtrlX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\RollupCtrl.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\StatusProgressX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\StdAfx.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\ToolbarX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\TreeCtrlX.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\Utilities.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\XMessageBox.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\XPTheme.obj"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\MFCaids.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSPD.tmp"
+<h3>Output Window</h3>
+Compiling...
+GraphXImage.cpp
+Linking...
+   Creating library ..\Build\MFCaids\Debug/MFCaids.lib and object ..\Build\MFCaids\Debug/MFCaids.exp
+<h3>
+--------------------Configuration: GraphX - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\build\GraphX\Debug/GraphX.res" /d "_DEBUG" /d "_AFXDLL" "D:\My C++\Civ3MM\For Ekmek\GraphX\GraphX.rc"" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP11.tmp" with contents
+[
+/nologo /MDd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "GRAPH_EXPORTS" /FR"..\build\GraphX\Debug/" /Fp"..\build\GraphX\Debug/GraphX.pch" /Yu"stdafx.h" /Fo"..\build\GraphX\Debug/" /Fd"..\build\GraphX\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\For Ekmek\GraphX\GifCoder.cpp"
+"D:\My C++\Civ3MM\For Ekmek\GraphX\GraphX.cpp"
+"D:\My C++\Civ3MM\For Ekmek\GraphX\GraphXExp.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP11.tmp" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP12.tmp" with contents
+[
+/nologo /MDd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /D "GRAPH_EXPORTS" /FR"..\build\GraphX\Debug/" /Fp"..\build\GraphX\Debug/GraphX.pch" /Yc"stdafx.h" /Fo"..\build\GraphX\Debug/" /Fd"..\build\GraphX\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\For Ekmek\GraphX\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP12.tmp" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP13.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"..\build\GraphX\Debug/GraphX.pdb" /debug /machine:I386 /def:".\GraphX.def" /out:"..\build\Debug/GraphX.dll" /implib:"..\build\GraphX\Debug/GraphX.lib" /pdbtype:sept 
+"\My C++\Civ3MM\For Ekmek\build\GraphX\Debug\GifCoder.obj"
+"\My C++\Civ3MM\For Ekmek\build\GraphX\Debug\GraphX.obj"
+"\My C++\Civ3MM\For Ekmek\build\GraphX\Debug\GraphXExp.obj"
+"\My C++\Civ3MM\For Ekmek\build\GraphX\Debug\StdAfx.obj"
+"\My C++\Civ3MM\For Ekmek\build\GraphX\Debug\GraphX.res"
+".\lib12\LTDIS_n.lib"
+".\lib12\ltdlg_n.lib"
+".\lib12\ltefx_n.lib"
+".\lib12\ltfil_n.lib"
+".\lib12\ltimg_n.lib"
+".\lib12\ltkrn_n.lib"
+".\lib12\ltlst_n.lib"
+".\lib12\lttwn_n.lib"
+".\lib12\ltscr_n.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP13.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+GifCoder.cpp
+GraphX.cpp
+GraphXExp.cpp
+Generating Code...
+Linking...
+   Creating library ..\build\GraphX\Debug/GraphX.lib and object ..\build\GraphX\Debug/GraphX.exp
+<h3>
+--------------------Configuration: Civ3FlcEdit - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP17.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"..\Build\Civ3FlcEdit\Debug/" /Fp"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.pch" /Yu"stdafx.h" /Fo"..\Build\Civ3FlcEdit\Debug/" /Fd"..\Build\Civ3FlcEdit\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\DocTemplateFlc.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FlcDoc.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FlcView.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ShrinkFrmCountDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\C3fDoc.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\C3fView.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\DocTemplateC3f.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\AboutDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FileFlcDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FileImgAllDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FileImgDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FileWavDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ImportToC3F.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\InfoDialog.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\OffsetDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PreviewDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\SelectBgdImgDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ZoomingDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\OptionsDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\OptionsDlgDoc.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\OptionsDlgFlc.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\OptionsDlgView.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorBCHSDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorMoveDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorReplaceDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorSelectDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorTable.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorTableDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorTablePreview.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ColorTableSrc.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ComboBoxCivColor.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ReplaceRangeDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ExportFlcDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ExportFlcFrm.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ExportFlcGen.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ExportFlcOut.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ExportFlcPal.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\NewFlcDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\NewFlcFrm.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\NewFlcGen.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\NewFlcOut.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\NewFlcPal.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FlcInfoDlg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FlcInfoExt.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FlcInfoGen.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\AnimationView.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\BgdImg.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\FlcImage.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\Pcx.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\Screen.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\Surface.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\DialogBarMy.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\DlgBar.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PanelAnimation.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PanelDelay.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PanelDirection.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PanelExtra.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PanelSound.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\PanelView.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\ChildFrm.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\Civ3FlcEdit.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\DocManagerEx.cpp"
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP17.tmp" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP18.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"..\Build\Civ3FlcEdit\Debug/" /Fp"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.pch" /Yc"stdafx.h" /Fo"..\Build\Civ3FlcEdit\Debug/" /Fd"..\Build\Civ3FlcEdit\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\For Ekmek\Civ3FlcEdit\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP18.tmp" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP19.tmp" with contents
+[
+Winmm.lib Version.lib ddraw.lib gdi32.lib "..\Build\MFCaids\Debug\MFCaids.lib" "..\Build\GraphX\Debug\GraphX.lib" /nologo /subsystem:windows /incremental:yes /pdb:"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.pdb" /debug /machine:I386 /out:"..\Build\Debug/Civ3FlcEdit.exe" /pdbtype:sept 
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\DocTemplateFlc.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FlcDoc.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FlcView.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ShrinkFrmCountDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\C3fDoc.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\C3fView.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\DocTemplateC3f.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\AboutDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FileFlcDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FileImgAllDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FileImgDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FileWavDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ImportToC3F.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\InfoDialog.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\OffsetDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PreviewDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\SelectBgdImgDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ZoomingDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\OptionsDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\OptionsDlgDoc.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\OptionsDlgFlc.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\OptionsDlgView.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorBCHSDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorMoveDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorReplaceDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorSelectDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorTable.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorTableDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorTablePreview.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ColorTableSrc.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ComboBoxCivColor.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ReplaceRangeDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ExportFlcDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ExportFlcFrm.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ExportFlcGen.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ExportFlcOut.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ExportFlcPal.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\NewFlcDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\NewFlcFrm.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\NewFlcGen.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\NewFlcOut.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\NewFlcPal.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FlcInfoDlg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FlcInfoExt.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FlcInfoGen.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\AnimationView.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\BgdImg.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\FlcImage.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\Pcx.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\Screen.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\Surface.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\DialogBarMy.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\DlgBar.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PanelAnimation.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PanelDelay.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PanelDirection.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PanelExtra.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PanelSound.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\PanelView.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\ChildFrm.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\Civ3FlcEdit.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\DocManagerEx.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\MainFrm.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\StdAfx.obj"
+"\My C++\Civ3MM\For Ekmek\Build\Civ3FlcEdit\Debug\Civ3FlcEdit.res"
+"\My C++\Civ3MM\For Ekmek\Build\MFCaids\Debug\MFCaids.lib"
+"\My C++\Civ3MM\For Ekmek\build\GraphX\Debug\GraphX.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP19.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+DocTemplateFlc.cpp
+FlcDoc.cpp
+FlcView.cpp
+ShrinkFrmCountDlg.cpp
+C3fDoc.cpp
+C3fView.cpp
+DocTemplateC3f.cpp
+AboutDlg.cpp
+FileFlcDlg.cpp
+FileImgAllDlg.cpp
+FileImgDlg.cpp
+FileWavDlg.cpp
+ImportToC3F.cpp
+InfoDialog.cpp
+OffsetDlg.cpp
+PreviewDlg.cpp
+SelectBgdImgDlg.cpp
+ZoomingDlg.cpp
+OptionsDlg.cpp
+OptionsDlgDoc.cpp
+Generating Code...
+Compiling...
+OptionsDlgFlc.cpp
+OptionsDlgView.cpp
+ColorBCHSDlg.cpp
+ColorMoveDlg.cpp
+ColorReplaceDlg.cpp
+ColorSelectDlg.cpp
+ColorTable.cpp
+ColorTableDlg.cpp
+ColorTablePreview.cpp
+ColorTableSrc.cpp
+ComboBoxCivColor.cpp
+ReplaceRangeDlg.cpp
+ExportFlcDlg.cpp
+ExportFlcFrm.cpp
+ExportFlcGen.cpp
+ExportFlcOut.cpp
+ExportFlcPal.cpp
+NewFlcDlg.cpp
+NewFlcFrm.cpp
+NewFlcGen.cpp
+Generating Code...
+Compiling...
+NewFlcOut.cpp
+NewFlcPal.cpp
+FlcInfoDlg.cpp
+FlcInfoExt.cpp
+FlcInfoGen.cpp
+AnimationView.cpp
+BgdImg.cpp
+FlcImage.cpp
+Pcx.cpp
+Screen.cpp
+Surface.cpp
+DialogBarMy.cpp
+DlgBar.cpp
+PanelAnimation.cpp
+PanelDelay.cpp
+PanelDirection.cpp
+PanelExtra.cpp
+PanelSound.cpp
+PanelView.cpp
+ChildFrm.cpp
+Generating Code...
+Compiling...
+Civ3FlcEdit.cpp
+DocManagerEx.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Civ3FlcEdit.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

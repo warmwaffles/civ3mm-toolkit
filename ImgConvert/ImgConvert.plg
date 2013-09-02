@@ -1,0 +1,37 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ImgConvert - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\Build\ImgConvert\Debug/ImgConvert.res" /d "_DEBUG" /d "_AFXDLL" "D:\My C++\Civ3MM\ImgConvert\ImgConvert.rc"" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP462.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"..\Build\ImgConvert\Debug/ImgConvert.pch" /Yu"stdafx.h" /Fo"..\Build\ImgConvert\Debug/" /Fd"..\Build\ImgConvert\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\ImgConvert\ImgConvertDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP462.tmp" 
+Creating temporary file "C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP463.tmp" with contents
+[
+"..\Build\GraphX\Debug\GraphX.lib" "..\Build\MFCaids\Debug\MFCaids.lib" /nologo /subsystem:windows /incremental:yes /pdb:"..\Build\ImgConvert\Debug/ImgConvert.pdb" /debug /machine:I386 /out:"..\Build\Debug/ImgConvert.exe" /pdbtype:sept 
+"\My C++\Civ3MM\Build\ImgConvert\Debug\ImgConvert.obj"
+"\My C++\Civ3MM\Build\ImgConvert\Debug\ImgConvertDlg.obj"
+"\My C++\Civ3MM\Build\ImgConvert\Debug\StdAfx.obj"
+"\My C++\Civ3MM\Build\ImgConvert\Debug\ImgConvert.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\APETRI~1\LOCALS~1\Temp\RSP463.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+ImgConvertDlg.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+ImgConvert.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

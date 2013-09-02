@@ -1,0 +1,949 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Civ3FlcEdit - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\Build\Civ3FlcEdit\Release/Civ3FlcEdit.res" /d "NDEBUG" /d "_AFXDLL" "D:\My C++\Civ3MM\Civ3FlcEdit\Civ3FlcEdit.rc"" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5A.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"..\Build\Civ3FlcEdit\Release/Civ3FlcEdit.pch" /Yu"stdafx.h" /Fo"..\Build\Civ3FlcEdit\Release/" /Fd"..\Build\Civ3FlcEdit\Release/" /FD /c 
+"D:\My C++\Civ3MM\Civ3FlcEdit\DocTemplateFlc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcDoc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\C3fDoc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\C3fView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DocTemplateC3f.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\AboutDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileImgAllDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileImgDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileWavDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ImportToC3F.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\InfoDialog.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OffsetDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PreviewDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ZoomingDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlgDoc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlgFlc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlgView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorBCHSDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorMoveDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorReplaceDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorSelectDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTable.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTableDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTablePreview.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTableSrc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ComboBoxCivColor.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ReplaceRangeDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcFrm.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcGen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcOut.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcPal.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcFrm.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcGen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcOut.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcPal.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcInfoDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcInfoExt.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcInfoGen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\AnimationView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcImage.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Pcx.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Screen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Surface.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DialogBarMy.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DlgBar.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelAnimation.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelDelay.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelDirection.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelExtra.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelSound.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ChildFrm.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Civ3FlcEdit.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DocManagerEx.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5A.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5B.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"..\Build\Civ3FlcEdit\Release/Civ3FlcEdit.pch" /Yc"stdafx.h" /Fo"..\Build\Civ3FlcEdit\Release/" /Fd"..\Build\Civ3FlcEdit\Release/" /FD /c 
+"D:\My C++\Civ3MM\Civ3FlcEdit\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5B.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5C.tmp" with contents
+[
+Winmm.lib Version.lib ddraw.lib gdi32.lib "..\Build\MFCaids\Release\MFCaids.lib" "..\Build\GraphX\Release\GraphX.lib" /nologo /subsystem:windows /incremental:no /pdb:"..\Build\Civ3FlcEdit\Release/Civ3FlcEdit.pdb" /machine:I386 /out:"..\Build\Release/Civ3FlcEdit.exe" 
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\DocTemplateFlc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FlcDoc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FlcView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\C3fDoc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\C3fView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\DocTemplateC3f.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\AboutDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FileFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FileImgAllDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FileImgDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FileWavDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ImportToC3F.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\InfoDialog.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\OffsetDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PreviewDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ZoomingDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\OptionsDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\OptionsDlgDoc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\OptionsDlgFlc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\OptionsDlgView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorBCHSDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorMoveDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorReplaceDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorSelectDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorTable.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorTableDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorTablePreview.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ColorTableSrc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ComboBoxCivColor.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ReplaceRangeDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ExportFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ExportFlcFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ExportFlcGen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ExportFlcOut.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ExportFlcPal.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\NewFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\NewFlcFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\NewFlcGen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\NewFlcOut.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\NewFlcPal.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FlcInfoDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FlcInfoExt.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FlcInfoGen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\AnimationView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\FlcImage.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\Pcx.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\Screen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\Surface.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\DialogBarMy.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\DlgBar.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PanelAnimation.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PanelDelay.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PanelDirection.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PanelExtra.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PanelSound.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\PanelView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\ChildFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\Civ3FlcEdit.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\DocManagerEx.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\MainFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\StdAfx.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Release\Civ3FlcEdit.res"
+"\My C++\Civ3MM\build\GraphX\Release\GraphX.lib"
+"\My C++\Civ3MM\Build\MFCaids\Release\MFCaids.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DocTemplateFlc.cpp
+FlcDoc.cpp
+FlcView.cpp
+C3fDoc.cpp
+C3fView.cpp
+DocTemplateC3f.cpp
+AboutDlg.cpp
+FileFlcDlg.cpp
+FileImgAllDlg.cpp
+FileImgDlg.cpp
+FileWavDlg.cpp
+ImportToC3F.cpp
+InfoDialog.cpp
+OffsetDlg.cpp
+PreviewDlg.cpp
+ZoomingDlg.cpp
+OptionsDlg.cpp
+OptionsDlgDoc.cpp
+OptionsDlgFlc.cpp
+OptionsDlgView.cpp
+Generating Code...
+Compiling...
+ColorBCHSDlg.cpp
+ColorMoveDlg.cpp
+ColorReplaceDlg.cpp
+ColorSelectDlg.cpp
+ColorTable.cpp
+ColorTableDlg.cpp
+ColorTablePreview.cpp
+ColorTableSrc.cpp
+ComboBoxCivColor.cpp
+ReplaceRangeDlg.cpp
+ExportFlcDlg.cpp
+ExportFlcFrm.cpp
+ExportFlcGen.cpp
+ExportFlcOut.cpp
+ExportFlcPal.cpp
+NewFlcDlg.cpp
+NewFlcFrm.cpp
+NewFlcGen.cpp
+NewFlcOut.cpp
+NewFlcPal.cpp
+Generating Code...
+Compiling...
+FlcInfoDlg.cpp
+FlcInfoExt.cpp
+FlcInfoGen.cpp
+AnimationView.cpp
+FlcImage.cpp
+Pcx.cpp
+Screen.cpp
+Surface.cpp
+DialogBarMy.cpp
+DlgBar.cpp
+PanelAnimation.cpp
+PanelDelay.cpp
+PanelDirection.cpp
+PanelExtra.cpp
+PanelSound.cpp
+PanelView.cpp
+ChildFrm.cpp
+Civ3FlcEdit.cpp
+DocManagerEx.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Civ3FlcEdit.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: Civ3FlcEdit - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.res" /d "_DEBUG" /d "_AFXDLL" "D:\My C++\Civ3MM\Civ3FlcEdit\Civ3FlcEdit.rc"" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5E.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"..\Build\Civ3FlcEdit\Debug/" /Fp"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.pch" /Yu"stdafx.h" /Fo"..\Build\Civ3FlcEdit\Debug/" /Fd"..\Build\Civ3FlcEdit\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\Civ3FlcEdit\DocTemplateFlc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcDoc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\C3fDoc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\C3fView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DocTemplateC3f.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\AboutDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileImgAllDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileImgDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FileWavDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ImportToC3F.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\InfoDialog.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OffsetDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PreviewDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ZoomingDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlgDoc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlgFlc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\OptionsDlgView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorBCHSDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorMoveDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorReplaceDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorSelectDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTable.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTableDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTablePreview.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ColorTableSrc.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ComboBoxCivColor.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ReplaceRangeDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcFrm.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcGen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcOut.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ExportFlcPal.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcFrm.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcGen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcOut.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\NewFlcPal.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcInfoDlg.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcInfoExt.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcInfoGen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\AnimationView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\FlcImage.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Pcx.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Screen.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Surface.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DialogBarMy.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DlgBar.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelAnimation.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelDelay.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelDirection.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelExtra.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelSound.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\PanelView.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\ChildFrm.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\Civ3FlcEdit.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\DocManagerEx.cpp"
+"D:\My C++\Civ3MM\Civ3FlcEdit\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5E.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5F.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"..\Build\Civ3FlcEdit\Debug/" /Fp"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.pch" /Yc"stdafx.h" /Fo"..\Build\Civ3FlcEdit\Debug/" /Fd"..\Build\Civ3FlcEdit\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\Civ3FlcEdit\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP5F.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP60.tmp" with contents
+[
+Winmm.lib Version.lib ddraw.lib gdi32.lib "..\Build\MFCaids\Debug\MFCaids.lib" "..\Build\GraphX\Debug\GraphX.lib" /nologo /subsystem:windows /incremental:yes /pdb:"..\Build\Civ3FlcEdit\Debug/Civ3FlcEdit.pdb" /debug /machine:I386 /out:"..\Build\Debug/Civ3FlcEdit.exe" /pdbtype:sept 
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\DocTemplateFlc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FlcDoc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FlcView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\C3fDoc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\C3fView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\DocTemplateC3f.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\AboutDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FileFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FileImgAllDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FileImgDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FileWavDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ImportToC3F.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\InfoDialog.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\OffsetDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PreviewDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ZoomingDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\OptionsDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\OptionsDlgDoc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\OptionsDlgFlc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\OptionsDlgView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorBCHSDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorMoveDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorReplaceDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorSelectDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorTable.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorTableDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorTablePreview.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ColorTableSrc.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ComboBoxCivColor.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ReplaceRangeDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ExportFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ExportFlcFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ExportFlcGen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ExportFlcOut.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ExportFlcPal.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\NewFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\NewFlcFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\NewFlcGen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\NewFlcOut.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\NewFlcPal.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FlcInfoDlg.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FlcInfoExt.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FlcInfoGen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\AnimationView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\FlcImage.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\Pcx.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\Screen.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\Surface.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\DialogBarMy.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\DlgBar.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PanelAnimation.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PanelDelay.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PanelDirection.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PanelExtra.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PanelSound.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\PanelView.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\ChildFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\Civ3FlcEdit.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\DocManagerEx.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\MainFrm.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\StdAfx.obj"
+"\My C++\Civ3MM\Build\Civ3FlcEdit\Debug\Civ3FlcEdit.res"
+"\My C++\Civ3MM\build\GraphX\Debug\GraphX.lib"
+"\My C++\Civ3MM\Build\MFCaids\Debug\MFCaids.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP60.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DocTemplateFlc.cpp
+FlcDoc.cpp
+FlcView.cpp
+C3fDoc.cpp
+C3fView.cpp
+DocTemplateC3f.cpp
+AboutDlg.cpp
+FileFlcDlg.cpp
+FileImgAllDlg.cpp
+FileImgDlg.cpp
+FileWavDlg.cpp
+ImportToC3F.cpp
+InfoDialog.cpp
+OffsetDlg.cpp
+PreviewDlg.cpp
+ZoomingDlg.cpp
+OptionsDlg.cpp
+OptionsDlgDoc.cpp
+OptionsDlgFlc.cpp
+OptionsDlgView.cpp
+Generating Code...
+Compiling...
+ColorBCHSDlg.cpp
+ColorMoveDlg.cpp
+ColorReplaceDlg.cpp
+ColorSelectDlg.cpp
+ColorTable.cpp
+ColorTableDlg.cpp
+ColorTablePreview.cpp
+ColorTableSrc.cpp
+ComboBoxCivColor.cpp
+ReplaceRangeDlg.cpp
+ExportFlcDlg.cpp
+ExportFlcFrm.cpp
+ExportFlcGen.cpp
+ExportFlcOut.cpp
+ExportFlcPal.cpp
+NewFlcDlg.cpp
+NewFlcFrm.cpp
+NewFlcGen.cpp
+NewFlcOut.cpp
+NewFlcPal.cpp
+Generating Code...
+Compiling...
+FlcInfoDlg.cpp
+FlcInfoExt.cpp
+FlcInfoGen.cpp
+AnimationView.cpp
+FlcImage.cpp
+Pcx.cpp
+Screen.cpp
+Surface.cpp
+DialogBarMy.cpp
+DlgBar.cpp
+PanelAnimation.cpp
+PanelDelay.cpp
+PanelDirection.cpp
+PanelExtra.cpp
+PanelSound.cpp
+PanelView.cpp
+ChildFrm.cpp
+Civ3FlcEdit.cpp
+DocManagerEx.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Civ3FlcEdit.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: Civ3MM - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\Build\Civ3MM\Release/Civ3MM.res" /d "NDEBUG" /d "_AFXDLL" "D:\My C++\Civ3MM\Civ3MM\Civ3MM.rc"" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP62.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"..\Build\Civ3MM\Release/Civ3MM.pch" /Yu"stdafx.h" /Fo"..\Build\Civ3MM\Release/" /Fd"..\Build\Civ3MM\Release/" /FD /c 
+"D:\My C++\Civ3MM\Civ3MM\PrtoGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoINI.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewPrto.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewPrtos.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewBldg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewBldgs.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewGood.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewGoods.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewTech.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewTechs.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RaceGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RaceNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RacePCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RaceTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewRace.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewRaces.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ScenarioFile.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfBase.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfCopyItemDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfEditDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfImportDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfSetDataDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ScenInfoGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ScenInfoSf.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewScenInfo.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemPar.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemSf.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgCreate.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgDoc.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgSf.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgView.cpp"
+"D:\My C++\Civ3MM\Civ3MM\AboutDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\CopyItemDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\FileFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\FileImgDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\FileWavDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImportDoc.cpp"
+"D:\My C++\Civ3MM\Civ3MM\InfoDialog.cpp"
+"D:\My C++\Civ3MM\Civ3MM\NewScenarioDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RenameDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SelectFlcEditorDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SelectImgEditorDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Civ3MM.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Civ3MMDoc.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Civ3MMView.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Core.cpp"
+"D:\My C++\Civ3MM\Civ3MM\DlgBar.cpp"
+"D:\My C++\Civ3MM\Civ3MM\EditCiv.cpp"
+"D:\My C++\Civ3MM\Civ3MM\MainFrm.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewDocInfo.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewItems.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP62.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP63.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"..\Build\Civ3MM\Release/Civ3MM.pch" /Yc"stdafx.h" /Fo"..\Build\Civ3MM\Release/" /Fd"..\Build\Civ3MM\Release/" /FD /c 
+"D:\My C++\Civ3MM\Civ3MM\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP63.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP64.tmp" with contents
+[
+"..\Build\GraphX\Release\GraphX.lib" "..\Build\MFCaids\Release\MFCaids.lib" Version.lib Winmm.lib HtmlHelp.lib /nologo /subsystem:windows /incremental:no /pdb:"..\Build\Civ3MM\Release/Civ3MM.pdb" /machine:I386 /out:"..\Build\Release/Civ3MM.exe" 
+"\My C++\Civ3MM\Build\Civ3MM\Release\PrtoGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\PrtoINI.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\PrtoNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\PrtoPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\PrtoTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewPrto.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewPrtos.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\BldgGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\BldgNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\BldgPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\BldgTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewBldg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewBldgs.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\GoodGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\GoodNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\GoodPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\GoodTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewGood.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewGoods.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\TechGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\TechNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\TechPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\TechTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewTech.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewTechs.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\RaceGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\RaceNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\RacePCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\RaceTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewRace.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewRaces.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ScenarioFile.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SfBase.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SfCopyItemDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SfEditDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SfImportDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SfSetDataDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ScenInfoGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ScenInfoSf.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewScenInfo.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ImpRemDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ImpRemGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ImpRemPar.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ImpRemSf.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\OptionsDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\OptionsDlgCreate.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\OptionsDlgDoc.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\OptionsDlgSf.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\OptionsDlgView.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\AboutDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\CopyItemDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\FileFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\FileImgDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\FileWavDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ImportDoc.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\InfoDialog.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\NewScenarioDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\RenameDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SelectFlcEditorDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\SelectImgEditorDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\Civ3MM.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\Civ3MMDoc.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\Civ3MMView.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\Core.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\DlgBar.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\EditCiv.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\MainFrm.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\StdAfx.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewDocInfo.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\ViewItems.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Release\Civ3MM.res"
+"\My C++\Civ3MM\Build\MFCaids\Release\MFCaids.lib"
+"\My C++\Civ3MM\build\GraphX\Release\GraphX.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP64.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+PrtoGen.cpp
+PrtoINI.cpp
+PrtoNote.cpp
+PrtoPCX.cpp
+PrtoTXT.cpp
+ViewPrto.cpp
+ViewPrtos.cpp
+BldgGen.cpp
+BldgNote.cpp
+BldgPCX.cpp
+BldgTXT.cpp
+ViewBldg.cpp
+ViewBldgs.cpp
+GoodGen.cpp
+GoodNote.cpp
+GoodPCX.cpp
+GoodTXT.cpp
+ViewGood.cpp
+ViewGoods.cpp
+TechGen.cpp
+Generating Code...
+Compiling...
+TechNote.cpp
+TechPCX.cpp
+TechTXT.cpp
+ViewTech.cpp
+ViewTechs.cpp
+RaceGen.cpp
+RaceNote.cpp
+RacePCX.cpp
+RaceTXT.cpp
+ViewRace.cpp
+ViewRaces.cpp
+ScenarioFile.cpp
+SfBase.cpp
+SfCopyItemDlg.cpp
+SfEditDlg.cpp
+SfImportDlg.cpp
+SfSetDataDlg.cpp
+ScenInfoGen.cpp
+ScenInfoSf.cpp
+ViewScenInfo.cpp
+Generating Code...
+Compiling...
+ImpRemDlg.cpp
+ImpRemGen.cpp
+ImpRemPar.cpp
+ImpRemSf.cpp
+OptionsDlg.cpp
+OptionsDlgCreate.cpp
+OptionsDlgDoc.cpp
+OptionsDlgSf.cpp
+OptionsDlgView.cpp
+AboutDlg.cpp
+CopyItemDlg.cpp
+FileFlcDlg.cpp
+FileImgDlg.cpp
+FileWavDlg.cpp
+ImportDoc.cpp
+InfoDialog.cpp
+NewScenarioDlg.cpp
+RenameDlg.cpp
+SelectFlcEditorDlg.cpp
+SelectImgEditorDlg.cpp
+Generating Code...
+Compiling...
+Civ3MM.cpp
+Civ3MMDoc.cpp
+Civ3MMView.cpp
+Core.cpp
+DlgBar.cpp
+EditCiv.cpp
+MainFrm.cpp
+ViewDocInfo.cpp
+ViewItems.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Civ3MM.exe - 0 error(s), 0 warning(s)
+<h3>
+--------------------Configuration: Civ3MM - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"..\Build\Civ3MM\Debug/Civ3MM.res" /d "_DEBUG" /d "_AFXDLL" "D:\My C++\Civ3MM\Civ3MM\Civ3MM.rc"" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP66.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"..\Build\Civ3MM\Debug/" /Fp"..\Build\Civ3MM\Debug/Civ3MM.pch" /Yu"stdafx.h" /Fo"..\Build\Civ3MM\Debug/" /Fd"..\Build\Civ3MM\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\Civ3MM\PrtoGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoINI.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\PrtoTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewPrto.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewPrtos.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\BldgTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewBldg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewBldgs.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\GoodTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewGood.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewGoods.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechPCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\TechTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewTech.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewTechs.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RaceGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RaceNote.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RacePCX.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RaceTXT.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewRace.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewRaces.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ScenarioFile.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfBase.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfCopyItemDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfEditDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfImportDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SfSetDataDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ScenInfoGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ScenInfoSf.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewScenInfo.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemGen.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemPar.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImpRemSf.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgCreate.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgDoc.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgSf.cpp"
+"D:\My C++\Civ3MM\Civ3MM\OptionsDlgView.cpp"
+"D:\My C++\Civ3MM\Civ3MM\AboutDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\CopyItemDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\FileFlcDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\FileImgDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\FileWavDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ImportDoc.cpp"
+"D:\My C++\Civ3MM\Civ3MM\InfoDialog.cpp"
+"D:\My C++\Civ3MM\Civ3MM\NewScenarioDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\RenameDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SelectFlcEditorDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\SelectImgEditorDlg.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Civ3MM.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Civ3MMDoc.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Civ3MMView.cpp"
+"D:\My C++\Civ3MM\Civ3MM\Core.cpp"
+"D:\My C++\Civ3MM\Civ3MM\DlgBar.cpp"
+"D:\My C++\Civ3MM\Civ3MM\EditCiv.cpp"
+"D:\My C++\Civ3MM\Civ3MM\MainFrm.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewDocInfo.cpp"
+"D:\My C++\Civ3MM\Civ3MM\ViewItems.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP66.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP67.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"..\Build\Civ3MM\Debug/" /Fp"..\Build\Civ3MM\Debug/Civ3MM.pch" /Yc"stdafx.h" /Fo"..\Build\Civ3MM\Debug/" /Fd"..\Build\Civ3MM\Debug/" /FD /GZ /c 
+"D:\My C++\Civ3MM\Civ3MM\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP67.tmp" 
+Creating temporary file "C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP68.tmp" with contents
+[
+"..\Build\GraphX\Debug\GraphX.lib" "..\Build\MFCaids\Debug\MFCaids.lib" Version.lib Winmm.lib HtmlHelp.lib /nologo /subsystem:windows /incremental:yes /pdb:"..\Build\Civ3MM\Debug/Civ3MM.pdb" /debug /machine:I386 /out:"..\Build\Debug/Civ3MM.exe" /pdbtype:sept 
+"\My C++\Civ3MM\Build\Civ3MM\Debug\PrtoGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\PrtoINI.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\PrtoNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\PrtoPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\PrtoTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewPrto.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewPrtos.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\BldgGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\BldgNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\BldgPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\BldgTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewBldg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewBldgs.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\GoodGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\GoodNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\GoodPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\GoodTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewGood.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewGoods.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\TechGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\TechNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\TechPCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\TechTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewTech.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewTechs.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\RaceGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\RaceNote.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\RacePCX.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\RaceTXT.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewRace.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewRaces.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ScenarioFile.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SfBase.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SfCopyItemDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SfEditDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SfImportDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SfSetDataDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ScenInfoGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ScenInfoSf.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewScenInfo.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ImpRemDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ImpRemGen.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ImpRemPar.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ImpRemSf.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\OptionsDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\OptionsDlgCreate.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\OptionsDlgDoc.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\OptionsDlgSf.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\OptionsDlgView.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\AboutDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\CopyItemDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\FileFlcDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\FileImgDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\FileWavDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ImportDoc.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\InfoDialog.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\NewScenarioDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\RenameDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SelectFlcEditorDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\SelectImgEditorDlg.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\Civ3MM.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\Civ3MMDoc.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\Civ3MMView.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\Core.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\DlgBar.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\EditCiv.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\MainFrm.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\StdAfx.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewDocInfo.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\ViewItems.obj"
+"\My C++\Civ3MM\Build\Civ3MM\Debug\Civ3MM.res"
+"\My C++\Civ3MM\Build\MFCaids\Debug\MFCaids.lib"
+"\My C++\Civ3MM\build\GraphX\Debug\GraphX.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\CYBERD~1\LOCALS~1\Temp\RSP68.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+PrtoGen.cpp
+PrtoINI.cpp
+PrtoNote.cpp
+PrtoPCX.cpp
+PrtoTXT.cpp
+ViewPrto.cpp
+ViewPrtos.cpp
+BldgGen.cpp
+BldgNote.cpp
+BldgPCX.cpp
+BldgTXT.cpp
+ViewBldg.cpp
+ViewBldgs.cpp
+GoodGen.cpp
+GoodNote.cpp
+GoodPCX.cpp
+GoodTXT.cpp
+ViewGood.cpp
+ViewGoods.cpp
+TechGen.cpp
+Generating Code...
+Compiling...
+TechNote.cpp
+TechPCX.cpp
+TechTXT.cpp
+ViewTech.cpp
+ViewTechs.cpp
+RaceGen.cpp
+RaceNote.cpp
+RacePCX.cpp
+RaceTXT.cpp
+ViewRace.cpp
+ViewRaces.cpp
+ScenarioFile.cpp
+SfBase.cpp
+SfCopyItemDlg.cpp
+SfEditDlg.cpp
+SfImportDlg.cpp
+SfSetDataDlg.cpp
+ScenInfoGen.cpp
+ScenInfoSf.cpp
+ViewScenInfo.cpp
+Generating Code...
+Compiling...
+ImpRemDlg.cpp
+ImpRemGen.cpp
+ImpRemPar.cpp
+ImpRemSf.cpp
+OptionsDlg.cpp
+OptionsDlgCreate.cpp
+OptionsDlgDoc.cpp
+OptionsDlgSf.cpp
+OptionsDlgView.cpp
+AboutDlg.cpp
+CopyItemDlg.cpp
+FileFlcDlg.cpp
+FileImgDlg.cpp
+FileWavDlg.cpp
+ImportDoc.cpp
+InfoDialog.cpp
+NewScenarioDlg.cpp
+RenameDlg.cpp
+SelectFlcEditorDlg.cpp
+SelectImgEditorDlg.cpp
+Generating Code...
+Compiling...
+Civ3MM.cpp
+Civ3MMDoc.cpp
+Civ3MMView.cpp
+Core.cpp
+DlgBar.cpp
+EditCiv.cpp
+MainFrm.cpp
+ViewDocInfo.cpp
+ViewItems.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Civ3MM.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

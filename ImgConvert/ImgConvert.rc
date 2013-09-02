@@ -1,0 +1,335 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+IDR_MANIFEST            24      DISCARDABLE     "res\\ImgConvert.manifest"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ImgConvert.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ImgConvert.ico"
+IDI_LOCK                ICON    DISCARDABLE     "res\\lock.ico"
+IDI_UNLOCK              ICON    DISCARDABLE     "res\\unlock.ico"
+IDI_BROWSE              ICON    DISCARDABLE     "res\\browse.ico"
+IDI_EXIT                ICON    DISCARDABLE     "res\\Exit.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ImgConvert"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Image Converter Version 1.1",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright © 2005 Cyber Dreyk",IDC_STATIC,40,25,136,8
+    DEFPUSHBUTTON   "&OK",IDOK,178,20,50,14,WS_GROUP
+END
+
+IDD_IMGCONVERT_DIALOG DIALOGEX 0, 0, 373, 190
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Image Converter"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Convert",IDOK,113,169,70,14
+    PUSHBUTTON      "&Exit",IDCANCEL,191,169,70,14
+    GROUPBOX        "Select Target Directory",IDC_STATIC,7,3,115,32
+    EDITTEXT        IDC_TARGET_PATH,17,14,79,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_TARGET_PATH,97,14,17,14
+    GROUPBOX        "Select Source Image File(s)",IDC_STATIC,7,38,115,37
+    PUSHBUTTON      "&Browse for Files",IDC_BROWSE_PATH,17,52,97,14
+    GROUPBOX        "File Type",IDC_STATIC,7,78,115,40
+    COMBOBOX        IDC_FILE_TYPE,17,90,97,58,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Use &File Type",IDC_USE_FILE_TYPE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,105,97,10
+    GROUPBOX        "Name Suffix",IDC_STATIC,7,121,115,41
+    EDITTEXT        IDC_SUFFIX,17,132,97,14,ES_AUTOHSCROLL
+    CONTROL         "Use Suffi&x",IDC_USE_SUFFIX,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,149,97,10
+    GROUPBOX        "Image Sizes",IDC_STATIC,129,3,115,72
+    RTEXT           "Width:",IDC_STATIC,140,14,31,14,SS_CENTERIMAGE
+    RTEXT           "Heigth:",IDC_STATIC,140,32,31,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_FRM_WIDTH,174,14,35,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin2",IDC_FRM_WIDTH_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,208,14,11,14
+    EDITTEXT        IDC_FRM_HEIGHT,174,32,35,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin3",IDC_FRM_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,208,32,11,14
+    CONTROL         "",IDC_LOCK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,224,25,
+                    14,12
+    CONTROL         "Use &Sizes",IDC_USE_SIZE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,140,49,97,10
+    CONTROL         "Proportional Resizing",IDC_USE_PROP_RESIZE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,148,61,89,10
+    GROUPBOX        "Bits Per Pixel",IDC_STATIC,129,78,115,84
+    COMBOBOX        IDC_BITS_PER_PIXEL,140,90,97,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use &Bits Per Pixel",IDC_USE_BPP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,140,105,97,10
+    CONTROL         "Make Civilopedia compatable palette (for 8 bit images only)",
+                    IDC_CIV_PAL,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | 
+                    WS_TABSTOP,148,115,89,27
+    GROUPBOX        "Frame Image Conversion",IDC_STATIC,251,3,115,159
+    LTEXT           "Size of Image Inside a Frame:",IDC_STATIC,260,12,100,8
+    RTEXT           "Width:",IDC_STATIC,256,22,26,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_IMG_CX,284,22,21,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Heigth:",IDC_STATIC,309,22,26,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_IMG_CY,337,22,21,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Thickness of Frame Borders:",IDC_STATIC,260,44,100,8
+    RTEXT           "CX:",IDC_STATIC,256,55,26,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_FRM_CX,284,55,21,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "CY:",IDC_STATIC,309,55,26,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_FRM_CY,337,55,20,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Separate Image from Image with Frame",IDC_FRM_CUT,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE | WS_GROUP | 
+                    WS_TABSTOP,260,73,97,19
+    CONTROL         "Framed Image from Image and Frame Template",
+                    IDC_FRM_PASTE,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE,
+                    260,93,97,19
+    CONTROL         "Use Frame Conversion",IDC_USE_FRM,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,260,149,97,10
+    LTEXT           "Select Frame Template:",IDC_STATIC,260,114,100,8
+    EDITTEXT        IDC_FRM_TARGET_PATH,260,127,79,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_FRM_BROWSE_TARGET_PATH,340,127,17,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,3,7
+ PRODUCTVERSION 1,2,3,7
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Image Converter MFC Application\0"
+            VALUE "FileVersion", "1, 2, 3, 7\0"
+            VALUE "InternalName", "ImgConvert\0"
+            VALUE "LegalCopyright", "Copyright © 2005 Cyber Dreyk\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ImgConvert.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ImgConvert Application\0"
+            VALUE "ProductVersion", "1, 2, 3, 7\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_IMGCONVERT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 366
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 162
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About ImgConvert..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLOR_256           "256 colors (8-bit)"
+    IDS_COLOR_TRUE          "true color (24-bit)"
+    IDS_TITLE_SELECT        "Select image file(s) to be changed"
+    IDS_FILTER_IMG          "All supported files (*.pcx *.bmp *.jpg *.gif *.wmf *emf *.psd *.ico *.flc *.tga)|*.pcx;*.bmp;*.jpg;*.gif; *wmf; *.emf; *.psd; *.ico; *.flc; *.tga||"
+    IDS_INVALID_TARGET_PATH "'%s'\r\nThe folder isn't exist.\r\nDo you want to create this folder?"
+    IDS_INVALID_SOURCE_FILES "Please, select the source image file(s) filrst!"
+    IDS_CONVERSION_SUCCESSFUL "Conversion is successfully finished."
+    IDS_ASK_TO_CONVERT      "'%s'\r\nDo you really want to convert selected files and place them by the target path?"
+    IDS_SBROWSE_FILES_RESULT "Selected %d file(s)"
+    IDS_CANNOT_CREATE_DIR   "'%s'\r\nCannot create the directory!"
+    IDS_EMPTY_PATH          "Please, enter a target path!"
+    IDS_TITLE_FRM_SELECT    "Select a Frame Template Image File"
+    IDS_EMPTY_FRM_PATH      "Please, enter a Frame Template Image target path!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_UNKNOWN_ERR         "Unknown error.\nFunction: %s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_FRM_PATH        "'%s'\r\nThe Frame Template Image file isn't exist!"
+    IDS_ERR_CONVERT         "%s\r\n%s"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ImgConvert.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

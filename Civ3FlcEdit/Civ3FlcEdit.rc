@@ -1,0 +1,2705 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+IDR_MANIFEST            24      DISCARDABLE     "res\\Civ3FlcEdit.manifest"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Civ3FlcEdit.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ZOOMING_DLG DIALOG DISCARDABLE  0, 0, 132, 143
+STYLE DS_SYSMODAL | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Zooming..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_PREVIEW,7,7,107,80,SS_SUNKEN | NOT WS_VISIBLE
+    SCROLLBAR       IDC_SCROLLBAR_VERT,114,7,11,78,SBS_VERT | WS_GROUP
+    SCROLLBAR       IDC_SCROLLBAR_HORIZ,7,86,105,11,WS_GROUP
+    PUSHBUTTON      "In",IDC_ZOOM_IN,7,101,40,14
+    COMBOBOX        IDC_ZOOMING,49,102,34,114,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Out",IDC_ZOOM_OUT,85,101,40,14
+    PUSHBUTTON      "&Save",IDC_SAVE,7,118,57,14
+    DEFPUSHBUTTON   "&Exit",IDCANCEL,68,118,57,14
+    CONTROL         "",IDC_ZOOM_FIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    113,86,14,12
+END
+
+IDD_DLG_IMPORT DIALOG DISCARDABLE  0, 0, 376, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Import from Image File to C3F Storyboard..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Cancel",IDCANCEL,309,247,60,14
+    GROUPBOX        "Source Target Path (Import From)",IDC_STATIC_1,7,3,184,
+                    29
+    EDITTEXT        IDC_TARGET_PATH,13,13,154,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_TARGET_PATH,168,13,18,14
+    GROUPBOX        "Destination Target Path (Import To)",IDC_STATIC_2,7,34,
+                    184,29
+    EDITTEXT        IDC_OUTPUT_PATH,13,44,154,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_OUTPUT_PATH,168,44,18,14
+    GROUPBOX        "Select Destination Storyboard File Type",IDC_STATIC_3,7,
+                    65,184,29
+    COMBOBOX        IDC_FILE_TYPE,14,76,171,58,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Source Palette",IDC_STATIC_8,7,96,184,40
+    CONTROL         "Current",IDC_PAL_DEFAULT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,14,106,77,10
+    CONTROL         "Selective",IDC_PAL_SELECTED,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,93,106,77,10
+    EDITTEXT        IDC_PAL_PATH,13,117,154,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PAL_PATH,168,117,18,14,WS_DISABLED
+    GROUPBOX        "Destination Palette File Type",IDC_STATIC_7,7,139,184,
+                    29
+    COMBOBOX        IDC_PAL_TYPE,14,150,171,58,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Frame Size (pixels)",IDC_STATIC_4,7,170,184,29
+    RTEXT           "Width:",IDC_STATIC,9,185,31,8
+    EDITTEXT        IDC_FRM_WIDTH,45,182,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_FRM_WIDTH_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,80,182,11,12
+    RTEXT           "Heigth:",IDC_STATIC,117,185,29,8
+    EDITTEXT        IDC_FRM_HEIGHT,150,182,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin3",IDC_FRM_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,90,182,11,12
+    GROUPBOX        "Frame Offset (pixels)",IDC_STATIC_5,7,202,184,29
+    RTEXT           "Left (x):",IDC_STATIC,9,216,31,8
+    EDITTEXT        IDC_FRM_LEFT,45,213,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_FRM_LEFT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,80,213,11,12
+    PUSHBUTTON      "XY",IDC_CENTERING,89,212,18,14
+    RTEXT           "Top (y):",IDC_STATIC,120,216,26,8
+    EDITTEXT        IDC_FRM_TOP,150,213,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin3",IDC_FRM_TOP_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,105,212,11,12
+    GROUPBOX        "Frame Delay (ms)",IDC_STATIC_6,7,234,184,29
+    CONTROL         "",IDC_TIMER_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,11,245,120,13
+    EDITTEXT        IDC_DELAY,150,245,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin1",IDC_SPIN_DELAY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_HOTTRACK | WS_DISABLED,179,245,11,12
+    GROUPBOX        "First Frame Preview",IDC_STATIC_9,196,3,173,174
+    LTEXT           "",IDC_PREVIEW,201,13,160,148,SS_SUNKEN | NOT WS_VISIBLE
+    LTEXT           "Info",IDC_STATIC_INFO,201,164,160,8
+    CONTROL         "Show &Preview",IDC_PREVIEW_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,201,179,82,10
+    CONTROL         "&Save Frame Settings",IDC_SAVE_SETTINGS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,201,190,82,10
+    CONTROL         "Show &Lines",IDC_SHOW_LINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,287,179,82,10
+    CONTROL         "Show &Grid",IDC_SHOW_GRID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,287,190,82,10
+    GROUPBOX        "Destination Storyboard Color Depth",IDC_STATIC_10,196,
+                    211,173,33
+    CONTROL         "8 bits per pixel (256 colors)",IDC_8_BIT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,201,221,100,10
+    CONTROL         "24 bits per pixel (full colors mode)",IDC_24_BIT,"Button",
+                    BS_AUTORADIOBUTTON,201,231,161,10
+    PUSHBUTTON      "&Import",IDOK,196,247,103,14,WS_DISABLED
+    CONTROL         "Source image has Grid lines between Frames",IDC_GRID,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,201,201,168,10
+END
+
+IDD_SHRINK_FRM_COUNT_DLG DIALOGEX 0, 0, 168, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Shrink Frames Count"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,31,45,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,85,45,50,14
+    LTEXT           "New frames count:",IDC_STATIC,7,25,118,8
+    EDITTEXT        IDC_FRM_COUNT,126,22,35,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin4",IDC_FRM_COUNT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,150,36,11,14
+    LTEXT           "Current frames count (per direction):",IDC_STATIC,7,7,
+                    113,8
+    LTEXT           "Static",IDC_STATIC_FRM_COUNT_CUR,127,7,34,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ZOOMING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_DLG_IMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 369
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    IDD_SHRINK_FRM_COUNT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 161
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 278, 140
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "About Civ3FlcEdit application..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,221,119,50,14,WS_GROUP
+    LTEXT           "",IDC_STATIC_BLINK,38,7,200,15
+    CTEXT           "Version Information",IDC_FILE_VERSION,69,25,138,8
+    CTEXT           "Copyright",IDC_COPYRIGHT,9,37,258,8
+    GROUPBOX        "",IDC_STATIC_2,7,75,264,38
+    CONTROL         "",IDC_EDIT_NOTE,"RICHEDIT",ES_MULTILINE | ES_NOHIDESEL | 
+                    ES_READONLY | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP,14,84,249,23
+    RTEXT           "Visit Forum:",IDC_STATIC_3,7,116,40,8
+    LTEXT           "http://forums.civfanatics.com/...t=91253",
+                    IDC_STATIC_GO_URL,55,116,163,8
+    RTEXT           "Send e-mail:",IDC_STATIC_4,7,127,40,8
+    LTEXT           "Civ3MM@yandex.ru",IDC_STATIC_MAIL_TO,55,127,163,8
+    CONTROL         "Animate1",IDC_ANIMATE_CTRL,"SysAnimate32",0x0,7,7,24,22,
+                    WS_EX_CLIENTEDGE
+    ICON            IDR_MAINFRAME,IDC_VIEW_ICON,247,7,20,20,0,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "Hearty thanks to James Healey AKA Jimmyh for his great help!\r\nCiv3FlcEdit is never being done without his Civ3 Unit Editor utility and helpfully permission to use its source code.",
+                    IDC_STATIC_1,14,50,249,28
+END
+
+IDD_COLOR_TABLE_DLG DIALOG DISCARDABLE  0, 0, 313, 177
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Color Table"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,7,175,163
+    DEFPUSHBUTTON   "&OK",IDOK,188,156,57,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,249,156,57,14
+    GROUPBOX        "Selected Color",IDC_STATIC,188,3,57,148
+    LTEXT           "",IDC_STATIC_SELECTED,192,15,49,18,SS_SUNKEN | NOT 
+                    WS_GROUP
+    RTEXT           "Red:",IDC_STATIC,189,41,28,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_COLOR_RED_S,219,41,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Green:",IDC_STATIC,189,59,28,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_COLOR_GREEN_S,219,59,22,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Blue:",IDC_STATIC,189,77,28,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_COLOR_BLUE_S,219,77,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Index:",IDC_STATIC,189,101,28,14,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX_S,221,101,18,14,SS_CENTERIMAGE
+    PUSHBUTTON      "&Select",IDC_SELECT_COLOR,194,132,46,14
+    GROUPBOX        "Current Color",IDC_STATIC,249,3,57,148
+    LTEXT           "",IDC_STATIC_CURRENT,253,15,49,18,SS_SUNKEN | NOT 
+                    WS_GROUP
+    RTEXT           "Red:",IDC_STATIC,250,41,28,14,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_RED,282,41,18,14,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,250,59,28,14,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN,282,59,18,14,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,250,77,28,14,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE,282,77,18,14,SS_CENTERIMAGE
+    RTEXT           "Index:",IDC_STATIC,250,101,28,14,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX,282,101,18,14,SS_CENTERIMAGE
+END
+
+IDD_DLG_EXPORT_FLC DIALOGEX 0, 0, 280, 270
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Export FLC to Storyboard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Export",IDOK,143,256,60,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,205,256,60,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_HOTTRACK | 
+                    TCS_MULTILINE | TCS_TOOLTIPS,0,0,280,256
+    CONTROL         "Show &Preview",IDC_PREVIEW_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,3,259,68,10
+    CONTROL         "&Save Settings",IDC_SAVE_SETTINGS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,74,259,64,10
+END
+
+IDD_DLG_FILE_FLC DIALOG DISCARDABLE  0, 0, 134, 152
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Preview",IDC_PREVIEW_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,9,117,10
+    LTEXT           "",1119,0,3,8,146
+    LTEXT           "",IDC_PREVIEW,12,25,117,111,SS_SUNKEN | NOT WS_VISIBLE
+END
+
+IDD_DLG_FILE_IMG DIALOG DISCARDABLE  0, 0, 134, 170
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_PREVIEW,12,5,117,100,SS_SUNKEN | NOT WS_VISIBLE
+    LTEXT           "",1119,0,0,8,170
+    LTEXT           "Color Depth:",IDC_STATIC,12,108,117,8
+    COMBOBOX        IDC_BITS_PER_PIXEL,12,119,117,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Width:",IDC_STATIC,12,139,31,8
+    EDITTEXT        IDC_FRM_WIDTH,43,137,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin2",IDC_FRM_WIDTH_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,77,137,11,12
+    LTEXT           "Heigth:",IDC_STATIC,12,155,29,8
+    EDITTEXT        IDC_FRM_HEIGHT,43,152,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin3",IDC_FRM_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,77,152,11,12
+    CONTROL         "",IDC_LOCK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,93,146,
+                    14,12
+END
+
+IDD_DLG_FLC_INFO DIALOGEX 0, 0, 220, 153
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "FLC Info"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,111,139,50,14
+    LTEXT           "File path:",IDC_STATIC,3,3,36,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_TITLE,44,3,176,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_HOTTRACK | 
+                    TCS_MULTILINE | TCS_TOOLTIPS,0,18,220,120
+    PUSHBUTTON      "&Save",IDC_SAVE,57,139,50,14
+END
+
+IDD_DLG_NEW_FLC DIALOGEX 0, 0, 280, 270
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Create a new Storyboard"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Create",IDOK,145,256,60,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,207,256,60,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_HOTTRACK | 
+                    TCS_MULTILINE | TCS_TOOLTIPS,0,0,280,256
+    CONTROL         "Show &Preview",IDC_PREVIEW_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,259,64,10
+    CONTROL         "&Save Settings",IDC_SAVE_SETTINGS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,80,259,64,10
+END
+
+IDD_DLG_OPTIONS DIALOGEX 0, 0, 250, 194
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_CONTROLPARENT
+CAPTION "Options"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_HOTTRACK | 
+                    TCS_MULTILINE | TCS_TOOLTIPS,0,0,250,177
+    DEFPUSHBUTTON   "&OK",IDOK,12,179,55,14
+    PUSHBUTTON      "&Apply",IDC_APPLY,69,179,55,14,WS_DISABLED
+    PUSHBUTTON      "&Default",IDC_DEFAULT,126,179,55,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,183,179,55,14
+END
+
+IDD_OPTIONSDLG_DOC DIALOGEX 0, 0, 230, 160
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "File Associations (FLC and C3F)",IDC_STATIC_1,4,2,222,
+                    33
+    CONTROL         "Associate the file types with Civ3FlcEdit application",
+                    IDC_REG_FILE_TYPE,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,12,12,207,10
+    CONTROL         "Check file types association at startup",
+                    IDC_CHECK_FILE_TYPE,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,12,22,207,10
+    GROUPBOX        "Document loading",IDC_STATIC_2,4,36,222,26,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Reload last opened document at startup",
+                    IDC_LOAD_LAST_DOC,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,12,47,207,10
+    GROUPBOX        "Recent files",IDC_STATIC_3,4,64,222,92
+    LTEXT           "Recent file list contains:",IDC_MRU_CAP,13,74,83,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_MRU,97,74,31,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_GROUP
+    CONTROL         "Spin1",IDC_MRU_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_HOTTRACK,168,74,11,14
+    LTEXT           "files",IDC_MRU_END,131,74,36,14,SS_CENTERIMAGE
+END
+
+IDD_OPTIONSDLG_FLC DIALOGEX 0, 0, 230, 160
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Civilizations' Palettes",IDC_STATIC_1,4,4,222,64
+    CONTROL         "Load Palette from the Game files",IDC_PAL_FILE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,12,15,207,10
+    CONTROL         "Load Palette from application resources",IDC_PAL_RES,
+                    "Button",BS_AUTORADIOBUTTON,12,26,207,10
+    CONTROL         "Load Palette from predefined folder",IDC_PAL_DIR,"Button",
+                    BS_AUTORADIOBUTTON,12,38,207,10
+    EDITTEXT        IDC_EDIT_PATH,12,49,167,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PATH,181,49,18,14,WS_DISABLED
+    PUSHBUTTON      "&Del",IDC_DEL_PATH,200,49,18,14,WS_DISABLED
+    GROUPBOX        "Startup Animation Options",IDC_STATIC_2,4,70,222,49
+    CONTROL         "Play animation straight away after loading (Play)",
+                    IDC_ANIM_PLAY,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,
+                    80,207,10
+    CONTROL         "Show only the first static frame, without animation (Pause)",
+                    IDC_ANIM_STATIC,"Button",BS_AUTORADIOBUTTON,12,91,207,10
+    CONTROL         "Ignore frame offset values (place frame to the top left corner)",
+                    IDC_IGNORE_OFFSET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    12,104,207,10
+    GROUPBOX        "Export Options",IDC_STATIC_3,4,121,222,35
+    CONTROL         "Open FLC/Storyboard document after export operation",
+                    IDC_EXP_OPEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,
+                    132,207,10
+    CONTROL         "Ask user before opening",IDC_EXP_ASK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,143,207,10
+END
+
+IDD_OPTIONSDLG_VIEW DIALOGEX 0, 0, 230, 160
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Control bars view options",IDC_STATIC_BARS,4,2,222,36,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Show Toolbar",IDC_TOOLBAR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,13,207,10
+    CONTROL         "Show Status bar",IDC_STATUSBAR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,24,207,10
+    GROUPBOX        "Menu view options",IDC_STATIC_1,4,40,222,78
+    GROUPBOX        "Buttons view options",IDC_STATIC_2,4,120,222,36
+    CONTROL         "Enable special menu border",IDC_MENU_BORDER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,52,207,10
+    CONTROL         "All menus have the same border ",
+                    IDC_MENU_ALL_SAMEBORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,62,207,10
+    CONTROL         "Enable disabled menu selection",IDC_MENU_SHOWSELECTION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,72,207,10
+    CONTROL         "Disabled icons looks grayed and non-selected looks gloomed",
+                    IDC_MENU_ENABLEGLOOM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,82,207,10
+    CONTROL         "XP menu style",IDC_MENU_XP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,95,207,10
+    CONTROL         "Old menu style",IDC_MENU_OLD,"Button",
+                    BS_AUTORADIOBUTTON,12,105,207,10
+    CONTROL         "Enable visual effects for buttons",
+                    IDC_BUTTONX_VISUAL_EFFECTS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,131,207,10
+    CONTROL         "Show buttons icons, if any",IDC_BUTTONX_SHOW_ICON,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,142,196,10
+END
+
+IDD_TAB_EXP_FRM DIALOGEX 0, 0, 275, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Frame Size",IDC_STATIC_1,4,1,267,55
+    CONTROL         "Current Size",IDC_FRM_SIZE_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,13,71,10
+    CONTROL         "Change Size",IDC_FRM_SIZE_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,27,71,10
+    CONTROL         "Proportionally resize image according to new frame sizes",
+                    IDC_FRM_RESIZE,"Button",BS_AUTOCHECKBOX | WS_DISABLED | 
+                    WS_TABSTOP,11,41,225,10
+    LTEXT           "Static",IDC_STATIC_FRM_SIZE_CUR,111,13,125,8
+    RTEXT           "Width:",IDC_STATIC,75,28,31,8
+    RTEXT           "Heigth:",IDC_STATIC,167,28,29,8
+    EDITTEXT        IDC_FRM_WIDTH,111,26,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_FRM_WIDTH_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,145,26,11,12
+    EDITTEXT        IDC_FRM_HEIGHT,201,26,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin3",IDC_FRM_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,156,26,11,12
+    CONTROL         "",IDC_LOCK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | 
+                    WS_TABSTOP,242,26,14,12
+    GROUPBOX        "Frames Count per Direction",IDC_STATIC_2,4,59,267,40
+    CONTROL         "Current Frames Count",IDC_FRM_COUNT_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,69,98,10
+    CONTROL         "Change Frames Count",IDC_FRM_COUNT_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,83,98,10
+    LTEXT           "Static",IDC_STATIC_FRM_COUNT_CUR,111,70,126,8
+    EDITTEXT        IDC_FRM_COUNT,111,81,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin4",IDC_FRM_COUNT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,145,81,11,12
+    GROUPBOX        "Frame Offset",IDC_STATIC_3,4,103,267,42
+    CONTROL         "Current Offset",IDC_FRM_OFFSET_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,114,98,10
+    CONTROL         "Change Offset",IDC_FRM_OFFSET_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,128,98,10
+    LTEXT           "Static",IDC_STATIC_FRM_OFFSET,111,114,150,8
+    RTEXT           "Left (x):",IDC_STATIC,103,129,31,8
+    RTEXT           "Top (y):",IDC_STATIC,195,129,29,8
+    EDITTEXT        IDC_FRM_LEFT,139,127,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_FRM_LEFT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,173,127,11,12
+    EDITTEXT        IDC_FRM_TOP,229,127,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin3",IDC_FRM_TOP_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,184,127,11,12
+    GROUPBOX        "Frame Delay",IDC_STATIC_4,4,148,267,42
+    CONTROL         "Original Delay",IDC_DELAY_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,159,98,10
+    CONTROL         "Select Delay",IDC_DELAY_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,173,98,10
+    LTEXT           "Static",IDC_STATIC_DELAY_CUR,111,162,125,8
+    CONTROL         "",IDC_TIMER_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,111,172,110,13
+    EDITTEXT        IDC_DELAY,229,172,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin1",IDC_SPIN_DELAY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_HOTTRACK | WS_DISABLED,254,156,11,12
+    EDITTEXT        IDC_RESIZE_LEFT,139,204,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_RESIZE_LEFT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,4,223,11,12
+    EDITTEXT        IDC_RESIZE_RIGHT,229,204,35,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_DISABLED
+    CONTROL         "Spin2",IDC_RESIZE_RIGHT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,15,223,11,12
+    EDITTEXT        IDC_RESIZE_TOP,139,218,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_RESIZE_TOP_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,26,223,11,12
+    EDITTEXT        IDC_RESIZE_BOTTOM,229,218,35,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_DISABLED
+    CONTROL         "Spin2",IDC_RESIZE_BOTTOM_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,37,223,11,12
+    RTEXT           "Lert:",IDC_STATIC,109,204,27,12,SS_CENTERIMAGE
+    RTEXT           "Top:",IDC_STATIC,109,218,27,12,SS_CENTERIMAGE
+    RTEXT           "Bottom:",IDC_STATIC,190,218,36,12,SS_CENTERIMAGE
+    RTEXT           "Right:",IDC_STATIC,190,204,36,12,SS_CENTERIMAGE
+    GROUPBOX        "Trim Frame Borders",IDC_STATIC_5,4,194,267,42
+    CONTROL         "Enable",IDC_RESIZE_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,211,98,10
+END
+
+IDD_TAB_EXP_GEN DIALOGEX 0, 0, 247, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Output Settings",IDC_STATIC_1,4,1,239,85
+    RTEXT           "Output Target Path:",IDC_STATIC,11,15,95,8,NOT WS_GROUP
+    EDITTEXT        IDC_TARGET_PATH,114,11,122,14,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_GROUP
+    RTEXT           "Output Directory:",IDC_STATIC,11,29,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_DIR,114,29,122,8,NOT WS_GROUP
+    RTEXT           "Base File Name:",IDC_STATIC,11,40,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_NAME,114,40,122,8,NOT WS_GROUP
+    RTEXT           "Image File Type:",IDC_STATIC,11,51,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_TYPE,114,51,122,8,NOT WS_GROUP
+    RTEXT           "Palette File Type:",IDC_STATIC,11,73,95,8
+    LTEXT           "Static",IDC_STATIC_PAL,114,73,122,8
+    GROUPBOX        "Frame Settings",IDC_STATIC_2,4,89,239,147
+    RTEXT           "Frame Width:",IDC_STATIC,11,98,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_WIDTH,114,98,122,8,NOT WS_GROUP
+    RTEXT           "Frame Height:",IDC_STATIC,11,108,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_HEIGHT,114,108,122,8,NOT WS_GROUP
+    RTEXT           "Resize Image:",IDC_STATIC,11,118,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_RESIZE,114,118,122,8,NOT WS_GROUP
+    RTEXT           "Frames Count per Direction:",IDC_STATIC,11,128,95,8,NOT 
+                    WS_GROUP
+    LTEXT           "Static",IDC_STATIC_COUNT,114,128,122,8,NOT WS_GROUP
+    RTEXT           "Palette:",IDC_STATIC,11,138,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_PALETTE,114,138,122,8,NOT WS_GROUP
+    RTEXT           "Frame Left Offset:",IDC_STATIC,11,148,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_OFFSET_LEFT,114,148,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Frame Top Offset:",IDC_STATIC,11,158,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_OFFSET_TOP,114,158,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Frame Delay:",IDC_STATIC,11,168,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_DELAY,114,168,122,8,NOT WS_GROUP
+    RTEXT           "Smoke/Shadows Type:",IDC_STATIC,11,223,95,8,NOT 
+                    WS_GROUP
+    LTEXT           "Static",IDC_STATIC_LAST_COLORS,114,223,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Left Border:",IDC_STATIC,11,179,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_RESIZE_LEFT,114,179,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Right Border:",IDC_STATIC,11,190,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_RESIZE_RIGHT,114,190,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Top Border:",IDC_STATIC,11,201,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_RESIZE_TOP,114,201,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Bottom Border:",IDC_STATIC,11,212,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_RESIZE_BOTTOM,114,212,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Color Depth:",IDC_STATIC,11,62,95,8
+    LTEXT           "Static",IDC_STATIC_COL_DEPTH,114,62,122,8
+END
+
+IDD_TAB_EXP_OUT DIALOGEX 0, 0, 247, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Output Directory",IDC_STATIC_1,4,1,239,32
+    EDITTEXT        IDC_TARGET_PATH,11,12,205,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PATH,218,12,18,14
+    GROUPBOX        "Base File Name",IDC_STATIC_2,4,36,239,42
+    CONTROL         "Original Name",IDC_NAME_CUR,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,11,46,60,10
+    CONTROL         "New Name",IDC_NAME_CHANGE,"Button",BS_AUTORADIOBUTTON,
+                    11,62,99,10
+    LTEXT           "Static",IDC_STATIC_NAME_CUR,113,47,123,8
+    EDITTEXT        IDC_FILE_NAME,113,58,123,14,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "Image File Type",IDC_STATIC_3,4,81,239,155
+    LTEXT           "Select Export Type",IDC_STATIC,11,93,100,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_FILE_TYPE,113,93,123,58,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TAB_INFO_EXT DIALOGEX 0, 0, 200, 100
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_OWNERDRAWFIXED | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,4,192,92
+END
+
+IDD_TAB_INFO_GEN DIALOGEX 0, 0, 200, 100
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_OWNERDRAWFIXED | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,4,192,92
+END
+
+IDD_TAB_NEW_FRM DIALOGEX 0, 0, 275, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Frame Size",IDC_STATIC_1,4,1,267,43
+    CONTROL         "Default Size",IDC_FRM_SIZE_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,13,70,10
+    CONTROL         "Change Size",IDC_FRM_SIZE_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,27,73,10
+    LTEXT           "50 x 50 pixels",IDC_STATIC_FRM_SIZE_CUR,111,13,125,8
+    RTEXT           "Width:",IDC_STATIC,75,28,31,8
+    RTEXT           "Heigth:",IDC_STATIC,167,28,29,8
+    EDITTEXT        IDC_FRM_WIDTH,111,26,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_FRM_WIDTH_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,145,26,11,12
+    EDITTEXT        IDC_FRM_HEIGHT,201,26,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin3",IDC_FRM_HEIGHT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,156,26,11,12
+    CONTROL         "",IDC_LOCK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | 
+                    WS_TABSTOP,242,26,14,12
+    GROUPBOX        "Directions Count",IDC_STATIC_2,4,48,267,43
+    CONTROL         "Default Directions Count",IDC_DIR_COUNT_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,61,96,10
+    CONTROL         "Change Directions Count",IDC_DIR_COUNT_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,75,96,10
+    LTEXT           "8",IDC_STATIC_DIR_COUNT_CUR,111,61,36,8
+    COMBOBOX        IDC_DIR_COUNT,111,73,35,30,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Frames Count per Direction",IDC_STATIC_3,4,95,267,43
+    CONTROL         "Default Frames Count",IDC_FRM_COUNT_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,107,96,10
+    CONTROL         "Change Frames Count",IDC_FRM_COUNT_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,121,96,10
+    LTEXT           "10",IDC_STATIC_FRM_COUNT_CUR,111,107,36,8
+    EDITTEXT        IDC_FRM_COUNT,111,119,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin4",IDC_FRM_COUNT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,145,119,11,12
+    GROUPBOX        "Frame Offset",IDC_STATIC_4,4,141,267,45
+    CONTROL         "Automatic Offset",IDC_FRM_OFFSET_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,154,96,10
+    CONTROL         "Select Offset",IDC_FRM_OFFSET_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,169,96,10
+    LTEXT           "Left: 95, Top: 95 pixels",IDC_STATIC_FRM_OFFSET,111,154,
+                    125,8
+    RTEXT           "Left (x):",IDC_STATIC,103,170,31,8
+    RTEXT           "Top (y):",IDC_STATIC,195,170,29,8
+    EDITTEXT        IDC_FRM_LEFT,139,167,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin2",IDC_FRM_LEFT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,173,167,11,12
+    EDITTEXT        IDC_FRM_TOP,229,167,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin3",IDC_FRM_TOP_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK | WS_DISABLED,184,167,11,12
+    GROUPBOX        "Frame Delay",IDC_STATIC_5,4,189,267,47
+    CONTROL         "Default Delay",IDC_DELAY_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,201,96,10
+    CONTROL         "Select Delay",IDC_DELAY_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,217,96,10
+    LTEXT           "125 ms",IDC_STATIC_DELAY_CUR,111,203,125,8
+    CONTROL         "",IDC_TIMER_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,111,214,110,13
+    EDITTEXT        IDC_DELAY,229,214,35,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_DISABLED
+    CONTROL         "Spin1",IDC_SPIN_DELAY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_HOTTRACK | WS_DISABLED,254,197,11,12
+END
+
+IDD_TAB_NEW_GEN DIALOGEX 0, 0, 247, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Output Settings",IDC_STATIC_1,4,1,239,103
+    RTEXT           "Output Target Path:",IDC_STATIC,11,16,95,8,NOT WS_GROUP
+    EDITTEXT        IDC_TARGET_PATH,114,12,122,14,ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_GROUP
+    RTEXT           "Output Directory:",IDC_STATIC,11,30,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_DIR,114,30,122,8,NOT WS_GROUP
+    RTEXT           "Base File Name:",IDC_STATIC,11,42,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_NAME,114,42,122,8,NOT WS_GROUP
+    RTEXT           "Image File Type:",IDC_STATIC,11,54,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_TYPE,114,54,122,8,NOT WS_GROUP
+    RTEXT           "Palette File Type:",IDC_STATIC,11,78,95,8
+    LTEXT           "Static",IDC_STATIC_PAL,114,78,122,8
+    RTEXT           "Animation Type:",IDC_STATIC,11,90,95,8
+    LTEXT           "Static",IDC_STATIC_ANIMATION,114,90,122,8
+    GROUPBOX        "Frame Settings",IDC_STATIC_2,4,107,239,129
+    RTEXT           "Frame Width:",IDC_STATIC,11,117,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_WIDTH,114,117,122,8,NOT WS_GROUP
+    RTEXT           "Frame Height:",IDC_STATIC,11,130,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_HEIGHT,114,130,122,8,NOT WS_GROUP
+    RTEXT           "Directions Count:",IDC_STATIC,11,143,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_DIR_COUNT,114,143,122,8,NOT WS_GROUP
+    RTEXT           "Frames Count per Direction:",IDC_STATIC,11,156,95,8,NOT 
+                    WS_GROUP
+    LTEXT           "Static",IDC_STATIC_COUNT,114,156,122,8,NOT WS_GROUP
+    RTEXT           "Palette:",IDC_STATIC,11,169,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_PALETTE,114,169,122,8,NOT WS_GROUP
+    RTEXT           "Frame Left Offset:",IDC_STATIC,11,182,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_OFFSET_LEFT,114,182,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Frame Top Offset:",IDC_STATIC,11,195,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_OFFSET_TOP,114,195,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Frame Delay:",IDC_STATIC,11,208,95,8,NOT WS_GROUP
+    LTEXT           "Static",IDC_STATIC_DELAY,114,208,122,8,NOT WS_GROUP
+    RTEXT           "Smoke/Shadows Type:",IDC_STATIC,11,221,95,8,NOT 
+                    WS_GROUP
+    LTEXT           "Static",IDC_STATIC_LAST_COLORS,114,221,122,8,NOT 
+                    WS_GROUP
+    RTEXT           "Color Depth:",IDC_STATIC,11,66,95,8
+    LTEXT           "Static",IDC_STATIC_COL_DEPTH,114,66,122,8
+END
+
+IDD_TAB_NEW_OUT DIALOGEX 0, 0, 247, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Output Directory",IDC_STATIC_1,4,1,239,29
+    EDITTEXT        IDC_TARGET_PATH,11,11,203,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PATH,216,11,18,14
+    GROUPBOX        "Base File Name",IDC_STATIC_2,4,33,239,40
+    CONTROL         "Default Name",IDC_NAME_CUR,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,11,43,99,10
+    CONTROL         "New Name",IDC_NAME_CHANGE,"Button",BS_AUTORADIOBUTTON,
+                    11,56,99,10
+    LTEXT           "Default",IDC_STATIC_NAME_CUR,113,43,123,10,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_FILE_NAME,113,53,123,14,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "Image File Type",IDC_STATIC_3,4,76,239,28
+    LTEXT           "Select File Type",IDC_STATIC,11,86,100,12,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_FILE_TYPE,113,86,123,58,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Animation Type",IDC_STATIC_4,4,108,239,128
+    CONTROL         "Unit Animation",IDC_TYPE_UNIT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,118,223,10
+    CONTROL         "Leader Head Animation",IDC_TYPE_LEADER,"Button",
+                    BS_AUTORADIOBUTTON,11,129,223,10
+END
+
+IDD_DLG_FILE_WAV DIALOG DISCARDABLE  0, 0, 241, 21
+STYLE WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Preview",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX,7,2,41,10
+    CONTROL         "Non Stop",IDC_NON_STOP,"Button",BS_AUTOCHECKBOX,55,2,46,
+                    10
+    PUSHBUTTON      "Play",IDC_PLAY,129,0,50,14,NOT WS_TABSTOP
+    PUSHBUTTON      "Stop",IDC_STOP,184,0,50,14,NOT WS_TABSTOP
+END
+
+IDD_DLG_INFO DIALOGEX 0, 0, 198, 94
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Information Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,136,76,50,14
+    EDITTEXT        IDC_EDIT_REPORT,10,35,177,33,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    LTEXT           "Information dialog dox.",IDC_STATIC_HEADER,30,9,159,21
+    ICON            "",IDC_STATIC_ICO,6,3,20,20
+    CONTROL         "",IDC_STATIC_FRAME,"Static",SS_ETCHEDFRAME,6,31,185,42,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "&Save",IDC_SAVE,81,76,50,14
+END
+
+IDD_DIALOG_BAR DIALOGEX 0, 0, 142, 127
+STYLE WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_PANEL_DIRECTION DIALOG DISCARDABLE  0, 0, 121, 54
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_DIRECTION_ALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,51,19,17,15
+    CONTROL         "",IDC_DIRECTION_SW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,35,17,15
+    CONTROL         "",IDC_DIRECTION_W,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    31,19,17,15
+    CONTROL         "",IDC_DIRECTION_NW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,3,17,15
+    CONTROL         "",IDC_DIRECTION_N,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    51,3,17,15
+    CONTROL         "",IDC_DIRECTION_NE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,71,3,17,15
+    CONTROL         "",IDC_DIRECTION_E,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    71,19,17,15
+    CONTROL         "",IDC_DIRECTION_SE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,71,35,17,15
+    CONTROL         "",IDC_DIRECTION_S,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    51,35,17,15
+END
+
+IDD_PANEL_DELAY DIALOG DISCARDABLE  0, 0, 121, 58
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Default",IDC_RADIO_TIMER_DEF,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,0,7,38,10
+    CONTROL         "Custom",IDC_RADIO_TIMER_CUSTOM,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,0,21,73,10
+    EDITTEXT        IDC_DELAY,77,19,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_DELAY,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_HOTTRACK | WS_TABSTOP,111,28,10,14
+    CONTROL         "",IDC_TIMER_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,0,38,121,13
+    LTEXT           "",IDC_STATIC_DEF_TIMER,40,7,81,10,SS_CENTERIMAGE
+END
+
+IDD_PANEL_VIEW DIALOG DISCARDABLE  0, 0, 121, 51
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Civilization Color",IDC_STATIC_CIV_COLOR,0,7,121,8
+    COMBOBOX        IDC_COMBO_PALETTES,0,17,121,96,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | CBS_HASSTRINGS | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Use &Alpha Blend for unit animation",
+                    IDC_USE_ALPHA_BLENDING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,34,121,10
+END
+
+IDD_PANEL_ANIMATION DIALOG DISCARDABLE  0, 0, 121, 66
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Pla&y",IDC_PLAY,0,7,40,14
+    PUSHBUTTON      "&Pause",IDC_PAUSE,41,7,40,14
+    PUSHBUTTON      "&Stop",IDC_STOP,81,7,40,14
+    PUSHBUTTON      "| <",IDC_FIRST,4,22,18,14
+    CONTROL         "<<",IDC_BACK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,
+                    22,18,14
+    PUSHBUTTON      "<",IDC_PREVIOUS,42,22,18,14
+    PUSHBUTTON      ">",IDC_NEXT,61,22,18,14
+    CONTROL         ">>",IDC_FORWARD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    80,22,18,14
+    PUSHBUTTON      "> |",IDC_LAST,99,22,18,14
+    CONTROL         "",IDC_FRAMES_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,2,39,117,11
+    LTEXT           "0",IDC_STATIC_FIRST_FRAME,5,51,8,8
+    RTEXT           "Frame:",IDC_STATIC_FRAME,27,51,34,8
+    LTEXT           "0",IDC_STATIC_CUR_FRAME,65,51,22,8
+    RTEXT           "0",IDC_STATIC_TOTAL_FRAME,100,51,15,8
+END
+
+IDD_PANEL_SOUND DIALOG DISCARDABLE  0, 0, 121, 59
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_PATH,0,7,83,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PATH,84,7,18,14
+    PUSHBUTTON      "&Del",IDC_DEL_PATH,103,7,18,14
+    CONTROL         "Play So&und",IDC_PREVIEW_WAV,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,26,78,10
+    CONTROL         "&Autoplay (WAV)",IDC_NON_STOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,39,78,10
+    PUSHBUTTON      "Pl&ay",IDC_PLAY_WAV,81,23,40,14
+    PUSHBUTTON      "St&op",IDC_STOP_WAV,81,38,40,14
+END
+
+IDD_PANEL_EXTRA DIALOG DISCARDABLE  0, 0, 121, 28
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Info",IDC_INFO,0,7,60,14
+    PUSHBUTTON      "Pale&tte",IDC_COLOR_TABLE,61,7,60,14
+END
+
+IDD_DLG_OFFSET DIALOG DISCARDABLE  0, 0, 123, 78
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Offset"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,7,57,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,66,57,50,14
+    CTEXT           "Current offset:",IDC_STATIC_FRM_OFFSET,7,7,109,8
+    RTEXT           "Left (x):",IDC_STATIC,13,22,31,8
+    RTEXT           "Top (y):",IDC_STATIC,13,37,31,8
+    EDITTEXT        IDC_FRM_LEFT,49,20,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin2",IDC_FRM_LEFT_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,86,20,11,12
+    EDITTEXT        IDC_FRM_TOP,49,35,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin3",IDC_FRM_TOP_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,86,34,11,12
+END
+
+IDD_COLOR_REPLACE_DLG DIALOG DISCARDABLE  0, 0, 492, 239
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Replase Palette Colors"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_DEST_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,17,175,163
+    DEFPUSHBUTTON   "&OK",IDOK,310,218,57,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,370,218,57,14
+    GROUPBOX        "Current Dest",IDC_STATIC,188,14,57,80
+    LTEXT           "",IDC_STATIC_SELECTED,192,105,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    RTEXT           "Red:",IDC_STATIC,191,120,25,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_COLOR_RED_S,219,120,22,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Green:",IDC_STATIC,191,134,25,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_COLOR_GREEN_S,219,134,22,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Blue:",IDC_STATIC,191,149,25,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_COLOR_BLUE_S,219,149,22,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Index:",IDC_STATIC,191,163,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX_S,221,163,18,12,SS_CENTERIMAGE
+    PUSHBUTTON      "&Select",IDC_SELECT_COLOR,7,184,57,14
+    GROUPBOX        "Current Src",IDC_STATIC,248,14,57,80
+    LTEXT           "",IDC_STATIC_CURRENT,192,24,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    RTEXT           "Red:",IDC_STATIC,249,37,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_RED_SRC,281,37,18,12,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,249,50,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN_SRC,281,50,18,12,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,249,65,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE_SRC,281,65,18,12,SS_CENTERIMAGE
+    RTEXT           "Index:",IDC_STATIC,249,80,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX_SRC,281,80,18,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_SRC_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,310,17,175,163
+    EDITTEXT        IDC_DEST_PATH,7,201,97,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_DEST_PATH,105,201,18,14
+    EDITTEXT        IDC_SRC_PATH,370,201,96,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_SRC_PATH,467,201,18,14
+    COMBOBOX        IDC_COMBO_PALETTES,370,184,115,96,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | CBS_HASSTRINGS | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "&Replace",IDC_REPLACE_COLOR,188,184,117,14
+    PUSHBUTTON      "Ran&ge",IDC_REPLACE_RANGE,188,201,117,14
+    PUSHBUTTON      "Sa&ve",IDC_SAVE,125,184,57,14
+    RTEXT           "Red:",IDC_STATIC,191,37,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_RED,221,37,18,12,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,191,50,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN,221,50,18,12,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,191,65,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE,221,65,18,12,SS_CENTERIMAGE
+    RTEXT           "Index:",IDC_STATIC,191,80,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX,221,80,18,12,SS_CENTERIMAGE
+    RTEXT           "Red:",IDC_STATIC,249,120,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_RED_SRC_S,281,120,18,12,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,249,134,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN_SRC_S,281,134,18,12,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,249,149,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE_SRC_S,281,149,18,12,SS_CENTERIMAGE
+    RTEXT           "Index:",IDC_STATIC,249,163,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX_SRC_S,281,163,18,12,SS_CENTERIMAGE
+    GROUPBOX        "Selected Dest",IDC_STATIC,188,96,57,84
+    GROUPBOX        "Selected Src",IDC_STATIC,248,96,57,84
+    LTEXT           "",IDC_STATIC_SELECTED_SRC,251,105,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    LTEXT           "",IDC_STATIC_CURRENTSRC,251,24,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    PUSHBUTTON      "&Move",IDC_MOVE_COLORS,66,184,57,14
+    CONTROL         "Civ &Palette",IDC_CIV_PALETTE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,310,184,58,14
+    CONTROL         "From &File",IDC_SEL_PALETTE,"Button",BS_AUTORADIOBUTTON,
+                    310,201,58,14
+    CTEXT           "Destination Palette",IDC_STATIC,7,7,175,8
+    CTEXT           "Source Palette",IDC_STATIC,310,7,175,8
+    PUSHBUTTON      "B.C.H.S.",IDC_BCHS,125,201,57,14
+    PUSHBUTTON      "&Apply",IDC_APPLY,66,218,57,14
+    PUSHBUTTON      "&Discard",IDC_REFRESH,125,218,57,14
+    PUSHBUTTON      "Select form &Image",IDC_SELECT_IMG,188,218,117,14
+END
+
+IDD_REPLACE_RANGE_DLG DIALOGEX 0, 0, 502, 186
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Replace Range"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Cancel",IDCANCEL,253,165,60,14
+    LTEXT           "&From (destination)",IDC_STATIC_1,187,80,82,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_FIRST_DEST,273,80,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "&To (source)",IDC_STATIC_2,187,96,82,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_FIRST_SRC,273,96,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "&Number to be replaced",IDC_STATIC_3,187,112,82,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_RANGE,273,112,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "&OK",IDOK,189,165,60,14
+    CONTROL         "",IDC_DEST_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,16,175,163
+    PUSHBUTTON      "&Apply",IDC_APPLY,189,147,60,14
+    PUSHBUTTON      "&Discard",IDC_REFRESH,253,147,60,14
+    CONTROL         "",IDC_SRC_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,320,16,175,163
+    CTEXT           "Destination Palette",IDC_STATIC,7,7,175,8
+    CTEXT           "Source Palette",IDC_STATIC,320,7,175,8
+    PUSHBUTTON      "&Replace Range",IDC_MOVE,189,129,124,14
+    LTEXT           "Note: Select start color index position on the Source palette (From), start color index on the Destination palette (To) and number of colors to be replaced.\r\nYou can select color indexes by the mouse clicking on the color tables.",
+                    IDC_STATIC,189,16,124,62
+END
+
+IDD_COLOR_MOVE_DLG DIALOGEX 0, 0, 380, 176
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Move Colors"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Cancel",IDCANCEL,282,155,60,14
+    LTEXT           "Move &From",IDC_STATIC_1,188,54,143,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_FIRST_DEST,333,54,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Move &To",IDC_STATIC_2,188,70,143,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_FIRST_SRC,333,70,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "&Number of colors to be moved",IDC_STATIC_3,188,86,143,
+                    12,SS_CENTERIMAGE
+    EDITTEXT        IDC_RANGE,333,86,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Move &all palette colors",IDC_ALL_PALETTE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,186,102,187,10
+    PUSHBUTTON      "&Left Shift",IDC_MOVE_LEFT,186,117,60,14
+    PUSHBUTTON      "&Move To",IDC_MOVE,250,117,60,14
+    PUSHBUTTON      "&Right Shift",IDC_MOVE_RIGHT,313,117,60,14
+    PUSHBUTTON      "&Apply",IDC_APPLY,218,136,60,14
+    PUSHBUTTON      "&Discard",IDC_REFRESH,282,136,60,14
+    PUSHBUTTON      "&OK",IDOK,218,155,60,14
+    CONTROL         "",IDC_DEST_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,6,175,163
+END
+
+IDD_PREVIEW_DLG DIALOG DISCARDABLE  0, 0, 174, 180
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preview"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_PREVIEW,7,7,160,148,SS_SUNKEN | NOT WS_VISIBLE
+    CONTROL         "Show &Lines",IDC_SHOW_LINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,160,160,10
+    CONTROL         "Show &Grid",IDC_SHOW_GRID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,169,160,10
+END
+
+IDD_COLOR_BCHS DIALOGEX 0, 0, 294, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Brightness/Contrast, Hue/Saturation"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Cancel",IDCANCEL,223,139,64,14
+    LTEXT           "&Brightness (-1000 to 1000):",IDC_STATIC,11,7,96,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_BRIGHT,108,7,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_BRIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,132,21,11,12
+    CONTROL         "",IDC_BRIGHT_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,7,19,140,13
+    LTEXT           "Co&ntrast (-1000 to 1000):",IDC_STATIC,11,39,96,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_CONTRAST,108,39,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_CONTRAST,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,133,53,11,12
+    CONTROL         "",IDC_CONTRAST_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,7,52,140,13
+    LTEXT           "&Hue (-360 to 360):",IDC_STATIC,11,72,96,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_HUE,108,72,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_HUE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_HOTTRACK,131,86,11,12
+    CONTROL         "",IDC_HUE_SLIDER_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE | WS_GROUP,7,85,140,13
+    LTEXT           "&Saturation (-1000 to 1000):",IDC_STATIC,11,105,96,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_SATURATION,108,105,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_SATURATION,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_HOTTRACK,132,119,11,12
+    CONTROL         "",IDC_SATURATION_SLIDER_POS,"Static",SS_BLACKFRAME | 
+                    NOT WS_VISIBLE | WS_GROUP,7,118,140,13
+    CONTROL         "Show &Preview",IDC_PREVIEW_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,151,128,124,10
+    PUSHBUTTON      "&Apply",IDC_APPLY,7,139,64,14
+    PUSHBUTTON      "&Discard",IDC_REFRESH,79,139,64,14
+    PUSHBUTTON      "&OK",IDOK,151,139,64,14
+    LTEXT           "",IDC_PREVIEW,151,7,136,119,SS_SUNKEN | NOT WS_VISIBLE
+END
+
+IDD_TAB_NEW_PAL DIALOGEX 0, 0, 275, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Color Depth",IDC_STATIC_1,4,1,267,33
+    CONTROL         "8 bits per pixel (256 colors)",IDC_8_BIT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,11,222,10
+    CONTROL         "24 bits per pixel (full colors mode, always with Default palette)",
+                    IDC_24_BIT,"Button",BS_AUTORADIOBUTTON,11,21,222,10
+    GROUPBOX        "Palette File(s)",IDC_STATIC_2,4,37,267,54
+    LTEXT           "Select Palette Type",-1,11,48,96,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_PAL_TYPE,111,48,154,58,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Make palette file (NAME.ext)",IDC_MAKE_PALETTE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,64,226,10
+    CONTROL         "Make Default Storyboard palette file ('NAME_Default.ext')",
+                    IDC_MAKE_DEF_PALETTE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,76,226,10
+    GROUPBOX        "Palette",IDC_STATIC_3,4,94,267,69
+    CONTROL         "Default Palette",IDC_PALETTE_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,104,96,10
+    CONTROL         "Select Palette",IDC_PALETTE_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,117,96,10
+    COMBOBOX        IDC_COMBO_PALETTES,111,115,154,96,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | CBS_HASSTRINGS | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Get palette from file",IDC_SELECTIVE_PAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,131,253,10
+    EDITTEXT        IDC_PAL_PATH,11,143,234,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PAL_PATH,247,143,18,14
+    LTEXT           "",IDC_STATIC_CURRENT,111,104,46,8,SS_SUNKEN | NOT 
+                    WS_GROUP
+    LTEXT           "CivColor 6",IDC_STATIC_PALETTE_CUR,163,104,71,8
+    GROUPBOX        "Select Smoke/Shadows Colors Type (last 32 colors in palette)",
+                    IDC_STATIC_4,4,166,267,70
+    CONTROL         "Original colors (current palette)",
+                    IDC_LAST_PAL_ORIGINAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,11,178,222,10
+    CONTROL         "Hardcoded colors (selected palette with changed last 32 colors)",
+                    IDC_LAST_PAL_HARDCODED,"Button",BS_AUTORADIOBUTTON,11,
+                    190,226,10
+    CONTROL         "Get colors from file (select target path below)",
+                    IDC_LAST_PAL_SELECTIVE,"Button",BS_AUTORADIOBUTTON,11,
+                    202,222,10
+    EDITTEXT        IDC_LAST_PAL_PATH,11,216,234,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_LAST_PAL_PATH,247,216,18,14
+END
+
+IDD_TAB_EXP_PAL DIALOGEX 0, 0, 275, 240
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Color Depth",IDC_STATIC_1,4,1,267,38
+    CONTROL         "8 bits per pixel (256 colors)",IDC_8_BIT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,12,222,10
+    CONTROL         "24 bits per pixel (full colors mode, always with Default palette)",
+                    IDC_24_BIT,"Button",BS_AUTORADIOBUTTON,11,24,222,10
+    GROUPBOX        "Palette File(s)",IDC_STATIC_2,4,43,267,58
+    LTEXT           "Select Palette Type",-1,11,55,96,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_PAL_TYPE,111,55,154,58,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Make palette file (NAME.ext)",IDC_MAKE_PALETTE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,72,226,10
+    CONTROL         "Make Default Storyboard palette file ('NAME_Default.ext')",
+                    IDC_MAKE_DEF_PALETTE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,85,226,10
+    GROUPBOX        "Palette",IDC_STATIC_3,4,104,267,43
+    CONTROL         "Default Palette",IDC_PALETTE_CUR,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,11,116,96,10
+    CONTROL         "Select Palette",IDC_PALETTE_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,11,130,96,10
+    COMBOBOX        IDC_COMBO_PALETTES,111,128,154,96,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWVARIABLE | CBS_HASSTRINGS | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STATIC_CURRENT,111,116,46,8,SS_SUNKEN | NOT 
+                    WS_GROUP
+    LTEXT           "CivColor 6",IDC_STATIC_PALETTE_CUR,163,116,71,8
+    GROUPBOX        "Select Smoke/Shadows Colors Type (last 32 colors in palette)",
+                    IDC_STATIC_4,4,150,267,86
+    CONTROL         "Original colors (current palette)",
+                    IDC_LAST_PAL_ORIGINAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,11,163,222,10
+    CONTROL         "Hardcoded colors (selected palette with changed last 32 colors)",
+                    IDC_LAST_PAL_HARDCODED,"Button",BS_AUTORADIOBUTTON,11,
+                    175,226,10
+    CONTROL         "Get colors from file (select target path below)",
+                    IDC_LAST_PAL_SELECTIVE,"Button",BS_AUTORADIOBUTTON,11,
+                    187,222,10
+    EDITTEXT        IDC_LAST_PAL_PATH,11,201,234,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_LAST_PAL_PATH,247,201,18,14
+END
+
+IDD_COLOR_SELECT_DLG DIALOGEX 0, 0, 422, 196
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Select colors from image"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Cancel",IDCANCEL,254,175,60,14
+    PUSHBUTTON      "&Apply",IDC_APPLY,56,175,60,14
+    PUSHBUTTON      "&Discard",IDC_REFRESH,122,175,60,14
+    PUSHBUTTON      "&OK",IDOK,187,175,60,14
+    CONTROL         "",IDC_DEST_PALETTE_POS,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,7,175,163
+    LTEXT           "",IDC_ZOOM,259,15,49,65,SS_SUNKEN | NOT WS_VISIBLE
+    LTEXT           "",IDC_PREVIEW,318,7,85,152,SS_SUNKEN | NOT WS_VISIBLE
+    SCROLLBAR       IDC_SCROLLBAR_VERT,403,7,12,152,SBS_VERT | WS_GROUP
+    SCROLLBAR       IDC_SCROLLBAR_HORIZ,318,159,85,11,WS_GROUP
+    EDITTEXT        IDC_PATH,318,175,78,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BROWSE_PATH,397,175,18,14
+    GROUPBOX        "Current Dest",IDC_STATIC,187,5,60,80
+    LTEXT           "",IDC_STATIC_SELECTED,194,96,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    RTEXT           "Red:",IDC_STATIC,193,111,25,12,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,193,125,25,12,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,193,140,25,12,SS_CENTERIMAGE
+    RTEXT           "Index:",IDC_STATIC,193,154,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX_S,223,154,18,12,SS_CENTERIMAGE
+    LTEXT           "",IDC_STATIC_CURRENT,194,15,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    RTEXT           "Red:",IDC_STATIC,193,28,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_RED,223,28,18,12,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,193,40,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN,223,40,18,12,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,193,56,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE,223,56,18,12,SS_CENTERIMAGE
+    RTEXT           "Index:",IDC_STATIC,193,71,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_INDEX,223,71,18,12,SS_CENTERIMAGE
+    GROUPBOX        "Selected Dest",IDC_STATIC,187,86,60,84
+    GROUPBOX        "Current Src",IDC_STATIC,254,86,60,84
+    RTEXT           "Red:",IDC_STATIC,257,111,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_RED_SRC,289,111,18,12,SS_CENTERIMAGE
+    RTEXT           "Green:",IDC_STATIC,257,125,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN_SRC,289,125,18,12,SS_CENTERIMAGE
+    RTEXT           "Blue:",IDC_STATIC,257,140,25,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE_SRC,289,140,18,12,SS_CENTERIMAGE
+    LTEXT           "",IDC_STATIC_CURRENTSRC,259,96,49,11,SS_SUNKEN | NOT 
+                    WS_GROUP
+    LTEXT           "0",IDC_COLOR_RED_S,223,111,18,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_GREEN_S,223,125,18,12,SS_CENTERIMAGE
+    LTEXT           "0",IDC_COLOR_BLUE_S,223,140,18,12,SS_CENTERIMAGE
+    GROUPBOX        "Zoom",IDC_STATIC,254,5,60,80
+END
+
+IDD_DLG_FILE_IMG_ALL DIALOG DISCARDABLE  0, 0, 134, 152
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Preview",IDC_PREVIEW_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,88,9,41,10
+    LTEXT           "",IDC_PREVIEW,12,25,117,117,SS_SUNKEN | NOT WS_VISIBLE
+    LTEXT           "",IDC_IMG_INFO,12,10,75,8
+    LTEXT           "",1119,0,3,8,146
+END
+
+IDD_DLG_SELECT_BGD_IMG DIALOGEX 0, 0, 245, 94
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Select Background Image"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,7,73,60,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,86,73,60,14
+    PUSHBUTTON      "...",IDC_BROWSE,111,7,17,14
+    EDITTEXT        IDC_EDIT_PATH,7,7,103,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "&Del",IDC_DELETE,129,7,17,14
+    LTEXT           "",IDC_PREVIEW,151,7,87,80,SS_SUNKEN | NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_INFO,25,24,123,8
+    LTEXT           "Info:",IDC_STATIC,7,24,18,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_COLOR_TABLE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_DLG_EXPORT_FLC, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+    END
+
+    IDD_DLG_FLC_INFO, DIALOG
+    BEGIN
+        TOPMARGIN, 3
+    END
+
+    IDD_DLG_NEW_FLC, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+    END
+
+    IDD_DLG_OPTIONS, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_OPTIONSDLG_DOC, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 226
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_OPTIONSDLG_FLC, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 226
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_OPTIONSDLG_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 226
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_TAB_EXP_FRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 271
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_TAB_EXP_GEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 243
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_TAB_EXP_OUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 243
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_TAB_INFO_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 196
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_TAB_INFO_GEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 196
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_TAB_NEW_FRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 271
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_TAB_NEW_GEN, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 243
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_TAB_NEW_OUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 243
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_DLG_FILE_WAV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_DLG_INFO, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_DIALOG_BAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 136
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_PANEL_DIRECTION, DIALOG
+    BEGIN
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_PANEL_DELAY, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_PANEL_VIEW, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_PANEL_ANIMATION, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_PANEL_SOUND, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_PANEL_EXTRA, DIALOG
+    BEGIN
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+
+    IDD_DLG_OFFSET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_COLOR_REPLACE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 485
+        VERTGUIDE, 182
+        VERTGUIDE, 188
+        VERTGUIDE, 305
+        VERTGUIDE, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+        HORZGUIDE, 180
+    END
+
+    IDD_REPLACE_RANGE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 495
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_COLOR_MOVE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 373
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_PREVIEW_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_COLOR_BCHS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_TAB_NEW_PAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 271
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_TAB_EXP_PAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 271
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_COLOR_SELECT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 415
+        VERTGUIDE, 403
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+        HORZGUIDE, 170
+    END
+
+    IDD_DLG_SELECT_BGD_IMG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_FLCTYPE             BITMAP  DISCARDABLE     "res\\FlcType.bmp"
+IDB_FLC_INFO            BITMAP  DISCARDABLE     "res\\FlcInfo.bmp"
+IDB_MAINFRAME           BITMAP  DISCARDABLE     "res\\MainToolbar.bmp"
+IDB_OPTIONS_TAB         BITMAP  DISCARDABLE     "res\\OptionsTab.bmp"
+IDB_C3FTYPE             BITMAP  DISCARDABLE     "res\\C3fType.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&1.File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Open &INI",                   ID_OPEN_INI
+        MENUITEM "Open &Multi",                 ID_OPEN_MULTI
+        MENUITEM SEPARATOR
+        MENUITEM "&New Storyboard",             ID_C3F_NEW
+        MENUITEM "Import To &Storyboard",       ID_IMPORT_C3F
+        MENUITEM SEPARATOR
+        POPUP "Recent &FLC Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_FLC1, GRAYED
+        END
+        POPUP "Recent C&3F Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_C3F1, GRAYED
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4, F12",          ID_APP_EXIT
+    END
+    POPUP "&2.View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Control Bar",                ID_VIEW_DIALOGBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Always on Top",              ID_ALWAYSONTOP
+    END
+    POPUP "&3.Tools"
+    BEGIN
+        MENUITEM "&Options",                    ID_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Color &Replace",              ID_COLOR_REPLACE
+    END
+    POPUP "&4.Help"
+    BEGIN
+        MENUITEM "&About Civ3FlcEdit...",       ID_APP_ABOUT
+    END
+END
+
+IDR_FLCTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&1.File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Open &INI",                   ID_OPEN_INI
+        MENUITEM "Open &Multi",                 ID_OPEN_MULTI
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&New Storyboard",             ID_C3F_NEW
+        MENUITEM "Export to S&toryboard",       ID_FLC_EXPORT
+        MENUITEM "Import To &Storyboard",       ID_IMPORT_C3F
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_REFRESH
+        MENUITEM SEPARATOR
+        POPUP "Recent &FLC Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_FLC1, GRAYED
+        END
+        POPUP "Recent C&3F Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_C3F1, GRAYED
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4, F12",          ID_APP_EXIT
+    END
+    POPUP "&2.View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Control Bar",                ID_VIEW_DIALOGBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Always on Top",              ID_ALWAYSONTOP
+    END
+    POPUP "&3.Animation"
+    BEGIN
+        MENUITEM "Pla&y",                       ID_PLAY
+        MENUITEM "&Pause\tPAUSE",               ID_PAUSE
+        MENUITEM "&Stop",                       ID_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "&First",                      ID_FIRST
+        MENUITEM "&Back",                       ID_BACK
+        MENUITEM "P&revious",                   ID_PREVIOUS
+        MENUITEM "&Next",                       ID_NEXT
+        MENUITEM "&Forward",                    ID_FORWARD
+        MENUITEM "&Last",                       ID_LAST
+    END
+    POPUP "&4.Direction"
+    BEGIN
+        MENUITEM "SW",                          ID_DIRECTION_SW
+        MENUITEM "W",                           ID_DIRECTION_W
+        MENUITEM "NW",                          ID_DIRECTION_NW
+        MENUITEM "N",                           ID_DIRECTION_N
+        MENUITEM "NE",                          ID_DIRECTION_NE
+        MENUITEM "E",                           ID_DIRECTION_E
+        MENUITEM "SE",                          ID_DIRECTION_SE
+        MENUITEM "S",                           ID_DIRECTION_S
+        MENUITEM SEPARATOR
+        MENUITEM "All",                         ID_DIRECTION_ALL
+    END
+    POPUP "&5.Background"
+    BEGIN
+        MENUITEM "&Default",                    ID_BGD_DEFAULT
+        MENUITEM "Custom &Color",               ID_CUSTOM_COLOR
+        MENUITEM "Custom &Image",               ID_BGD_IMG
+        MENUITEM "&Sea",                        ID_BGD_SEA
+        MENUITEM "&Land",                       ID_BGD_LAND
+        MENUITEM "&Grid",                       ID_BGD_GRID
+        MENUITEM SEPARATOR
+        MENUITEM "S&elect Custom Color...",     ID_BGD_SELECT
+        MENUITEM "Select Custom I&mage",        ID_SELECT_IMG
+        MENUITEM SEPARATOR
+        MENUITEM "&Alpha Blend",                ID_USE_ALPHA_BLENDING
+    END
+    POPUP "&6.Palette"
+    BEGIN
+        MENUITEM "&Palette",                    ID_COLOR_TABLE
+        MENUITEM SEPARATOR
+        MENUITEM "&Import Palette",             ID_IMPORT_PALETTE
+        MENUITEM "&Export Palette",             ID_EXPORT_PALETTE
+    END
+    POPUP "&7.Tools"
+    BEGIN
+        MENUITEM "&Options",                    ID_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "&Info",                       ID_INFO
+        MENUITEM SEPARATOR
+        MENUITEM "Copy to &Clipboard",          ID_COPY_TO_CLIPBOARD
+        MENUITEM "Copy to &File",               ID_COPY_TO_FILE
+        MENUITEM "&Save Frame to File",         ID_SAVE_FRAME
+        MENUITEM SEPARATOR
+        MENUITEM "&Zoom",                       ID_ZOOM
+        MENUITEM SEPARATOR
+        MENUITEM "C&hange Offset",              ID_OFFSET
+        MENUITEM SEPARATOR
+        MENUITEM "Color &Replace",              ID_COLOR_REPLACE
+        MENUITEM SEPARATOR
+        MENUITEM "Shrin&k Frame Count",         ID_SHRINK_FRM_COUNT
+    END
+    POPUP "&8.Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+        MENUITEM "Clo&se",                      ID_FILE_CLOSE
+        MENUITEM "Clos&e All",                  ID_WINDOW_CLOSEALL
+    END
+    POPUP "&9.Help"
+    BEGIN
+        MENUITEM "&About Civ3FlcEdit...",       ID_APP_ABOUT
+    END
+END
+
+IDR_MRU_FLC MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "(None)",                      ID_FILE_MRU_FLC1, GRAYED
+    END
+END
+
+IDR_C3FTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&1.File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Open &INI",                   ID_OPEN_INI
+        MENUITEM "Open &Multi",                 ID_OPEN_MULTI
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&New Storyboard",             ID_C3F_NEW
+        MENUITEM "Export to F&LC",              ID_C3F_EXPORT
+        MENUITEM "Import To &Storyboard",       ID_IMPORT_C3F
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_REFRESH
+        MENUITEM SEPARATOR
+        POPUP "Recent &FLC Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_FLC1, GRAYED
+        END
+        POPUP "Recent C&3F Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_C3F1, GRAYED
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4, F12",          ID_APP_EXIT
+    END
+    POPUP "&2.View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Control Bar",                ID_VIEW_DIALOGBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Always on Top",              ID_ALWAYSONTOP
+    END
+    POPUP "&3.Animation"
+    BEGIN
+        MENUITEM "Pla&y",                       ID_PLAY
+        MENUITEM "&Pause\tPAUSE",               ID_PAUSE
+        MENUITEM "&Stop",                       ID_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "&First",                      ID_FIRST
+        MENUITEM "&Back",                       ID_BACK
+        MENUITEM "P&revious",                   ID_PREVIOUS
+        MENUITEM "&Next",                       ID_NEXT
+        MENUITEM "&Forward",                    ID_FORWARD
+        MENUITEM "&Last",                       ID_LAST
+    END
+    POPUP "&4.Direction"
+    BEGIN
+        MENUITEM "SW",                          ID_DIRECTION_SW
+        MENUITEM "W",                           ID_DIRECTION_W
+        MENUITEM "NW",                          ID_DIRECTION_NW
+        MENUITEM "N",                           ID_DIRECTION_N
+        MENUITEM "NE",                          ID_DIRECTION_NE
+        MENUITEM "E",                           ID_DIRECTION_E
+        MENUITEM "SE",                          ID_DIRECTION_SE
+        MENUITEM "S",                           ID_DIRECTION_S
+        MENUITEM SEPARATOR
+        MENUITEM "All",                         ID_DIRECTION_ALL
+    END
+    POPUP "&5.Background"
+    BEGIN
+        MENUITEM "&Default",                    ID_BGD_DEFAULT
+        MENUITEM "Custom &Color",               ID_CUSTOM_COLOR
+        MENUITEM "Custom &Image",               ID_BGD_IMG
+        MENUITEM "&Sea",                        ID_BGD_SEA
+        MENUITEM "&Land",                       ID_BGD_LAND
+        MENUITEM "&Grid",                       ID_BGD_GRID
+        MENUITEM SEPARATOR
+        MENUITEM "S&elect Custom Color...",     ID_BGD_SELECT
+        MENUITEM "Select Custom I&mage",        ID_SELECT_IMG
+        MENUITEM SEPARATOR
+        MENUITEM "&Alpha Blend",                ID_USE_ALPHA_BLENDING
+    END
+    POPUP "&6.Palette"
+    BEGIN
+        MENUITEM "&Palette",                    ID_COLOR_TABLE
+        MENUITEM SEPARATOR
+        MENUITEM "&Import Palette",             ID_IMPORT_PALETTE
+        MENUITEM "&Export Palette",             ID_EXPORT_PALETTE
+    END
+    POPUP "&7.Tools"
+    BEGIN
+        MENUITEM "&Options",                    ID_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "&Info",                       ID_INFO
+        MENUITEM SEPARATOR
+        MENUITEM "Copy to &Clipboard",          ID_COPY_TO_CLIPBOARD
+        MENUITEM "Copy to &File",               ID_COPY_TO_FILE
+        MENUITEM "&Save Frame to File",         ID_SAVE_FRAME
+        MENUITEM SEPARATOR
+        MENUITEM "&Zoom",                       ID_ZOOM
+        MENUITEM SEPARATOR
+        MENUITEM "C&hange Offset",              ID_OFFSET
+        MENUITEM SEPARATOR
+        MENUITEM "Color &Replace",              ID_COLOR_REPLACE
+        MENUITEM SEPARATOR
+        MENUITEM "Shrin&k Frame Count",         ID_SHRINK_FRM_COUNT
+    END
+    POPUP "&8.Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "Close &All",                  ID_WINDOW_CLOSEALL
+    END
+    POPUP "&9.Help"
+    BEGIN
+        MENUITEM "&About Civ3FlcEdit...",       ID_APP_ABOUT
+    END
+END
+
+IDR_MRU_C3F MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "(None)",                      ID_FILE_MRU_C3F1, GRAYED
+    END
+END
+
+IDR_MRU MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        POPUP "Recent &FLC Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_FLC1, GRAYED
+        END
+        POPUP "Recent C&3F Files"
+        BEGIN
+            MENUITEM "(None)",                      ID_FILE_MRU_C3F1, GRAYED
+        END
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,2,8,101
+ PRODUCTVERSION 3,2,8,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Civilization III FLC Editor MFC Application\0"
+            VALUE "FileVersion", "3, 2, 8, 101\0"
+            VALUE "InternalName", "Civ3FlcEdit\0"
+            VALUE "LegalCopyright", "Copyright © 2004-2005 Cyber Dreyk\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Civ3FlcEdit.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Civ3FlcEdit Application\0"
+            VALUE "ProductVersion", "3, 2, 8, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F12,         ID_APP_EXIT,            VIRTKEY, NOINVERT
+    VK_F5,          ID_REFRESH,             VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AVI
+//
+
+IDR_AVI_CYBERLION       AVI     DISCARDABLE     "res\\CyberLion.avi"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PCX
+//
+
+IDR_PCX_00              PCX     DISCARDABLE     "res\\Palettes\\ntp00.pcx"
+IDR_PCX_01              PCX     DISCARDABLE     "res\\Palettes\\ntp01.pcx"
+IDR_PCX_02              PCX     DISCARDABLE     "res\\Palettes\\ntp02.pcx"
+IDR_PCX_03              PCX     DISCARDABLE     "res\\Palettes\\ntp03.pcx"
+IDR_PCX_04              PCX     DISCARDABLE     "res\\Palettes\\ntp04.pcx"
+IDR_PCX_05              PCX     DISCARDABLE     "res\\Palettes\\ntp05.pcx"
+IDR_PCX_06              PCX     DISCARDABLE     "res\\Palettes\\ntp06.pcx"
+IDR_PCX_07              PCX     DISCARDABLE     "res\\Palettes\\ntp07.pcx"
+IDR_PCX_08              PCX     DISCARDABLE     "res\\Palettes\\ntp08.pcx"
+IDR_PCX_09              PCX     DISCARDABLE     "res\\Palettes\\ntp09.pcx"
+IDR_PCX_10              PCX     DISCARDABLE     "res\\Palettes\\ntp10.pcx"
+IDR_PCX_11              PCX     DISCARDABLE     "res\\Palettes\\ntp11.pcx"
+IDR_PCX_12              PCX     DISCARDABLE     "res\\Palettes\\ntp12.pcx"
+IDR_PCX_13              PCX     DISCARDABLE     "res\\Palettes\\ntp13.pcx"
+IDR_PCX_14              PCX     DISCARDABLE     "res\\Palettes\\ntp14.pcx"
+IDR_PCX_15              PCX     DISCARDABLE     "res\\Palettes\\ntp15.pcx"
+IDR_PCX_16              PCX     DISCARDABLE     "res\\Palettes\\ntp16.pcx"
+IDR_PCX_17              PCX     DISCARDABLE     "res\\Palettes\\ntp17.pcx"
+IDR_PCX_18              PCX     DISCARDABLE     "res\\Palettes\\ntp18.pcx"
+IDR_PCX_19              PCX     DISCARDABLE     "res\\Palettes\\ntp19.pcx"
+IDR_PCX_20              PCX     DISCARDABLE     "res\\Palettes\\ntp20.pcx"
+IDR_PCX_21              PCX     DISCARDABLE     "res\\Palettes\\ntp21.pcx"
+IDR_PCX_22              PCX     DISCARDABLE     "res\\Palettes\\ntp22.pcx"
+IDR_PCX_23              PCX     DISCARDABLE     "res\\Palettes\\ntp23.pcx"
+IDR_PCX_24              PCX     DISCARDABLE     "res\\Palettes\\ntp24.pcx"
+IDR_PCX_25              PCX     DISCARDABLE     "res\\Palettes\\ntp25.pcx"
+IDR_PCX_26              PCX     DISCARDABLE     "res\\Palettes\\ntp26.pcx"
+IDR_PCX_27              PCX     DISCARDABLE     "res\\Palettes\\ntp27.pcx"
+IDR_PCX_28              PCX     DISCARDABLE     "res\\Palettes\\ntp28.pcx"
+IDR_PCX_29              PCX     DISCARDABLE     "res\\Palettes\\ntp29.pcx"
+IDR_PCX_30              PCX     DISCARDABLE     "res\\Palettes\\ntp30.pcx"
+IDR_PCX_31              PCX     DISCARDABLE     "res\\Palettes\\ntp31.pcx"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Civ3FlcEdit.ico"
+IDI_ABOUT               ICON    DISCARDABLE     "res\\About.ico"
+IDI_APPLY               ICON    DISCARDABLE     "res\\Apply.ico"
+IDI_BACK                ICON    DISCARDABLE     "res\\Back.ico"
+IDI_BROWSE              ICON    DISCARDABLE     "res\\Browse.ico"
+IDI_CANCEL              ICON    DISCARDABLE     "res\\Cancel.ico"
+IDI_DEFAULT             ICON    DISCARDABLE     "res\\Default.ico"
+IDI_DELETE              ICON    DISCARDABLE     "res\\Delete.ico"
+IDI_DIR_ALL             ICON    DISCARDABLE     "res\\DirectAll.ico"
+IDI_DIR_E               ICON    DISCARDABLE     "res\\DirectE.ico"
+IDI_DIR_N               ICON    DISCARDABLE     "res\\DirectN.ico"
+IDI_DIR_NE              ICON    DISCARDABLE     "res\\DirectNE.ico"
+IDI_DIR_NW              ICON    DISCARDABLE     "res\\DirectNW.ico"
+IDI_DIR_S               ICON    DISCARDABLE     "res\\DirectS.ico"
+IDI_DIR_SE              ICON    DISCARDABLE     "res\\DirectSE.ico"
+IDI_DIR_SW              ICON    DISCARDABLE     "res\\DirectSW.ico"
+IDI_DIR_W               ICON    DISCARDABLE     "res\\DirectW.ico"
+IDI_EXIT                ICON    DISCARDABLE     "res\\Exit.ico"
+IDI_FIRST               ICON    DISCARDABLE     "res\\First.ico"
+IDI_FLC_EXP             ICON    DISCARDABLE     "res\\FlcExp.ico"
+IDI_FLC_IMP             ICON    DISCARDABLE     "res\\FlcImp.ico"
+IDI_FLC_NEW             ICON    DISCARDABLE     "res\\FlcNew.ico"
+IDI_FORWARD             ICON    DISCARDABLE     "res\\Forward.ico"
+IDI_INFO                ICON    DISCARDABLE     "res\\Info.ico"
+IDI_LAST                ICON    DISCARDABLE     "res\\Last.ico"
+IDI_LOCK                ICON    DISCARDABLE     "res\\Lock.ico"
+IDI_NEXT                ICON    DISCARDABLE     "res\\Next.ico"
+IDI_OK                  ICON    DISCARDABLE     "res\\OK.ico"
+IDI_OPEN_C3F            ICON    DISCARDABLE     "res\\OpenC3F.ico"
+IDI_OPEN_FLC            ICON    DISCARDABLE     "res\\OpenFLC.ico"
+IDI_OPTIONS             ICON    DISCARDABLE     "res\\Options.ico"
+IDI_PALETTE             ICON    DISCARDABLE     "res\\Palette.ico"
+IDI_PAUSE               ICON    DISCARDABLE     "res\\Pause.ico"
+IDI_PLAY                ICON    DISCARDABLE     "res\\Play.ico"
+IDI_PREVIOUS            ICON    DISCARDABLE     "res\\Previous.ico"
+IDI_SAVE                ICON    DISCARDABLE     "res\\Save.ico"
+IDI_SELECT_COLOR        ICON    DISCARDABLE     "res\\SelectColor.ico"
+IDI_STOP                ICON    DISCARDABLE     "res\\Stop.ico"
+IDI_UNLOCK              ICON    DISCARDABLE     "res\\Unlock.ico"
+IDR_FLCTYPE             ICON    DISCARDABLE     "res\\FlcDoc.ico"
+IDR_C3FTYPE             ICON    DISCARDABLE     "res\\C3fDoc.ico"
+IDI_STOP_WAV            ICON    DISCARDABLE     "res\\StopWAV.ico"
+IDI_PLAY_WAV            ICON    DISCARDABLE     "res\\PlayWAV.ico"
+IDI_PANEL_VIEW          ICON    DISCARDABLE     "res\\PanelView.ico"
+IDI_PANEL_ANIM          ICON    DISCARDABLE     "res\\PanelAnimation.ico"
+IDI_PANEL_DELAY         ICON    DISCARDABLE     "res\\PanelDelay.ico"
+IDI_PANEL_EXTRA         ICON    DISCARDABLE     "res\\PanelExtra.ico"
+IDI_PANEL_SOUND         ICON    DISCARDABLE     "res\\PanelSound.ico"
+IDI_PANEL_DIRECT        ICON    DISCARDABLE     "res\\PanelDirection.ico"
+IDI_ZOOM_OUT            ICON    DISCARDABLE     "res\\ZoomOut.ico"
+IDI_ZOOM                ICON    DISCARDABLE     "res\\Zoom.ico"
+IDI_ZOOM_IN             ICON    DISCARDABLE     "res\\ZoomIn.ico"
+IDI_ZOOM_FIT            ICON    DISCARDABLE     "res\\ZoomFit.ico"
+IDI_OFFSET              ICON    DISCARDABLE     "res\\Offset.ico"
+IDI_IMPORT_C3F          ICON    DISCARDABLE     "res\\ImportC3F.ico"
+IDI_CENTERING           ICON    DISCARDABLE     "res\\Centering.ico"
+IDI_COLOR_REPLACE       ICON    DISCARDABLE     "res\\ColorReplace.ico"
+IDI_REPLACE_COLOR       ICON    DISCARDABLE     "res\\ReplaceColor.ico"
+IDI_COLOR_RANGE         ICON    DISCARDABLE     "res\\ColorRange.ico"
+IDI_MOVE_COLOR          ICON    DISCARDABLE     "res\\MoveColor.ico"
+IDI_MOVE_RIGHT          ICON    DISCARDABLE     "res\\MoveColorR.ico"
+IDI_MOVE_LEFT           ICON    DISCARDABLE     "res\\MoveColorL.ico"
+IDI_REFRESH             ICON    DISCARDABLE     "res\\Refresh.ico"
+IDI_BCHS                ICON    DISCARDABLE     "res\\BCHS.ico"
+IDI_COLOR_SELECT        ICON    DISCARDABLE     "res\\ColorSelect.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TAB_NEW_FRM DLGINIT
+BEGIN
+    IDC_DIR_COUNT, 0x403, 2, 0
+0x0038, 
+    IDC_DIR_COUNT, 0x403, 2, 0
+0x0031, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR  DISCARDABLE     "res\\CursorHand.cur"
+IDC_CROSS_SELECT        CURSOR  DISCARDABLE     "res\\Cross.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BGD
+//
+
+IDR_BGD_LAND            BGD     DISCARDABLE     "res\\BgdLand.bmp"
+IDR_BGD_SEA             BGD     DISCARDABLE     "res\\BgdSea.bmp"
+IDR_BGD_GRID            BGD     DISCARDABLE     "res\\BgdGrid.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Civ3FlcEdit"
+    IDR_FLCTYPE             "\nFLC\nFLC\nflc\n.flc\nFLC\nFLC Document"
+    IDR_C3FTYPE             "\nC3F\nC3F\nc3f\n.c3f\nC3F\nC3F Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    IDS_TITLE_OPEN          "Open FLC file"
+    IDS_FILTER_FLC          "Civ3 FLC files (*.FLC)|*.flc||"
+    IDS_NEW_DOCUMENT_CAPTION "FLC isn't loaded"
+    IDS_ERR_INVALID_FLC     "'%s'\r\nInvalid or unsupported document format."
+    IDS_C3F_INFO            "Storyboard file name:\t%s\r\nBase file name:\t\t%s\r\nImage file type:\t\t%s\r\nPalette file type:\t\t%s\r\nTotal frames:\t\t%d\r\nWidth:\t\t\t%d pixels\r\nHeight:\t\t\t%d pixels\r\nSpeed:\t\t\t%d mc\r\nTotal directions:\t\t%d\r\nFrames per direction:\t%d\r\nLeft Offset:\t\t%d\r\nTop Offset:\t\t%d"
+    IDS_ERR_SET_BGD_IMG     "Cannot set background image."
+    IDS_CIV_COLOR           "Civ Color %d"
+    IDS_DEF_COLOR           "Default"
+    IDS_BUILD_NUMBER        "Build: %s"
+    IDS_CIVFANATICS_FORUM_URL 
+                            "http://forums.civfanatics.com/showthread.php?t=91253"
+    IDS_EMAIL_ADDRESS       "mailto:Civ3MM@yandex.ru"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUT_DLG_BLINK     "Civilization III FLC Editor"
+    IDS_DIALOGBAR_TITLE     "Control Bar"
+    IDS_SB_TO_FLC_SUCCES    "'%s'\r\nThe Storyboard is successfully exported to the\r\n'%s' FLC file."
+    IDS_SB_EXP              "Export to FLC"
+    IDS_FILTER_FLCEDIT      "All avaliable formats (.FLC, .C3F)|*.flc;*.c3f|Civ3 FLC files (*.FLC)|*.flc|Civ3 FLC Storyboard (*.C3F)|*.c3f||"
+    IDS_TITLE_OPEN_FLCEDIT  "Open File"
+    IDS_RECENT_FILES_C3F    "Recent C&3F Files"
+    IDS_ASK_OPEN_C3F        "'%s'\r\nFLC is successfully exported to Storyboard.\r\nDo you want to open the Storyboard document?"
+    IDS_ASK_OPEN_FLC        "'%s'\r\nThe Storyboard is successfully exported to the\r\n'%s' FLC file.\r\nDo you want to open the FLC document?"
+    IDS_C3F_OPEN_STATUS     "%d frames from %d already loaded"
+    IDS_FLC_EXP_STATUS      "%d frames from %d are exported"
+    IDS_AMB_ERR1            "The '%s' file, decleared in the '%s' file is not exist."
+    IDS_AMB_ERR2            "Cannot get list of the decleared *.wav files from '%s' file."
+    IDS_AMB_ERR3            "'%s'\r\nThe file is not valid *.amb file format."
+    IDS_AMB_ERR4            "'%s'\r\nThe file has not defined *.wav files."
+    IDS_FILTER_WAV          "Sound files (*.WAV *.AMB)|*.wav;*.amb|WAV files (*.WAV)|*.wav|AMB files  (*.AMB)|*.amb||"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_REGFILETYPE_OK      "The file type '.FLC' is registered."
+    IDS_UNREGFILETYPE_OK    "The file type '.FLC' is unregistered."
+    IDS_CHECK_FILETYPE      "'%s'\r\n\r\nThe 'FLC' and/or 'C3F' file types are not associated with this copy of the Civ3FlcEdit application.\r\nDo you want to register the file types?"
+    IDS_NONE                "(None)"
+    IDS_REG_FILE_ENTRY      "File%d"
+    IDS_TOOLBAR_CAPTION     "Tool Bar"
+    IDS_RECENT_FILES_FLC    "Recent &FLC Files"
+    IDS_APP_EXIT            "Do you realy want exit this application?"
+    IDS_RICHEDIT_ERR        "Cannot initialize the rich edit control for the application."
+    IDS_OPTIONSTAB_DOC      "Document"
+    IDS_OPTIONSTAB_VIEW     "View"
+    IDS_SET_DEFAULT         "Do you really want to set default value?"
+    IDS_COL_INFO            "Value"
+    IDS_COL_ID              "Property"
+    IDS_COL_01              "File name"
+    IDS_COL_02              "File size (bytes)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLAY                 "Play animation\nPlay"
+    ID_PAUSE                "Pause animation playing\nPause"
+    ID_STOP                 "Stop animation playing\nStop"
+    ID_INFO                 "Information about FLC file\nInfo"
+    ID_BGD_DEFAULT          "Set default background color\nDefault"
+    ID_BGD_SELECT           "Select background color\nSelect Color"
+    ID_BGD_SEA              "Set sea background\nSea"
+    ID_BGD_LAND             "Set land background\nLand"
+    ID_CUSTOM_COLOR         "Set custom background color\nCustom Color"
+    ID_FIRST                "Move to the first frame\nFirst"
+    ID_PREVIOUS             "Move to the previous frame\nPrevious"
+    ID_NEXT                 "Move to the next frame\nNext"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_LAST                 "Move to the last frame\nLast"
+    ID_COLOR_TABLE          "View current palette\nPalette"
+    ID_OPTIONS              "Show Options dialog\nOptions"
+    ID_BACK                 "Back wind\nBack"
+    ID_FORWARD              "Forward wind\nForward"
+    ID_IMPORT_PALETTE       "Import palette from file\nImport Palette"
+    ID_EXPORT_PALETTE       "Export palette to file\nExport Palette"
+    ID_REFRESH              "Reload FLC file\nRefresh"
+    ID_USE_ALPHA_BLENDING   "Use or not alpha blendind\nAlpha Blend"
+    ID_FLC_EXPORT           "Export FLC to Storyboard\nExport to Storyboard"
+    ID_C3F_NEW              "Create a new Storyboard\nNew Storyboard"
+    ID_C3F_OPEN             "Open Recent Storyboard file\nRecent Storyboard"
+    ID_COPY_TO_CLIPBOARD    "Copy secected area to the clipboard\nCopy to Clipboard"
+    ID_COPY_TO_FILE         "Save secected area to file\nCopy to File"
+    ID_VIEW_DIALOGBAR       "Show or hide the Control Bar\nToggle Control Bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COL_03              "Total frames"
+    IDS_COL_04              "Width (pixels)"
+    IDS_COL_05              "Height (pixels)"
+    IDS_COL_06              "Speed (mc)"
+    IDS_COL_07              "Total directions"
+    IDS_COL_08              "Frames per direction"
+    IDS_COL_09              "Animation time"
+    IDS_COL_10              "Original widt (pixels)"
+    IDS_COL_11              "Original height (pixels)"
+    IDS_COL_12              "Left offset (pixels)"
+    IDS_COL_13              "Top offset (pixels)"
+    IDS_COL_14              "reserved"
+    IDS_COL_15              "reserved"
+    IDS_IMG_UNKNOWN_FORMAT  "'%s'\r\nThe file has a wrong or unsupported format."
+    IDS_DIRECT_W            "W"
+    IDS_DIRECT_SW           "SW"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_C3F_EXPORT           "Export Storyboard to FLC\nExport to FLC"
+    ID_WINDOW_CLOSEALL      "Close all documents\nClose All"
+    ID_OPEN_INI             "Open Civ3 FLC files from INI file\nOpen INI"
+    ID_OPEN_MULTI           "Open animation files from specified folder (not more than 20)\nOpen Multi"
+    ID_ZOOM                 "Zooming the current frame\nZoom"
+    ID_OFFSET               "Change frames offset\nChange Offset"
+    ID_ALWAYSONTOP          "Set app window placement: always on top or not\nAlways on Top"
+    ID_FLC_OPEN             "Open Recent Civ3 FLC file\nRecent FLC"
+    ID_IMPORT_C3F           "Import from an existent image file to Storyboard\nImport to Storyboard"
+    ID_SAVE_FRAME           "Save current displayed frame to file\nSave Frame"
+    ID_DIRECTION_SW         "South-West\nSouth-West"
+    ID_DIRECTION_W          "West\nWest"
+    ID_DIRECTION_NW         "North-West\nNorth-West"
+    ID_DIRECTION_N          "North\nNorth"
+    ID_DIRECTION_NE         "North-East\nNorth-East"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIRECT_SE           "SE"
+    IDS_DIRECT_S            "S"
+    IDS_DIRECT_NW           "NW"
+    IDS_DIRECT_NE           "NE"
+    IDS_DIRECT_N            "N"
+    IDS_DIRECT_E            "E"
+    IDS_DIRECT_ALL          "All"
+    IDS_DEF_TIMER           "(%d ms)"
+    IDS_COLOR_DEFAULT       "Default"
+    IDS_COLOR_CUSTOM        "Custom"
+    IDS_OPTIONSTAB_FLC      "Animation"
+    IDS_TITLE_SAVE_AS       "Save FLC as"
+    IDS_SELECT_PAL_DIR      "Select Palettes Directory"
+    IDS_CANNOT_GET_PAL      "Cannot get civilization specified palette."
+    IDS_CANNOT_CHANGE_PALETTE "Cannot apply palette changes."
+    IDS_FILTER_PAL_IMP      "All avaliable formats (.ACT, .PAL)|*.act;*.pal|Adobe Color Table (.ACT)|*.act|Microsoft Palette (.PAL)|*.pal|Jasc Animation Shop (.PAL)|*.pal||"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TITLE_IMP_PAL       "Select Palette file to import"
+    IDS_TITLE_EXP_PAL       "Select Palette file to export"
+    IDS_IMP_PAL_ERR         "'%s'\r\nCould not import the color table because it's not a valid file."
+    IDS_IMP_PAL_OK          "Palette is successfully imported."
+    IDS_EXP_PAL_OK          "Palette is successfully exported."
+    IDS_EXP_PAL_ERR         "'%s'\r\nCannot export palette to the file."
+    IDS_FILTER_PAL_EXP      "Adobe Color Table (.ACT)|*.act|Microsoft Palette (.PAL)|*.pal|Jasc Animation Shop (.PAL)|*.pal||"
+    IDS_UNKNOWN_ERR         "Unknown error.\nFunction: %s"
+    IDS_FILE_TYPE_BMP       "Windows Bitmap (.BMP)"
+    IDS_FILE_TYPE_PCX       "ZSoft PCX (.PCX)"
+    IDS_TAB_SB_GEN          "Information"
+    IDS_TAB_SB_OUT          "Output"
+    IDS_TAB_SB_FRM          "Frame"
+    IDS_SELECT_SB_DIR       "Select output target folder"
+    IDS_STORYBOARD_DIR      "Storyboard"
+    IDS_EMPTY_NAME          "Please enter the base file name."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INVALID_DIR         "Invalid target path name.\nPlease, try another."
+    IDS_FLC_NEW_OK          "New storyboard is successfully created."
+    IDS_FLC_NEW_ERR         "Cannot create a new storyboard."
+    IDS_FLC_EXP_OK          "FLC is successfully exported to Storyboard."
+    IDS_FLC_EXP_ERR         "Cannot export FLC."
+    IDS_ERR_CREATE_STORYBOARD "Cannot create Storyboard."
+    IDS_ERR_WRITE_C3F       "Cannot write C3F file."
+    IDS_ERR_READ_C3F        "Cannot read C3F file.\r\nInvalid or unsupported document format."
+    IDS_FILTER_C3F          "Civ3 FLC Storyboard (*.C3F)|*.c3f||"
+    IDS_TITLE_C3F           "Select Civ3 FLC Storyboard file"
+    IDS_ERR_SB_NOTEXIST     "'%s'\nImage file isn't exist."
+    IDS_FLC_IMP_OK          "FLC is successfully imported from Storyboard."
+    IDS_ERR_SB_BITSPERPIXEL "'%s'\nImage has invalid color depth.\nNeeded - 24 or 8 bits per pixel.\nActual - %d bits per pixel."
+    IDS_ERR_SB_INVALIDSIZE  "'%s'\nStoryboard contain invalid image sizes."
+    IDS_ERR_SB_FILEFORMAT   "'%s'\nImage has a wrong file format."
+    IDS_ERR_SB_SIZES        "'%s'\nImage has wrong sizes.\nNeeded: Width - %d, Height - %d.\nActual: Width - %d, Height - %d."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_INVALID_SB      "'%s'\r\nInvalid document format."
+    IDS_TAB_INFO_GEN        "General Info"
+    IDS_TAB_INFO_EXT        "Extended Info"
+    IDS_COL_TYPE            "Frame/Chunk"
+    IDS_COL_NOTE            "Note"
+    IDS_COL_POS             "Start Pos."
+    IDS_COL_SIZE            "Size"
+    IDS_TYPE_FRAME          "Frame %d"
+    IDS_TYPE_CHUNK          "Chunk %d"
+    IDS_NOTE_FRAME          "contains %d chunk(s)"
+    IDS_ERR_SB_LOAD         "'%s'\r\nCannot load image file."
+    IDS_PAL_TYPE_ACT        "Adobe Color Table (.ACT)"
+    IDS_FILE_TYPE_MS        "Microsoft Palette (.PAL)"
+    IDS_FILE_TYPE_JASC      "Jasc Animation Shop (.PAL)"
+    IDS_ERR_WRITE_PAL       "Cannot write palette to file."
+    IDS_ERR_READ_PAL        "'%s'\r\nCannot load palette file."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONSTRAIN_PROP      "Constrain Proportions"
+    IDS_COLOR_256           "256 colors (8-bit)"
+    IDS_COLOR_TRUE          "true color (24-bit)"
+    IDS_FILTER_IMG          "All avaliable formats (.PCX, .BMP, .JPG)|*.pcx;*.bmp;*jpg|ZSoft PCX (.PCX)|*.pcx|Windows Bitmap (.BMP)|*.bmp|JPEG (.JPG)|*jpg||"
+    IDS_TITLE_IMG           "Save Image to File..."
+    IDS_NOT_STANDARD_FLC    "'%s'\r\nThis file has unusual Civ3 FLC document format.\r\nDocument was opend but will not correctly works."
+    IDS_TITLE_EXPORT_TO_FLC "Export Storyboard to FLC"
+    IDS_FILTER_TXT          "Text files (*.TXT)|*.txt||"
+    IDS_INFO_HEADER         "Information about ""%s"" file.\r\n\r\n"
+    IDS_INFO_FRAME          "\r\nFrame %d contains %d chunk(s). Pos: %d, Size: %d\r\n"
+    IDS_INFO_CHUNK          "\tChunk %d is type %s. Pos: %d, Size: %d\r\n"
+    IDS_INFO_GEN            "\r\n*** General Information. ***\r\n\r\n"
+    IDS_INFO_EXT            "\r\n\r\n*** Extended Information. ***\r\n"
+    IDS_ERR_COPY_TMP_FILE   "'%s'\r\nCannot copy temporary file to the specified target path."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Civ3FlcEdit"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FLC1        "Open this FLC file"
+    ID_FILE_MRU_FLC2        "Open this FLC file"
+    ID_FILE_MRU_FLC3        "Open this FLC file"
+    ID_FILE_MRU_FLC4        "Open this FLC file"
+    ID_FILE_MRU_FLC5        "Open this FLC file"
+    ID_FILE_MRU_FLC6        "Open this FLC file"
+    ID_FILE_MRU_FLC7        "Open this FLC file"
+    ID_FILE_MRU_FLC8        "Open this FLC file"
+    ID_FILE_MRU_FLC9        "Open this FLC file"
+    ID_FILE_MRU_FLC10       "Open this FLC file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FLC11       "Open this FLC file"
+    ID_FILE_MRU_FLC12       "Open this FLC file"
+    ID_FILE_MRU_FLC13       "Open this FLC file"
+    ID_FILE_MRU_FLC14       "Open this FLC file"
+    ID_FILE_MRU_FLC15       "Open this FLC file"
+    ID_FILE_MRU_FLC16       "Open this FLC file"
+    ID_FILE_MRU_C3F1        "Open this Storyboard file"
+    ID_FILE_MRU_C3F2        "Open this Storyboard file"
+    ID_FILE_MRU_C3F3        "Open this Storyboard file"
+    ID_FILE_MRU_C3F4        "Open this Storyboard file"
+    ID_FILE_MRU_C3F5        "Open this Storyboard file"
+    ID_FILE_MRU_C3F6        "Open this Storyboard file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_C3F7        "Open this Storyboard file"
+    ID_FILE_MRU_C3F8        "Open this Storyboard file"
+    ID_FILE_MRU_C3F9        "Open this Storyboard file"
+    ID_FILE_MRU_C3F10       "Open this Storyboard file"
+    ID_FILE_MRU_C3F11       "Open this Storyboard file"
+    ID_FILE_MRU_C3F12       "Open this Storyboard file"
+    ID_FILE_MRU_C3F13       "Open this Storyboard file"
+    ID_FILE_MRU_C3F14       "Open this Storyboard file"
+    ID_FILE_MRU_C3F15       "Open this Storyboard file"
+    ID_FILE_MRU_C3F16       "Open this Storyboard file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TITLE_WAV           "Select sound file"
+    IDS_CHECK_AMB_RESULT    "The '%s' file content the following *wav files:\r\n\r\n%s"
+    IDS_CHECK_AMB_HEADER    "It is a valid AMB file."
+    IDS_CHECK_AMB_CAP       "Check AMB file..."
+    IDS_TITLE_TXT           "Save Information..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_C3F_INFO_CAP        "Storyboard Info"
+    IDS_ERR_OPEN_INI        "'%s'\r\nThere are no FLC files found from the given INI file."
+    IDS_ASK_OPEN_INI        "'%s'\r\nAt least one FLC file found.\r\nDo you want to open following FLC file(s)?\r\n\r\n%s"
+    IDS_SELECT_ANIM_FOLDER  "Select folder with FLC/C3F files"
+    IDS_ERR_OPEN_MULTI      "'%s'\r\nThere are no FLC/C3F files found by the given path."
+    IDS_ASK_OPEN_MULTI      "'%s'\r\nAt least one FLC/C3F file found.\r\nDo you want to open following file(s)?\r\n\r\n%s"
+    IDS_INVALID_PARAMS      "Some of the parameter(s) is/are not valid."
+    IDS_ERR_PALETTE         "Cannot apply palette changes."
+    IDS_ERR_PALETTE_FILE    "'%s'\r\nThe palette file is not exist."
+    IDS_ERR_PAL_GAME        "You have currently selected the 'Load Palette from the Game files'\r\noption but Civilization III is not registered on your PC.\r\nPlease, select an other option on the Tools->Options->Civilizations' Palettes."
+    IDS_ERR_PAL_DIR         "You have currently selected the 'Load Palette from predefined folder'\r\noption but specified folder isn't exist.\r\nPlease, select an other option on the Tools->Options->Civilizations' Palettes."
+    IDS_ERR_PAL_RES         "You have currently selected the 'Load Palette from application resources'\r\noption but application cannot get paleete from resources.\r\nPlease, select an other option on the Tools->Options->Civilizations' Palettes."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FILTER_INI          "INI files (*.INI)|*.ini||"
+    IDS_TITLE_INI           "Select an Unit .INI file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INF_PIXELS          "%d pixels"
+    IDS_INF_MS              "%d ms"
+    IDS_INF_LEADERHEAD      "Leader Head"
+    IDS_INF_UNIT            "Unit"
+    IDS_INF_PAL_CURRENT     "Current"
+    IDS_INF_PAL_HARDCODED   "Hardcoded"
+    IDS_INF_PAL_SELECTIVE   "Selective"
+    IDS_INF_PAL_ERROR       "Error!"
+    IDS_INF_YES             "YES"
+    IDS_INF_NO              "NO"
+    IDS_ERR_EXIT            "Serious internal error is occured.\r\nApplication will automatically closed."
+    IDS_ERR_REFRESH         "'%s'\r\nCannot reload document.\r\nThe document will be closed."
+    IDS_ERR_COPY_FILE       "Cannot copy from\r\n'%s'\r\nto\r\n'%s'."
+    IDS_TITLE_IMPORT_C3F    "Select a Source Image File"
+    IDS_TITLE_DEST_C3F      "Select a Destination C3F file"
+    IDS_CENTERING           "Centering"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_COLOR_DEPTH     "Color depth must be not less 8 bits."
+    IDS_ERR_INVALID_IMAGE_FORMAT "An invalid image file format."
+    IDS_IMG_INFO            "%dx%dx%db"
+    IDS_IMP_C3F_OK          "Image is successfully converted to C3F Storyboard."
+    IDS_ASK_OPEN_C3F_IMP    "'%s'\r\nImage is successfully converted to C3F Storyboard.\r\nDo you want to open the Storyboard document?"
+    IDS_IMP_ASK_LEADERHEAD  "Destination Storyboard parameters looks like a Leaderhead.\r\nDo you want to make Leaderhead animation?"
+    IDS_IMP_SELECT_PAL      "Please, select a source palette file first."
+    IDS_IMP_DIR_MORE_8      "Actual directions count more than 8.\r\nDestination Storyboard will has 8 directions.\r\nAre you agry?"
+    IDS_IMP_DIR_LESS_8      "Actual directions count more than 1 but less than 8.\r\nDestination Storyboard will has only 1 direction.\r\nAre you agry?"
+    IDS_IMP_SMALL_HEIGHT    "Image height less than Frame height and grid around the Frame."
+    IDS_IMP_SMALL_WIDTH     "Image width less than Frame width and grid around the Frame."
+    IDS_IMP_WRONG_HEIGHT    "Wrong height - value cannot be less than 1 pixel."
+    IDS_IMP_WRONG_WIDTH     "Wrong width - value cannot be less than 1 pixel."
+    IDS_ERR_COLORS_COUNT    "Wrong colors count in the Source file's  palette.\r\nNeeded colors count is 256 but present just %d.\r\nCannot apply such palette to C3F Storyboard."
+    IDS_CUR_OFFSET          "Current: Left: %d, Top: %d pixels"
+    IDS_FILTER_GET_PALETTE  "All avaliable formats|*.act;*.pal;*.bmp;*.pcx;*.c3f;*.flc|Palette files (.ACT, .PAL)|*.act;*.pal|Image files (.PCX, .BMP)|*.pcx;*.bmp|Civ3FlcEdit files (.FLC, .C3F)|*.flc;*.c3f|Adobe Color Table (.ACT)|*.act|Microsoft and Jasc AS palette (.PAL)|*.pal|ZSoft PCX (.PCX)|*.pcx|Windows Bitmap (.BMP)|*.bmp|Civ3 FLC files (*.FLC)|*.flc|Civ3 FLC Storyboard (*.C3F)|*.c3f||"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DIRECTION_E          "East\nEast"
+    ID_DIRECTION_SE         "South-East\nSouth-East"
+    ID_DIRECTION_ALL        "All directions\nAll"
+    ID_DIRECTION_S          "South\nSouth"
+    ID_COLOR_REPLACE        "Replace palette colors\nColor Replace"
+    ID_BGD_GRID             "Set grid background\nGrid"
+    ID_BGD_IMG              "Set custom background image\nCustom Image"
+    ID_SELECT_IMG           "Select background image\nSelect Image"
+    ID_SHRINK_FRM_COUNT     "Shrink count of frames in storyboard\nShrink Frame Count"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TITLE_DEST_PALETTE  "Select Destination Palette File"
+    IDS_TITLE_SRC_PALETTE   "Select Source Palette File"
+    IDS_ERR_GET_PALETTE     "Cannot get palette from file."
+    IDS_DEF_PALETTE_SUFFIX  "_Default"
+    IDS_INF_COL_DEPTH       "%d bits per pixels"
+    IDS_PAL_FILE_ABSENT     "'%s'\r\nThe palette file is absent.\r\n\r\nDo you want continue anyway?"
+    IDS_TAB_SB_PAL          "Palette"
+    IDS_TITLE_IMAGE         "Select Image File"
+    IDS_FILTER_IMAGE        "All supported files (*.pcx *.bmp *.jpg *.gif *.wmf *emf *.psd *.ico *.flc)|*.pcx;*.bmp;*.jpg;*.gif; *wmf; *.emf; *.psd; *.ico; *.flc||"
+    IDS_IMG_ALL_INFO        "%dx%dx%db"
+    IDS_FILTER_IMG_SAVE     "ZSoft PCX (.PCX)|*.pcx|Windows Bitmap (.BMP)|*.bmp|JPEG (.JPG)|*jpg||"
+    IDS_ERR_LOAD_IMG        "Cannot load image file."
+    IDS_ERR_IMG_SIZE        "Selected image file's size %dx%d pixels, but background file should be 240x240 pixels.\r\n\r\nDo you want to resize image file (otherwise every time when background will be used the image will stretched and it will cause a loss of time)?"
+    IDS_FILTER_BGD          "All supported files (*.pcx *.bmp *.jpg *.gif *.wmf *emf *.psd)|*.pcx;*.bmp;*.jpg;*.gif; *wmf; *.emf; *.psd||"
+    IDS_SHRINK_FRM_COUNT    "Are you sure you want to change Storyboard's frames count from %d to %d?"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Civ3FlcEdit.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

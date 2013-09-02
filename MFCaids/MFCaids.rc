@@ -1,0 +1,345 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MFCaids.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,2,48
+ PRODUCTVERSION 1,0,2,48
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MFCaids DLL\0"
+            VALUE "FileVersion", "1, 0, 2, 48\0"
+            VALUE "InternalName", "MFCaids\0"
+            VALUE "LegalCopyright", "Copyright © 2003-2005 Cyber Dreyk\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MFCaids.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "MFCaids dynamic-link library\0"
+            VALUE "ProductVersion", "1, 0, 2, 48\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_HDRUP               BITMAP  DISCARDABLE     "res\\hdrup.bmp"
+IDB_HDRDOWN             BITMAP  DISCARDABLE     "res\\hdrdown.bmp"
+IDB_CUSTOMIZE           BITMAP  DISCARDABLE     "res\\Customize.bmp"
+IDB_EDIT                BITMAP  DISCARDABLE     "res\\Edit.bmp"
+IDB_ICON_OPTIONS        BITMAP  DISCARDABLE     "res\\IconOptions.bmp"
+IDB_TEXT_OPTIONS        BITMAP  DISCARDABLE     "res\\TextOptions.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_CUSTOMIZE DIALOGEX 0, 0, 179, 34
+STYLE DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Te&xt options:",IDC_STATIC,4,2,39,8
+    COMBOBOX        IDC_CB_TEXTOPTIONS,52,0,123,50,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Ico&n options:",IDC_STATIC,4,20,39,8
+    COMBOBOX        IDC_CB_ICONOPTIONS,52,18,123,50,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_ICONOPTIONS MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "&Small Icons",                ID_SMALL_ICONS
+        MENUITEM "&Large icons",                ID_LARGE_ICONS
+    END
+END
+
+IDR_TEXTOPTIONS MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "&Show Text Labels",           ID_SHOW_TEXT_LABELS
+        MENUITEM "Selective Text on &Right",    ID_TEXT_ON_RIGHT
+        MENUITEM "&No Text Labels",             ID_NO_TEXT_LABELS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DRAG_MULTI          ICON    DISCARDABLE     "res\\DragMul.ico"
+IDI_DRAG_ONE            ICON    DISCARDABLE     "res\\DragOne.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_OS_OUT_OF_RES   "The operating system is out\nof memory or resources."
+    IDS_ERR_PATH_NOT_FOUND  "The specified path was not found."
+    IDS_ERR_FILE_NOT_FOUND  "The specified file was not found."
+    IDS_ERR_INVALID_EXE     "The .EXE file is invalid\n(non-Win32 .EXE or error in .EXE image)."
+    IDS_ERR_CAN_NOT_ACCESS_FILE 
+                            "The operating system denied\naccess to the specified file."
+    IDS_ERR_INVALID_FILE_ASSOC 
+                            "The filename association is\nincomplete or invalid."
+    IDS_ERR_DDE_TRAN_CANT_COMPLETED 
+                            "The DDE transaction could not\nbe completed because other DDE transactions\nwere being processed."
+    IDS_ERR_DDE_TRAN_FAILED "The DDE transaction failed."
+    IDS_ERR_DDE_TRAN_TIMEOUT 
+                            "The DDE transaction could not\nbe completed because the request timed out."
+    IDS_ERR_DLL_NOT_FOUND   "The specified dynamic-link library was not found."
+    IDS_ERR_NO_APP_ASSOC_WITH_EXT 
+                            "There is no application associated\nwith the given filename extension."
+    IDS_ERR_NOT_ENOUGHT_MEMORY 
+                            "There was not enough memory to complete the operation."""
+    IDS_ERR_SHARE_VIOLATION "A sharing violation occurred."
+    IDS_ERR_UNKNOWN         "Unknown Error (%d) occurred."
+    IDS_ERR_OPEN_LINK       "Unable to open hyperlink:\n\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OLD_STYLE_BROWSEINFO "\nor type a target path in the editbox."
+    IDS_WRONG_FOLDER        "Error Folder..."
+    IDS_INVALID_TARGET_PATH "'%s'\n\nInvalid target path."
+    IDS_ASK_CREATE_DIRECTORY 
+                            "The '%s' directory is not exist.\nDo you want to create this directory?"
+    IDS_CANT_CREATE_DIRECTORY 
+                            "'%s'\n\nCannot create a new directory by the given target path."
+    IDS_LOCAL_HOST          "local host"
+    IDS_LISTTABLE_NOITEMS   "There are no items in this view."
+    IDS_ERR_NAME            "Invalid name. Please, type another.\nAllowed symbols: A-z, 0-9, chars '_', ''', '-'."
+    IDS_ERR_DUPLICATE_NAME  "Duplicate name. Please, type another."
+    IDS_WARNING             "Warning"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_ACCESSDENIED    "Cannot save to the '%s' document.\nError code: %d\nError description: Access denied."
+    IDS_ERR_INVALIDARG      "Cannot save the '%s' document.\nError code: %d\nError description: It is not a valid file name."
+    IDS_ERR_OUTOFMEMORY     "Cannot save the '%s' document.\nError code: %d\nError description: Memory allocate error."
+    IDS_ERR_SAVE            "Cannot save the '%s' document."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CUSTOMIZE            "Customize toolbar\nCustomize"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SHOW_TEXT_LABELS     "Show text labels"
+    ID_TEXT_ON_RIGHT        "Selective text on right"
+    ID_NO_TEXT_LABELS       "No text labels"
+    ID_SMALL_ICONS          "Show small icons"
+    ID_LARGE_ICONS          "Show large icons"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nDelete\tDEL"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy\tCtrl+C"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut\tCtrl+X"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste\tCtrl+P"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All\tCtrl+A"
+    ID_EDIT_UNDO            "Undo the last action\nUndo\tCtrl+Z"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TO_TEXTLABELS       "Show text labels"
+    IDS_TO_TEXTONRIGHT      "Selective text on right"
+    IDS_TO_NOTEXTLABELS     "No text labels"
+    IDS_IO_SMALLICONS       "Small icons"
+    IDS_IO_LARGEICONS       "Large icons"
+    IDS_CUSTOMIZE           "&Customize..."
+    IDS_SEPARATOR           "Separator"
+    IDS_TEXT_OPTIONS        "&Text Options"
+    IDS_ICON_OPTIONS        "&Icon Options"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WRITE_FILE_ERR      "'%s'\r\nCannot save to the file.\r\n\r\nReason: %s"
+    IDS_READ_FILE_ERR       "'%s'\r\nCannot read the file.\r\n\r\nReason: %s"
+    IDS_PROGRESS_ABORT      "Are you sure you want to abort process?"
+    IDS_PROGRESS_TITLE      "Process progress..."
+    IDS_PROGRESS_PERCENTAGE "%d"
+    IDS_PROGRESS_TIMER      "%dh:%dm:%ds"
+    IDS_RTF_SEGMENT         "{%s}"
+    IDS_RTF_MAIN            "\\rtf {\\fonttbl}"
+    IDS_RTF_COLOR_TABLE     "{\\colortbl ;\\red0\\green0\\blue0;\\red0\\green0\\blue255;}"
+    IDS_ASK_REWRITE_FILE    "'%s'\r\nThe file is already exist.\r\nDo you want to replace it?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_OK                  "OK"
+    IDS_CANCEL              "Cancel"
+    IDS_IGNORE              "&Ignore"
+    IDS_RETRY               "&Retry"
+    IDS_ABORT               "&Abort"
+    IDS_HELP                "&Help"
+    IDS_YES                 "&Yes"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NO                  "&No"
+    IDS_CONTINUE            "&Continue"
+    IDS_DONOTASKAGAIN       "Apply to all"
+    IDS_DONOTTELLAGAIN      "Don't tell me again"
+    IDS_DONOTSHOWAGAIN      "Don't show again"
+    IDS_YESTOALL            "Y&es to All"
+    IDS_NOTOALL             "N&o to All"
+    IDS_TRYAGAIN            "&Try Again"
+    IDS_REPORT              "Re&port"
+    IDS_IGNOREALL           "I&gnore All"
+    IDS_SKIP                "&Skip"
+    IDS_SKIPALL             "S&kip All"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MFCaids.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
