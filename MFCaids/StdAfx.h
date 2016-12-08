@@ -10,27 +10,26 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-
 // Insert your headers here
-#define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
+#define WIN32_LEAN_AND_MEAN // Exclude rarely-used stuff from Windows headers
 
-#define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
+#define VC_EXTRALEAN // Exclude rarely-used stuff from Windows headers
 
-#include <afxwin.h>         // MFC core and standard components
-#include <afxext.h>         // MFC extensions
+#include <afxwin.h> // MFC core and standard components
+#include <afxext.h> // MFC extensions
 
 #ifndef _AFX_NO_OLE_SUPPORT
-#include <afxole.h>         // MFC OLE classes
-#include <afxodlgs.h>       // MFC OLE dialog classes
-#include <afxdisp.h>        // MFC Automation classes
-#endif // _AFX_NO_OLE_SUPPORT
+#include <afxole.h>   // MFC OLE classes
+#include <afxodlgs.h> // MFC OLE dialog classes
+#include <afxdisp.h>  // MFC Automation classes
+#endif                // _AFX_NO_OLE_SUPPORT
 
-#include <afxdtctl.h>		// MFC support for Internet Explorer 4 Common Controls
+#include <afxdtctl.h> // MFC support for Internet Explorer 4 Common Controls
 #include <afxtempl.h>
 #include <Winsock.h>
 
 #ifndef _AFX_NO_AFXCMN_SUPPORT
-#include <afxcmn.h>			// MFC support for Windows Common Controls
+#include <afxcmn.h> // MFC support for Windows Common Controls
 
 #include <afxpriv.h>
 

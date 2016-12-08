@@ -27,8 +27,8 @@ static char THIS_FILE[] = __FILE__;
 IMPLEMENT_DYNCREATE(CC3fDoc, CDocument)
 
 BEGIN_MESSAGE_MAP(CC3fDoc, CDocument)
-	//{{AFX_MSG_MAP(CC3fDoc)
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CC3fDoc)
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -42,64 +42,65 @@ CC3fDoc::~CC3fDoc()
 {
 }
 
-BOOL CC3fDoc::OnNewDocument()
+BOOL
+CC3fDoc::OnNewDocument()
 {
-	BOOL bRes = FALSE;
-	
-	if (MAIN_APP->IsStartup() && MAIN_APP->IsLoadLastDoc())
-	{
-		// get the tapget path of the last opend document
-		CString sPath = AfxGetApp()->GetProfileString(REG_MRU_C3F, uFormatString(IDS_REG_FILE_ENTRY, 1), "");
-		
-		if (uIsFileExist(sPath))
-		{
-			if (OnOpenDocument(sPath))
-			{
-				bRes = TRUE;
-				SetPathName(sPath, FALSE);
-			}
-		}
-	}
-	
-	if (!bRes)
-	{
-		return FALSE;
-	}
+    BOOL bRes = FALSE;
 
-	SetModifiedFlag(FALSE);
-	return TRUE;
+    if (MAIN_APP->IsStartup() && MAIN_APP->IsLoadLastDoc()) {
+        // get the tapget path of the last opend document
+        CString sPath = AfxGetApp()->GetProfileString(REG_MRU_C3F, uFormatString(IDS_REG_FILE_ENTRY, 1), "");
+
+        if (uIsFileExist(sPath)) {
+            if (OnOpenDocument(sPath)) {
+                bRes = TRUE;
+                SetPathName(sPath, FALSE);
+            }
+        }
+    }
+
+    if (!bRes) {
+        return FALSE;
+    }
+
+    SetModifiedFlag(FALSE);
+    return TRUE;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // CC3fDoc diagnostics
 
 #ifdef _DEBUG
-void CC3fDoc::AssertValid() const
+void
+CC3fDoc::AssertValid() const
 {
-	CDocument::AssertValid();
+    CDocument::AssertValid();
 }
 
-void CC3fDoc::Dump(CDumpContext& dc) const
+void
+CC3fDoc::Dump(CDumpContext& dc) const
 {
-	CDocument::Dump(dc);
+    CDocument::Dump(dc);
 }
 #endif //_DEBUG
 
 /////////////////////////////////////////////////////////////////////////////
 // CC3fDoc commands
 
-BOOL CC3fDoc::OnOpenDocument(LPCTSTR lpszPathName) 
+BOOL
+CC3fDoc::OnOpenDocument(LPCTSTR lpszPathName)
 {
-	CWaitCursor wait;
+    CWaitCursor wait;
 
-	if (!CDocument::OnOpenDocument(lpszPathName))
-		return FALSE;
+    if (!CDocument::OnOpenDocument(lpszPathName))
+        return FALSE;
 
-	return OpenStoryboard(lpszPathName, m_c3f);
+    return OpenStoryboard(lpszPathName, m_c3f);
 }
 
-BOOL CC3fDoc::OnSaveDocument(LPCTSTR lpszPathName) 
+BOOL
+CC3fDoc::OnSaveDocument(LPCTSTR lpszPathName)
 {
-	return TRUE;
-//	return CDocument::OnSaveDocument(lpszPathName);
+    return TRUE;
+    //	return CDocument::OnSaveDocument(lpszPathName);
 }

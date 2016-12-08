@@ -6,10 +6,10 @@
 // Copyright (c) 1998.
 //
 // This code may be used in compiled form in any way you desire. This
-// file may be redistributed unmodified by any means PROVIDING it is 
-// not sold for profit without the authors written consent, and 
-// providing that this notice and the authors name is included. If 
-// the source code in this file is used in any commercial application 
+// file may be redistributed unmodified by any means PROVIDING it is
+// not sold for profit without the authors written consent, and
+// providing that this notice and the authors name is included. If
+// the source code in this file is used in any commercial application
 // then an email to me would be nice.
 //
 // This file is provided "as is" with no expressed or implied warranty.
@@ -18,10 +18,10 @@
 // makes you car start emitting strange noises when you start it up.
 //
 // Expect bugs.
-// 
-// Please use and enjoy. Please let me know of any bugs/mods/improvements 
+//
+// Please use and enjoy. Please let me know of any bugs/mods/improvements
 // that you have found/implemented and I will fix/incorporate them into this
-// file. 
+// file.
 //
 // Version 1.1  Chris Maunder (chrismaunder@codeguru.com)
 //
@@ -29,7 +29,7 @@
 //              Added code to enable progress bar to appear in any pane
 //              of the status bar.
 //
-//              Chris Maunder 17 Aug 1998 
+//              Chris Maunder 17 Aug 1998
 //              Fixed Pane text restoration, and general cleanup.
 //
 /////////////////////////////////////////////////////////////////////////////
@@ -51,54 +51,51 @@ extern BOOL MFCAIDS_API PeekAndPump();
 // Copyright (c) Chris Maunder, 1997
 // Please feel free to use and distribute.
 
-class MFCAIDS_API CStatusProgressX: public CProgressCtrl
+class MFCAIDS_API CStatusProgressX : public CProgressCtrl
 // Creates a ProgressBar in the status bar
 {
-public:
-	CStatusProgressX();
-	CStatusProgressX(LPCTSTR strMessage, int nSize=100, int MaxValue=100, 
-                 BOOL bSmooth=FALSE, int nPane=0);
-	~CStatusProgressX();
-	BOOL Create(LPCTSTR strMessage, int nSize=100, int MaxValue=100, 
-                BOOL bSmooth=FALSE, int nPane=0);
+  public:
+    CStatusProgressX();
+    CStatusProgressX(LPCTSTR strMessage, int nSize = 100, int MaxValue = 100, BOOL bSmooth = FALSE, int nPane = 0);
+    ~CStatusProgressX();
+    BOOL Create(LPCTSTR strMessage, int nSize = 100, int MaxValue = 100, BOOL bSmooth = FALSE, int nPane = 0);
 
-	DECLARE_DYNCREATE(CStatusProgressX)
+    DECLARE_DYNCREATE(CStatusProgressX)
 
-// operations
-public:
-	BOOL SetRange(int nLower, int nUpper, int nStep = 1);
-	BOOL SetText(LPCTSTR strMessage);
-	BOOL SetSize(int nSize);
-	COLORREF SetBarColour(COLORREF clrBar);
-	COLORREF SetBkColour(COLORREF clrBk);
-	int  SetPos(int nPos);
-	int  OffsetPos(int nPos);
-	int  SetStep(int nStep);
-	int  StepIt();
-	void Clear();
+    // operations
+  public:
+    BOOL SetRange(int nLower, int nUpper, int nStep = 1);
+    BOOL SetText(LPCTSTR strMessage);
+    BOOL SetSize(int nSize);
+    COLORREF SetBarColour(COLORREF clrBar);
+    COLORREF SetBkColour(COLORREF clrBk);
+    int SetPos(int nPos);
+    int OffsetPos(int nPos);
+    int SetStep(int nStep);
+    int StepIt();
+    void Clear();
 
-// Overrides
-	//{{AFX_VIRTUAL(CStatusProgressX)
-	//}}AFX_VIRTUAL
+    // Overrides
+    //{{AFX_VIRTUAL(CStatusProgressX)
+    //}}AFX_VIRTUAL
 
-// implementation
-protected:
-	int		m_nSize;		// Percentage size of control
-	int		m_nPane;		// ID of status bar pane progress bar is to appear in
-	CString	m_strMessage;	// Message to display to left of control
-    CString m_strPrevText;  // Previous text in status bar
-	CRect	m_Rect;			// Dimensions of the whole thing
+    // implementation
+  protected:
+    int m_nSize;           // Percentage size of control
+    int m_nPane;           // ID of status bar pane progress bar is to appear in
+    CString m_strMessage;  // Message to display to left of control
+    CString m_strPrevText; // Previous text in status bar
+    CRect m_Rect;          // Dimensions of the whole thing
 
-	CStatusBar *GetStatusBar();
-	BOOL Resize();
+    CStatusBar* GetStatusBar();
+    BOOL Resize();
 
-// Generated message map functions
-protected:
-	//{{AFX_MSG(CStatusProgressX)
-	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
-
+    // Generated message map functions
+  protected:
+    //{{AFX_MSG(CStatusProgressX)
+    afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

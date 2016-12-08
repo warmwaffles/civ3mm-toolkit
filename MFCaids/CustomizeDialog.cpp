@@ -15,7 +15,7 @@
 /////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2001 by Nikolay Denisov. All rights reserved.
 //
-// This code is free for personal and commercial use, providing this 
+// This code is free for personal and commercial use, providing this
 // notice remains intact in the source files and all eventual changes are
 // clearly marked with comments.
 //
@@ -58,8 +58,7 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // COptionsDialog dialog
 
-COptionsDialog::COptionsDialog(ETextOptions eTextOptions,
-                                EIconOptions eIconOptions)
+COptionsDialog::COptionsDialog(ETextOptions eTextOptions, EIconOptions eIconOptions)
 {
     //{{AFX_DATA_INIT(COptionsDialog)
     //}}AFX_DATA_INIT
@@ -68,8 +67,8 @@ COptionsDialog::COptionsDialog(ETextOptions eTextOptions,
     m_eIconOptions = eIconOptions;
 }
 
-
-void COptionsDialog::DoDataExchange(CDataExchange* pDX)
+void
+COptionsDialog::DoDataExchange(CDataExchange* pDX)
 {
     CDialog::DoDataExchange(pDX);
     //{{AFX_DATA_MAP(COptionsDialog)
@@ -78,21 +77,21 @@ void COptionsDialog::DoDataExchange(CDataExchange* pDX)
     //}}AFX_DATA_MAP
 }
 
-BOOL COptionsDialog::Create(UINT nIDTemplate, CWnd* pParentWnd)
+BOOL
+COptionsDialog::Create(UINT nIDTemplate, CWnd* pParentWnd)
 {
-//	AFX_MANAGE_STATE(AfxGetStaticModuleState());
-	return CDialog::Create(nIDTemplate, pParentWnd);
+    //	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+    return CDialog::Create(nIDTemplate, pParentWnd);
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // Operations
 
-BOOL COptionsDialog::SelectTextOption(ETextOptions eTextOptions)
+BOOL
+COptionsDialog::SelectTextOption(ETextOptions eTextOptions)
 {
-    for (int nIndex = 0; nIndex < m_cbTextOptions.GetCount(); nIndex++)
-    {
-        if (eTextOptions == (ETextOptions)m_cbTextOptions.GetItemData(nIndex))
-        {
+    for (int nIndex = 0; nIndex < m_cbTextOptions.GetCount(); nIndex++) {
+        if (eTextOptions == (ETextOptions)m_cbTextOptions.GetItemData(nIndex)) {
             m_cbTextOptions.SetCurSel(nIndex);
             m_eTextOptions = eTextOptions;
             return TRUE;
@@ -102,12 +101,11 @@ BOOL COptionsDialog::SelectTextOption(ETextOptions eTextOptions)
     return FALSE;
 }
 
-BOOL COptionsDialog::SelectIconOption(EIconOptions eIconOptions)
+BOOL
+COptionsDialog::SelectIconOption(EIconOptions eIconOptions)
 {
-	for (int nIndex = 0; nIndex < m_cbIconOptions.GetCount(); nIndex++)
-    {
-		if (eIconOptions == (EIconOptions)m_cbIconOptions.GetItemData(nIndex))
-        {
+    for (int nIndex = 0; nIndex < m_cbIconOptions.GetCount(); nIndex++) {
+        if (eIconOptions == (EIconOptions)m_cbIconOptions.GetItemData(nIndex)) {
             m_cbIconOptions.SetCurSel(nIndex);
             m_eIconOptions = eIconOptions;
             return TRUE;
@@ -120,7 +118,8 @@ BOOL COptionsDialog::SelectIconOption(EIconOptions eIconOptions)
 /////////////////////////////////////////////////////////////////////////////
 // Implementation
 
-CCustomizeDialog* COptionsDialog::GetCustomizeDialog() const
+CCustomizeDialog*
+COptionsDialog::GetCustomizeDialog() const
 {
     return STATIC_DOWNCAST(CCustomizeDialog, GetParent());
 }
@@ -129,21 +128,21 @@ CCustomizeDialog* COptionsDialog::GetCustomizeDialog() const
 // COptionsDialog message handlers
 
 BEGIN_MESSAGE_MAP(COptionsDialog, CDialog)
-    //{{AFX_MSG_MAP(COptionsDialog)
-    ON_CBN_SELENDOK(IDC_CB_TEXTOPTIONS, OnTextOptions)
-    ON_CBN_SELENDOK(IDC_CB_ICONOPTIONS, OnIconOptions)
-    //}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(COptionsDialog)
+ON_CBN_SELENDOK(IDC_CB_TEXTOPTIONS, OnTextOptions)
+ON_CBN_SELENDOK(IDC_CB_ICONOPTIONS, OnIconOptions)
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
-
-BOOL COptionsDialog::OnInitDialog() 
+BOOL
+COptionsDialog::OnInitDialog()
 {
     CDialog::OnInitDialog();
 
     CCustomizeDialog* pCustomizeDialog = GetCustomizeDialog();
 
-    pCustomizeDialog->AddTextOption(m_cbTextOptions, toTextLabels,   IDS_TO_TEXTLABELS);
-    pCustomizeDialog->AddTextOption(m_cbTextOptions, toTextOnRight,  IDS_TO_TEXTONRIGHT);
+    pCustomizeDialog->AddTextOption(m_cbTextOptions, toTextLabels, IDS_TO_TEXTLABELS);
+    pCustomizeDialog->AddTextOption(m_cbTextOptions, toTextOnRight, IDS_TO_TEXTONRIGHT);
     pCustomizeDialog->AddTextOption(m_cbTextOptions, toNoTextLabels, IDS_TO_NOTEXTLABELS);
     VERIFY(SelectTextOption(m_eTextOptions));
 
@@ -154,7 +153,8 @@ BOOL COptionsDialog::OnInitDialog()
     return TRUE;
 }
 
-void COptionsDialog::OnTextOptions()
+void
+COptionsDialog::OnTextOptions()
 {
     int nSel = m_cbTextOptions.GetCurSel();
     ASSERT(nSel != CB_ERR);
@@ -162,7 +162,8 @@ void COptionsDialog::OnTextOptions()
     GetCustomizeDialog()->SetTextOptions(m_eTextOptions, FALSE);
 }
 
-void COptionsDialog::OnIconOptions()
+void
+COptionsDialog::OnIconOptions()
 {
     int nSel = m_cbIconOptions.GetCurSel();
     ASSERT(nSel != CB_ERR);
@@ -173,8 +174,8 @@ void COptionsDialog::OnIconOptions()
 /////////////////////////////////////////////////////////////////////////////
 // CCustomizeDialog dialog
 
-#define IDC_LB_AVAILABLE    0x00C9  // determined with Spy++
-#define IDC_LB_CURRENT      0x00CB
+#define IDC_LB_AVAILABLE 0x00C9 // determined with Spy++
+#define IDC_LB_CURRENT 0x00CB
 
 static const int cxPadding = 3;
 static const int cyPadding = 3;
@@ -182,7 +183,7 @@ static const int cyPadding = 3;
 IMPLEMENT_DYNAMIC(CCustomizeDialog, CWnd)
 
 CCustomizeDialog::CCustomizeDialog(CToolBarX* pToolBar)
-    : m_dlgOptions(pToolBar->m_eTextOptions, pToolBar->m_eIconOptions)
+  : m_dlgOptions(pToolBar->m_eTextOptions, pToolBar->m_eIconOptions)
 {
     m_pToolBar = pToolBar;
 }
@@ -190,7 +191,8 @@ CCustomizeDialog::CCustomizeDialog(CToolBarX* pToolBar)
 /////////////////////////////////////////////////////////////////////////////
 // Operations
 
-void CCustomizeDialog::SetTextOptions(ETextOptions eTextOptions, BOOL bInDialog)
+void
+CCustomizeDialog::SetTextOptions(ETextOptions eTextOptions, BOOL bInDialog)
 {
     if (bInDialog)
         VERIFY(m_dlgOptions.SelectTextOption(eTextOptions));
@@ -198,7 +200,8 @@ void CCustomizeDialog::SetTextOptions(ETextOptions eTextOptions, BOOL bInDialog)
         m_pToolBar->SetTextOptions(eTextOptions);
 }
 
-void CCustomizeDialog::SetIconOptions(EIconOptions eIconOptions, BOOL bInDialog)
+void
+CCustomizeDialog::SetIconOptions(EIconOptions eIconOptions, BOOL bInDialog)
 {
     if (bInDialog)
         VERIFY(m_dlgOptions.SelectIconOption(eIconOptions));
@@ -208,24 +211,22 @@ void CCustomizeDialog::SetIconOptions(EIconOptions eIconOptions, BOOL bInDialog)
     int nHeight = GetButtonSize().cy;
 
     CWnd* pWnd = GetDlgItem(IDC_LB_AVAILABLE);
-    if (pWnd->GetSafeHwnd())
-    {
+    if (pWnd->GetSafeHwnd()) {
         pWnd->SendMessage(LB_SETITEMHEIGHT, 0, nHeight);
         pWnd->Invalidate();
 
-//		CRect r;
-//		pWnd->GetClientRect(r);
-//		pWnd->MapWindowPoints(this, r);
-//		InvalidateRect(r);
-//		pWnd->GetClientRect(&r);
-//		ScreenToClient(&r);
-//		InvalidateRect(r);
-//		pWnd->SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOSIZE | SWP_NOMOVE | SWP_DRAWFRAME);
+        //		CRect r;
+        //		pWnd->GetClientRect(r);
+        //		pWnd->MapWindowPoints(this, r);
+        //		InvalidateRect(r);
+        //		pWnd->GetClientRect(&r);
+        //		ScreenToClient(&r);
+        //		InvalidateRect(r);
+        //		pWnd->SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOSIZE | SWP_NOMOVE | SWP_DRAWFRAME);
     }
 
     pWnd = GetDlgItem(IDC_LB_CURRENT);
-    if (pWnd->GetSafeHwnd())
-    {
+    if (pWnd->GetSafeHwnd()) {
         pWnd->SendMessage(LB_SETITEMHEIGHT, 0, nHeight);
         pWnd->Invalidate();
     }
@@ -234,7 +235,8 @@ void CCustomizeDialog::SetIconOptions(EIconOptions eIconOptions, BOOL bInDialog)
 /////////////////////////////////////////////////////////////////////////////
 // Overrides
 
-void CCustomizeDialog::PostNcDestroy()
+void
+CCustomizeDialog::PostNcDestroy()
 {
     delete this;
 }
@@ -242,13 +244,12 @@ void CCustomizeDialog::PostNcDestroy()
 /////////////////////////////////////////////////////////////////////////////
 // Implementation
 
-void CCustomizeDialog::AddTextOption(CComboBox& cbTextOptions, ETextOptions eTextOptions,
-                                      UINT nStringID)
+void
+CCustomizeDialog::AddTextOption(CComboBox& cbTextOptions, ETextOptions eTextOptions, UINT nStringID)
 {
-    if (m_pToolBar->IsTextOptionAvailable(eTextOptions))
-    {
-		AFX_MANAGE_STATE(AfxGetStaticModuleState());
-		CString strText;
+    if (m_pToolBar->IsTextOptionAvailable(eTextOptions)) {
+        AFX_MANAGE_STATE(AfxGetStaticModuleState());
+        CString strText;
         VERIFY(strText.LoadString(nStringID));
         int nItem = cbTextOptions.AddString(strText);
         ASSERT(nItem >= 0);
@@ -256,13 +257,12 @@ void CCustomizeDialog::AddTextOption(CComboBox& cbTextOptions, ETextOptions eTex
     }
 }
 
-void CCustomizeDialog::AddIconOption(CComboBox& cbIconOptions, EIconOptions eIconOptions,
-                                      UINT nStringID)
+void
+CCustomizeDialog::AddIconOption(CComboBox& cbIconOptions, EIconOptions eIconOptions, UINT nStringID)
 {
-    if (m_pToolBar->IsIconOptionAvailable(eIconOptions))
-    {
-		AFX_MANAGE_STATE(AfxGetStaticModuleState());
-		CString strText;
+    if (m_pToolBar->IsIconOptionAvailable(eIconOptions)) {
+        AFX_MANAGE_STATE(AfxGetStaticModuleState());
+        CString strText;
         VERIFY(strText.LoadString(nStringID));
         int nItem = cbIconOptions.AddString(strText);
         ASSERT(nItem >= 0);
@@ -270,10 +270,10 @@ void CCustomizeDialog::AddIconOption(CComboBox& cbIconOptions, EIconOptions eIco
     }
 }
 
-CSize CCustomizeDialog::GetButtonSize() const
+CSize
+CCustomizeDialog::GetButtonSize() const
 {
-    CSize szImage = (m_pToolBar->GetIconOptions() == ioSmallIcons) ?
-        m_szImageSmall : m_szImageLarge;
+    CSize szImage = (m_pToolBar->GetIconOptions() == ioSmallIcons) ? m_szImageSmall : m_szImageLarge;
     return szImage + CSize(cxPadding * 2, cyPadding * 2);
 }
 
@@ -281,16 +281,16 @@ CSize CCustomizeDialog::GetButtonSize() const
 // CCustomizeDialog message handlers
 
 BEGIN_MESSAGE_MAP(CCustomizeDialog, CWnd)
-    //{{AFX_MSG_MAP(CCustomizeDialog)
-    ON_WM_DRAWITEM()
-    ON_WM_MEASUREITEM()
-    //}}AFX_MSG_MAP
-    ON_MESSAGE(WM_INITDIALOG, OnInitDialog)
+//{{AFX_MSG_MAP(CCustomizeDialog)
+ON_WM_DRAWITEM()
+ON_WM_MEASUREITEM()
+//}}AFX_MSG_MAP
+ON_MESSAGE(WM_INITDIALOG, OnInitDialog)
 END_MESSAGE_MAP()
 
 LRESULT CCustomizeDialog::OnInitDialog(WPARAM /*wParam*/, LPARAM /*lParam*/)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+    AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
     CRect rcClient;
     GetClientRect(rcClient);
@@ -299,53 +299,49 @@ LRESULT CCustomizeDialog::OnInitDialog(WPARAM /*wParam*/, LPARAM /*lParam*/)
 
     // Create Options dialog as a child window of Customize Toolbar dialog
     if (!m_dlgOptions.Create(IDD_DLG_CUSTOMIZE, this))
-		return Default();
+        return Default();
 
-	ModifyStyleEx(WS_EX_CONTEXTHELP, 0);
+    ModifyStyleEx(WS_EX_CONTEXTHELP, 0);
 
     CRect rcDlg;
     m_dlgOptions.GetWindowRect(rcDlg);
 
     // Place Options dialog at the bottom
-    VERIFY(m_dlgOptions.SetWindowPos(0, 0, rcClient.Height(), rcClient.Width(), rcDlg.Height(),
-        SWP_NOZORDER | SWP_SHOWWINDOW));
+    VERIFY(m_dlgOptions.SetWindowPos(0, 0, rcClient.Height(), rcClient.Width(), rcDlg.Height(), SWP_NOZORDER | SWP_SHOWWINDOW));
 
     // Increase height of Customize Toolbar dialog accordingly
     rcWindow.bottom += rcDlg.Height();
-    VERIFY(SetWindowPos(0, 0, 0, rcWindow.Width(), rcWindow.Height(),
-        SWP_NOZORDER | SWP_NOMOVE));
+    VERIFY(SetWindowPos(0, 0, 0, rcWindow.Width(), rcWindow.Height(), SWP_NOZORDER | SWP_NOMOVE));
 
-	//Set Title
-	ASSERT(m_pToolBar);
-	CString strName, strOrgName;
-	m_pToolBar->GetWindowText(strName);
+    //Set Title
+    ASSERT(m_pToolBar);
+    CString strName, strOrgName;
+    m_pToolBar->GetWindowText(strName);
 
-	if (!strName.IsEmpty())
-	{
-		GetWindowText(strOrgName);
-		SetWindowText(strOrgName + _T(" - ") + strName);
-	}
+    if (!strName.IsEmpty()) {
+        GetWindowText(strOrgName);
+        SetWindowText(strOrgName + _T(" - ") + strName);
+    }
 
     return Default();
 }
 
-void CCustomizeDialog::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
+void
+CCustomizeDialog::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
 {
-    if (lpDrawItemStruct->CtlType == ODT_LISTBOX)
-    {
-        if ((nIDCtl == IDC_LB_AVAILABLE) || (nIDCtl == IDC_LB_CURRENT))
-        {
-            CDC* pDC = CDC::FromHandle(lpDrawItemStruct->hDC);
+    if (lpDrawItemStruct->CtlType == ODT_LISTBOX) {
+        if ((nIDCtl == IDC_LB_AVAILABLE) || (nIDCtl == IDC_LB_CURRENT)) {
+            CDC* pDC     = CDC::FromHandle(lpDrawItemStruct->hDC);
             int nSavedDC = pDC->SaveDC();
             ASSERT(nSavedDC);
 
             // Get all needed info about the item being drawn
             CRect rcItem(&lpDrawItemStruct->rcItem);
-            int nItem  = (SHORT)HIWORD(lpDrawItemStruct->itemData);
-            int nImage = (SHORT)LOWORD(lpDrawItemStruct->itemData);
-            int nIndex = (int)lpDrawItemStruct->itemID;
+            int nItem       = (SHORT)HIWORD(lpDrawItemStruct->itemData);
+            int nImage      = (SHORT)LOWORD(lpDrawItemStruct->itemData);
+            int nIndex      = (int)lpDrawItemStruct->itemID;
             BOOL bSelected  = (lpDrawItemStruct->itemState & ODS_SELECTED) != 0;
-            BOOL bFocused   = (lpDrawItemStruct->itemState & ODS_FOCUS   ) != 0;
+            BOOL bFocused   = (lpDrawItemStruct->itemState & ODS_FOCUS) != 0;
             BOOL bSeparator = ((nItem < 0) || (nItem > m_pToolBar->m_arTB.GetUpperBound()));
 
             // Calculate rectangles for image, text and focus frame
@@ -353,14 +349,14 @@ void CCustomizeDialog::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
             CRect rcImage(rcItem);
             rcImage.right = rcImage.left + szButton.cx;
             CRect rcText(rcItem);
-            rcText.left  += szButton.cx + 5;
+            rcText.left += szButton.cx + 5;
             rcText.right -= 2;
             CRect rcLabel(rcItem);
             rcLabel.left += szButton.cx + 1;
 
             // Cache system colors
             COLORREF clrText     = ::GetSysColor((bFocused && bSelected) ? COLOR_HIGHLIGHTTEXT : COLOR_BTNTEXT);
-			COLORREF clrBack     = ::GetSysColor((bFocused && bSelected) ? COLOR_HIGHLIGHT : COLOR_WINDOW);
+            COLORREF clrBack     = ::GetSysColor((bFocused && bSelected) ? COLOR_HIGHLIGHT : COLOR_WINDOW);
             COLORREF clrGrayText = ::GetSysColor(COLOR_GRAYTEXT);
             COLORREF clrBtnFace  = ::GetSysColor(COLOR_BTNFACE);
             COLORREF clr3dShadow = ::GetSysColor(COLOR_3DSHADOW);
@@ -369,54 +365,45 @@ void CCustomizeDialog::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
             pDC->FillSolidRect(rcItem, clrBack);
 
             // Draw focus rect, if needed
-            if (bSelected)
-            {
-				if (bFocused)
-					pDC->DrawFocusRect(rcItem);
-				else
-				{
-					CBrush brush(::GetSysColor(COLOR_HIGHLIGHT));
-					pDC->FrameRect(rcItem, &brush);
-					VERIFY(brush.DeleteObject());
-				}
+            if (bSelected) {
+                if (bFocused)
+                    pDC->DrawFocusRect(rcItem);
+                else {
+                    CBrush brush(::GetSysColor(COLOR_HIGHLIGHT));
+                    pDC->FrameRect(rcItem, &brush);
+                    VERIFY(brush.DeleteObject());
+                }
             }
 
             // Get item text to be drawn
             CString strText;
-            if (!bSeparator)
-            {
+            if (!bSeparator) {
                 UINT nID = m_pToolBar->m_arTB[nItem].tbinfo.idCommand;
                 m_pToolBar->GetButtonText(nID, strText);
-            }
-            else
-				strText = uLocalLoadString(IDS_SEPARATOR);
+            } else
+                strText = uLocalLoadString(IDS_SEPARATOR);
 
             // Prepare to draw item text
             int nFormat = DT_SINGLELINE | DT_LEFT | DT_VCENTER | DT_END_ELLIPSIS;
             pDC->SetBkMode(TRANSPARENT);
             pDC->SetTextColor(clrText);
 
-            if (!bSeparator)
-            {
+            if (!bSeparator) {
                 // Draw item image, if any
-                if (nImage >= 0)
-                {
-                    CToolBarCtrl& tbCtrl = m_pToolBar->GetToolBarCtrl();
+                if (nImage >= 0) {
+                    CToolBarCtrl& tbCtrl   = m_pToolBar->GetToolBarCtrl();
                     CImageList* pImageList = tbCtrl.GetHotImageList();
 
                     if (!bSelected || !pImageList)
                         pImageList = tbCtrl.GetImageList();
-					
-					if (pImageList)
-					{
-						rcImage.DeflateRect(cxPadding, cyPadding);
-						VERIFY(pImageList->Draw(pDC, nImage, rcImage.TopLeft(),
-							ILD_NORMAL | ILD_TRANSPARENT));
-					}
+
+                    if (pImageList) {
+                        rcImage.DeflateRect(cxPadding, cyPadding);
+                        VERIFY(pImageList->Draw(pDC, nImage, rcImage.TopLeft(), ILD_NORMAL | ILD_TRANSPARENT));
+                    }
                 }
 
-                if (m_pToolBar->m_arTB[nItem].tbinfo.fsStyle & TBSTYLE_DROPDOWN)
-                {
+                if (m_pToolBar->m_arTB[nItem].tbinfo.fsStyle & TBSTYLE_DROPDOWN) {
                     // This button is drop-down button.  To indicate this simple fact
                     // we draw an arrow on right like one that submenu items have.
 
@@ -436,65 +423,56 @@ void CCustomizeDialog::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
                     CBitmap* pOldBitmap = dc.SelectObject(&bmpArrow);
                     CRect rc(0, 0, rcArrow.Width(), rcArrow.Height());
                     VERIFY(dc.DrawFrameControl(rc, DFC_MENU, DFCS_MENUARROW));
-                    VERIFY(pDC->BitBlt(rcArrow.left, rcArrow.top, rcArrow.Width(), rcArrow.Height(),
-                        &dc, 0, 0, ROP_PSDPxax));
+                    VERIFY(pDC->BitBlt(rcArrow.left, rcArrow.top, rcArrow.Width(), rcArrow.Height(), &dc, 0, 0, ROP_PSDPxax));
 
                     dc.SelectObject(pOldBitmap);
                     VERIFY(bmpArrow.DeleteObject());
 
                     pDC->SelectObject(pOldBrush);
                     VERIFY(brush.DeleteObject());
-                }//if (m_pToolBar->m_arTB[nItem].tbinfo.fsStyle & TBSTYLE_DROPDOWN)
-            }//if (!bSeparator)
-            else
-            {
-                if ((nIDCtl == IDC_LB_CURRENT) &&
-                     (nIndex == SendDlgItemMessage(nIDCtl, LB_GETCOUNT) - 1))
-                {
+                } //if (m_pToolBar->m_arTB[nItem].tbinfo.fsStyle & TBSTYLE_DROPDOWN)
+            }     //if (!bSeparator)
+            else {
+                if ((nIDCtl == IDC_LB_CURRENT) && (nIndex == SendDlgItemMessage(nIDCtl, LB_GETCOUNT) - 1)) {
                     // The last item in the list of current buttons is a separator
                     // which cannot be removed (guess what is the purpose of it?).
                     // To indicate this fact we draw it as disabled item.
 
                     if (bSelected)
                         pDC->SetTextColor(clrGrayText);
-                    else
-                    {
+                    else {
                         CRect rcTemp(rcText);
                         rcTemp.OffsetRect(1, 1);
                         pDC->SetTextColor(clr3dHilite);
                         pDC->DrawText(strText, rcTemp, nFormat);
                         pDC->SetTextColor(clr3dShadow);
                     }
-                }
-                else
-                {
+                } else {
                     // Draw the separator bar in the middle
                     rcImage.DeflateRect(cxPadding, cyPadding);
-                    int y = (rcImage.top + rcImage.bottom) / 2;
+                    int y          = (rcImage.top + rcImage.bottom) / 2;
                     rcImage.top    = y - 1;
                     rcImage.bottom = y + 1;
 
                     pDC->Draw3dRect(rcImage, clr3dShadow, clr3dHilite);
                 }
-            }//else: if (!bSeparator)
+            } //else: if (!bSeparator)
 
             pDC->DrawText(strText, rcText, nFormat);
 
             VERIFY(pDC->RestoreDC(nSavedDC));
             return;
-        }//if ((nIDCtl == IDC_LB_AVAILABLE) || (nIDCtl == IDC_LB_CURRENT))
-    }//if (lpDrawItemStruct->CtlType == ODT_LISTBOX)
+        } //if ((nIDCtl == IDC_LB_AVAILABLE) || (nIDCtl == IDC_LB_CURRENT))
+    }     //if (lpDrawItemStruct->CtlType == ODT_LISTBOX)
 
     CWnd::OnDrawItem(nIDCtl, lpDrawItemStruct);
 }
 
-void CCustomizeDialog::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct)
+void
+CCustomizeDialog::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct)
 {
-    if (lpMeasureItemStruct->CtlType == ODT_LISTBOX)
-    {
-        if ((nIDCtl == IDC_LB_AVAILABLE) ||
-             (nIDCtl == IDC_LB_CURRENT))
-        {
+    if (lpMeasureItemStruct->CtlType == ODT_LISTBOX) {
+        if ((nIDCtl == IDC_LB_AVAILABLE) || (nIDCtl == IDC_LB_CURRENT)) {
             lpMeasureItemStruct->itemHeight = GetButtonSize().cy;
             return;
         }
@@ -502,4 +480,3 @@ void CCustomizeDialog::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureIt
 
     CWnd::OnMeasureItem(nIDCtl, lpMeasureItemStruct);
 }
-

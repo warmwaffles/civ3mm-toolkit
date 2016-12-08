@@ -12,15 +12,21 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CListCtrlSfEdit list ctrl
-class CListFlcInfoExt : public CListCtrlX  
+class CListFlcInfoExt : public CListCtrlX
 {
-public:
-	CListFlcInfoExt() {};
-	virtual ~CListFlcInfoExt() {};
-	
-protected:
-	virtual LPCTSTR RegKey() { return REG_SF_INFO_DLG; }
-	virtual BOOL IsEditable(int nRow, int nCol) { return FALSE; }
+  public:
+    CListFlcInfoExt(){};
+    virtual ~CListFlcInfoExt(){};
+
+  protected:
+    virtual LPCTSTR RegKey()
+    {
+        return REG_SF_INFO_DLG;
+    }
+    virtual BOOL IsEditable(int nRow, int nCol)
+    {
+        return FALSE;
+    }
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -28,35 +34,38 @@ protected:
 class CFlcInfoDlg;
 class CFlcInfoExt : public CDialogX
 {
-// Construction
-public:
-	CFlcInfoExt(CWnd* pParent = NULL);   // standard constructor
+    // Construction
+  public:
+    CFlcInfoExt(CWnd* pParent = NULL); // standard constructor
 
-// Dialog Data
-	//{{AFX_DATA(CFlcInfoExt)
-	enum { IDD = IDD_TAB_INFO_EXT };
-	CListFlcInfoExt	m_Table;
-	//}}AFX_DATA
+    // Dialog Data
+    //{{AFX_DATA(CFlcInfoExt)
+    enum
+    {
+        IDD = IDD_TAB_INFO_EXT
+    };
+    CListFlcInfoExt m_Table;
+    //}}AFX_DATA
 
-	CFlcInfoDlg*	m_pParent;
+    CFlcInfoDlg* m_pParent;
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CFlcInfoExt)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CFlcInfoExt)
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
 
-// Implementation
-protected:
-	CImageList m_imgState;
+    // Implementation
+  protected:
+    CImageList m_imgState;
 
-	// Generated message map functions
-	//{{AFX_MSG(CFlcInfoExt)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnDestroy();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+    //{{AFX_MSG(CFlcInfoExt)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnDestroy();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

@@ -16,50 +16,50 @@
 
 class CFileWavDlg : public CFileDialogX
 {
-	DECLARE_DYNAMIC(CFileWavDlg)
+    DECLARE_DYNAMIC(CFileWavDlg)
 
-public:
-	CFileWavDlg(BOOL bOpenFileDialog, // TRUE for FileOpen, FALSE for FileSaveAs
-		LPCTSTR lpszDefExt   = NULL,
-		LPCTSTR lpszFileName = NULL,
-		DWORD dwFlags        = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
-		LPCTSTR lpszFilter   = NULL,
-		CWnd* pParentWnd     = NULL);
+  public:
+    CFileWavDlg(BOOL bOpenFileDialog, // TRUE for FileOpen, FALSE for FileSaveAs
+                LPCTSTR lpszDefExt   = NULL,
+                LPCTSTR lpszFileName = NULL,
+                DWORD dwFlags        = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
+                LPCTSTR lpszFilter   = NULL,
+                CWnd* pParentWnd     = NULL);
 
-// Dialog Data
-	//{{AFX_DATA(CFileWavDlg)
-	CButtonX	m_btnPlay;
-	CButtonX	m_btnStop;
-	CButton		m_btnPreview;
-	CButton		m_btnNonStop;
-	BOOL		m_bPreview;
-	BOOL		m_bNonStop;
-	//}}AFX_DATA
+    // Dialog Data
+    //{{AFX_DATA(CFileWavDlg)
+    CButtonX m_btnPlay;
+    CButtonX m_btnStop;
+    CButton m_btnPreview;
+    CButton m_btnNonStop;
+    BOOL m_bPreview;
+    BOOL m_bNonStop;
+    //}}AFX_DATA
 
-	// Overrides
-	//{{AFX_VIRTUAL(CFileWavDlg)
-protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // Overrides
+    //{{AFX_VIRTUAL(CFileWavDlg)
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
 
-protected:
-	void StopSoundFile();
-	void PlaySoundFile();
-	virtual void OnFolderChange();
-	virtual void OnFileNameChange();
+  protected:
+    void StopSoundFile();
+    void PlaySoundFile();
+    virtual void OnFolderChange();
+    virtual void OnFileNameChange();
 
-	CString m_sFile;
+    CString m_sFile;
 
-	//{{AFX_MSG(CFileWavDlg)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnPlay();
-	afx_msg void OnStop();
-	afx_msg void OnPreview();
-	afx_msg void OnNonStop();
-	afx_msg void OnSize(UINT nType, int cx, int cy);
-	afx_msg void OnDestroy();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    //{{AFX_MSG(CFileWavDlg)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnPlay();
+    afx_msg void OnStop();
+    afx_msg void OnPreview();
+    afx_msg void OnNonStop();
+    afx_msg void OnSize(UINT nType, int cx, int cy);
+    afx_msg void OnDestroy();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

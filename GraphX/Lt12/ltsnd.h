@@ -2,27 +2,28 @@
 #define _LTSND_H_
 
 /* general waveform format structure (information common to all formats) */
-typedef struct capwaveformat_tag {
-    L_UINT16   wFormatTag;        /* format type */
-    L_UINT16   nChannels;         /* number of channels (i.e. mono, stereo...) */
-    L_UINT32   nSamplesPerSec;    /* sample rate */
-    L_UINT32   nAvgBytesPerSec;   /* for buffer estimation */
-    L_UINT16   nBlockAlign;       /* block size of data */
-} CAPWAVEFORMAT, FAR  *LPCAPWAVEFORMAT;
-
+typedef struct capwaveformat_tag
+{
+    L_UINT16 wFormatTag;      /* format type */
+    L_UINT16 nChannels;       /* number of channels (i.e. mono, stereo...) */
+    L_UINT32 nSamplesPerSec;  /* sample rate */
+    L_UINT32 nAvgBytesPerSec; /* for buffer estimation */
+    L_UINT16 nBlockAlign;     /* block size of data */
+} CAPWAVEFORMAT, FAR* LPCAPWAVEFORMAT;
 
 /* waveform format structure for PCM data */
-typedef struct cappcmwaveformat_tag {
-    CAPWAVEFORMAT  wf;
-    L_UINT16       wBitsPerSample;
-} CAPPCMWAVEFORMAT, FAR  *LPCAPPCMWAVEFORMAT;
-
+typedef struct cappcmwaveformat_tag
+{
+    CAPWAVEFORMAT wf;
+    L_UINT16 wBitsPerSample;
+} CAPPCMWAVEFORMAT, FAR* LPCAPPCMWAVEFORMAT;
 
 /* waveform format structure for MS ADPCM */
 
-typedef struct capadpcmcoef_tag {
-        L_INT16   iCoef1;
-        L_INT16   iCoef2;
+typedef struct capadpcmcoef_tag
+{
+    L_INT16 iCoef1;
+    L_INT16 iCoef2;
 } CAPADPCMCOEFSET;
 
 /*
@@ -32,20 +33,20 @@ typedef struct capadpcmcoef_tag {
  *
  */
 #ifdef _MSC_VER
-#pragma warning(disable:4200)
+#pragma warning(disable : 4200)
 #endif
 
-typedef struct capadpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16            wSamplesPerBlock;
-        L_UINT16            wNumCoef;
-        CAPADPCMCOEFSET    aCoef[];
-} CAPADPCMWAVEFORMAT, L_FAR  *LPCAPADPCMWAVEFORMAT;
+typedef struct capadpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+    L_UINT16 wNumCoef;
+    CAPADPCMCOEFSET aCoef[];
+} CAPADPCMWAVEFORMAT, L_FAR* LPCAPADPCMWAVEFORMAT;
 
 #ifdef _MSC_VER
-#pragma warning(default:4200)
+#pragma warning(default : 4200)
 #endif
-
 
 //
 //  Intel's DVI ADPCM structure definitions
@@ -54,10 +55,11 @@ typedef struct capadpcmwaveformat_tag {
 //
 //
 
-typedef struct capdvi_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16            wSamplesPerBlock;
-} CAPDVIADPCMWAVEFORMAT, L_FAR  *LPCAPDVIADPCMWAVEFORMAT;
+typedef struct capdvi_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPDVIADPCMWAVEFORMAT, L_FAR* LPCAPDVIADPCMWAVEFORMAT;
 
 //
 //  IMA endorsed ADPCM structure definitions--note that this is exactly
@@ -67,10 +69,11 @@ typedef struct capdvi_adpcmwaveformat_tag {
 //
 //
 
-typedef struct capima_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wSamplesPerBlock;
-} CAPIMAADPCMWAVEFORMAT, L_FAR  *LPCAPIMAADPCMWAVEFORMAT;
+typedef struct capima_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPIMAADPCMWAVEFORMAT, L_FAR* LPCAPIMAADPCMWAVEFORMAT;
 
 /*
 //VideoLogic's Media Space ADPCM Structure definitions
@@ -78,10 +81,11 @@ typedef struct capima_adpcmwaveformat_tag {
 //
 //
 */
-typedef struct capmediaspace_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-} CAPMEDIASPACEADPCMWAVEFORMAT, L_FAR      *LPCAPMEDIASPACEADPCMWAVEFORMAT;
+typedef struct capmediaspace_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+} CAPMEDIASPACEADPCMWAVEFORMAT, L_FAR* LPCAPMEDIASPACEADPCMWAVEFORMAT;
 
 //
 //  Sierra Semiconductor
@@ -90,10 +94,11 @@ typedef struct capmediaspace_adpcmwaveformat_tag {
 //
 //
 
-typedef struct capsierra_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-} CAPSIERRAADPCMWAVEFORMAT, L_FAR       *LPCAPSIERRAADPCMWAVEFORMAT;
+typedef struct capsierra_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+} CAPSIERRAADPCMWAVEFORMAT, L_FAR* LPCAPSIERRAADPCMWAVEFORMAT;
 
 //
 //  Antex Electronics  structure definitions
@@ -102,11 +107,12 @@ typedef struct capsierra_adpcmwaveformat_tag {
 //
 //
 
-typedef struct capg723_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        cbExtraSize;
-        L_UINT16        nAuxBlockSize;
-} CAPG723_ADPCMWAVEFORMAT, L_FAR  *LPCAPG723_ADPCMWAVEFORMAT;
+typedef struct capg723_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 cbExtraSize;
+    L_UINT16 nAuxBlockSize;
+} CAPG723_ADPCMWAVEFORMAT, L_FAR* LPCAPG723_ADPCMWAVEFORMAT;
 
 //
 //  DSP Solutions (formerly DIGISPEECH) structure definitions
@@ -115,9 +121,10 @@ typedef struct capg723_adpcmwaveformat_tag {
 //
 //
 
-typedef struct capdigistdwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAP_DIGISTDWAVEFORMAT, L_FAR  *LPCAPDIGISTDWAVEFORMAT;
+typedef struct capdigistdwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAP_DIGISTDWAVEFORMAT, L_FAR* LPCAPDIGISTDWAVEFORMAT;
 
 //
 //  DSP Solutions (formerly DIGISPEECH) structure definitions
@@ -126,17 +133,19 @@ typedef struct capdigistdwaveformat_tag {
 //
 //
 
-typedef struct capdigifixwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPDIGIFIXWAVEFORMAT, L_FAR  *LPCAPDIGIFIXWAVEFORMAT;
+typedef struct capdigifixwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPDIGIFIXWAVEFORMAT, L_FAR* LPCAPDIGIFIXWAVEFORMAT;
 
 //
 //   Dialogic Corporation
 // CAP_WAVE_FORMAT_DIALOGIC_OKI_ADPCM   (0x0017)
 //
-typedef struct capcreative_fastspeechformat_tag{
-        WAVEFORMATDATA  ewf;
-}CAPDIALOGICOKIADPCMWAVEFORMAT, L_FAR  *LPCAPDIALOGICOKIADPCMWAVEFORMAT;
+typedef struct capcreative_fastspeechformat_tag
+{
+    WAVEFORMATDATA ewf;
+} CAPDIALOGICOKIADPCMWAVEFORMAT, L_FAR* LPCAPDIALOGICOKIADPCMWAVEFORMAT;
 
 //
 //  Yamaha Compression's ADPCM structure definitions
@@ -145,10 +154,11 @@ typedef struct capcreative_fastspeechformat_tag{
 //
 //
 
-typedef struct capyamaha_adpmcwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        
-} CAPYAMAHA_ADPCMWAVEFORMAT, L_FAR  *LPCAPYAMAHA_ADPCMWAVEFORMAT;
+typedef struct capyamaha_adpmcwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+
+} CAPYAMAHA_ADPCMWAVEFORMAT, L_FAR* LPCAPYAMAHA_ADPCMWAVEFORMAT;
 
 //
 //  Speech Compression's Sonarc structure definitions
@@ -157,10 +167,11 @@ typedef struct capyamaha_adpmcwaveformat_tag {
 //
 //
 
-typedef struct capsonarcwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wCompType;
-} CAPSONARCWAVEFORMAT, L_FAR  *LPCAPSONARCWAVEFORMAT;
+typedef struct capsonarcwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wCompType;
+} CAPSONARCWAVEFORMAT, L_FAR* LPCAPSONARCWAVEFORMAT;
 
 //
 //  DSP Groups's TRUESPEECH structure definitions
@@ -169,12 +180,13 @@ typedef struct capsonarcwaveformat_tag {
 //
 //
 
-typedef struct captruespeechwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-        L_UINT16        nSamplesPerBlock;
-        L_UCHAR         abReserved[28];
-} CAPTRUESPEECHWAVEFORMAT, L_FAR  *LPCAPTRUESPEECHWAVEFORMAT;
+typedef struct captruespeechwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+    L_UINT16 nSamplesPerBlock;
+    L_UCHAR abReserved[28];
+} CAPTRUESPEECHWAVEFORMAT, L_FAR* LPCAPTRUESPEECHWAVEFORMAT;
 
 //
 //  Echo Speech Corp structure definitions
@@ -183,9 +195,10 @@ typedef struct captruespeechwaveformat_tag {
 //
 //
 
-typedef struct capechosc1waveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPECHOSC1WAVEFORMAT, L_FAR  *LPCAPECHOSC1WAVEFORMAT;
+typedef struct capechosc1waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPECHOSC1WAVEFORMAT, L_FAR* LPCAPECHOSC1WAVEFORMAT;
 
 //
 //  Audiofile Inc.structure definitions
@@ -194,9 +207,10 @@ typedef struct capechosc1waveformat_tag {
 //
 //
 
-typedef struct capaudiofile_af36waveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPAUDIOFILE_AF36WAVEFORMAT, L_FAR  *LPCAPAUDIOFILE_AF36WAVEFORMAT;
+typedef struct capaudiofile_af36waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPAUDIOFILE_AF36WAVEFORMAT, L_FAR* LPCAPAUDIOFILE_AF36WAVEFORMAT;
 
 //
 //  Audio Processing Technology structure definitions
@@ -205,9 +219,10 @@ typedef struct capaudiofile_af36waveformat_tag {
 //
 //
 
-typedef struct capaptxwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPAPTXWAVEFORMAT, L_FAR  *LPCAPAPTXWAVEFORMAT;
+typedef struct capaptxwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPAPTXWAVEFORMAT, L_FAR* LPCAPAPTXWAVEFORMAT;
 
 //
 //  Audiofile Inc.structure definitions
@@ -216,9 +231,10 @@ typedef struct capaptxwaveformat_tag {
 //
 //
 
-typedef struct capaudiofile_af10waveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPAUDIOFILE_AF10WAVEFORMAT, L_FAR  *LPCAPAUDIOFILE_AF10WAVEFORMAT;
+typedef struct capaudiofile_af10waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPAUDIOFILE_AF10WAVEFORMAT, L_FAR* LPCAPAUDIOFILE_AF10WAVEFORMAT;
 
 //
 // Dolby's AC-2 structure definition
@@ -227,10 +243,11 @@ typedef struct capaudiofile_af10waveformat_tag {
 //
 //
 
-typedef struct capdolbyac2waveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        nAuxBitsCode;
-} CAPDOLBYAC2WAVEFORMAT, L_FAR*LPCAPDOLBYAC2WAVEFORMAT;
+typedef struct capdolbyac2waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 nAuxBitsCode;
+} CAPDOLBYAC2WAVEFORMAT, L_FAR* LPCAPDOLBYAC2WAVEFORMAT;
 
 //
 // Microsoft structure definition
@@ -239,10 +256,11 @@ typedef struct capdolbyac2waveformat_tag {
 //
 //
 
-typedef struct capgsm610waveformat_tag {
-WAVEFORMATDATA  wfx;
-L_UINT16        wSamplesPerBlock;
-} CAPGSM610WAVEFORMAT, L_FAR     *LPCAPGSM610WAVEFORMAT;
+typedef struct capgsm610waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPGSM610WAVEFORMAT, L_FAR* LPCAPGSM610WAVEFORMAT;
 
 //
 //      Antex Electronics Corp structure definition
@@ -251,10 +269,11 @@ L_UINT16        wSamplesPerBlock;
 //
 //
 
-typedef struct capadpcmewaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wSamplesPerBlock;
-} CAPADPCMEWAVEFORMAT, L_FAR    *LPCAPADPCMEWAVEFORMAT;
+typedef struct capadpcmewaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPADPCMEWAVEFORMAT, L_FAR* LPCAPADPCMEWAVEFORMAT;
 
 //
 //       Control Resources Limited structure definition
@@ -263,10 +282,11 @@ typedef struct capadpcmewaveformat_tag {
 //
 //
 
-typedef struct capcontres_vqlpcwaveformat_tag {
-         WAVEFORMATDATA    wfx;
-         L_UINT16          wSamplesPerBlock;
-} CAPCONTRESVQLPCWAVEFORMAT, L_FAR       *LPCAPCONTRESVQLPCWAVEFORMAT;
+typedef struct capcontres_vqlpcwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPCONTRESVQLPCWAVEFORMAT, L_FAR* LPCAPCONTRESVQLPCWAVEFORMAT;
 
 //
 //
@@ -275,10 +295,11 @@ typedef struct capcontres_vqlpcwaveformat_tag {
 //
 //
 
-typedef struct capdigirealwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wSamplesPerBlock;
-} CAPDIGIREALWAVEFORMAT, L_FAR *LPCAPDIGIREALWAVEFORMAT;
+typedef struct capdigirealwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPDIGIREALWAVEFORMAT, L_FAR* LPCAPDIGIREALWAVEFORMAT;
 
 //
 //  DSP Solutions
@@ -287,10 +308,11 @@ typedef struct capdigirealwaveformat_tag {
 //
 //
 
-typedef struct capdigiadpcmmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wSamplesPerBlock;
-} CAPDIGIADPCMWAVEFORMAT, L_FAR  *LPCAPDIGIADPCMWAVEFORMAT;
+typedef struct capdigiadpcmmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPDIGIADPCMWAVEFORMAT, L_FAR* LPCAPDIGIADPCMWAVEFORMAT;
 
 //
 //       Control Resources Limited structure definition
@@ -299,10 +321,11 @@ typedef struct capdigiadpcmmwaveformat_tag {
 //
 //
 
-typedef struct capcontres_cr10waveformat_tag {
-      WAVEFORMATDATA  wfx;
-      L_UINT16        wSamplesPerBlock;
-} CAPCONTRESCR10WAVEFORMAT, L_FAR        *LPCAPCONTRESCR10WAVEFORMAT;
+typedef struct capcontres_cr10waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPCONTRESCR10WAVEFORMAT, L_FAR* LPCAPCONTRESCR10WAVEFORMAT;
 
 //
 //  Natural Microsystems
@@ -311,10 +334,11 @@ typedef struct capcontres_cr10waveformat_tag {
 //
 //
 
-typedef struct capnms_vbxadpcmmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wSamplesPerBlock;
-} CAPNMS_VBXADPCMWAVEFORMAT, L_FAR  *LPCAPNMS_VBXADPCMWAVEFORMAT;
+typedef struct capnms_vbxadpcmmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wSamplesPerBlock;
+} CAPNMS_VBXADPCMWAVEFORMAT, L_FAR* LPCAPNMS_VBXADPCMWAVEFORMAT;
 
 //
 //  Antex Electronics  structure definitions
@@ -323,10 +347,11 @@ typedef struct capnms_vbxadpcmmwaveformat_tag {
 //
 //
 
-typedef struct capg721_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        nAuxBlockSize;
-} CAPG721_ADPCMWAVEFORMAT, L_FAR  *LPCAPG721_ADPCMWAVEFORMAT;
+typedef struct capg721_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 nAuxBlockSize;
+} CAPG721_ADPCMWAVEFORMAT, L_FAR* LPCAPG721_ADPCMWAVEFORMAT;
 
 //
 //
@@ -338,30 +363,31 @@ typedef struct capg721_adpcmwaveformat_tag {
 //
 //
 
-typedef struct capmpeg1waveformat_tag {
-    WAVEFORMATDATA  wfx;
-    L_UINT16        fwHeadLayer;
-    L_UINT32        dwHeadBitrate;
-    L_UINT16        fwHeadMode;
-    L_UINT16        fwHeadModeExt;
-    L_UINT16        wHeadEmphasis;
-    L_UINT16        fwHeadFlags;
-    L_UINT32        dwPTSLow;
-    L_UINT32        dwPTSHigh;
-} CAPMPEG1WAVEFORMAT, L_FAR            *LPCAPMPEG1WAVEFORMAT;
+typedef struct capmpeg1waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 fwHeadLayer;
+    L_UINT32 dwHeadBitrate;
+    L_UINT16 fwHeadMode;
+    L_UINT16 fwHeadModeExt;
+    L_UINT16 wHeadEmphasis;
+    L_UINT16 fwHeadFlags;
+    L_UINT32 dwPTSLow;
+    L_UINT32 dwPTSHigh;
+} CAPMPEG1WAVEFORMAT, L_FAR* LPCAPMPEG1WAVEFORMAT;
 
-#define CAP_ACM_MPEG_LAYER1             (0x0001)
-#define CAP_ACM_MPEG_LAYER2             (0x0002)
-#define CAP_ACM_MPEG_LAYER3             (0x0004)
-#define CAP_ACM_MPEG_STEREO             (0x0001)
-#define CAP_ACM_MPEG_JOINTSTEREO        (0x0002)
-#define CAP_ACM_MPEG_DUALCHANNEL        (0x0004)
-#define CAP_ACM_MPEG_SINGLECHANNEL      (0x0008)
-#define CAP_ACM_MPEG_PRIVATEBIT         (0x0001)
-#define CAP_ACM_MPEG_COPYRIGHT          (0x0002)
-#define CAP_ACM_MPEG_ORIGINALHOME       (0x0004)
-#define CAP_ACM_MPEG_PROTECTIONBIT      (0x0008)
-#define CAP_ACM_MPEG_ID_MPEG1           (0x0010)
+#define CAP_ACM_MPEG_LAYER1 (0x0001)
+#define CAP_ACM_MPEG_LAYER2 (0x0002)
+#define CAP_ACM_MPEG_LAYER3 (0x0004)
+#define CAP_ACM_MPEG_STEREO (0x0001)
+#define CAP_ACM_MPEG_JOINTSTEREO (0x0002)
+#define CAP_ACM_MPEG_DUALCHANNEL (0x0004)
+#define CAP_ACM_MPEG_SINGLECHANNEL (0x0008)
+#define CAP_ACM_MPEG_PRIVATEBIT (0x0001)
+#define CAP_ACM_MPEG_COPYRIGHT (0x0002)
+#define CAP_ACM_MPEG_ORIGINALHOME (0x0004)
+#define CAP_ACM_MPEG_PROTECTIONBIT (0x0008)
+#define CAP_ACM_MPEG_ID_MPEG1 (0x0010)
 
 //
 //  Creative's ADPCM structure definitions
@@ -370,10 +396,11 @@ typedef struct capmpeg1waveformat_tag {
 //
 //
 
-typedef struct capcreative_adpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-} CAPCREATIVEADPCMWAVEFORMAT, L_FAR  *LPCAPCREATIVEADPCMWAVEFORMAT;
+typedef struct capcreative_adpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+} CAPCREATIVEADPCMWAVEFORMAT, L_FAR* LPCAPCREATIVEADPCMWAVEFORMAT;
 
 //
 //    Creative FASTSPEECH structure definition
@@ -382,10 +409,11 @@ typedef struct capcreative_adpcmwaveformat_tag {
 //
 //
 
-typedef struct capcreative_fastspeech8format_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-} CAPCREATIVEFASTSPEECH8WAVEFORMAT, L_FAR  *LPCAPCREATIVEFASTSPEECH8WAVEFORMAT;
+typedef struct capcreative_fastspeech8format_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+} CAPCREATIVEFASTSPEECH8WAVEFORMAT, L_FAR* LPCAPCREATIVEFASTSPEECH8WAVEFORMAT;
 
 //
 //    Creative FASTSPEECH structure definition
@@ -394,10 +422,11 @@ typedef struct capcreative_fastspeech8format_tag {
 //
 //
 
-typedef struct capcreative_fastspeech10format_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-} CAPCREATIVEFASTSPEECH10WAVEFORMAT, L_FAR  *LPCAPCREATIVEFASTSPEECH10WAVEFORMAT;
+typedef struct capcreative_fastspeech10format_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+} CAPCREATIVEFASTSPEECH10WAVEFORMAT, L_FAR* LPCAPCREATIVEFASTSPEECH10WAVEFORMAT;
 
 //
 //  Fujitsu FM Towns 'SND' structure
@@ -406,10 +435,11 @@ typedef struct capcreative_fastspeech10format_tag {
 //
 //
 
-typedef struct capfmtowns_snd_waveformat_tag {
-        WAVEFORMATDATA  wfx;
-        L_UINT16        wRevision;
-} CAPFMTOWNS_SND_WAVEFORMAT, L_FAR  *LPCAPFMTOWNS_SND_WAVEFORMAT;
+typedef struct capfmtowns_snd_waveformat_tag
+{
+    WAVEFORMATDATA wfx;
+    L_UINT16 wRevision;
+} CAPFMTOWNS_SND_WAVEFORMAT, L_FAR* LPCAPFMTOWNS_SND_WAVEFORMAT;
 
 //
 //  Olivetti structure
@@ -418,9 +448,10 @@ typedef struct capfmtowns_snd_waveformat_tag {
 //
 //
 
-typedef struct capoligsmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPOLIGSMWAVEFORMAT, L_FAR  *LPCAPOLIGSMWAVEFORMAT;
+typedef struct capoligsmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPOLIGSMWAVEFORMAT, L_FAR* LPCAPOLIGSMWAVEFORMAT;
 
 //
 //  Olivetti structure
@@ -429,9 +460,10 @@ typedef struct capoligsmwaveformat_tag {
 //
 //
 
-typedef struct capoliadpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPOLIADPCMWAVEFORMAT, L_FAR  *LPCAPOLIADPCMWAVEFORMAT;
+typedef struct capoliadpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPOLIADPCMWAVEFORMAT, L_FAR* LPCAPOLIADPCMWAVEFORMAT;
 
 //
 //  Olivetti structure
@@ -440,9 +472,10 @@ typedef struct capoliadpcmwaveformat_tag {
 //
 //
 
-typedef struct capolicelpwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPOLICELPWAVEFORMAT, L_FAR  *LPCAPOLICELPWAVEFORMAT;
+typedef struct capolicelpwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPOLICELPWAVEFORMAT, L_FAR* LPCAPOLICELPWAVEFORMAT;
 
 //
 //  Olivetti structure
@@ -451,9 +484,10 @@ typedef struct capolicelpwaveformat_tag {
 //
 //
 
-typedef struct capolisbcwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPOLISBCWAVEFORMAT, L_FAR  *LPCAPOLISBCWAVEFORMAT;
+typedef struct capolisbcwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPOLISBCWAVEFORMAT, L_FAR* LPCAPOLISBCWAVEFORMAT;
 
 //
 //  Olivetti structure
@@ -462,9 +496,10 @@ typedef struct capolisbcwaveformat_tag {
 //
 //
 
-typedef struct capolioprwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPOLIOPRWAVEFORMAT, L_FAR  *LPCAPOLIOPRWAVEFORMAT;
+typedef struct capolioprwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPOLIOPRWAVEFORMAT, L_FAR* LPCAPOLIOPRWAVEFORMAT;
 
 //
 //  Crystal Semiconductor IMA ADPCM format
@@ -473,12 +508,9 @@ typedef struct capolioprwaveformat_tag {
 //
 //
 
-typedef struct capcsimaadpcmwaveformat_tag {
-        WAVEFORMATDATA  wfx;
-} CAPCSIMAADPCMWAVEFORMAT, L_FAR  *LPCAPCSIMAADPCMWAVEFORMAT;
-
-
-
-
+typedef struct capcsimaadpcmwaveformat_tag
+{
+    WAVEFORMATDATA wfx;
+} CAPCSIMAADPCMWAVEFORMAT, L_FAR* LPCAPCSIMAADPCMWAVEFORMAT;
 
 #endif //_LTSND_H_

@@ -15,47 +15,49 @@ class CDlgBar;
 
 class CPanelExtra : public CDialog
 {
-	friend class CAnimationView;
-	
-// Construction
-public:
-	CPanelExtra(CWnd* pParent = NULL);   // standard constructor
+    friend class CAnimationView;
 
-// Dialog Data
-	//{{AFX_DATA(CPanelExtra)
-	enum { IDD = IDD_PANEL_EXTRA };
-	CButtonX		m_btnInfo;
-	CButtonX		m_btnColorTable;
-	//}}AFX_DATA
+    // Construction
+  public:
+    CPanelExtra(CWnd* pParent = NULL); // standard constructor
 
+    // Dialog Data
+    //{{AFX_DATA(CPanelExtra)
+    enum
+    {
+        IDD = IDD_PANEL_EXTRA
+    };
+    CButtonX m_btnInfo;
+    CButtonX m_btnColorTable;
+    //}}AFX_DATA
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CPanelExtra)
-	public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
-	
-public:
-	BOOL IsAttached();
-	void SetView(CAnimationView* pView);
-	void UpdateControlsState();
-	
-	CAnimationView*	m_pView;
-	CDlgBar*		m_pParent;
-		
-// Implementation
-protected:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CPanelExtra)
+  public:
+    virtual BOOL PreTranslateMessage(MSG* pMsg);
 
-	// Generated message map functions
-	//{{AFX_MSG(CPanelExtra)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnInfo();
-	afx_msg void OnColorTable();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
+
+  public:
+    BOOL IsAttached();
+    void SetView(CAnimationView* pView);
+    void UpdateControlsState();
+
+    CAnimationView* m_pView;
+    CDlgBar* m_pParent;
+
+    // Implementation
+  protected:
+    // Generated message map functions
+    //{{AFX_MSG(CPanelExtra)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnInfo();
+    afx_msg void OnColorTable();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

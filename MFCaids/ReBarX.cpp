@@ -55,31 +55,30 @@ int CReBarX::m_nBarNumber = 0;
 
 CReBarX::CReBarX()
 {
-	m_pDropWindow = NULL;
+    m_pDropWindow = NULL;
 
-	++m_nBarNumber; // Increase the Bar number
+    ++m_nBarNumber; // Increase the Bar number
 
-	CWinApp  *pApp = AfxGetApp();
-	ASSERT_VALID(pApp);
-	m_strValueName.Format(_T("ReBarX #%d"), m_nBarNumber);
-	m_strSubKey = _T("Settings");
+    CWinApp* pApp = AfxGetApp();
+    ASSERT_VALID(pApp);
+    m_strValueName.Format(_T("ReBarX #%d"), m_nBarNumber);
+    m_strSubKey = _T("Settings");
 }
 
 CReBarX::~CReBarX()
 {
-	if (m_pDropWindow)
-	{
-		delete m_pDropWindow;
-		m_pDropWindow = NULL;
-	}
+    if (m_pDropWindow) {
+        delete m_pDropWindow;
+        m_pDropWindow = NULL;
+    }
 }
 
 BEGIN_MESSAGE_MAP(CReBarX, CReBar)
-	//{{AFX_MSG_MAP(CReBarX)
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CReBarX)
+//}}AFX_MSG_MAP
 
-	// Reflection message entry for Chevron push
-	ON_NOTIFY_REFLECT(RBN_CHEVRONPUSHED, OnChevronPushed)
+// Reflection message entry for Chevron push
+ON_NOTIFY_REFLECT(RBN_CHEVRONPUSHED, OnChevronPushed)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -87,175 +86,173 @@ END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // This method is to add a band to the Rebar
-// Toolbars are preferred now. The iID has to be unique for the 
+// Toolbars are preferred now. The iID has to be unique for the
 // *toolbar bands* that are added.
 //
-BOOL CReBarX::AddBar(CWnd* pBar, LPCTSTR lpszText, CBitmap* pbmp, DWORD dwStyle)
+BOOL
+CReBarX::AddBar(CWnd* pBar, LPCTSTR lpszText, CBitmap* pbmp, DWORD dwStyle)
 {
-	CWnd *pTBar = FromHandle(pBar->m_hWnd);
-	ASSERT(pTBar);
-	
-	DWORD dwStyleNew = dwStyle;
+    CWnd* pTBar = FromHandle(pBar->m_hWnd);
+    ASSERT(pTBar);
 
-	// Check if the window to be added is from CToolBar
-	// Chevron support is only for the control with toolbar as child window
-	// and proper id is provided
-	if (pTBar->IsKindOf(RUNTIME_CLASS(CToolBar)))
-		dwStyleNew |= RBBS_USECHEVRON;
-	else
-		dwStyleNew &= ~RBBS_USECHEVRON;
+    DWORD dwStyleNew = dwStyle;
 
-	// Add band
-	if (!CReBar::AddBar(pBar, lpszText, pbmp, dwStyleNew))
-		return FALSE;
+    // Check if the window to be added is from CToolBar
+    // Chevron support is only for the control with toolbar as child window
+    // and proper id is provided
+    if (pTBar->IsKindOf(RUNTIME_CLASS(CToolBar)))
+        dwStyleNew |= RBBS_USECHEVRON;
+    else
+        dwStyleNew &= ~RBBS_USECHEVRON;
 
-	UpdateBandInfo(pBar, dwStyleNew);
+    // Add band
+    if (!CReBar::AddBar(pBar, lpszText, pbmp, dwStyleNew))
+        return FALSE;
 
-	return TRUE;
+    UpdateBandInfo(pBar, dwStyleNew);
+
+    return TRUE;
 }
 
-BOOL CReBarX::AddBar(CWnd* pBar, COLORREF clrFore, COLORREF clrBack,
-		              LPCTSTR pszText,
-		              DWORD dwStyle)
+BOOL
+CReBarX::AddBar(CWnd* pBar, COLORREF clrFore, COLORREF clrBack, LPCTSTR pszText, DWORD dwStyle)
 {
-	CWnd *pTBar = FromHandle(pBar->m_hWnd);
-	ASSERT(pTBar);
-	
-	DWORD dwStyleNew = dwStyle;
+    CWnd* pTBar = FromHandle(pBar->m_hWnd);
+    ASSERT(pTBar);
 
-	// Check if the window to be added is from CToolBar
-	// Chevron support is only for the control with toolbar as child window
-	// and proper id is provided
-	if (pTBar->IsKindOf(RUNTIME_CLASS(CToolBar)))
-		dwStyleNew |= RBBS_USECHEVRON;
-	else
-		dwStyleNew &= ~RBBS_USECHEVRON;
+    DWORD dwStyleNew = dwStyle;
 
-	// Add band
-	if (!CReBar::AddBar(pBar, clrFore, clrBack, pszText, dwStyleNew))
-		return FALSE;
+    // Check if the window to be added is from CToolBar
+    // Chevron support is only for the control with toolbar as child window
+    // and proper id is provided
+    if (pTBar->IsKindOf(RUNTIME_CLASS(CToolBar)))
+        dwStyleNew |= RBBS_USECHEVRON;
+    else
+        dwStyleNew &= ~RBBS_USECHEVRON;
 
-	UpdateBandInfo(pBar, dwStyleNew);
+    // Add band
+    if (!CReBar::AddBar(pBar, clrFore, clrBack, pszText, dwStyleNew))
+        return FALSE;
 
-	return TRUE;
+    UpdateBandInfo(pBar, dwStyleNew);
+
+    return TRUE;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // Toolbar is in child band, so set band properties for chevron to show
 // properly.
 //
-void CReBarX::UpdateBandInfo(CWnd* pBar, DWORD dwStyle)
+void
+CReBarX::UpdateBandInfo(CWnd* pBar, DWORD dwStyle)
 {
-	if (dwStyle & RBBS_USECHEVRON)
-	{
-		// This looks like toolbar
-		CToolBar *pToolBar = (CToolBar*)pBar;
+    if (dwStyle & RBBS_USECHEVRON) {
+        // This looks like toolbar
+        CToolBar* pToolBar = (CToolBar*)pBar;
 
-		CReBarCtrl &refBar = GetReBarCtrl();
+        CReBarCtrl& refBar = GetReBarCtrl();
 
-		pToolBar->ModifyStyle(0, TBSTYLE_TRANSPARENT);
-		pToolBar->GetToolBarCtrl().SetExtendedStyle(TBSTYLE_EX_DRAWDDARROWS | 
-			                                        TBSTYLE_EX_HIDECLIPPEDBUTTONS);
+        pToolBar->ModifyStyle(0, TBSTYLE_TRANSPARENT);
+        pToolBar->GetToolBarCtrl().SetExtendedStyle(TBSTYLE_EX_DRAWDDARROWS | TBSTYLE_EX_HIDECLIPPEDBUTTONS);
 
-		// BUG:
-		// CToolBarCtrl::GetMaxSize( ) doest seem to return proper size when
-		// TBSTYLE_DROPDOWN style is set for buttons.. Anybody knows any way ?
-		CSize sizeMax;
-		pToolBar->GetToolBarCtrl().GetMaxSize(&sizeMax);
+        // BUG:
+        // CToolBarCtrl::GetMaxSize( ) doest seem to return proper size when
+        // TBSTYLE_DROPDOWN style is set for buttons.. Anybody knows any way ?
+        CSize sizeMax;
+        pToolBar->GetToolBarCtrl().GetMaxSize(&sizeMax);
 
-		// Set band prop
-		REBARBANDINFO rbbi;
-		rbbi.cbSize     = sizeof(rbbi);
-		rbbi.fMask      = RBBIM_CHILDSIZE | RBBIM_IDEALSIZE | RBBIM_SIZE | RBBIM_ID;
-		rbbi.cxMinChild = 0;
-		rbbi.cyMinChild = sizeMax.cy;
-		rbbi.cx         = sizeMax.cx;
-		rbbi.cxIdeal    = sizeMax.cx;
-		rbbi.wID        = (UINT)pToolBar->GetDlgCtrlID();
+        // Set band prop
+        REBARBANDINFO rbbi;
+        rbbi.cbSize     = sizeof(rbbi);
+        rbbi.fMask      = RBBIM_CHILDSIZE | RBBIM_IDEALSIZE | RBBIM_SIZE | RBBIM_ID;
+        rbbi.cxMinChild = 0;
+        rbbi.cyMinChild = sizeMax.cy;
+        rbbi.cx         = sizeMax.cx;
+        rbbi.cxIdeal    = sizeMax.cx;
+        rbbi.wID        = (UINT)pToolBar->GetDlgCtrlID();
 
-		refBar.SetBandInfo(refBar.GetBandCount() - 1, &rbbi); 
-	}
+        refBar.SetBandInfo(refBar.GetBandCount() - 1, &rbbi);
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // This is the handler for chevron push.
 //
-void CReBarX::OnChevronPushed(NMHDR * pNotifyStruct, LRESULT* result)
+void
+CReBarX::OnChevronPushed(NMHDR* pNotifyStruct, LRESULT* result)
 {
-	NMREBARCHEVRON* pChev = (NMREBARCHEVRON*)pNotifyStruct;
-	
-	// Has the band id of the chevron that generated this message
-	int	iBand = pChev->uBand;
+    NMREBARCHEVRON* pChev = (NMREBARCHEVRON*)pNotifyStruct;
 
-	// Have to get the child window handle this band holds
-	REBARBANDINFO rbinfo;
-	rbinfo.cbSize = sizeof(rbinfo);
-	rbinfo.fMask  = RBBIM_CHILD;
-	GetReBarCtrl().GetBandInfo(iBand, &rbinfo);
+    // Has the band id of the chevron that generated this message
+    int iBand = pChev->uBand;
 
-	// Check if the child window is a toolbar
-	// Some rebar bands may have other windows, so that is left as an exercise
-	// to the user :-)
-	CWnd *pBar = FromHandle(rbinfo.hwndChild);
-	ASSERT(pBar);
-	ASSERT(pBar->IsKindOf(RUNTIME_CLASS(CToolBar)));
+    // Have to get the child window handle this band holds
+    REBARBANDINFO rbinfo;
+    rbinfo.cbSize = sizeof(rbinfo);
+    rbinfo.fMask  = RBBIM_CHILD;
+    GetReBarCtrl().GetBandInfo(iBand, &rbinfo);
 
-	CToolBar *pTBar = (CToolBar*)pBar;
+    // Check if the child window is a toolbar
+    // Some rebar bands may have other windows, so that is left as an exercise
+    // to the user :-)
+    CWnd* pBar = FromHandle(rbinfo.hwndChild);
+    ASSERT(pBar);
+    ASSERT(pBar->IsKindOf(RUNTIME_CLASS(CToolBar)));
 
-	// Get band rectangle.
-	CRect rectBand;
-	GetReBarCtrl().GetRect(iBand, &rectBand);
+    CToolBar* pTBar = (CToolBar*)pBar;
 
-	// We are concerned only with the size, but GetRect() returns the actual band position
-	// So we have to translate its position to 0,0 
-	rectBand.right  = rectBand.Width();
-	rectBand.left   = 0 ;
-	rectBand.bottom = rectBand.Height();
-	rectBand.top    = 0;
-	
-	// It depends on the user to decide if this subtraction is necessary, if they feel
-	// happy about the chevron hiding a part of a button then remove this code
-	CRect rectChevron;
-	rectChevron = pChev->rc;
-	rectBand.right -= rectChevron.Width();
+    // Get band rectangle.
+    CRect rectBand;
+    GetReBarCtrl().GetRect(iBand, &rectBand);
 
-	// Screen coordinates for Menu to be displayed
-	CPoint	ptMenu;
-	ptMenu.x = rectChevron.left;
-	ptMenu.y = rectChevron.bottom;
-	ClientToScreen(&ptMenu);
+    // We are concerned only with the size, but GetRect() returns the actual band position
+    // So we have to translate its position to 0,0
+    rectBand.right  = rectBand.Width();
+    rectBand.left   = 0;
+    rectBand.bottom = rectBand.Height();
+    rectBand.top    = 0;
 
-	// Create the drop down popup window
-	if (!m_pDropWindow)
-	{
-		m_pDropWindow = new CChevronPopup;
-		if (m_pDropWindow)
-			m_pDropWindow->CreatePopup(this);	
-	}
+    // It depends on the user to decide if this subtraction is necessary, if they feel
+    // happy about the chevron hiding a part of a button then remove this code
+    CRect rectChevron;
+    rectChevron = pChev->rc;
+    rectBand.right -= rectChevron.Width();
 
-	// this CChevronPopup object deletes itself when it has been created/shown properly
-	if (m_pDropWindow)
-		m_pDropWindow->ShowPopup(GetParent(), pTBar, rectBand, ptMenu);
+    // Screen coordinates for Menu to be displayed
+    CPoint ptMenu;
+    ptMenu.x = rectChevron.left;
+    ptMenu.y = rectChevron.bottom;
+    ClientToScreen(&ptMenu);
+
+    // Create the drop down popup window
+    if (!m_pDropWindow) {
+        m_pDropWindow = new CChevronPopup;
+        if (m_pDropWindow)
+            m_pDropWindow->CreatePopup(this);
+    }
+
+    // this CChevronPopup object deletes itself when it has been created/shown properly
+    if (m_pDropWindow)
+        m_pDropWindow->ShowPopup(GetParent(), pTBar, rectBand, ptMenu);
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // This function restores index, width and style from the registry for
 // each band in the rebar.
 //
-void CReBarX::RestoreState()
+void
+CReBarX::RestoreState()
 {
     CString strValue = AfxGetApp()->GetProfileString(m_strSubKey, m_strValueName);
-    if (!strValue.IsEmpty())
-    {
+    if (!strValue.IsEmpty()) {
         REBARBANDINFO rbbi;
         rbbi.cbSize = sizeof(rbbi);
         rbbi.fMask  = RBBIM_STYLE | RBBIM_SIZE | RBBIM_ID;
 
         CReBarCtrl& rbCtrl = GetReBarCtrl();
-        for (UINT nBand = 0; nBand < rbCtrl.GetBandCount(); nBand++)
-        {
+        for (UINT nBand = 0; nBand < rbCtrl.GetBandCount(); nBand++) {
             CString strBandState;
-            VERIFY(AfxExtractSubString( strBandState, strValue, nBand, _T('\n')));
+            VERIFY(AfxExtractSubString(strBandState, strValue, nBand, _T('\n')));
 
             UINT nID, cx, nStyle;
             int nResult = _stscanf(strBandState, m_lpszStateInfoFormat, &nID, &cx, &nStyle);
@@ -275,7 +272,8 @@ void CReBarX::RestoreState()
 // band in the rebar, so that it could be possible to restore all these
 // settings when the user runs the program next time.
 //
-void CReBarX::SaveState()
+void
+CReBarX::SaveState()
 {
     CString strValue;
 
@@ -284,8 +282,7 @@ void CReBarX::SaveState()
     rbbi.fMask  = RBBIM_STYLE | RBBIM_SIZE | RBBIM_ID;
 
     CReBarCtrl& rbCtrl = GetReBarCtrl();
-    for (UINT nBand = 0; nBand < rbCtrl.GetBandCount(); nBand++)
-    {
+    for (UINT nBand = 0; nBand < rbCtrl.GetBandCount(); nBand++) {
         VERIFY(rbCtrl.GetBandInfo(nBand, &rbbi));
 
         CString strBandState;
@@ -296,26 +293,14 @@ void CReBarX::SaveState()
     VERIFY(AfxGetApp()->WriteProfileString(m_strSubKey, m_strValueName, strValue));
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////
 // CChevronPopup
 
 CChevronPopup::CChevronPopup()
 {
-	m_pToolBar     = NULL;
-	m_hMsgReceiver = NULL;
-	m_bTextLabels  = FALSE;
+    m_pToolBar     = NULL;
+    m_hMsgReceiver = NULL;
+    m_bTextLabels  = FALSE;
 }
 
 CChevronPopup::~CChevronPopup()
@@ -323,73 +308,66 @@ CChevronPopup::~CChevronPopup()
 }
 
 BEGIN_MESSAGE_MAP(CChevronPopup, CWnd)
-	//{{AFX_MSG_MAP(CChevronPopup)
-	ON_WM_KILLFOCUS()
-	ON_WM_KEYDOWN()
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CChevronPopup)
+ON_WM_KILLFOCUS()
+ON_WM_KEYDOWN()
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
-BOOL CChevronPopup::CreatePopup(CWnd* pParent)
+BOOL
+CChevronPopup::CreatePopup(CWnd* pParent)
 {
-	if (!m_hWnd)
-	{
-		// Register for our popup window
-		LPCTSTR lpszClassName = AfxRegisterWndClass(CS_HREDRAW | CS_VREDRAW);
-		return CWnd::CreateEx(WS_EX_TOOLWINDOW, 
-							  lpszClassName, 
-							  "", 
-							  WS_POPUP | WS_DLGFRAME,
-							  CRect(0,0,0,0), 
-							  pParent, 
-							  NULL);
-	}
+    if (!m_hWnd) {
+        // Register for our popup window
+        LPCTSTR lpszClassName = AfxRegisterWndClass(CS_HREDRAW | CS_VREDRAW);
+        return CWnd::CreateEx(WS_EX_TOOLWINDOW, lpszClassName, "", WS_POPUP | WS_DLGFRAME, CRect(0, 0, 0, 0), pParent, NULL);
+    }
 
-	return TRUE;
+    return TRUE;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper to create a new ToolBarX.
-// 
-HWND CChevronPopup::CreateToolBarX(HWND hwndParent, CToolBarX* pToolBar) 
+//
+HWND
+CChevronPopup::CreateToolBarX(HWND hwndParent, CToolBarX* pToolBar)
 {
-	m_pToolBar = pToolBar;
+    m_pToolBar = pToolBar;
 
-	// There could be only two modes, depending on text options
+    // There could be only two modes, depending on text options
     // of the original toolbar: with or without text labels.
     ETextOptions eTextOptions = pToolBar->GetTextOptions();
-    m_bTextLabels =
-        (eTextOptions == toTextLabels) ||
-        (eTextOptions == toTextOnRight);
+    m_bTextLabels             = (eTextOptions == toTextLabels) || (eTextOptions == toTextOnRight);
 
-	// Make sure common control lib is loaded
-	InitCommonControls(); 
-	HWND hwndTB = CreateWindowEx(
-		0, 
-		TOOLBARCLASSNAME, 
-		(LPSTR) NULL, 
-		WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN |
-		TBSTYLE_FLAT | TBSTYLE_WRAPABLE | TBSTYLE_LIST |
-		(m_bTextLabels ? 0 : TBSTYLE_TOOLTIPS) |
-		CCS_NODIVIDER | CBRS_NOALIGN, 
-		0, 0, 0, 0, 
-		hwndParent,
-		(HMENU) AFX_IDW_TOOLBAR + 40, 
-		AfxGetInstanceHandle(), 
-		NULL);
+    // Make sure common control lib is loaded
+    InitCommonControls();
+    HWND hwndTB = CreateWindowEx(0,
+                                 TOOLBARCLASSNAME,
+                                 (LPSTR)NULL,
+                                 WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | TBSTYLE_FLAT | TBSTYLE_WRAPABLE | TBSTYLE_LIST |
+                                   (m_bTextLabels ? 0 : TBSTYLE_TOOLTIPS) | CCS_NODIVIDER | CBRS_NOALIGN,
+                                 0,
+                                 0,
+                                 0,
+                                 0,
+                                 hwndParent,
+                                 (HMENU)AFX_IDW_TOOLBAR + 40,
+                                 AfxGetInstanceHandle(),
+                                 NULL);
 
-	ASSERT(hwndTB);
-	if (!hwndTB)
-		return NULL;
+    ASSERT(hwndTB);
+    if (!hwndTB)
+        return NULL;
 
-	// Doc says, required for backward compatibility
-	::SendMessage(hwndTB, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0); 
+    // Doc says, required for backward compatibility
+    ::SendMessage(hwndTB, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
 
-	// Our toolbar may have dropdown buttons, so got to set the extended style
-	::SendMessage(hwndTB, TB_SETEXTENDEDSTYLE, 0, TBSTYLE_EX_DRAWDDARROWS);
+    // Our toolbar may have dropdown buttons, so got to set the extended style
+    ::SendMessage(hwndTB, TB_SETEXTENDEDSTYLE, 0, TBSTYLE_EX_DRAWDDARROWS);
 
-	// Attach to a object.. just for the convenience
-	m_tbCtrl.Attach(hwndTB);
-	m_tbCtrl.SetExtendedStyle(TBSTYLE_EX_DRAWDDARROWS | TBSTYLE_EX_MIXEDBUTTONS);
+    // Attach to a object.. just for the convenience
+    m_tbCtrl.Attach(hwndTB);
+    m_tbCtrl.SetExtendedStyle(TBSTYLE_EX_DRAWDDARROWS | TBSTYLE_EX_MIXEDBUTTONS);
 
     // Copy all required information from the original toolbar
     CToolBarCtrl& tbCtrl = pToolBar->GetToolBarCtrl();
@@ -402,21 +380,18 @@ HWND CChevronPopup::CreateToolBarX(HWND hwndParent, CToolBarX* pToolBar)
 
     TBBUTTON tbinfo;
     int nMaxWidth = 0;
-    int nButtons = tbCtrl.GetButtonCount();
+    int nButtons  = tbCtrl.GetButtonCount();
     int nIndex;
 
-    for (nIndex = 0; nIndex < nButtons; nIndex++)
-    {
+    for (nIndex = 0; nIndex < nButtons; nIndex++) {
         tbCtrl.GetItemRect(nIndex, rcItem);
-        if (rcItem.right > rcClient.right)
-        {
+        if (rcItem.right > rcClient.right) {
             VERIFY(tbCtrl.GetButton(nIndex, &tbinfo));
-            if (!(tbinfo.fsStyle & TBSTYLE_SEP) && !(tbinfo.fsState & TBSTATE_HIDDEN))
-            {
+            if (!(tbinfo.fsStyle & TBSTYLE_SEP) && !(tbinfo.fsState & TBSTATE_HIDDEN)) {
                 CString strButtonText;
                 pToolBar->GetButtonText(tbinfo.idCommand, strButtonText);
                 CString strToAdd(strButtonText, strButtonText.GetLength() + 1);
-                tbinfo.iString  = m_tbCtrl.AddStrings(strToAdd);
+                tbinfo.iString = m_tbCtrl.AddStrings(strToAdd);
                 tbinfo.fsStyle |= TBSTYLE_AUTOSIZE | (m_bTextLabels ? BTNS_SHOWTEXT : 0);
                 VERIFY(m_tbCtrl.AddButtons(1, &tbinfo));
                 VERIFY(m_tbCtrl.GetItemRect(m_tbCtrl.CommandToIndex(tbinfo.idCommand), rcItem));
@@ -426,19 +401,16 @@ HWND CChevronPopup::CreateToolBarX(HWND hwndParent, CToolBarX* pToolBar)
     }
 
     nButtons = m_tbCtrl.GetButtonCount();
-    if (nButtons == 0)
-    {
+    if (nButtons == 0) {
         ASSERT(false); // it should never happen
         return NULL;
     }
 
-    if (m_bTextLabels)
-    {
+    if (m_bTextLabels) {
         TBBUTTONINFO tbbi;
         tbbi.cbSize = sizeof(tbbi);
         tbbi.dwMask = TBIF_SIZE | TBIF_STYLE;
-        for (nIndex = 0; nIndex < nButtons; nIndex++)
-        {
+        for (nIndex = 0; nIndex < nButtons; nIndex++) {
             VERIFY(m_tbCtrl.GetButton(nIndex, &tbinfo));
             tbbi.cx      = (WORD)nMaxWidth;
             tbbi.fsStyle = (BYTE)(tbinfo.fsStyle & ~TBSTYLE_AUTOSIZE);
@@ -446,208 +418,199 @@ HWND CChevronPopup::CreateToolBarX(HWND hwndParent, CToolBarX* pToolBar)
         }
     }
 
-	return hwndTB; 
+    return hwndTB;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // Helper to create a new toolbar.
-// 
-HWND CChevronPopup::CreateToolBar(HWND hwndParent, HWND hToolToReplicate) 
+//
+HWND
+CChevronPopup::CreateToolBar(HWND hwndParent, HWND hToolToReplicate)
 {
-	// Make sure common control lib is loaded
-	InitCommonControls(); 
-	HWND hwndTB = CreateWindowEx(
-		0, 
-		TOOLBARCLASSNAME, 
-		(LPSTR) NULL, 
-		WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN |
-		TBSTYLE_FLAT | TBSTYLE_TOOLTIPS| TBSTYLE_WRAPABLE | //TBSTYLE_LIST | 
-		CCS_NODIVIDER | CBRS_NOALIGN, 
-		0, 0, 0, 0, 
-		hwndParent, 
-		(HMENU) AFX_IDW_TOOLBAR + 40, 
-		AfxGetInstanceHandle(), 
-		NULL); 
+    // Make sure common control lib is loaded
+    InitCommonControls();
+    HWND hwndTB =
+      CreateWindowEx(0,
+                     TOOLBARCLASSNAME,
+                     (LPSTR)NULL,
+                     WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | TBSTYLE_FLAT | TBSTYLE_TOOLTIPS | TBSTYLE_WRAPABLE | //TBSTYLE_LIST |
+                       CCS_NODIVIDER |
+                       CBRS_NOALIGN,
+                     0,
+                     0,
+                     0,
+                     0,
+                     hwndParent,
+                     (HMENU)AFX_IDW_TOOLBAR + 40,
+                     AfxGetInstanceHandle(),
+                     NULL);
 
-	ASSERT(hwndTB);
-	if (!hwndTB)
-		return NULL;
+    ASSERT(hwndTB);
+    if (!hwndTB)
+        return NULL;
 
-	// Doc says, required for backward compatibility
-	::SendMessage(hwndTB, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0); 
+    // Doc says, required for backward compatibility
+    ::SendMessage(hwndTB, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
 
-	// Our toolbar may have dropdown buttons, so got to set the extended style
-	::SendMessage(hwndTB, TB_SETEXTENDEDSTYLE, 0, TBSTYLE_EX_DRAWDDARROWS);
+    // Our toolbar may have dropdown buttons, so got to set the extended style
+    ::SendMessage(hwndTB, TB_SETEXTENDEDSTYLE, 0, TBSTYLE_EX_DRAWDDARROWS);
 
-	// Attach to a object.. just for the convenience
-	m_tbCtrl.Attach(hwndTB);
+    // Attach to a object.. just for the convenience
+    m_tbCtrl.Attach(hwndTB);
 
-	// Get normal ImageList from the toolbar
-	HIMAGELIST	hHot = (HIMAGELIST)::SendMessage(hToolToReplicate, TB_GETIMAGELIST, 0, 0);
+    // Get normal ImageList from the toolbar
+    HIMAGELIST hHot = (HIMAGELIST)::SendMessage(hToolToReplicate, TB_GETIMAGELIST, 0, 0);
 
-	// Create a duplicate of the imagelist
-	HIMAGELIST	hImageList = ImageList_Duplicate(hHot);
+    // Create a duplicate of the imagelist
+    HIMAGELIST hImageList = ImageList_Duplicate(hHot);
 
-	// Set the imagelist for our new toolbar
-	::SendMessage(hwndTB, TB_SETIMAGELIST, 0, (LPARAM)hImageList);
+    // Set the imagelist for our new toolbar
+    ::SendMessage(hwndTB, TB_SETIMAGELIST, 0, (LPARAM)hImageList);
 
-	// Attach it to an MFC object so that it automagically deletes the handle 
-	// when it goes out of scope, too lazy to delete it 
-	m_imgNormal.Attach(hImageList);
+    // Attach it to an MFC object so that it automagically deletes the handle
+    // when it goes out of scope, too lazy to delete it
+    m_imgNormal.Attach(hImageList);
 
-	// Get hot ImageList from the toolbar
-	hHot = (HIMAGELIST)::SendMessage(hToolToReplicate, TB_GETHOTIMAGELIST, 0, 0);
-	if (hHot)
-	{
-		hImageList = ImageList_Duplicate(hHot);
-		::SendMessage(hwndTB, TB_SETHOTIMAGELIST, 0, (LPARAM)hImageList);
-		m_imgHot.Attach(hImageList);
-	}
+    // Get hot ImageList from the toolbar
+    hHot = (HIMAGELIST)::SendMessage(hToolToReplicate, TB_GETHOTIMAGELIST, 0, 0);
+    if (hHot) {
+        hImageList = ImageList_Duplicate(hHot);
+        ::SendMessage(hwndTB, TB_SETHOTIMAGELIST, 0, (LPARAM)hImageList);
+        m_imgHot.Attach(hImageList);
+    }
 
-	// Get disabled ImageList from the toolbar
-	hHot = (HIMAGELIST)::SendMessage(hToolToReplicate, TB_GETDISABLEDIMAGELIST, 0, 0);
-	if (hHot)
-	{
-		hImageList = ImageList_Duplicate(hHot);
-		::SendMessage(hwndTB, TB_SETDISABLEDIMAGELIST, 0, (LPARAM)hImageList);
-		m_imgDisabled.Attach(hImageList);
-	}
+    // Get disabled ImageList from the toolbar
+    hHot = (HIMAGELIST)::SendMessage(hToolToReplicate, TB_GETDISABLEDIMAGELIST, 0, 0);
+    if (hHot) {
+        hImageList = ImageList_Duplicate(hHot);
+        ::SendMessage(hwndTB, TB_SETDISABLEDIMAGELIST, 0, (LPARAM)hImageList);
+        m_imgDisabled.Attach(hImageList);
+    }
 
-	return hwndTB; 
-} 
+    return hwndTB;
+}
 
-BOOL CChevronPopup::CleanToolBar()
+BOOL
+CChevronPopup::CleanToolBar()
 {
-	BOOL bReturn = TRUE;
+    BOOL bReturn = TRUE;
 
-	if (m_tbCtrl.GetSafeHwnd())
-	{
-		HWND hTool = m_tbCtrl.Detach();
-		bReturn = ::DestroyWindow(hTool) || bReturn;
-	}
+    if (m_tbCtrl.GetSafeHwnd()) {
+        HWND hTool = m_tbCtrl.Detach();
+        bReturn    = ::DestroyWindow(hTool) || bReturn;
+    }
 
-	if (m_imgNormal.GetSafeHandle())
-		bReturn = m_imgNormal.DeleteImageList() || bReturn;
+    if (m_imgNormal.GetSafeHandle())
+        bReturn = m_imgNormal.DeleteImageList() || bReturn;
 
-	if (m_imgHot.GetSafeHandle())
-		bReturn = m_imgHot.DeleteImageList() || bReturn;
+    if (m_imgHot.GetSafeHandle())
+        bReturn = m_imgHot.DeleteImageList() || bReturn;
 
-	if (m_imgDisabled.GetSafeHandle())
-		bReturn = m_imgDisabled.DeleteImageList() || bReturn;
+    if (m_imgDisabled.GetSafeHandle())
+        bReturn = m_imgDisabled.DeleteImageList() || bReturn;
 
-	m_bTextLabels = FALSE;
-	m_pToolBar    = NULL;
+    m_bTextLabels = FALSE;
+    m_pToolBar    = NULL;
 
-	return bReturn;
+    return bReturn;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // CChevronPopup message handlers
 
-BOOL CChevronPopup::ShowPopup(CWnd*	pMsgReceiver,
-							  CToolBar* pToolBar,
-							  CRect	rectDisplayed,
-							  CPoint ptScreen)
+BOOL
+CChevronPopup::ShowPopup(CWnd* pMsgReceiver, CToolBar* pToolBar, CRect rectDisplayed, CPoint ptScreen)
 {
-	// Somebody should be there to receive the message from toolbar
-	ASSERT(pMsgReceiver != NULL);
-	// The receiving handle should not be empty
-	ASSERT(pMsgReceiver->GetSafeHwnd() != NULL);
-	// The source toolbar should exist
-	ASSERT(pToolBar != NULL);
-	// It is really a toolbar ??
-	ASSERT(pToolBar->IsKindOf(RUNTIME_CLASS(CToolBar)));
+    // Somebody should be there to receive the message from toolbar
+    ASSERT(pMsgReceiver != NULL);
+    // The receiving handle should not be empty
+    ASSERT(pMsgReceiver->GetSafeHwnd() != NULL);
+    // The source toolbar should exist
+    ASSERT(pToolBar != NULL);
+    // It is really a toolbar ??
+    ASSERT(pToolBar->IsKindOf(RUNTIME_CLASS(CToolBar)));
 
-	// Clean if any previous objects have been attached
-	CleanToolBar();
+    // Clean if any previous objects have been attached
+    CleanToolBar();
 
-	// Create a tool bar with the popup as parent
-	if (pToolBar->IsKindOf(RUNTIME_CLASS(CToolBarX)))
-	{
-		if (CreateToolBarX(GetSafeHwnd(), (CToolBarX*)pToolBar) == NULL)
-			return FALSE;
+    // Create a tool bar with the popup as parent
+    if (pToolBar->IsKindOf(RUNTIME_CLASS(CToolBarX))) {
+        if (CreateToolBarX(GetSafeHwnd(), (CToolBarX*)pToolBar) == NULL)
+            return FALSE;
 
-		m_hMsgReceiver = pMsgReceiver->GetSafeHwnd();
-	}
-	else
-	{		
-		CreateToolBar(GetSafeHwnd(), pToolBar->GetSafeHwnd());
-		
-		// Store the window which receives notifications from the toolbar
-		// We have to redirect a few later
-		m_hMsgReceiver = pMsgReceiver->GetSafeHwnd();
-		
-		// This flag indicates if atleast one has been added to the menu
-		// POPUP Menu is shown only if atleast one item has to be shown
-		BOOL bAtleastOne = FALSE;
-		
-		// Run along all the buttons, find hidden ones and add them to new toolbar
-		int iCount, iButtonCount = pToolBar->GetToolBarCtrl().GetButtonCount();
-		for (iCount = 0; iCount < iButtonCount; iCount++)
-		{
-			TBBUTTON tbinfo;
-			pToolBar->GetToolBarCtrl().GetButton(iCount, &tbinfo);
-			
-			// If the button is a separator then we can also add a separator to the
-			// popup menu
-			if (tbinfo.fsStyle & TBSTYLE_SEP)
-			{
-				// It wouldnt be nice if there is a separator as the first item in the menu
-				if (bAtleastOne)
-				{
-					// add to our toolbar
-					
-					// NOTE: Adding separators changes the way in which the toolbar
-					// shows the popup. The program uses CToolBarCtl::SetRows( ) to 
-					// wrap buttons, the behaviour of this method is different when
-					// separators and grouping is there, so uncomment the following line
-					// to see how it works 
-					
-//  				m_tbCtrl.AddButtons ( 1, &tbinfo );
-				}
-			}
-			else
-			{
-				// Get the button rectangle
-				CRect rectButton;
-				pToolBar->GetItemRect(iCount, &rectButton);
-				
-				// Check the intersection of the button and the band
-				CRect interRect;
-				interRect.IntersectRect(&rectButton, &rectDisplayed);
-				
-				// if the intersection is not the same as button then
-				// the button is not completely visible, so add to menu
-				if (interRect != rectButton)
-				{
-					// Yeah buttons seem to be hidden now
-					m_tbCtrl.AddButtons(1, &tbinfo);
-					
-					// Yeah, have added one, so can show the menu
-					bAtleastOne = TRUE;
-				}
-			}
-		}
-		
-		// Show the window only if atleast one item has been added
-		if (!bAtleastOne)
-			return FALSE;
-	}
+        m_hMsgReceiver = pMsgReceiver->GetSafeHwnd();
+    } else {
+        CreateToolBar(GetSafeHwnd(), pToolBar->GetSafeHwnd());
 
-	SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOMOVE);
+        // Store the window which receives notifications from the toolbar
+        // We have to redirect a few later
+        m_hMsgReceiver = pMsgReceiver->GetSafeHwnd();
 
-	// Better call this after modifying buttons.. dunno what will go wrong if i dont
-	// use this
-	m_tbCtrl.AutoSize();
+        // This flag indicates if atleast one has been added to the menu
+        // POPUP Menu is shown only if atleast one item has to be shown
+        BOOL bAtleastOne = FALSE;
 
-	CSize szBar;
-	m_tbCtrl.GetMaxSize(&szBar);
+        // Run along all the buttons, find hidden ones and add them to new toolbar
+        int iCount, iButtonCount = pToolBar->GetToolBarCtrl().GetButtonCount();
+        for (iCount = 0; iCount < iButtonCount; iCount++) {
+            TBBUTTON tbinfo;
+            pToolBar->GetToolBarCtrl().GetButton(iCount, &tbinfo);
 
-	CRect recWindow;
-	m_tbCtrl.SetRows(m_tbCtrl.GetButtonCount(), m_bTextLabels, &recWindow);
-	if (m_tbCtrl.GetRows() == 1)
-		recWindow.bottom = szBar.cy;
-/*
+            // If the button is a separator then we can also add a separator to the
+            // popup menu
+            if (tbinfo.fsStyle & TBSTYLE_SEP) {
+                // It wouldnt be nice if there is a separator as the first item in the menu
+                if (bAtleastOne) {
+                    // add to our toolbar
+
+                    // NOTE: Adding separators changes the way in which the toolbar
+                    // shows the popup. The program uses CToolBarCtl::SetRows( ) to
+                    // wrap buttons, the behaviour of this method is different when
+                    // separators and grouping is there, so uncomment the following line
+                    // to see how it works
+
+                    //  				m_tbCtrl.AddButtons ( 1, &tbinfo );
+                }
+            } else {
+                // Get the button rectangle
+                CRect rectButton;
+                pToolBar->GetItemRect(iCount, &rectButton);
+
+                // Check the intersection of the button and the band
+                CRect interRect;
+                interRect.IntersectRect(&rectButton, &rectDisplayed);
+
+                // if the intersection is not the same as button then
+                // the button is not completely visible, so add to menu
+                if (interRect != rectButton) {
+                    // Yeah buttons seem to be hidden now
+                    m_tbCtrl.AddButtons(1, &tbinfo);
+
+                    // Yeah, have added one, so can show the menu
+                    bAtleastOne = TRUE;
+                }
+            }
+        }
+
+        // Show the window only if atleast one item has been added
+        if (!bAtleastOne)
+            return FALSE;
+    }
+
+    SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOMOVE);
+
+    // Better call this after modifying buttons.. dunno what will go wrong if i dont
+    // use this
+    m_tbCtrl.AutoSize();
+
+    CSize szBar;
+    m_tbCtrl.GetMaxSize(&szBar);
+
+    CRect recWindow;
+    m_tbCtrl.SetRows(m_tbCtrl.GetButtonCount(), m_bTextLabels, &recWindow);
+    if (m_tbCtrl.GetRows() == 1)
+        recWindow.bottom = szBar.cy;
+    /*
 	if (m_bTextLabels)
 		m_tbCtrl.SetRows(m_tbCtrl.GetButtonCount(), TRUE, &recWindow);
 	else
@@ -661,57 +624,51 @@ BOOL CChevronPopup::ShowPopup(CWnd*	pMsgReceiver,
 			recWindow.bottom = szBar.cy;
 	}
 */
-	// BUG: When the toolbar had one button, recWindow had 0 width, so have to 
-	// get width from GetMaxSize(). This may be wrong when the button
-	// had TBSTYLE_DROPDOWN style...
-	int iWidth = recWindow.Width() == 0 ? szBar.cx : recWindow.Width();
+    // BUG: When the toolbar had one button, recWindow had 0 width, so have to
+    // get width from GetMaxSize(). This may be wrong when the button
+    // had TBSTYLE_DROPDOWN style...
+    int iWidth = recWindow.Width() == 0 ? szBar.cx : recWindow.Width();
 
-	// Get the top and bottom spacing for the toolbar
-	DWORD dwPad = ::SendMessage(m_tbCtrl.GetSafeHwnd(), TB_GETPADDING, 0, 0);
-	CRect rectWindow(ptScreen.x, 
-					 ptScreen.y, 
-					 ptScreen.x + iWidth + LOWORD(dwPad),
-					 ptScreen.y + recWindow.Height() + HIWORD(dwPad));
+    // Get the top and bottom spacing for the toolbar
+    DWORD dwPad = ::SendMessage(m_tbCtrl.GetSafeHwnd(), TB_GETPADDING, 0, 0);
+    CRect rectWindow(ptScreen.x, ptScreen.y, ptScreen.x + iWidth + LOWORD(dwPad), ptScreen.y + recWindow.Height() + HIWORD(dwPad));
 
-	// Have to adjust to screen pos
-	int cxScreen = ::GetSystemMetrics(SM_CXSCREEN);
-	int cyScreen = ::GetSystemMetrics(SM_CYSCREEN);
+    // Have to adjust to screen pos
+    int cxScreen = ::GetSystemMetrics(SM_CXSCREEN);
+    int cyScreen = ::GetSystemMetrics(SM_CYSCREEN);
 
-	// Move little left to show the complete toolbar
-	if (rectWindow.right > cxScreen)
-	{
-		int diff = rectWindow.right - cxScreen;
-		rectWindow.left  -= diff;
-		rectWindow.right -= diff;
-	}
+    // Move little left to show the complete toolbar
+    if (rectWindow.right > cxScreen) {
+        int diff = rectWindow.right - cxScreen;
+        rectWindow.left -= diff;
+        rectWindow.right -= diff;
+    }
 
-	// Move little up to show the complete toolbar
-	if (rectWindow.bottom > cyScreen)
-	{
-		int diff = rectWindow.bottom - cyScreen;
-		rectWindow.top    -= diff;
-		rectWindow.bottom -= diff;
-	}
+    // Move little up to show the complete toolbar
+    if (rectWindow.bottom > cyScreen) {
+        int diff = rectWindow.bottom - cyScreen;
+        rectWindow.top -= diff;
+        rectWindow.bottom -= diff;
+    }
 
-	// Should we check for top and left positions?
-	// Move the parent popup window and show
-	MoveWindow(&rectWindow, TRUE);
+    // Should we check for top and left positions?
+    // Move the parent popup window and show
+    MoveWindow(&rectWindow, TRUE);
 
-	// Move toolbar to the top corner and show
-	m_tbCtrl.MoveWindow(	//hWndToolbar, 
-					rectWindow.left, 
-					rectWindow.top,
-					rectWindow.Width(),
-					rectWindow.Height(),
-					TRUE);
+    // Move toolbar to the top corner and show
+    m_tbCtrl.MoveWindow( //hWndToolbar,
+      rectWindow.left,
+      rectWindow.top,
+      rectWindow.Width(),
+      rectWindow.Height(),
+      TRUE);
 
-	ShowWindow(SW_SHOW);
-	m_tbCtrl.ShowWindow(SW_SHOW);
+    ShowWindow(SW_SHOW);
+    m_tbCtrl.ShowWindow(SW_SHOW);
 
+    // ****************	Uncomment the following to get a weird scroll effect :-)) ********
 
-// ****************	Uncomment the following to get a weird scroll effect :-)) ********
-
-/*
+    /*
 #define SPI_GETMENUANIMATION                0x1002
 	// Sliding effect
 	BOOL	bSlide;
@@ -765,89 +722,88 @@ BOOL CChevronPopup::ShowPopup(CWnd*	pMsgReceiver,
 		memDC.SelectObject(pOld);
 	}
 */
-	// All went ok !
-	return TRUE;
+    // All went ok !
+    return TRUE;
 }
 
-
-void CChevronPopup::OnKillFocus(CWnd* pNewWnd) 
+void
+CChevronPopup::OnKillFocus(CWnd* pNewWnd)
 {
-	//TRACE0("KILLFOCUS\n");
-	SetWindowPos(NULL, 0, 0, 0, 0, SWP_HIDEWINDOW | SWP_NOACTIVATE);
+    //TRACE0("KILLFOCUS\n");
+    SetWindowPos(NULL, 0, 0, 0, 0, SWP_HIDEWINDOW | SWP_NOACTIVATE);
 }
 
-void CChevronPopup::PostNcDestroy() 
+void
+CChevronPopup::PostNcDestroy()
 {
-	CleanToolBar();
-	CWnd::PostNcDestroy();
+    CleanToolBar();
+    CWnd::PostNcDestroy();
 
-//	TRACE0("NC destroy\n");
+    //	TRACE0("NC destroy\n");
 
-	// Commit suicide :-(
-	//delete this;
+    // Commit suicide :-(
+    //delete this;
 }
 
-BOOL CChevronPopup::OnCommand(WPARAM wParam, LPARAM lParam) 
+BOOL
+CChevronPopup::OnCommand(WPARAM wParam, LPARAM lParam)
 {
-	// Pass on the message to the Window that needs it
-	BOOL bReturn = ::SendMessage(m_hMsgReceiver, WM_COMMAND, wParam, lParam);
+    // Pass on the message to the Window that needs it
+    BOOL bReturn = ::SendMessage(m_hMsgReceiver, WM_COMMAND, wParam, lParam);
 
-	return bReturn;
+    return bReturn;
 }
 
-BOOL CChevronPopup::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult) 
+BOOL
+CChevronPopup::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 {
-	NMHDR* pNMHDR = (NMHDR*)lParam;
-    if (pNMHDR->hwndFrom == m_tbCtrl.m_hWnd && 
-	    (m_pToolBar && m_pToolBar->GetSafeHwnd()))
-    {
+    NMHDR* pNMHDR = (NMHDR*)lParam;
+    if (pNMHDR->hwndFrom == m_tbCtrl.m_hWnd && (m_pToolBar && m_pToolBar->GetSafeHwnd())) {
         // Handle certain notifications from embedded toolbar control
-        switch (pNMHDR->code)
-        {
-            case TBN_DROPDOWN:
-                {
-					// Get the id of the button
-					UINT iItem = (WPARAM)((LPNMTOOLBAR)lParam)->iItem;
-					
-					// Get location of button
-					CRect rc;
-					m_tbCtrl.GetRect(iItem, rc);
-					ClientToScreen(&rc);
-					
-					// Call virtual function to display dropdown menu
-					m_pToolBar->DropDownButton(iItem, rc);
+        switch (pNMHDR->code) {
+            case TBN_DROPDOWN: {
+                // Get the id of the button
+                UINT iItem = (WPARAM)((LPNMTOOLBAR)lParam)->iItem;
 
-					// Hide toolbar
-					SetWindowPos(NULL, 0, 0, 0, 0, SWP_HIDEWINDOW | SWP_NOACTIVATE);
-					return TRUE;
-                }
+                // Get location of button
+                CRect rc;
+                m_tbCtrl.GetRect(iItem, rc);
+                ClientToScreen(&rc);
 
-			case TBN_GETINFOTIP:
-                if (!m_bTextLabels)
-                {
+                // Call virtual function to display dropdown menu
+                m_pToolBar->DropDownButton(iItem, rc);
+
+                // Hide toolbar
+                SetWindowPos(NULL, 0, 0, 0, 0, SWP_HIDEWINDOW | SWP_NOACTIVATE);
+                return TRUE;
+            }
+
+            case TBN_GETINFOTIP:
+                if (!m_bTextLabels) {
                     NMTBGETINFOTIP* lptbgit = (NMTBGETINFOTIP*)pNMHDR;
                     CString strTip;
                     m_pToolBar->GetButtonTip(lptbgit->iItem, strTip);
                     _tcsncpy(lptbgit->pszText, strTip, lptbgit->cchTextMax);
-					*pResult = 0;
-	
-					return TRUE;
+                    *pResult = 0;
+
+                    return TRUE;
                 }
         }
     }
 
-	// Notifications are sent by the toolbar control.
-	// A typical message is TBN_DROPDOWN which should be passed to the window
-	// to handle the dropdown.. which may show another menu :-)
-	BOOL bReturn = ::SendMessage(m_hMsgReceiver, WM_NOTIFY, wParam, lParam);
-	return bReturn;
+    // Notifications are sent by the toolbar control.
+    // A typical message is TBN_DROPDOWN which should be passed to the window
+    // to handle the dropdown.. which may show another menu :-)
+    BOOL bReturn = ::SendMessage(m_hMsgReceiver, WM_NOTIFY, wParam, lParam);
+    return bReturn;
 }
 
-void CChevronPopup::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) 
+void
+CChevronPopup::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	// If Escape key was pressed, close popup window
-	if (nChar == VK_ESCAPE)
-		SetWindowPos(NULL, 0, 0, 0, 0, SWP_HIDEWINDOW | SWP_NOACTIVATE);
-	else
-		CWnd::OnKeyDown(nChar, nRepCnt, nFlags);
+    // If Escape key was pressed, close popup window
+    if (nChar == VK_ESCAPE)
+        SetWindowPos(NULL, 0, 0, 0, 0, SWP_HIDEWINDOW | SWP_NOACTIVATE);
+    else
+        CWnd::OnKeyDown(nChar, nRepCnt, nFlags);
 }

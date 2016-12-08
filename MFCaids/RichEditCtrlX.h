@@ -19,75 +19,73 @@
 
 class MFCAIDS_API CRichEditCtrlX : public CRichEditCtrl
 {
-// Construction
-public:
-	CRichEditCtrlX();
+    // Construction
+  public:
+    CRichEditCtrlX();
 
-// Attributes
-public:
+    // Attributes
+  public:
+    // Operations
+  public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CRichEditCtrlX)
+  protected:
+    virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
+    //}}AFX_VIRTUAL
 
-// Operations
-public:
+    // Implementation
+  public:
+    long GetSelectionFontSize();
+    CString GetSelectionFontName();
+    CStringArray m_saFontList;
+    void GetSystemFonts(CStringArray& saFontList);
+    void SetFontSize(int nPointSize);
+    void SetFontName(CString sFontName);
+    void SelectColor();
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CRichEditCtrlX)
-	protected:
-	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
-	//}}AFX_VIRTUAL
+    BOOL IsBulleted();
+    void SetBulleted();
 
-// Implementation
-public:
-	long GetSelectionFontSize();
-	CString GetSelectionFontName();
-	CStringArray m_saFontList;
-	void GetSystemFonts(CStringArray &saFontList);
-	void SetFontSize(int nPointSize);
-	void SetFontName(CString sFontName);
-	void SelectColor();
+    PARAFORMAT GetParagraphFormat();
 
-	BOOL IsBulleted();
-	void SetBulleted();
-	
-	PARAFORMAT GetParagraphFormat();
-	
-	BOOL IsRightAlign();
-	BOOL IsLeftAlign();
-	BOOL IsCenteredAlign();
-	
-	void SetRightAlign();
-	void SetLeftAlign();
-	void SetCenterAlign();
-	
-	CHARFORMAT GetCharFormat(DWORD dwMask = CFM_COLOR | CFM_FACE | CFM_SIZE | CFM_BOLD | CFM_ITALIC | CFM_UNDERLINE | CFM_LINK);
-	
-	BOOL IsBold();
-	BOOL IsItalic();
-	BOOL IsUnderlined();
-	BOOL IsLink();
+    BOOL IsRightAlign();
+    BOOL IsLeftAlign();
+    BOOL IsCenteredAlign();
 
-	void SetBold();
-	void SetItalic();
-	void SetUnderlined();
-	void SetLink();
+    void SetRightAlign();
+    void SetLeftAlign();
+    void SetCenterAlign();
 
-	void SetRTF(CString sRTF);
-	CString GetRTF();
-	virtual ~CRichEditCtrlX();
+    CHARFORMAT GetCharFormat(DWORD dwMask = CFM_COLOR | CFM_FACE | CFM_SIZE | CFM_BOLD | CFM_ITALIC | CFM_UNDERLINE | CFM_LINK);
 
-	// Generated message map functions
-protected:
-	//{{AFX_MSG(CRichEditCtrlX)
-	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
-	//}}AFX_MSG
+    BOOL IsBold();
+    BOOL IsItalic();
+    BOOL IsUnderlined();
+    BOOL IsLink();
 
-	DECLARE_MESSAGE_MAP()
+    void SetBold();
+    void SetItalic();
+    void SetUnderlined();
+    void SetLink();
 
-private:
-	void SetCharStyle(int MASK, int STYLE, int nStart, int nEnd);
-	static DWORD CALLBACK CBStreamIn(DWORD dwCookie, LPBYTE pbBuff, LONG cb, LONG *pcb);
-	static DWORD CALLBACK CBStreamOut(DWORD dwCookie, LPBYTE pbBuff, LONG cb, LONG* pcb);
-	static BOOL CALLBACK CBEnumFonts(LPLOGFONT lplf, LPTEXTMETRIC lptm, DWORD dwType, LPARAM lpData);
+    void SetRTF(CString sRTF);
+    CString GetRTF();
+    virtual ~CRichEditCtrlX();
+
+    // Generated message map functions
+  protected:
+    //{{AFX_MSG(CRichEditCtrlX)
+    afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
+    //}}AFX_MSG
+
+    DECLARE_MESSAGE_MAP()
+
+  private:
+    void SetCharStyle(int MASK, int STYLE, int nStart, int nEnd);
+    static DWORD CALLBACK CBStreamIn(DWORD dwCookie, LPBYTE pbBuff, LONG cb, LONG* pcb);
+    static DWORD CALLBACK CBStreamOut(DWORD dwCookie, LPBYTE pbBuff, LONG cb, LONG* pcb);
+    static BOOL CALLBACK CBEnumFonts(LPLOGFONT lplf, LPTEXTMETRIC lptm, DWORD dwType, LPARAM lpData);
 };
 
 /////////////////////////////////////////////////////////////////////////////

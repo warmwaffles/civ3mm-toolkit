@@ -17,69 +17,71 @@
 class CNewFlcDlg;
 class CNewFlcPal : public CDialogX
 {
-// Construction
-public:
-	void ApplyChanges();
-	CNewFlcPal(CWnd* pParent = NULL);   // standard constructor
-	void UpdateControlsState();
-	void UpdateValues();
+    // Construction
+  public:
+    void ApplyChanges();
+    CNewFlcPal(CWnd* pParent = NULL); // standard constructor
+    void UpdateControlsState();
+    void UpdateValues();
 
-// Dialog Data
-	//{{AFX_DATA(CNewFlcPal)
-	enum { IDD = IDD_TAB_NEW_PAL };
-	CButton			m_btnDefPalette;
-	CEditX			m_wndLastPalPath;
-	CButtonX		m_btnBrowseLastCol;
-	CComboBox		m_wndPalType;
-	int				m_nPalType;
-	CString			m_sLastPalPath;
-	int				m_nLastPalType;
-	BOOL			m_bDefPalette;
-	int				m_nBitsPerPixel;
-	BOOL			m_bMakePalette;
-	CEditX			m_wndSelPalPath;
-	CButtonX		m_btnBrowseSelPalPath;
-	int				m_nPaletteType;
-	int				m_nPalette;
-	CString			m_sPaletteCur;
-	CString			m_sSelPalPath;
-	BOOL			m_bSelPalPath;
-	CComboBoxCivColor	m_wndPalettes;
-	//}}AFX_DATA
+    // Dialog Data
+    //{{AFX_DATA(CNewFlcPal)
+    enum
+    {
+        IDD = IDD_TAB_NEW_PAL
+    };
+    CButton m_btnDefPalette;
+    CEditX m_wndLastPalPath;
+    CButtonX m_btnBrowseLastCol;
+    CComboBox m_wndPalType;
+    int m_nPalType;
+    CString m_sLastPalPath;
+    int m_nLastPalType;
+    BOOL m_bDefPalette;
+    int m_nBitsPerPixel;
+    BOOL m_bMakePalette;
+    CEditX m_wndSelPalPath;
+    CButtonX m_btnBrowseSelPalPath;
+    int m_nPaletteType;
+    int m_nPalette;
+    CString m_sPaletteCur;
+    CString m_sSelPalPath;
+    BOOL m_bSelPalPath;
+    CComboBoxCivColor m_wndPalettes;
+    //}}AFX_DATA
 
-	CNewFlcDlg*	m_pParent;
-	BOOL		m_bChanged;
+    CNewFlcDlg* m_pParent;
+    BOOL m_bChanged;
 
-	BYTE		m_nPaletteCur;
+    BYTE m_nPaletteCur;
 
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CNewFlcPal)
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CNewFlcPal)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // Implementation
+  protected:
+    HBRUSH m_brCurrent;
 
-// Implementation
-protected:
-	HBRUSH		m_brCurrent;
-
-	// Generated message map functions
-	//{{AFX_MSG(CNewFlcPal)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnSelendokPalType();
-	afx_msg void OnBrowseLastColorsPath();
-	afx_msg void OnLastColors();
-	afx_msg void OnBitsPerPixel();
-	afx_msg void OnMakePalette();
-	afx_msg void OnDestroy();
-	afx_msg void OnPalette();
-	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
-	afx_msg void OnSelendokComboPalettes();
-	afx_msg void OnSelectivePal();
-	afx_msg void OnBrowsePalPath();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+    //{{AFX_MSG(CNewFlcPal)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnSelendokPalType();
+    afx_msg void OnBrowseLastColorsPath();
+    afx_msg void OnLastColors();
+    afx_msg void OnBitsPerPixel();
+    afx_msg void OnMakePalette();
+    afx_msg void OnDestroy();
+    afx_msg void OnPalette();
+    afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+    afx_msg void OnSelendokComboPalettes();
+    afx_msg void OnSelectivePal();
+    afx_msg void OnBrowsePalPath();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

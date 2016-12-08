@@ -17,45 +17,45 @@
 // Windows 2000 version of OPENFILENAME.
 // The new version has three extra members.
 // This is copied from commdlg.h
-struct OPENFILENAMEEX : public OPENFILENAME 
-{ 
-  void *        pvReserved;
-  DWORD         dwReserved;
-  DWORD         FlagsEx;
+struct OPENFILENAMEEX : public OPENFILENAME
+{
+    void* pvReserved;
+    DWORD dwReserved;
+    DWORD FlagsEx;
 };
 
 ///////////////////////////////////////////////////////////////////////////
 // CFileDialogX: Encapsulate Windows-2000 style open dialog.
-class MFCAIDS_API CFileDialogX : public CFileDialog 
+class MFCAIDS_API CFileDialogX : public CFileDialog
 {
-      DECLARE_DYNAMIC(CFileDialogX)
-public: 
-      CFileDialogX(BOOL bOpenFileDialog, // TRUE for open, 
-                                          // FALSE for FileSaveAs
-      LPCTSTR lpszDefExt = NULL,
-      LPCTSTR lpszFileName = NULL,
-      DWORD dwFlags = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
-      LPCTSTR lpszFilter = NULL,
-      CWnd* pParentWnd = NULL);
+    DECLARE_DYNAMIC(CFileDialogX)
+  public:
+    CFileDialogX(BOOL bOpenFileDialog, // TRUE for open,
+                                       // FALSE for FileSaveAs
+                 LPCTSTR lpszDefExt   = NULL,
+                 LPCTSTR lpszFileName = NULL,
+                 DWORD dwFlags        = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
+                 LPCTSTR lpszFilter   = NULL,
+                 CWnd* pParentWnd     = NULL);
 
-   // override
-   virtual int DoModal();
+    // override
+    virtual int DoModal();
 
-protected:
-   OPENFILENAMEEX m_ofnEx; // new Windows 2000 version of OPENFILENAME
+  protected:
+    OPENFILENAMEEX m_ofnEx; // new Windows 2000 version of OPENFILENAME
 
-   virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult);
+    virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult);
 
-   // virtual fns that handle various notifications
-   virtual BOOL OnFileNameOK();
-   virtual void OnInitDone();
-   virtual void OnFileNameChange();
-   virtual void OnFolderChange();
-   virtual void OnTypeChange();
+    // virtual fns that handle various notifications
+    virtual BOOL OnFileNameOK();
+    virtual void OnInitDone();
+    virtual void OnFileNameChange();
+    virtual void OnFolderChange();
+    virtual void OnTypeChange();
 
-   DECLARE_MESSAGE_MAP()
-   //{{AFX_MSG(CFileDialogX)
-   //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
+    //{{AFX_MSG(CFileDialogX)
+    //}}AFX_MSG
 };
 
 /////////////////////////////////////////////////////////////////////////////

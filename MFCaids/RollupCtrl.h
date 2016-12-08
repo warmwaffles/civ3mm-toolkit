@@ -1,13 +1,13 @@
 //////////////////////////////////////////////////////////////////////////////
 //
 // RollupCtrl.h
-// 
+//
 // Code Johann Nadalutti
 // Mail: jnadalutti@worldonline.fr
 //
 //////////////////////////////////////////////////////////////////////////////
 //
-// This code is free for personal and commercial use, providing this 
+// This code is free for personal and commercial use, providing this
 // notice remains intact in the source files and all eventual changes are
 // clearly marked with comments.
 //
@@ -73,14 +73,14 @@
 
 struct RC_PAGEINFO
 {
-	CWnd*			pwndTemplate;
-	CButtonX*		pwndButton;
-	CButton*		pwndGroupBox;
-	BOOL			bExpanded;
-	BOOL			bEnable;
-	BOOL			bAutoDestroyTpl;
-	WNDPROC 		pOldDlgProc;	//Old wndTemplate(Dialog) window proc
-	WNDPROC 		pOldButProc;	//Old wndTemplate(Dialog) window proc
+    CWnd* pwndTemplate;
+    CButtonX* pwndButton;
+    CButton* pwndGroupBox;
+    BOOL bExpanded;
+    BOOL bEnable;
+    BOOL bAutoDestroyTpl;
+    WNDPROC pOldDlgProc; //Old wndTemplate(Dialog) window proc
+    WNDPROC pOldButProc; //Old wndTemplate(Dialog) window proc
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -88,95 +88,102 @@ struct RC_PAGEINFO
 
 class MFCAIDS_API CRollupCtrl : public CWnd
 {
-	DECLARE_DYNCREATE(CRollupCtrl)
+    DECLARE_DYNCREATE(CRollupCtrl)
 
-public:
+  public:
+    // Constructor-Destructor
+    CRollupCtrl();
+    virtual ~CRollupCtrl();
 
-	// Constructor-Destructor
-	CRollupCtrl();
-	virtual ~CRollupCtrl();
+    // Methods
+    BOOL Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID);
 
-	// Methods
-	BOOL	Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID);
+    int InsertPage(LPCTSTR caption, CDialog* pwndTemplate, BOOL bAutoDestroyTpl = TRUE, int idx = -1); //Return page zero-based index
+    int InsertPage(LPCTSTR caption, UINT nIDTemplate, CRuntimeClass* rtc, int idx = -1);               //Return page zero-based index
 
-	int		InsertPage(LPCTSTR caption, CDialog* pwndTemplate, BOOL bAutoDestroyTpl=TRUE, int idx=-1);	//Return page zero-based index
-	int		InsertPage(LPCTSTR caption, UINT nIDTemplate, CRuntimeClass* rtc, int idx=-1);				//Return page zero-based index
+    void RemovePage(int idx); //idx is a zero-based index
+    void RemoveAllPages();
 
-	void	RemovePage(int idx);	//idx is a zero-based index
-	void	RemoveAllPages();
+    void ExpandPage(int idx, BOOL bExpand = TRUE); //idx is a zero-based index
+    void ExpandAllPages(BOOL bExpand = TRUE);
 
-	void	ExpandPage(int idx, BOOL bExpand=TRUE);	//idx is a zero-based index
-	void	ExpandAllPages(BOOL bExpand=TRUE);
+    void EnablePage(int idx, BOOL bEnable = TRUE); //idx is a zero-based index
+    void EnableAllPages(BOOL bEnable = TRUE);
 
-	void	EnablePage(int idx, BOOL bEnable=TRUE);	//idx is a zero-based index
-	void	EnableAllPages(BOOL bEnable=TRUE);
+    int GetPagesCount()
+    {
+        return m_PageList.GetSize();
+    }
 
-	int		GetPagesCount() { return m_PageList.GetSize(); }
+    RC_PAGEINFO* GetPageInfo(int idx); //idx is a zero-based index
 
-	RC_PAGEINFO* GetPageInfo(int idx); //idx is a zero-based index
+    // New v1.01 Methods
+    void ScrollToPage(int idx, BOOL bAtTheTop = TRUE);
+    int MovePageAt(int idx, int newidx); //newidx can be equal to -1 (move at end)
+    BOOL IsPageExpanded(int idx);
+    BOOL IsPageEnabled(int idx);
 
-	// New v1.01 Methods
-	void	ScrollToPage(int idx, BOOL bAtTheTop=TRUE);
-	int		MovePageAt(int idx, int newidx);	//newidx can be equal to -1 (move at end)
-	BOOL	IsPageExpanded(int idx);
-	BOOL	IsPageEnabled(int idx);
+    // Call these functions to setup some sizes
+    // Note: do it before calling InsertPage!
+    void SetButtonHeight(int nSize)
+    {
+        m_nButtonHeight = nSize;
+    }
+    void SetScrollBarWidth(int nSize)
+    {
+        m_nScrollBarWidth = nSize;
+    }
+    void SetGroupBoxIndent(int nSize)
+    {
+        m_nGroupBoxIndent = nSize;
+    }
 
-	// Call these functions to setup some sizes
-	// Note: do it before calling InsertPage!
-	void SetButtonHeight(int nSize) { m_nButtonHeight = nSize; }
-	void SetScrollBarWidth(int nSize) { m_nScrollBarWidth = nSize; }
-	void SetGroupBoxIndent(int nSize) { m_nGroupBoxIndent = nSize; }
+  protected:
+    // Internal methods
+    void RecalLayout();
+    int GetPageIdxFromButtonHWND(HWND hwnd);
+    void _RemovePage(int idx);
+    void _ExpandPage(RC_PAGEINFO* pi, BOOL bExpand);
+    void _EnablePage(RC_PAGEINFO* pi, BOOL bEnable);
+    int _InsertPage(LPCTSTR caption, CDialog* dlg, int idx, BOOL bAutoDestroyTpl);
 
-protected:
+    // Datas
+    CString m_strMyClass;
+    CArray<RC_PAGEINFO*, RC_PAGEINFO*> m_PageList;
+    int m_nStartYPos, m_nPageHeight;
+    int m_nOldMouseYPos, m_nSBOffset;
 
-	// Internal methods
-	void	RecalLayout();
-	int		GetPageIdxFromButtonHWND(HWND hwnd);
-	void	_RemovePage(int idx);
-	void	_ExpandPage(RC_PAGEINFO* pi, BOOL bExpand);
-	void	_EnablePage(RC_PAGEINFO* pi, BOOL bEnable);
-	int		_InsertPage(LPCTSTR caption, CDialog* dlg, int idx, BOOL bAutoDestroyTpl);
+    int m_nButtonHeight;
+    int m_nScrollBarWidth;
+    int m_nGroupBoxIndent;
 
-	// Datas
-	CString		m_strMyClass;
-	CArray		<RC_PAGEINFO*,RC_PAGEINFO*> m_PageList;
-	int			m_nStartYPos, m_nPageHeight;
-	int			m_nOldMouseYPos, m_nSBOffset;
+    // Window proc
+    static LRESULT CALLBACK DlgWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+    static LRESULT CALLBACK ButWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-	int			m_nButtonHeight;
-	int			m_nScrollBarWidth;
-	int			m_nGroupBoxIndent;
+  public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CRollupCtrl)
+  protected:
+    virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
+    //}}AFX_VIRTUAL
 
-
-	// Window proc
-	static LRESULT CALLBACK DlgWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-	static LRESULT CALLBACK ButWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-
-public:
-
-	// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CRollupCtrl)
-	protected:
-	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
-	//}}AFX_VIRTUAL
-
-	// Generated message map functions
-protected:
-	//{{AFX_MSG(CRollupCtrl)
-	afx_msg void OnPaint();
-	afx_msg void OnSize(UINT nType, int cx, int cy);
-	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
-	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
-	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
-	afx_msg int OnMouseActivate(CWnd* pDesktopWnd, UINT nHitTest, UINT message);
-	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+  protected:
+    //{{AFX_MSG(CRollupCtrl)
+    afx_msg void OnPaint();
+    afx_msg void OnSize(UINT nType, int cx, int cy);
+    afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+    afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+    afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+    afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
+    afx_msg int OnMouseActivate(CWnd* pDesktopWnd, UINT nHitTest, UINT message);
+    afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////
-
 
 #endif // !defined(ROLLUPCTRL_H__MFCAIDS__INCLUDED_)

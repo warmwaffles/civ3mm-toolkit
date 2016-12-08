@@ -37,15 +37,15 @@
 #define MFCAIDS_API __declspec(dllimport)
 #endif
 
-// Flagdefinitions 
-#define MFT_TITLE       0x0001
-#define MFT_TOP_TITLE   0x0000
-#define MFT_SIDE_TITLE  0x0002
-#define MFT_GRADIENT    0x0004
-#define MFT_SUNKEN      0x0008
-#define MFT_LINE        0x0010
-#define MFT_ROUND       0x0020
-#define MFT_CENTER      0x0040
+// Flagdefinitions
+#define MFT_TITLE 0x0001
+#define MFT_TOP_TITLE 0x0000
+#define MFT_SIDE_TITLE 0x0002
+#define MFT_GRADIENT 0x0004
+#define MFT_SUNKEN 0x0008
+#define MFT_LINE 0x0010
+#define MFT_ROUND 0x0020
+#define MFT_CENTER 0x0040
 
 // Typedefinition for compatibility to MFC 7.0
 #ifndef DWORD_PTR
@@ -62,11 +62,11 @@ typedef long LONG_PTR, *PLONG_PTR;
 
 // Additional flagdefinition for highlighting
 #ifndef ODS_HOTLIGHT
-#define ODS_HOTLIGHT        0x0040
+#define ODS_HOTLIGHT 0x0040
 #endif
 
 #ifndef ODS_INACTIVE
-#define ODS_INACTIVE        0x0080
+#define ODS_INACTIVE 0x0080
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
@@ -78,7 +78,7 @@ extern BOOL MFCAIDS_API bRemoteSession;
 UINT MFCAIDS_API GetSafeTimerID(HWND hWnd, const UINT uiElapse);
 BOOL MFCAIDS_API DrawMenubarItem(CWnd* pWnd, CMenu* pMenu, UINT nItemIndex, UINT nState);
 
-HBITMAP LoadColorBitmap(LPCTSTR lpszResourceName, HMODULE hInst, int* pNumcol=NULL);
+HBITMAP LoadColorBitmap(LPCTSTR lpszResourceName, HMODULE hInst, int* pNumcol = NULL);
 
 /////////////////////////////////////////////////////////////////////////////
 // Forwarddeclaration for drawing purpose
@@ -89,71 +89,70 @@ class CMenuTheme;
 
 class MFCAIDS_API CNewMenuIcons : public CObject
 {
-  DECLARE_DYNCREATE(CNewMenuIcons)
+    DECLARE_DYNCREATE(CNewMenuIcons)
 
-public:
-  CNewMenuIcons();
-  virtual ~CNewMenuIcons();
+  public:
+    CNewMenuIcons();
+    virtual ~CNewMenuIcons();
 
-public:
-  BOOL GetIconSize(int* cx, int* cy);
-  CSize GetIconSize();
+  public:
+    BOOL GetIconSize(int* cx, int* cy);
+    CSize GetIconSize();
 
-  virtual int FindIndex(UINT nID);
-  virtual void OnSysColorChange();
+    virtual int FindIndex(UINT nID);
+    virtual void OnSysColorChange();
 
-  virtual BOOL LoadToolBar(LPCTSTR lpszResourceName, HMODULE hInst);
-  virtual BOOL LoadToolBar(WORD* pToolInfo, COLORREF crTransparent = CLR_NONE);
+    virtual BOOL LoadToolBar(LPCTSTR lpszResourceName, HMODULE hInst);
+    virtual BOOL LoadToolBar(WORD* pToolInfo, COLORREF crTransparent = CLR_NONE);
 
-  virtual BOOL DoMatch(LPCTSTR lpszResourceName, HMODULE hInst);
-  virtual BOOL DoMatch(WORD* pToolInfo, COLORREF crTransparent = CLR_NONE);
+    virtual BOOL DoMatch(LPCTSTR lpszResourceName, HMODULE hInst);
+    virtual BOOL DoMatch(WORD* pToolInfo, COLORREF crTransparent = CLR_NONE);
 
-  virtual BOOL LoadBitmap(int nWidth, int nHeight, LPCTSTR lpszResourceName, HMODULE hInst=NULL);
+    virtual BOOL LoadBitmap(int nWidth, int nHeight, LPCTSTR lpszResourceName, HMODULE hInst = NULL);
 
-  virtual int AddGloomIcon(HICON hIcon, int nIndex = -1);
-  virtual int AddGrayIcon(HICON hIcon, int nIndex = -1);
-  virtual BOOL MakeImages();
+    virtual int AddGloomIcon(HICON hIcon, int nIndex = -1);
+    virtual int AddGrayIcon(HICON hIcon, int nIndex = -1);
+    virtual BOOL MakeImages();
 
-  void SetResourceName(LPCTSTR lpszResourceName);
+    void SetResourceName(LPCTSTR lpszResourceName);
 
-  int AddRef();
-  int Release();
+    int AddRef();
+    int Release();
 
 #if defined(_DEBUG) || defined(_AFXDLL)
-  // Diagnostic Support
-  virtual void AssertValid() const;
-  virtual void Dump(CDumpContext& dc) const;
+    // Diagnostic Support
+    virtual void AssertValid() const;
+    virtual void Dump(CDumpContext& dc) const;
 #endif
 
-public:
-  LPCTSTR             m_lpszResourceName;
-  HMODULE             m_hInst;
-  int                 m_nColors;
-  COLORREF            m_crTransparent;
-  CImageList          m_IconsList;
-  DWORD               m_dwRefCount;
-  CArray<UINT, UINT&> m_IDs;
-
+  public:
+    LPCTSTR m_lpszResourceName;
+    HMODULE m_hInst;
+    int m_nColors;
+    COLORREF m_crTransparent;
+    CImageList m_IconsList;
+    DWORD m_dwRefCount;
+    CArray<UINT, UINT&> m_IDs;
 };
 
 /////////////////////////////////////////////////////////////////////////////
 // CNewMenuBitmaps menu icons for drawing
 class MFCAIDS_API CNewMenuBitmaps : public CNewMenuIcons
 {
-  DECLARE_DYNCREATE(CNewMenuBitmaps)
+    DECLARE_DYNCREATE(CNewMenuBitmaps)
 
-public:
-  CNewMenuBitmaps();
-  virtual ~CNewMenuBitmaps();
+  public:
+    CNewMenuBitmaps();
+    virtual ~CNewMenuBitmaps();
 
-public:
-  int Add(UINT nID, COLORREF crTransparent = CLR_NONE);
-  int Add(HICON hIcon, UINT nID = 0);
-  int Add(CBitmap* pBitmap, COLORREF crTransparent = CLR_NONE);
+  public:
+    int Add(UINT nID, COLORREF crTransparent = CLR_NONE);
+    int Add(HICON hIcon, UINT nID = 0);
+    int Add(CBitmap* pBitmap, COLORREF crTransparent = CLR_NONE);
 
-  virtual void OnSysColorChange();
+    virtual void OnSysColorChange();
 
-  CArray<COLORREF, COLORREF&> m_TranspColors;
+    CArray<COLORREF, COLORREF&> m_TranspColors;
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -161,31 +160,31 @@ public:
 
 class MFCAIDS_API CNewMenuItemData : public CObject
 {
-  DECLARE_DYNCREATE(CNewMenuItemData)
+    DECLARE_DYNCREATE(CNewMenuItemData)
 
-public:
-  CNewMenuItemData();
-  virtual ~CNewMenuItemData();
+  public:
+    CNewMenuItemData();
+    virtual ~CNewMenuItemData();
 
-public:
-  LPCTSTR GetString();
-  void SetString(LPCTSTR szMenuText);
+  public:
+    LPCTSTR GetString();
+    void SetString(LPCTSTR szMenuText);
 
 #if defined(_DEBUG) || defined(_AFXDLL)
-  // Diagnostic Support
-  virtual void AssertValid() const;
-  virtual void Dump(CDumpContext& dc) const;
+    // Diagnostic Support
+    virtual void AssertValid() const;
+    virtual void Dump(CDumpContext& dc) const;
 #endif
 
-public:
-  CString        m_szMenuText;
-  UINT           m_nTitleFlags;
-  UINT           m_nFlags;
-  UINT           m_nID;
-  UINT           m_nSyncFlag;
-  CNewMenuIcons* m_pMenuIcon;
-  int            m_nMenuIconOffset;
-  void*          m_pData;
+  public:
+    CString m_szMenuText;
+    UINT m_nTitleFlags;
+    UINT m_nFlags;
+    UINT m_nID;
+    UINT m_nSyncFlag;
+    CNewMenuIcons* m_pMenuIcon;
+    int m_nMenuIconOffset;
+    void* m_pData;
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -193,550 +192,516 @@ public:
 
 class MFCAIDS_API CNewMenu : public CMenu
 {
-  friend class CNewMenuHook;
-  friend class CNewMenuIcons;
-
-  DECLARE_DYNCREATE(CNewMenu)
-
-public:
-  // how the menu's are drawn, either original or XP style
-  typedef enum 
-  { 
-    STYLE_ORIGINAL, 
-    STYLE_ORIGINAL_NOBORDER, 
-
-    STYLE_XP, 
-    STYLE_XP_NOBORDER, 
-
-    STYLE_UNDEFINED = -1
-
-  } EDrawStyle;
-
-  // how separators are handled when removing a menu (Tongzhe Cui)
-  typedef enum {NONE, HEAD, TAIL, BOTH} ESeparator;
-
-public:
-  CNewMenu(HMENU hParent=0); 
-  virtual ~CNewMenu();
-
-  // Functions for loading and applying bitmaps to menus (see example application)
-  virtual BOOL LoadMenu(HMENU hMenu);
-  virtual BOOL LoadMenu(LPCTSTR lpszResourceName);
-  virtual BOOL LoadMenu(int nResource);
-
-  BOOL LoadToolBar(WORD* pIconInfo, COLORREF crTransparent = CLR_NONE);
-  BOOL LoadToolBar(LPCTSTR lpszResourceName, HMODULE hInst = NULL);
-  BOOL LoadToolBar(UINT nToolBar, HMODULE hInst = NULL);
-  BOOL LoadToolBars(const UINT *arID, int n, HMODULE hInst = NULL);
-
-  BOOL LoadFromToolBar(UINT nID, UINT nToolBar, int& xoffset);
-  BOOL AddBitmapToImageList(CImageList *list, UINT nResourceID);
-
-  static HBITMAP LoadSysColorBitmap(int nResourceId);
-  // custom check mark bitmaps
-  void LoadCheckmarkBitmap(int unselect, int select); 
-
-  // functions for appending a menu option, use the AppendMenu call
-  BOOL AppendMenu(UINT nFlags, UINT nIDNewItem = 0, LPCTSTR lpszNewItem = NULL, int nIconNormal = -1);
-  BOOL AppendMenu(UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CImageList *il, int xoffset);
-  BOOL AppendMenu(UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CBitmap *bmp);
-
-  BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags = MF_OWNERDRAW, UINT nID = 0, int nIconNormal = -1);  
-  BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags, UINT nID, CBitmap* pbmp);
-  BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags, UINT nID, CImageList *il, int xoffset);
-  BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags, UINT nID, CNewMenuIcons* pIcons, int nIndex);
-
-  // for appending a popup menu (see example application)
-  CNewMenu* AppendODPopupMenu(LPCTSTR lpstrText);
-
-  // functions for inserting a menu option, use the InsertMenu call (see above define)
-  BOOL InsertMenu(UINT nPosition, UINT nFlags, UINT nIDNewItem = 0, LPCTSTR lpszNewItem = NULL, int nIconNormal = -1);
-  BOOL InsertMenu(UINT nPosition, UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CImageList *il, int xoffset);
-  BOOL InsertMenu(UINT nPosition, UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CBitmap *bmp);
-
-  BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags = MF_OWNERDRAW, UINT nID = 0, int nIconNormal = -1);  
-  BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags, UINT nID, CBitmap* pBmp);
-  BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags, UINT nID, CImageList *il, int xoffset);
-  BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags, UINT nID, CNewMenuIcons* pIcons, int nIndex);
-
-  // functions for modifying a menu option, use the ModifyODMenu call (see above define)
-  BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID = 0, int nIconNormal = -1);
-  BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, CImageList *il, int xoffset);
-  BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, CNewMenuIcons* pIcons, int nIndex);
-
-  BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, CBitmap *bmp);
-  BOOL ModifyODMenu(LPCTSTR lpstrText, LPCTSTR OptionText, int nIconNormal);
-  // use this method for adding a solid/hatched colored square beside a menu option
-  // courtesy of Warren Stevens
-  BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, COLORREF fill, COLORREF border, int hatchstyle = -1);
-
-  // for deleting and removing menu options
-  BOOL  DeleteMenu(UINT uiId, UINT nFlags);
-  BOOL  RemoveMenu(UINT uiId, UINT nFlags);
-  int RemoveMenu(LPCTSTR pText, ESeparator sPos = CNewMenu::NONE);
-
-  // function for retrieving and setting a menu options text (use this function
-  // because it is ownerdrawn)
-  BOOL GetMenuText(UINT id, CString &string, UINT nFlags = MF_BYPOSITION);
-  BOOL SetMenuText(UINT id, CString string, UINT nFlags = MF_BYPOSITION);
-
-  // Getting a submenu from it's name or position
-  CMenu* GetSubMenu (LPCTSTR lpszSubMenuName) const;
-  CMenu* GetSubMenu (int nPos) const;
-  int GetMenuPosition(LPCTSTR pText);
-
-  // Destoying
-  virtual BOOL DestroyMenu();
-
-  // Drawing: 
-  // Draw an item
-  virtual void DrawItem(LPDRAWITEMSTRUCT lpDIS);
-  // Measure an item  
-  virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMIS);
-  // Draw title of the menu
-  virtual void DrawTitle(LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenuBar);
-  // Erase the Background of the menu
-  virtual BOOL EraseBkgnd(HWND hWnd, HDC hDC);
+    friend class CNewMenuHook;
+    friend class CNewMenuIcons;
+
+    DECLARE_DYNCREATE(CNewMenu)
+
+  public:
+    // how the menu's are drawn, either original or XP style
+    typedef enum {
+        STYLE_ORIGINAL,
+        STYLE_ORIGINAL_NOBORDER,
+
+        STYLE_XP,
+        STYLE_XP_NOBORDER,
+
+        STYLE_UNDEFINED = -1
+
+    } EDrawStyle;
+
+    // how separators are handled when removing a menu (Tongzhe Cui)
+    typedef enum { NONE, HEAD, TAIL, BOTH } ESeparator;
+
+  public:
+    CNewMenu(HMENU hParent = 0);
+    virtual ~CNewMenu();
+
+    // Functions for loading and applying bitmaps to menus (see example application)
+    virtual BOOL LoadMenu(HMENU hMenu);
+    virtual BOOL LoadMenu(LPCTSTR lpszResourceName);
+    virtual BOOL LoadMenu(int nResource);
+
+    BOOL LoadToolBar(WORD* pIconInfo, COLORREF crTransparent = CLR_NONE);
+    BOOL LoadToolBar(LPCTSTR lpszResourceName, HMODULE hInst = NULL);
+    BOOL LoadToolBar(UINT nToolBar, HMODULE hInst = NULL);
+    BOOL LoadToolBars(const UINT* arID, int n, HMODULE hInst = NULL);
+
+    BOOL LoadFromToolBar(UINT nID, UINT nToolBar, int& xoffset);
+    BOOL AddBitmapToImageList(CImageList* list, UINT nResourceID);
+
+    static HBITMAP LoadSysColorBitmap(int nResourceId);
+    // custom check mark bitmaps
+    void LoadCheckmarkBitmap(int unselect, int select);
+
+    // functions for appending a menu option, use the AppendMenu call
+    BOOL AppendMenu(UINT nFlags, UINT nIDNewItem = 0, LPCTSTR lpszNewItem = NULL, int nIconNormal = -1);
+    BOOL AppendMenu(UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CImageList* il, int xoffset);
+    BOOL AppendMenu(UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CBitmap* bmp);
+
+    BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags = MF_OWNERDRAW, UINT nID = 0, int nIconNormal = -1);
+    BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags, UINT nID, CBitmap* pbmp);
+    BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags, UINT nID, CImageList* il, int xoffset);
+    BOOL AppendODMenu(LPCTSTR lpstrText, UINT nFlags, UINT nID, CNewMenuIcons* pIcons, int nIndex);
+
+    // for appending a popup menu (see example application)
+    CNewMenu* AppendODPopupMenu(LPCTSTR lpstrText);
+
+    // functions for inserting a menu option, use the InsertMenu call (see above define)
+    BOOL InsertMenu(UINT nPosition, UINT nFlags, UINT nIDNewItem = 0, LPCTSTR lpszNewItem = NULL, int nIconNormal = -1);
+    BOOL InsertMenu(UINT nPosition, UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CImageList* il, int xoffset);
+    BOOL InsertMenu(UINT nPosition, UINT nFlags, UINT nIDNewItem, LPCTSTR lpszNewItem, CBitmap* bmp);
+
+    BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags = MF_OWNERDRAW, UINT nID = 0, int nIconNormal = -1);
+    BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags, UINT nID, CBitmap* pBmp);
+    BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags, UINT nID, CImageList* il, int xoffset);
+    BOOL InsertODMenu(UINT nPosition, LPCTSTR lpstrText, UINT nFlags, UINT nID, CNewMenuIcons* pIcons, int nIndex);
+
+    // functions for modifying a menu option, use the ModifyODMenu call (see above define)
+    BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID = 0, int nIconNormal = -1);
+    BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, CImageList* il, int xoffset);
+    BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, CNewMenuIcons* pIcons, int nIndex);
+
+    BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, CBitmap* bmp);
+    BOOL ModifyODMenu(LPCTSTR lpstrText, LPCTSTR OptionText, int nIconNormal);
+    // use this method for adding a solid/hatched colored square beside a menu option
+    // courtesy of Warren Stevens
+    BOOL ModifyODMenu(LPCTSTR lpstrText, UINT nID, COLORREF fill, COLORREF border, int hatchstyle = -1);
+
+    // for deleting and removing menu options
+    BOOL DeleteMenu(UINT uiId, UINT nFlags);
+    BOOL RemoveMenu(UINT uiId, UINT nFlags);
+    int RemoveMenu(LPCTSTR pText, ESeparator sPos = CNewMenu::NONE);
+
+    // function for retrieving and setting a menu options text (use this function
+    // because it is ownerdrawn)
+    BOOL GetMenuText(UINT id, CString& string, UINT nFlags = MF_BYPOSITION);
+    BOOL SetMenuText(UINT id, CString string, UINT nFlags = MF_BYPOSITION);
+
+    // Getting a submenu from it's name or position
+    CMenu* GetSubMenu(LPCTSTR lpszSubMenuName) const;
+    CMenu* GetSubMenu(int nPos) const;
+    int GetMenuPosition(LPCTSTR pText);
+
+    // Destoying
+    virtual BOOL DestroyMenu();
+
+    // Drawing:
+    // Draw an item
+    virtual void DrawItem(LPDRAWITEMSTRUCT lpDIS);
+    // Measure an item
+    virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMIS);
+    // Draw title of the menu
+    virtual void DrawTitle(LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenuBar);
+    // Erase the Background of the menu
+    virtual BOOL EraseBkgnd(HWND hWnd, HDC hDC);
 
-  static COLORREF GetMenuBarColor();
-  static COLORREF GetMenuColor();
+    static COLORREF GetMenuBarColor();
+    static COLORREF GetMenuColor();
 
-  static void SetMenuTitleFont(CFont* pFont);
-  static void SetMenuTitleFont(LOGFONT* pLogFont);
-  static LOGFONT GetMenuTitleFont();
+    static void SetMenuTitleFont(CFont* pFont);
+    static void SetMenuTitleFont(LOGFONT* pLogFont);
+    static LOGFONT GetMenuTitleFont();
 
-  // Menutitle function
-  BOOL SetMenuTitle(LPCTSTR pTitle, UINT nTitleFlags = MFT_TOP_TITLE);
-  BOOL RemoveMenuTitle();
+    // Menutitle function
+    BOOL SetMenuTitle(LPCTSTR pTitle, UINT nTitleFlags = MFT_TOP_TITLE);
+    BOOL RemoveMenuTitle();
 
-  // Function to set how menu is drawn, either original or XP style
-  static UINT GetMenuDrawMode();
-  static UINT SetMenuDrawMode(UINT mode);
+    // Function to set how menu is drawn, either original or XP style
+    static UINT GetMenuDrawMode();
+    static UINT SetMenuDrawMode(UINT mode);
 
-  // Function to set how disabled items are drawn 
-  //(mode=FALSE means they are not drawn selected)
-  static BOOL SetSelectDisableMode(BOOL mode);
-  static BOOL GetSelectDisableMode();
+    // Function to set how disabled items are drawn
+    //(mode=FALSE means they are not drawn selected)
+    static BOOL SetSelectDisableMode(BOOL mode);
+    static BOOL GetSelectDisableMode();
 
-  // Function to set how icons were drawn in normal mode 
-  //(enable=TRUE means they are drawn blended)
-  static BOOL SetXpBlendig(BOOL bEnable=TRUE);
-  static BOOL GetXpBlendig();
+    // Function to set how icons were drawn in normal mode
+    //(enable=TRUE means they are drawn blended)
+    static BOOL SetXpBlendig(BOOL bEnable = TRUE);
+    static BOOL GetXpBlendig();
 
-  // Function to set how default menu border were drawn
-  //(enable=TRUE means that all menu in the application has the same border)
-  static BOOL SetNewMenuBorderAllMenu(BOOL bEnable=TRUE);
-  static BOOL GetNewMenuBorderAllMenu();
+    // Function to set how default menu border were drawn
+    //(enable=TRUE means that all menu in the application has the same border)
+    static BOOL SetNewMenuBorderAllMenu(BOOL bEnable = TRUE);
+    static BOOL GetNewMenuBorderAllMenu();
 
-  static void OnSysColorChange();
+    static void OnSysColorChange();
 
-  // Static functions used for handling menu's in the mainframe
-  static LRESULT FindKeyboardShortcut(UINT nChar, UINT nFlags, CMenu *pMenu);
-  static BOOL OnMeasureItem(const MSG* pMsg);
-  static void OnInitMenuPopup(HWND hWnd, CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu);
+    // Static functions used for handling menu's in the mainframe
+    static LRESULT FindKeyboardShortcut(UINT nChar, UINT nFlags, CMenu* pMenu);
+    static BOOL OnMeasureItem(const MSG* pMsg);
+    static void OnInitMenuPopup(HWND hWnd, CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu);
 
-  // Helperfunction to find the menu to the item
-  static CMenu* FindPopupMenuFromID(CMenu* pMenu, UINT nID);
-  static CMenu* FindPopupMenuFromID(HMENU hMenu, UINT nID);
+    // Helperfunction to find the menu to the item
+    static CMenu* FindPopupMenuFromID(CMenu* pMenu, UINT nID);
+    static CMenu* FindPopupMenuFromID(HMENU hMenu, UINT nID);
 
-  static CMenu* FindPopupMenuFromIDData(CMenu* pMenu, UINT nID, ULONG_PTR pData);
-  static CMenu* FindPopupMenuFromIDData(HMENU hMenu, UINT nID, ULONG_PTR pData);
+    static CMenu* FindPopupMenuFromIDData(CMenu* pMenu, UINT nID, ULONG_PTR pData);
+    static CMenu* FindPopupMenuFromIDData(HMENU hMenu, UINT nID, ULONG_PTR pData);
 
-  virtual void OnInitMenuPopup();
-  virtual BOOL OnUnInitPopupMenu();
+    virtual void OnInitMenuPopup();
+    virtual BOOL OnUnInitPopupMenu();
 
-  // Customizing:
-  // Set icon size
-  void SetIconSize(int width, int height);
+    // Customizing:
+    // Set icon size
+    void SetIconSize(int width, int height);
 
-  // set the color in the bitmaps that is the background transparent color
-  COLORREF SetBitmapBackground(COLORREF newColor);
-  COLORREF GetBitmapBackground(); 
+    // set the color in the bitmaps that is the background transparent color
+    COLORREF SetBitmapBackground(COLORREF newColor);
+    COLORREF GetBitmapBackground();
 
-  // Return the last itemrect from a menubaritem.
-  CRect GetLastActiveMenuRect();
-  HMENU GetParent();
-  BOOL IsPopup();
-  BOOL SetPopup(BOOL bIsPopup=TRUE);
+    // Return the last itemrect from a menubaritem.
+    CRect GetLastActiveMenuRect();
+    HMENU GetParent();
+    BOOL IsPopup();
+    BOOL SetPopup(BOOL bIsPopup = TRUE);
 
-  BOOL SetItemData(UINT uiId, DWORD_PTR dwItemData, BOOL fByPos = FALSE);
-  BOOL SetItemDataPtr(UINT uiId, void* pItemData, BOOL fByPos = FALSE);
+    BOOL SetItemData(UINT uiId, DWORD_PTR dwItemData, BOOL fByPos = FALSE);
+    BOOL SetItemDataPtr(UINT uiId, void* pItemData, BOOL fByPos = FALSE);
 
-  DWORD_PTR GetItemData(UINT uiId, BOOL fByPos = FALSE) const;
-  void* GetItemDataPtr(UINT uiId, BOOL fByPos = FALSE) const;
+    DWORD_PTR GetItemData(UINT uiId, BOOL fByPos = FALSE) const;
+    void* GetItemDataPtr(UINT uiId, BOOL fByPos = FALSE) const;
 
-  BOOL SetMenuData(DWORD_PTR dwMenuData);
-  BOOL SetMenuDataPtr(void* pMenuData);
+    BOOL SetMenuData(DWORD_PTR dwMenuData);
+    BOOL SetMenuDataPtr(void* pMenuData);
 
-  DWORD_PTR GetMenuData() const;
-  void* GetMenuDataPtr() const;
+    DWORD_PTR GetMenuData() const;
+    void* GetMenuDataPtr() const;
 
-// Miscellaneous Protected Member functions
-protected:
-  CNewMenuIcons* GetMenuIcon(int &nIndex, UINT nID, CImageList* pil, int xoffset);
-  CNewMenuIcons* GetMenuIcon(int &nIndex, int nID);
-  CNewMenuIcons* GetMenuIcon(int &nIndex, CBitmap* pBmp);
+    // Miscellaneous Protected Member functions
+  protected:
+    CNewMenuIcons* GetMenuIcon(int& nIndex, UINT nID, CImageList* pil, int xoffset);
+    CNewMenuIcons* GetMenuIcon(int& nIndex, int nID);
+    CNewMenuIcons* GetMenuIcon(int& nIndex, CBitmap* pBmp);
 
-  CNewMenuIcons* GetToolbarIcons(UINT nToolBar, HMODULE hInst=NULL);
+    CNewMenuIcons* GetToolbarIcons(UINT nToolBar, HMODULE hInst = NULL);
 
-  DWORD SetMenuIcons(CNewMenuIcons* pMenuIcons);
-  BOOL Replace(UINT nID, UINT nNewID);
+    DWORD SetMenuIcons(CNewMenuIcons* pMenuIcons);
+    BOOL Replace(UINT nID, UINT nNewID);
 
-  static BOOL IsNewShell();
-  BOOL IsMenuBar(HMENU hMenu=NULL);
+    static BOOL IsNewShell();
+    BOOL IsMenuBar(HMENU hMenu = NULL);
 
-  void SetLastMenuRect(HDC hDC, LPRECT pRect);
+    void SetLastMenuRect(HDC hDC, LPRECT pRect);
 
-  CNewMenuItemData* FindMenuItem(UINT nID);
-  CNewMenu* FindMenuOption(int nId, int& nLoc);
-  CNewMenu* FindMenuOption(LPCTSTR lpstrText, int& nLoc);
+    CNewMenuItemData* FindMenuItem(UINT nID);
+    CNewMenu* FindMenuOption(int nId, int& nLoc);
+    CNewMenu* FindMenuOption(LPCTSTR lpstrText, int& nLoc);
 
-  CNewMenu* FindAnotherMenuOption(int nId, int& nLoc, CArray<CNewMenu*, CNewMenu*>&newSubs, CArray<int, int&>&newLocs);
+    CNewMenu* FindAnotherMenuOption(int nId, int& nLoc, CArray<CNewMenu*, CNewMenu*>& newSubs, CArray<int, int&>& newLocs);
 
-  CNewMenuItemData* NewODMenu(UINT pos, UINT nFlags, UINT nID, LPCTSTR string);
+    CNewMenuItemData* NewODMenu(UINT pos, UINT nFlags, UINT nID, LPCTSTR string);
 
-  void SynchronizeMenu();
-  void InitializeMenuList(int value);
-  void DeleteMenuList();
-  
-  CNewMenuItemData* FindMenuList(UINT nID);
-  CNewMenuItemData* CheckMenuItemData(ULONG_PTR nItemData) const;
+    void SynchronizeMenu();
+    void InitializeMenuList(int value);
+    void DeleteMenuList();
 
-  void DrawSpecial_OldStyle(CDC* pDC, LPCRECT pRect, UINT nID, DWORD dwStyle);
-  void DrawSpecial_WinXP(CDC* pDC, LPCRECT pRect, UINT nID, DWORD dwStyle);
+    CNewMenuItemData* FindMenuList(UINT nID);
+    CNewMenuItemData* CheckMenuItemData(ULONG_PTR nItemData) const;
 
-  void DrawSpecialCharStyle(CDC* pDC, LPCRECT pRect, TCHAR Sign, DWORD dwStyle);
-  void DrawSpecialChar(CDC* pDC, LPCRECT pRect, TCHAR Sign, BOOL bBold);
+    void DrawSpecial_OldStyle(CDC* pDC, LPCRECT pRect, UINT nID, DWORD dwStyle);
+    void DrawSpecial_WinXP(CDC* pDC, LPCRECT pRect, UINT nID, DWORD dwStyle);
 
-  void DrawMenuTitle(LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenuBar);
+    void DrawSpecialCharStyle(CDC* pDC, LPCRECT pRect, TCHAR Sign, DWORD dwStyle);
+    void DrawSpecialChar(CDC* pDC, LPCRECT pRect, TCHAR Sign, BOOL bBold);
 
-  // Measure an item
-  void MeasureItem_OldStyle(LPMEASUREITEMSTRUCT lpMIS, BOOL bIsMenuBar); 
-  void DrawItem_OldStyle (LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenubar);
+    void DrawMenuTitle(LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenuBar);
 
-  BOOL Draw3DCheckmark(CDC* dc, const CRect& rc, HBITMAP hbmCheck, DWORD dwStyle);
+    // Measure an item
+    void MeasureItem_OldStyle(LPMEASUREITEMSTRUCT lpMIS, BOOL bIsMenuBar);
+    void DrawItem_OldStyle(LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenubar);
 
-  void MeasureItem_WinXP(LPMEASUREITEMSTRUCT lpMIS, BOOL bIsMenuBar); 
-  void DrawItem_WinXP (LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenuBar);
+    BOOL Draw3DCheckmark(CDC* dc, const CRect& rc, HBITMAP hbmCheck, DWORD dwStyle);
 
-//  BOOL ImageListDuplicate(CImageList* il, int xoffset, CImageList* newlist);
-  void ColorBitmap(CDC* pDC, CBitmap& bmp, CSize size, COLORREF fill, COLORREF border, int hatchstyle=-1);
-  
-// Member Variables
-public:
-  static DWORD m_dwLastActiveItem;
+    void MeasureItem_WinXP(LPMEASUREITEMSTRUCT lpMIS, BOOL bIsMenuBar);
+    void DrawItem_WinXP(LPDRAWITEMSTRUCT lpDIS, BOOL bIsMenuBar);
 
-protected: 
-  // Stores list of menu items
-  CTypedPtrArray<CPtrArray, CNewMenuItemData*> m_MenuItemList;   
-  // When loading an owner-drawn menu using a Resource, CNewMenu must keep track of
-  // the popup menu's that it creates. Warning, this list *MUST* be destroyed
-  // last item first :)
-  // Stores list of sub-menus
-  CTypedPtrArray<CPtrArray, HMENU>  m_SubMenus;
+    //  BOOL ImageListDuplicate(CImageList* il, int xoffset, CImageList* newlist);
+    void ColorBitmap(CDC* pDC, CBitmap& bmp, CSize size, COLORREF fill, COLORREF border, int hatchstyle = -1);
 
-  static BOOL        m_bEnableXpBlendig;
-  static BOOL        m_bNewMenuBorderAllMenu;
-  static BOOL        m_bSelectDisable;
-  static CMenuTheme* m_pActMenuDrawing;
-  static LOGFONT     m_MenuTitleFont;
-  static CTypedPtrList<CPtrList, CNewMenuIcons*>* m_pSharedMenuIcons;
+    // Member Variables
+  public:
+    static DWORD m_dwLastActiveItem;
 
-  int                m_iconX;
-  int                m_iconY;
+  protected:
+    // Stores list of menu items
+    CTypedPtrArray<CPtrArray, CNewMenuItemData*> m_MenuItemList;
+    // When loading an owner-drawn menu using a Resource, CNewMenu must keep track of
+    // the popup menu's that it creates. Warning, this list *MUST* be destroyed
+    // last item first :)
+    // Stores list of sub-menus
+    CTypedPtrArray<CPtrArray, HMENU> m_SubMenus;
 
-  HWND               m_hTempOwner;
+    static BOOL m_bEnableXpBlendig;
+    static BOOL m_bNewMenuBorderAllMenu;
+    static BOOL m_bSelectDisable;
+    static CMenuTheme* m_pActMenuDrawing;
+    static LOGFONT m_MenuTitleFont;
+    static CTypedPtrList<CPtrList, CNewMenuIcons*>* m_pSharedMenuIcons;
 
-  COLORREF           m_bitmapBackground;
+    int m_iconX;
+    int m_iconY;
 
-  CImageList*        m_checkmaps;
-  BOOL               m_checkmapsshare;
+    HWND m_hTempOwner;
 
-  int                m_selectcheck;
-  int                m_unselectcheck;
+    COLORREF m_bitmapBackground;
 
-  BOOL               m_bDynIcons;
+    CImageList* m_checkmaps;
+    BOOL m_checkmapsshare;
 
-  HMENU              m_hParentMenu;
+    int m_selectcheck;
+    int m_unselectcheck;
 
-  BOOL               m_bIsPopupMenu;
+    BOOL m_bDynIcons;
 
-  CRect              m_LastActiveMenuRect;
+    HMENU m_hParentMenu;
 
-  DWORD              m_dwOpenMenu;
+    BOOL m_bIsPopupMenu;
 
-  void*              m_pData;
+    CRect m_LastActiveMenuRect;
+
+    DWORD m_dwOpenMenu;
+
+    void* m_pData;
 };
 
 /////////////////////////////////////////////////////////////////////////////
 // CNewFrame<> template for easy using of the new menu
 
-template<class baseClass>
+template <class baseClass>
 class MFCAIDS_API CNewFrame : public baseClass
 {
-  typedef CNewFrame<baseClass> MyNewFrame;
-public:
-  CNewMenu m_DefaultNewMenu;
-  CNewMenu m_SystemNewMenu;
+    typedef CNewFrame<baseClass> MyNewFrame;
 
-public:
+  public:
+    CNewMenu m_DefaultNewMenu;
+    CNewMenu m_SystemNewMenu;
 
-  CNewFrame()
-  {
-    m_bInMenuLoop = FALSE;
-    m_TimerID = NULL;
-    m_menubarItemIndex = UINT(-1);
-  }
+  public:
+    CNewFrame()
+    {
+        m_bInMenuLoop      = FALSE;
+        m_TimerID          = NULL;
+        m_menubarItemIndex = UINT(-1);
+    }
 
-  // control bar docking
-  void EnableDocking(DWORD dwDockStyle);
+    // control bar docking
+    void EnableDocking(DWORD dwDockStyle);
 
-private:
-  static const AFX_MSGMAP_ENTRY _messageEntries[];
+  private:
+    static const AFX_MSGMAP_ENTRY _messageEntries[];
 
-protected: 
-  static const AFX_MSGMAP messageMap;
+  protected:
+    static const AFX_MSGMAP messageMap;
 
-  BOOL m_bInMenuLoop;
-  UINT m_TimerID;
-  UINT m_menubarItemIndex;
+    BOOL m_bInMenuLoop;
+    UINT m_TimerID;
+    UINT m_menubarItemIndex;
 
-
-#if _MFC_VER < 0x0700 
-  static const AFX_MSGMAP* PASCAL _GetBaseMessageMap()
-  { 
-    return &baseClass::messageMap; 
-  };
+#if _MFC_VER < 0x0700
+    static const AFX_MSGMAP* PASCAL _GetBaseMessageMap()
+    {
+        return &baseClass::messageMap;
+    };
 #else
-  static const AFX_MSGMAP* PASCAL GetThisMessageMap()
-  {
-    return &CNewFrame<baseClass>::messageMap; 
-  }
+    static const AFX_MSGMAP* PASCAL GetThisMessageMap()
+    {
+        return &CNewFrame<baseClass>::messageMap;
+    }
 #endif
 
-  virtual const AFX_MSGMAP* GetMessageMap() const 
-  {
-    return &CNewFrame<baseClass>::messageMap; 
-  }
-
-  static const AFX_MSGMAP_ENTRY* GetMessageEntries()
-  {
-    static const AFX_MSGMAP_ENTRY Entries[] =
+    virtual const AFX_MSGMAP* GetMessageMap() const
     {
-      ON_WM_MEASUREITEM()
-      ON_WM_MENUCHAR()
-      ON_WM_INITMENUPOPUP()
-      ON_WM_ENTERMENULOOP()
-      ON_WM_EXITMENULOOP() 
-      ON_WM_TIMER()
-      ON_WM_CREATE()
-      ON_WM_NCHITTEST()
-      ON_WM_DESTROY()
-      ON_WM_SYSCOLORCHANGE()
-      {0, 0, 0, 0, AfxSig_end, (AFX_PMSG)0 }
-    }; 
-    return Entries;
-  }
-
-  afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct)
-  {
-    if (baseClass::OnCreate(lpCreateStruct) == -1)
-      return -1;
-
-    m_SystemNewMenu.Attach(::GetSystemMenu(m_hWnd, FALSE));
-    return 0;
-  }
-
-  afx_msg void OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu) 
-  {
-    baseClass::OnInitMenuPopup(pPopupMenu, nIndex, bSysMenu);
-    CNewMenu::OnInitMenuPopup(m_hWnd, pPopupMenu, nIndex, bSysMenu);
-  }
-
-  afx_msg void OnSysColorChange() 
-  {
-    baseClass::OnSysColorChange();
-    CNewMenu::OnSysColorChange();
-  }
-
-  afx_msg void OnEnterMenuLoop(BOOL bIsTrackPopupMenu)
-  {
-    m_bInMenuLoop = TRUE;
-
-    if (m_TimerID != NULL)
-    {
-      KillTimer(m_TimerID);
-      m_TimerID = NULL;
+        return &CNewFrame<baseClass>::messageMap;
     }
 
-    if (m_menubarItemIndex != UINT(-1))
+    static const AFX_MSGMAP_ENTRY* GetMessageEntries()
     {
-      DrawMenubarItem(this, GetMenu(), m_menubarItemIndex, NULL);
-      m_menubarItemIndex = UINT(-1);
+        static const AFX_MSGMAP_ENTRY Entries[] = { ON_WM_MEASUREITEM() ON_WM_MENUCHAR() ON_WM_INITMENUPOPUP() ON_WM_ENTERMENULOOP()
+                                                      ON_WM_EXITMENULOOP() ON_WM_TIMER() ON_WM_CREATE() ON_WM_NCHITTEST() ON_WM_DESTROY()
+                                                        ON_WM_SYSCOLORCHANGE(){ 0, 0, 0, 0, AfxSig_end, (AFX_PMSG)0 } };
+        return Entries;
     }
 
-    baseClass::OnEnterMenuLoop(bIsTrackPopupMenu);
-  }
-
-  afx_msg void OnExitMenuLoop(BOOL bIsTrackPopupMenu)
-  {
-    m_bInMenuLoop = FALSE;
-    baseClass::OnExitMenuLoop(bIsTrackPopupMenu);
-  }
-
-  afx_msg void OnTimer(UINT_PTR nIDEvent)
-  {
-    baseClass::OnTimer(nIDEvent);
-
-    if (m_TimerID == nIDEvent)
-    {   
-      CPoint pt;
-      GetCursorPos(&pt);
-      SendMessage(WM_NCHITTEST, 0, MAKELONG(pt.x, pt.y));
-    }
-  }
-
-  afx_msg void OnDestroy()
-  {
-    if (m_TimerID != NULL)
+    afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct)
     {
-      KillTimer(m_TimerID);
-      m_TimerID = NULL;
+        if (baseClass::OnCreate(lpCreateStruct) == -1)
+            return -1;
+
+        m_SystemNewMenu.Attach(::GetSystemMenu(m_hWnd, FALSE));
+        return 0;
     }
-    baseClass::OnDestroy();
-  }
 
-  afx_msg UINT OnNcHitTest(CPoint point)
-  {
-    UINT nHitCode = baseClass::OnNcHitTest(point);
-    // Test Win85/98/me and Win NT 4.0
-    if (g_Shell<Win2000 || bRemoteSession)
+    afx_msg void OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu)
     {
-      UINT nStatus;
-      UINT nHotlightStatus;
+        baseClass::OnInitMenuPopup(pPopupMenu, nIndex, bSysMenu);
+        CNewMenu::OnInitMenuPopup(m_hWnd, pPopupMenu, nIndex, bSysMenu);
+    }
 
-      if (IsChild(GetFocus()))
-      { 
-        nStatus = 0; 
-        nHotlightStatus = ODS_HOTLIGHT;
-      }
-      else if (g_Shell == Win95 || g_Shell == WinNT4)
-      { // Win95 or winNt 4.0 do not have an inactive menubar
-        nStatus = 0; 
-        nHotlightStatus = 0;
-      }
-      else
-      { 
-        nStatus = ODS_INACTIVE;
-        nHotlightStatus = ODS_HOTLIGHT | ODS_INACTIVE;
-      }
+    afx_msg void OnSysColorChange()
+    {
+        baseClass::OnSysColorChange();
+        CNewMenu::OnSysColorChange();
+    }
 
-      CNewMenu* pNewMenu = DYNAMIC_DOWNCAST(CNewMenu, GetMenu());
-      if (!m_bInMenuLoop && nHitCode == HTMENU)
-      {
-        // I support only CNewMenu ownerdrawings menu!!
-        if (pNewMenu)
-        {
-          UINT nItemIndex = MenuItemFromPoint(m_hWnd, pNewMenu->m_hMenu, point);
+    afx_msg void OnEnterMenuLoop(BOOL bIsTrackPopupMenu)
+    {
+        m_bInMenuLoop = TRUE;
 
-          if (nItemIndex != (UINT)-1)
-          {
-            if (m_menubarItemIndex != nItemIndex)
-            { 
-              // Clear the old Item
-              DrawMenubarItem(this, pNewMenu, m_menubarItemIndex, nStatus);
+        if (m_TimerID != NULL) {
+            KillTimer(m_TimerID);
+            m_TimerID = NULL;
+        }
 
-              // Draw the hotlight item.
-              if (DrawMenubarItem(this, pNewMenu, nItemIndex, nHotlightStatus))
-              {
-                // Set a new Timer
-                if (m_TimerID == NULL)
-                  m_TimerID = GetSafeTimerID(m_hWnd, 100);
+        if (m_menubarItemIndex != UINT(-1)) {
+            DrawMenubarItem(this, GetMenu(), m_menubarItemIndex, NULL);
+            m_menubarItemIndex = UINT(-1);
+        }
 
-                m_menubarItemIndex = nItemIndex;
-              }
-              else
+        baseClass::OnEnterMenuLoop(bIsTrackPopupMenu);
+    }
+
+    afx_msg void OnExitMenuLoop(BOOL bIsTrackPopupMenu)
+    {
+        m_bInMenuLoop = FALSE;
+        baseClass::OnExitMenuLoop(bIsTrackPopupMenu);
+    }
+
+    afx_msg void OnTimer(UINT_PTR nIDEvent)
+    {
+        baseClass::OnTimer(nIDEvent);
+
+        if (m_TimerID == nIDEvent) {
+            CPoint pt;
+            GetCursorPos(&pt);
+            SendMessage(WM_NCHITTEST, 0, MAKELONG(pt.x, pt.y));
+        }
+    }
+
+    afx_msg void OnDestroy()
+    {
+        if (m_TimerID != NULL) {
+            KillTimer(m_TimerID);
+            m_TimerID = NULL;
+        }
+        baseClass::OnDestroy();
+    }
+
+    afx_msg UINT OnNcHitTest(CPoint point)
+    {
+        UINT nHitCode = baseClass::OnNcHitTest(point);
+        // Test Win85/98/me and Win NT 4.0
+        if (g_Shell < Win2000 || bRemoteSession) {
+            UINT nStatus;
+            UINT nHotlightStatus;
+
+            if (IsChild(GetFocus())) {
+                nStatus         = 0;
+                nHotlightStatus = ODS_HOTLIGHT;
+            } else if (g_Shell == Win95 || g_Shell == WinNT4) { // Win95 or winNt 4.0 do not have an inactive menubar
+                nStatus         = 0;
+                nHotlightStatus = 0;
+            } else {
+                nStatus         = ODS_INACTIVE;
+                nHotlightStatus = ODS_HOTLIGHT | ODS_INACTIVE;
+            }
+
+            CNewMenu* pNewMenu = DYNAMIC_DOWNCAST(CNewMenu, GetMenu());
+            if (!m_bInMenuLoop && nHitCode == HTMENU) {
+                // I support only CNewMenu ownerdrawings menu!!
+                if (pNewMenu) {
+                    UINT nItemIndex = MenuItemFromPoint(m_hWnd, pNewMenu->m_hMenu, point);
+
+                    if (nItemIndex != (UINT)-1) {
+                        if (m_menubarItemIndex != nItemIndex) {
+                            // Clear the old Item
+                            DrawMenubarItem(this, pNewMenu, m_menubarItemIndex, nStatus);
+
+                            // Draw the hotlight item.
+                            if (DrawMenubarItem(this, pNewMenu, nItemIndex, nHotlightStatus)) {
+                                // Set a new Timer
+                                if (m_TimerID == NULL)
+                                    m_TimerID = GetSafeTimerID(m_hWnd, 100);
+
+                                m_menubarItemIndex = nItemIndex;
+                            } else
+                                m_menubarItemIndex = UINT(-1);
+                        } else {
+                            // Draw the hotlight item again.
+                            if (CNewMenu::m_dwLastActiveItem == NULL && DrawMenubarItem(this, pNewMenu, nItemIndex, nHotlightStatus)) {
+                                // Set a new Timer
+                                if (m_TimerID == NULL)
+                                    m_TimerID = GetSafeTimerID(m_hWnd, 100);
+
+                                m_menubarItemIndex = nItemIndex;
+                            }
+                        }
+                        return nHitCode;
+                    }
+                }
+            }
+
+            if (m_menubarItemIndex != UINT(-1)) {
+                DrawMenubarItem(this, pNewMenu, m_menubarItemIndex, nStatus);
                 m_menubarItemIndex = UINT(-1);
             }
-            else
-            {
-              // Draw the hotlight item again.
-              if (CNewMenu::m_dwLastActiveItem == NULL && 
-                 DrawMenubarItem(this, pNewMenu, nItemIndex, nHotlightStatus))
-              {
-                // Set a new Timer
-                if (m_TimerID == NULL)
-                  m_TimerID = GetSafeTimerID(m_hWnd, 100);
 
-                m_menubarItemIndex = nItemIndex;
-              }
+            if (m_TimerID != NULL) {
+                KillTimer(m_TimerID);
+                m_TimerID = NULL;
             }
-            return nHitCode;
-          }
         }
-      }
-
-      if (m_menubarItemIndex != UINT(-1))
-      {
-        DrawMenubarItem(this, pNewMenu, m_menubarItemIndex, nStatus);
-        m_menubarItemIndex = UINT(-1);
-      }
-
-      if (m_TimerID != NULL)
-      {
-        KillTimer(m_TimerID);
-        m_TimerID = NULL;
-      }
+        return nHitCode;
     }
-    return nHitCode;
-  }
 
-  afx_msg void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMIS) 
-  {
-    if (!CNewMenu::OnMeasureItem(GetCurrentMessage()))
-      baseClass::OnMeasureItem(nIDCtl, lpMIS);
-  } 
+    afx_msg void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMIS)
+    {
+        if (!CNewMenu::OnMeasureItem(GetCurrentMessage()))
+            baseClass::OnMeasureItem(nIDCtl, lpMIS);
+    }
 
-  afx_msg LRESULT OnMenuChar(UINT nChar, UINT nFlags, CMenu* pMenu) 
-  {
-    LRESULT lresult;
-    if (DYNAMIC_DOWNCAST(CNewMenu, pMenu))
-      lresult=CNewMenu::FindKeyboardShortcut(nChar, nFlags, pMenu);
-    else
-      lresult=baseClass::OnMenuChar(nChar, nFlags, pMenu);
-    
-    return lresult;
-  }
+    afx_msg LRESULT OnMenuChar(UINT nChar, UINT nFlags, CMenu* pMenu)
+    {
+        LRESULT lresult;
+        if (DYNAMIC_DOWNCAST(CNewMenu, pMenu))
+            lresult = CNewMenu::FindKeyboardShortcut(nChar, nFlags, pMenu);
+        else
+            lresult = baseClass::OnMenuChar(nChar, nFlags, pMenu);
+
+        return lresult;
+    }
 };
 
 #ifdef _AFXDLL
-  #if _MFC_VER < 0x0700 
-    template<class baseClass>
-    const AFX_MSGMAP CNewFrame<baseClass>::messageMap = { &CNewFrame<baseClass>::_GetBaseMessageMap, GetMessageEntries()};
-  #else
-    template<class baseClass>
-    const AFX_MSGMAP CNewFrame<baseClass>::messageMap = { &baseClass::GetThisMessageMap, GetMessageEntries()};
-  #endif
+#if _MFC_VER < 0x0700
+template <class baseClass>
+const AFX_MSGMAP CNewFrame<baseClass>::messageMap = { &CNewFrame<baseClass>::_GetBaseMessageMap, GetMessageEntries() };
 #else
-  template<class baseClass>
-  const AFX_MSGMAP CNewFrame<baseClass>::messageMap = { &baseClass::messageMap, GetMessageEntries()};
+template <class baseClass>
+const AFX_MSGMAP CNewFrame<baseClass>::messageMap = { &baseClass::GetThisMessageMap, GetMessageEntries() };
+#endif
+#else
+template <class baseClass>
+const AFX_MSGMAP CNewFrame<baseClass>::messageMap = { &baseClass::messageMap, GetMessageEntries() };
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
 // CNewMiniDockFrameWnd for docking toolbars with new menu
 
-class MFCAIDS_API CNewMiniDockFrameWnd: public CNewFrame<CMiniDockFrameWnd> 
+class MFCAIDS_API CNewMiniDockFrameWnd : public CNewFrame<CMiniDockFrameWnd>
 {
-  DECLARE_DYNCREATE(CNewMiniDockFrameWnd) 
+    DECLARE_DYNCREATE(CNewMiniDockFrameWnd)
 };
 
 // control bar docking
-template<class baseClass>
-void CNewFrame<baseClass>::EnableDocking(DWORD dwDockStyle)
+template <class baseClass>
+void
+CNewFrame<baseClass>::EnableDocking(DWORD dwDockStyle)
 {
-  baseClass::EnableDocking(dwDockStyle);
-  // Owerite registering for floating frame
-  m_pFloatingFrameClass = RUNTIME_CLASS(CNewMiniDockFrameWnd);
+    baseClass::EnableDocking(dwDockStyle);
+    // Owerite registering for floating frame
+    m_pFloatingFrameClass = RUNTIME_CLASS(CNewMiniDockFrameWnd);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -744,23 +709,23 @@ void CNewFrame<baseClass>::EnableDocking(DWORD dwDockStyle)
 
 class MFCAIDS_API CNewDialog : public CNewFrame<CDialog>
 {
-  DECLARE_DYNAMIC(CNewDialog);
+    DECLARE_DYNAMIC(CNewDialog);
 
-public:
-  CNewDialog();
-  CNewDialog(LPCTSTR lpszTemplateName, CWnd* pParentWnd = NULL);
-  CNewDialog(UINT nIDTemplate, CWnd* pParentWnd = NULL);
+  public:
+    CNewDialog();
+    CNewDialog(LPCTSTR lpszTemplateName, CWnd* pParentWnd = NULL);
+    CNewDialog(UINT nIDTemplate, CWnd* pParentWnd = NULL);
 
-  // Overridables (special message map entries)
-  virtual BOOL OnInitDialog();
+    // Overridables (special message map entries)
+    virtual BOOL OnInitDialog();
 
-protected:
-  // Generated message map functions
-  //{{AFX_MSG(CNewDialog)
-  afx_msg void OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu);
-  //}}AFX_MSG
+  protected:
+    // Generated message map functions
+    //{{AFX_MSG(CNewDialog)
+    afx_msg void OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu);
+    //}}AFX_MSG
 
-  DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -768,7 +733,7 @@ protected:
 
 class MFCAIDS_API CNewMiniFrameWnd : public CNewFrame<CMiniFrameWnd>
 {
-  DECLARE_DYNCREATE(CNewMiniFrameWnd)
+    DECLARE_DYNCREATE(CNewMiniFrameWnd)
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -776,7 +741,7 @@ class MFCAIDS_API CNewMiniFrameWnd : public CNewFrame<CMiniFrameWnd>
 
 class MFCAIDS_API CNewMDIChildWnd : public CNewFrame<CMDIChildWnd>
 {
-  DECLARE_DYNCREATE(CNewMDIChildWnd)
+    DECLARE_DYNCREATE(CNewMDIChildWnd)
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -784,27 +749,27 @@ class MFCAIDS_API CNewMDIChildWnd : public CNewFrame<CMDIChildWnd>
 
 class MFCAIDS_API CNewFrameWnd : public CNewFrame<CFrameWnd>
 {
-  DECLARE_DYNCREATE(CNewFrameWnd)
+    DECLARE_DYNCREATE(CNewFrameWnd)
 
-public:
-#if _MFC_VER < 0x0700 
+  public:
+#if _MFC_VER < 0x0700
     // dynamic creation - load frame and associated resources
-  virtual BOOL LoadFrame(UINT nIDResource, 
-        DWORD dwDefaultStyle = WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, 
-        CWnd* pParentWnd = NULL, 
-        CCreateContext* pContext = NULL);
+    virtual BOOL LoadFrame(UINT nIDResource,
+                           DWORD dwDefaultStyle     = WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE,
+                           CWnd* pParentWnd         = NULL,
+                           CCreateContext* pContext = NULL);
 #endif
 
-  // under MFC 7.0 the next function is virtual so we don't neet to owerwrite
-  // loadframe
-  BOOL Create(LPCTSTR lpszClassName, 
-        LPCTSTR lpszWindowName, 
-        DWORD dwStyle = WS_OVERLAPPEDWINDOW, 
-        const RECT& rect = rectDefault, 
-        CWnd* pParentWnd = NULL,        // != NULL for popups
-        LPCTSTR lpszMenuName = NULL, 
-        DWORD dwExStyle = 0, 
-        CCreateContext* pContext = NULL);
+    // under MFC 7.0 the next function is virtual so we don't neet to owerwrite
+    // loadframe
+    BOOL Create(LPCTSTR lpszClassName,
+                LPCTSTR lpszWindowName,
+                DWORD dwStyle            = WS_OVERLAPPEDWINDOW,
+                const RECT& rect         = rectDefault,
+                CWnd* pParentWnd         = NULL, // != NULL for popups
+                LPCTSTR lpszMenuName     = NULL,
+                DWORD dwExStyle          = 0,
+                CCreateContext* pContext = NULL);
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -812,100 +777,101 @@ public:
 
 class MFCAIDS_API CNewMDIFrameWnd : public CNewFrame<CMDIFrameWnd>
 {
-  DECLARE_DYNCREATE(CNewMDIFrameWnd);
-  HMENU m_hShowMenu;
+    DECLARE_DYNCREATE(CNewMDIFrameWnd);
+    HMENU m_hShowMenu;
 
-public: 
-  CNewMDIFrameWnd():m_hShowMenu(NULL){};
+  public:
+    CNewMDIFrameWnd()
+      : m_hShowMenu(NULL){};
 
-  BOOL ShowMenu(BOOL bShow);
+    BOOL ShowMenu(BOOL bShow);
 
-#if _MFC_VER < 0x0700 
+#if _MFC_VER < 0x0700
     // dynamic creation - load frame and associated resources
-  virtual BOOL LoadFrame(UINT nIDResource, 
-        DWORD dwDefaultStyle = WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, 
-        CWnd* pParentWnd = NULL, 
-        CCreateContext* pContext = NULL);
+    virtual BOOL LoadFrame(UINT nIDResource,
+                           DWORD dwDefaultStyle     = WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE,
+                           CWnd* pParentWnd         = NULL,
+                           CCreateContext* pContext = NULL);
 #endif
     // under MFC 7.0 the next function is virtual so we don't neet to owerwrite
     // loadframe
-    BOOL Create(LPCTSTR lpszClassName, 
-        LPCTSTR lpszWindowName, 
-        DWORD dwStyle = WS_OVERLAPPEDWINDOW, 
-        const RECT& rect = rectDefault, 
-        CWnd* pParentWnd = NULL,        // != NULL for popups
-        LPCTSTR lpszMenuName = NULL, 
-        DWORD dwExStyle = 0, 
-        CCreateContext* pContext = NULL);
+    BOOL Create(LPCTSTR lpszClassName,
+                LPCTSTR lpszWindowName,
+                DWORD dwStyle            = WS_OVERLAPPEDWINDOW,
+                const RECT& rect         = rectDefault,
+                CWnd* pParentWnd         = NULL, // != NULL for popups
+                LPCTSTR lpszMenuName     = NULL,
+                DWORD dwExStyle          = 0,
+                CCreateContext* pContext = NULL);
 };
-
 
 /////////////////////////////////////////////////////////////////////////////
 // CNewMultiDocTemplate for menu to documents
 
-class MFCAIDS_API CNewMultiDocTemplate: public CMultiDocTemplate
+class MFCAIDS_API CNewMultiDocTemplate : public CMultiDocTemplate
 {
-  DECLARE_DYNAMIC(CNewMultiDocTemplate)
+    DECLARE_DYNAMIC(CNewMultiDocTemplate)
 
-public:
-  CNewMenu m_NewMenuShared;
+  public:
+    CNewMenu m_NewMenuShared;
 
-// Constructors
-public:
-  CNewMultiDocTemplate(UINT nIDResource, CRuntimeClass* pDocClass, 
-                       CRuntimeClass* pFrameClass, CRuntimeClass* pViewClass);
+    // Constructors
+  public:
+    CNewMultiDocTemplate(UINT nIDResource, CRuntimeClass* pDocClass, CRuntimeClass* pFrameClass, CRuntimeClass* pViewClass);
 
-  ~CNewMultiDocTemplate();
+    ~CNewMultiDocTemplate();
 };
 
 /////////////////////////////////////////////////////////////////////////////
-// CNewMemDC helperclass for drawing off screen 
+// CNewMemDC helperclass for drawing off screen
 
-class MFCAIDS_API CNewMemDC: public CDC
+class MFCAIDS_API CNewMemDC : public CDC
 {
-  CRect    m_rect;
-  CBitmap* m_pOldBitmap;
-  CBitmap  m_memBitmap;
-  HDC      m_hDcOriginal;
+    CRect m_rect;
+    CBitmap* m_pOldBitmap;
+    CBitmap m_memBitmap;
+    HDC m_hDcOriginal;
 
-public:
-  CNewMemDC(LPCRECT pRect, HDC hdc):m_rect(pRect), m_hDcOriginal(hdc)
-  {
-    CDC *pOrgDC = CDC::FromHandle(m_hDcOriginal);
-    CreateCompatibleDC(pOrgDC);
+  public:
+    CNewMemDC(LPCRECT pRect, HDC hdc)
+      : m_rect(pRect)
+      , m_hDcOriginal(hdc)
+    {
+        CDC* pOrgDC = CDC::FromHandle(m_hDcOriginal);
+        CreateCompatibleDC(pOrgDC);
 
-    m_memBitmap.CreateCompatibleBitmap (pOrgDC, m_rect.Width (), m_rect.Height());
-    m_pOldBitmap = SelectObject (&m_memBitmap);
-    SetViewportOrg (-m_rect.left, -m_rect.top);
-  }
+        m_memBitmap.CreateCompatibleBitmap(pOrgDC, m_rect.Width(), m_rect.Height());
+        m_pOldBitmap = SelectObject(&m_memBitmap);
+        SetViewportOrg(-m_rect.left, -m_rect.top);
+    }
 
-  ~CNewMemDC()
-  {
-    CDC *pOrgDC = CDC::FromHandle(m_hDcOriginal);
-    pOrgDC->BitBlt (m_rect.left, m_rect.top, m_rect.Width (), m_rect.Height (), this, m_rect.left, m_rect.top, SRCCOPY);
-    SelectObject (m_pOldBitmap);
-  }
+    ~CNewMemDC()
+    {
+        CDC* pOrgDC = CDC::FromHandle(m_hDcOriginal);
+        pOrgDC->BitBlt(m_rect.left, m_rect.top, m_rect.Width(), m_rect.Height(), this, m_rect.left, m_rect.top, SRCCOPY);
+        SelectObject(m_pOldBitmap);
+    }
 };
 
 /////////////////////////////////////////////////////////////////////////////
 // CNewMenuHelper for enabling / disabling menu border, replacing system menu.
 
-#define  NEW_MENU_DIALOG_SUBCLASS     1
-#define  NEW_MENU_DIALOG_SYSTEM_MENU  2
-#define  NEW_MENU_DEFAULT_BORDER      4
-#define  NEW_MENU_CHANGE_MENU_STYLE   8
+#define NEW_MENU_DIALOG_SUBCLASS 1
+#define NEW_MENU_DIALOG_SYSTEM_MENU 2
+#define NEW_MENU_DEFAULT_BORDER 4
+#define NEW_MENU_CHANGE_MENU_STYLE 8
 
 class MFCAIDS_API CNewMenuHelper
 {
-private:
-  DWORD m_dwOldFlags;
-  int m_OldMenuDrawStyle;
+  private:
+    DWORD m_dwOldFlags;
+    int m_OldMenuDrawStyle;
 
-public: 
-  CNewMenuHelper(DWORD dwFlags);
-  CNewMenuHelper(CNewMenu::EDrawStyle setTempStyle);
+  public:
+    CNewMenuHelper(DWORD dwFlags);
+    CNewMenuHelper(CNewMenu::EDrawStyle setTempStyle);
 
-  ~CNewMenuHelper();
+    ~CNewMenuHelper();
 };
 
 #pragma warning(pop)

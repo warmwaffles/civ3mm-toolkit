@@ -5,7 +5,6 @@
 #include "GraphX.h"
 #include "GraphXExp.h"
 
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -30,7 +29,7 @@ static char THIS_FILE[] = __FILE__;
 //
 //		It is very important that this macro appear in each
 //		function, prior to any calls into MFC.  This means that
-//		it must appear as the first statement within the 
+//		it must appear as the first statement within the
 //		function, even before any object variable declarations
 //		as their constructors may generate calls into the MFC
 //		DLL.
@@ -43,10 +42,10 @@ static char THIS_FILE[] = __FILE__;
 // CGraphXApp
 
 BEGIN_MESSAGE_MAP(CGraphXApp, CWinApp)
-	//{{AFX_MSG_MAP(CGraphXApp)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-		//    DO NOT EDIT what you see in these blocks of generated code!
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CGraphXApp)
+// NOTE - the ClassWizard will add and remove mapping macros here.
+//    DO NOT EDIT what you see in these blocks of generated code!
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -54,8 +53,8 @@ END_MESSAGE_MAP()
 
 CGraphXApp::CGraphXApp()
 {
-	// TODO: add construction code here,
-	// Place all significant initialization in InitInstance
+    // TODO: add construction code here,
+    // Place all significant initialization in InitInstance
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -70,18 +69,19 @@ CGraphXApp theApp;
 /////////////////////////////////////////////////////////////////////////////
 // CGraphXApp initialization
 
-BOOL CGraphXApp::InitInstance()
+BOOL
+CGraphXApp::InitInstance()
 {
-	// Register all OLE server (factories) as running.  This enables the
-	//  OLE libraries to create objects from other applications.
-//	COleObjectFactory::RegisterAll();
-	
-//	srand(time(NULL));
-	
-	// display mode: scale to gray
-	GraphXnamespace::L_SetDisplayMode (DISPLAYMODE_RESETPOSITIONS, DISPLAYMODE_FASTPAINT);
-	
-	return TRUE;
+    // Register all OLE server (factories) as running.  This enables the
+    //  OLE libraries to create objects from other applications.
+    //	COleObjectFactory::RegisterAll();
+
+    //	srand(time(NULL));
+
+    // display mode: scale to gray
+    GraphXnamespace::L_SetDisplayMode(DISPLAYMODE_RESETPOSITIONS, DISPLAYMODE_FASTPAINT);
+
+    return TRUE;
 }
 /*
 /////////////////////////////////////////////////////////////////////////////

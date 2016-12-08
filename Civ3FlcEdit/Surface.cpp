@@ -9,32 +9,34 @@ static char THIS_FILE[] = __FILE__;
 
 CSurface::CSurface(CScreen* pScreen)
 {
-	m_lpDDs		= NULL;
-	m_pScreen	= pScreen;
+    m_lpDDs   = NULL;
+    m_pScreen = pScreen;
 }
 
 CSurface::~CSurface()
 {
-	SAFE_DELETE_MULTI(flags.pixelData);
+    SAFE_DELETE_MULTI(flags.pixelData);
 }
 
-HRESULT CSurface::Create(void)
+HRESULT
+CSurface::Create(void)
 {
-	return S_OK;
+    return S_OK;
 }
 
-HRESULT CSurface::Create(int nWidth, int nHeight)
+HRESULT
+CSurface::Create(int nWidth, int nHeight)
 {
-	DDSURFACEDESC	ddsd;		// A DDSURFACEDESC object, stores surface information
+    DDSURFACEDESC ddsd; // A DDSURFACEDESC object, stores surface information
 
-	ZeroMemory(&ddsd, sizeof(ddsd));
-	ddsd.dwSize			= sizeof(ddsd);
-	ddsd.dwFlags		= DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH;// | DDSD_PIXELFORMAT;
-	ddsd.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN;// | DDSCAPS_PALETTE;
-	ddsd.dwWidth		= nWidth;
-	ddsd.dwHeight		= nHeight;
+    ZeroMemory(&ddsd, sizeof(ddsd));
+    ddsd.dwSize         = sizeof(ddsd);
+    ddsd.dwFlags        = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH; // | DDSD_PIXELFORMAT;
+    ddsd.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN;               // | DDSCAPS_PALETTE;
+    ddsd.dwWidth        = nWidth;
+    ddsd.dwHeight       = nHeight;
 
-/*	ZeroMemory(&ddsd.ddpfPixelFormat, sizeof(DDPIXELFORMAT));
+    /*	ZeroMemory(&ddsd.ddpfPixelFormat, sizeof(DDPIXELFORMAT));
 	ddsd.ddpfPixelFormat.dwSize				= sizeof(DDPIXELFORMAT);
 	ddsd.ddpfPixelFormat.dwFlags			= DDPF_RGB;
 	ddsd.ddpfPixelFormat.dwFourCC			= 0;
@@ -44,12 +46,12 @@ HRESULT CSurface::Create(int nWidth, int nHeight)
     ddsd.ddpfPixelFormat.dwBBitMask			= 0x000000FF;	
 	ddsd.ddpfPixelFormat.dwRGBAlphaBitMask	= 0x00FF00FF;
 */
-	flags.width			= nWidth;
-	flags.height		= nHeight;
+    flags.width  = nWidth;
+    flags.height = nHeight;
 
-	if (m_pScreen->GetDD()->CreateSurface(&ddsd, &m_lpDDs, NULL) != DD_OK)
-		return E_FAIL;
-/*	
+    if (m_pScreen->GetDD()->CreateSurface(&ddsd, &m_lpDDs, NULL) != DD_OK)
+        return E_FAIL;
+    /*	
 	HRESULT hRes = g_Screen->GetDD()->CreateSurface(&ddsd, &m_lpDDs, NULL);
 	
 	int x = 0;
@@ -113,39 +115,38 @@ HRESULT CSurface::Create(int nWidth, int nHeight)
 
 	if (hRes != DD_OK)
 		return E_FAIL;
-*/	
-	// set default transparent colors
-	DDCOLORKEY ddck;
-	ddck.dwColorSpaceLowValue  = RGB_TRANSPARENT;
-	ddck.dwColorSpaceHighValue = RGB_TRANSPARENT;
+*/
+    // set default transparent colors
+    DDCOLORKEY ddck;
+    ddck.dwColorSpaceLowValue  = RGB_TRANSPARENT;
+    ddck.dwColorSpaceHighValue = RGB_TRANSPARENT;
 
-	GetDDS()->SetColorKey(DDCKEY_SRCBLT, &ddck);
+    GetDDS()->SetColorKey(DDCKEY_SRCBLT, &ddck);
 
-	return S_OK;
+    return S_OK;
 }
 
-void CSurface::Draw(int nPosX, int nPosY)
+void
+CSurface::Draw(int nPosX, int nPosY)
 {
-	RECT rect;
-	
-	rect.top    = 0;
-	rect.left   = 0;
-	rect.right  = flags.width;
-	rect.bottom = flags.height;
-	
-	if (nPosX < 0)
-	{
-		if (nPosX > 0 - flags.width)
-		{
-			rect.left = -nPosX;
-			nPosX = 0;
-		}
-	}
-	
-	if (nPosX > 1024 - flags.width)
-		rect.right = (nPosX + flags.width) - 1024;
-	
-	/*HRESULT retVal = */m_pScreen->GetBack()->GetDDS()->BltFast(nPosX, nPosY, GetDDS(), &rect, DDBLTFAST_WAIT | DDBLTFAST_SRCCOLORKEY);
+    RECT rect;
+
+    rect.top    = 0;
+    rect.left   = 0;
+    rect.right  = flags.width;
+    rect.bottom = flags.height;
+
+    if (nPosX < 0) {
+        if (nPosX > 0 - flags.width) {
+            rect.left = -nPosX;
+            nPosX     = 0;
+        }
+    }
+
+    if (nPosX > 1024 - flags.width)
+        rect.right = (nPosX + flags.width) - 1024;
+
+    /*HRESULT retVal = */ m_pScreen->GetBack()->GetDDS()->BltFast(nPosX, nPosY, GetDDS(), &rect, DDBLTFAST_WAIT | DDBLTFAST_SRCCOLORKEY);
 }
 /*
 HRESULT CSurface::CopyRectTo(CSurface* pSurface, RECT* rect)

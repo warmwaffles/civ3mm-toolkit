@@ -13,17 +13,17 @@ class CSurface;
 
 class CBgdImg : public CGraphXImage
 {
-public:
-	CBgdImg();
-	CBgdImg(LPCTSTR sPath);
-	virtual ~CBgdImg();
+  public:
+    CBgdImg();
+    CBgdImg(LPCTSTR sPath);
+    virtual ~CBgdImg();
 
-	virtual BOOL LoadBgdImgFile(LPCTSTR sPath);
-	HRESULT CopyToSurface(CSurface *pSurface);
+    virtual BOOL LoadBgdImgFile(LPCTSTR sPath);
+    HRESULT CopyToSurface(CSurface* pSurface);
 
-protected:
-	UINT		m_nWidth;
-	UINT		m_nHeight;
+  protected:
+    UINT m_nWidth;
+    UINT m_nHeight;
 };
 
 //{{AFX_INSERT_LOCATION}}

@@ -33,8 +33,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-
-#if!defined(FADEWND_H__MFCAIDS__INCLUDED_)
+#if !defined(FADEWND_H__MFCAIDS__INCLUDED_)
 #define FADEWND_H__MFCAIDS__INCLUDED_
 
 #if _MSC_VER > 1000
@@ -50,76 +49,70 @@
 /////////////////////////////////////////////////////////////////////////////
 // CFadeWnd window
 
-#define WC_FADEWND	_T("FadeWnd")
+#define WC_FADEWND _T("FadeWnd")
 
 class MFCAIDS_API CFadeWnd : public CWnd
 {
-// Construction
-public:
-	CFadeWnd(
-		CWnd*		pParentWnd = NULL,
-		BOOL		bFade = TRUE,
-		COLORREF	clrLight = RGB(255,255,255),
-		COLORREF	clrDark  = RGB(  0,  0,  0));
-	virtual ~CFadeWnd();
+    // Construction
+  public:
+    CFadeWnd(CWnd* pParentWnd = NULL, BOOL bFade = TRUE, COLORREF clrLight = RGB(255, 255, 255), COLORREF clrDark = RGB(0, 0, 0));
+    virtual ~CFadeWnd();
 
-// Attributes
-public:
+    // Attributes
+  public:
+    // Operations
+  public:
+    static void AutoFade(CWnd* pParentWnd, COLORREF clrLight = RGB(255, 255, 255), COLORREF clrDark = RGB(0, 0, 0));
+    virtual void CreateGradient(COLORREF clrLight = RGB(255, 255, 255), COLORREF clrDark = RGB(0, 0, 0));
 
-// Operations
-public:
-	static void AutoFade(
-		CWnd*		pParentWnd,
-		COLORREF	clrLight = RGB(255,255,255),
-		COLORREF	clrDark  = RGB(  0,  0,  0));
-	virtual void CreateGradient(
-		COLORREF	clrLight = RGB(255,255,255),
-		COLORREF	clrDark  = RGB(  0,  0,  0));
+    // Virtuals to override window behaviour
+  public:
+    virtual BOOL OnLButtonCheck()
+    {
+        return TRUE;
+    } // no behaviour
+    virtual BOOL OnRButtonCheck()
+    {
+        return FALSE;
+    } // no behaviour
 
-// Virtuals to override window behaviour
-public:
-	virtual BOOL OnLButtonCheck() { return TRUE; }	// no behaviour
-	virtual BOOL OnRButtonCheck() { return FALSE; }	// no behaviour
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CFadeWnd)
+  public:
+    virtual BOOL Create(CWnd* pParentWnd, BOOL bAutoDel = FALSE, CRect rc = CRect(0, 0, 0, 0));
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CFadeWnd)
-	public:
-	virtual BOOL Create(CWnd* pParentWnd, BOOL bAutoDel = FALSE, CRect rc = CRect(0,0,0,0));
-	protected:
-	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
-	virtual void PostNcDestroy();
-	//}}AFX_VIRTUAL
+  protected:
+    virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+    virtual void PostNcDestroy();
+    //}}AFX_VIRTUAL
 
-// Implementation
-protected:
-	void OnDraw(CDC* pDC);
+    // Implementation
+  protected:
+    void OnDraw(CDC* pDC);
 
-	HBITMAP CopyScreenToBitmap(LPRECT lpRect);
-	HBITMAP FadeBitmap(
-		HBITMAP		hBmp,
-		double		dfTrans	= 100.0,
-		HDC			hBmpDC	= NULL);
+    HBITMAP CopyScreenToBitmap(LPRECT lpRect);
+    HBITMAP FadeBitmap(HBITMAP hBmp, double dfTrans = 100.0, HDC hBmpDC = NULL);
 
-// Attributes
-protected:
-	CWnd		m_wndInvisible;
-	BOOL		m_bAutoDel;
-	HBITMAP		m_hBitmap;
-	HBITMAP		m_hNewBitmap;
-	COLORREF	m_clrGradient[256];
-	CWnd*		m_pWndLock;
-	BOOL		m_bFade;
+    // Attributes
+  protected:
+    CWnd m_wndInvisible;
+    BOOL m_bAutoDel;
+    HBITMAP m_hBitmap;
+    HBITMAP m_hNewBitmap;
+    COLORREF m_clrGradient[256];
+    CWnd* m_pWndLock;
+    BOOL m_bFade;
 
-	// Generated message map functions
-protected:
-	//{{AFX_MSG(CFadeWnd)
-	afx_msg void OnPaint();
-	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
-	afx_msg void OnKillFocus(CWnd* pNewWnd);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+  protected:
+    //{{AFX_MSG(CFadeWnd)
+    afx_msg void OnPaint();
+    afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+    afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
+    afx_msg void OnKillFocus(CWnd* pNewWnd);
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

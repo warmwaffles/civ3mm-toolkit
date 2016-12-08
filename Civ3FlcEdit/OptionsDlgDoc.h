@@ -15,41 +15,43 @@
 
 class COptionsDlgDoc : public CDialogX
 {
-// Construction
-public:
-	void SetDefault();
-	void Apply();
-	COptionsDlgDoc(CWnd* pParent = NULL);   // standard constructor
+    // Construction
+  public:
+    void SetDefault();
+    void Apply();
+    COptionsDlgDoc(CWnd* pParent = NULL); // standard constructor
 
-// Dialog Data
-	//{{AFX_DATA(COptionsDlgDoc)
-	enum { IDD = IDD_OPTIONSDLG_DOC };
-	CEditX	m_wndMRU;
-	CSpinButtonCtrl	m_wndSpinMRU;
-	UINT	m_nMRU;
-	BOOL	m_bLoadLastDoc;
-	BOOL	m_bCheckFileType;
-	BOOL	m_bRegFileType;
-	//}}AFX_DATA
+    // Dialog Data
+    //{{AFX_DATA(COptionsDlgDoc)
+    enum
+    {
+        IDD = IDD_OPTIONSDLG_DOC
+    };
+    CEditX m_wndMRU;
+    CSpinButtonCtrl m_wndSpinMRU;
+    UINT m_nMRU;
+    BOOL m_bLoadLastDoc;
+    BOOL m_bCheckFileType;
+    BOOL m_bRegFileType;
+    //}}AFX_DATA
 
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(COptionsDlgDoc)
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(COptionsDlgDoc)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // Implementation
+  protected:
+    void OnChangeData();
 
-// Implementation
-protected:
-	void OnChangeData();
-
-	// Generated message map functions
-	//{{AFX_MSG(COptionsDlgDoc)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnChanged();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Generated message map functions
+    //{{AFX_MSG(COptionsDlgDoc)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnChanged();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

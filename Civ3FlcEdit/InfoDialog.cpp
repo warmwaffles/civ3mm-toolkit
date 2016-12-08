@@ -30,7 +30,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 static CString INFO_REPORT_MSG;
-static UINT    INFO_REPORT_NUM;
+static UINT INFO_REPORT_NUM;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Show information dialog box.
@@ -41,19 +41,15 @@ static UINT    INFO_REPORT_NUM;
 // lpCaption - dialog caption
 // hIcon     - icon for the dialog caption
 //
-void InfoShowDialog(LPCTSTR lpReport, LPCTSTR lpHeader, UINT nIconId, LPCTSTR lpCaption, HICON hIcon)
+void
+InfoShowDialog(LPCTSTR lpReport, LPCTSTR lpHeader, UINT nIconId, LPCTSTR lpCaption, HICON hIcon)
 {
-	CInfoDialog dlg(
-		lpReport, 
-		lpHeader, 
-		nIconId, 
-		lpCaption, 
-		hIcon);
-	
-	dlg.DoModal();
-	
-	// Zeroing the report string and report counter
-	InfoResetReports();
+    CInfoDialog dlg(lpReport, lpHeader, nIconId, lpCaption, hIcon);
+
+    dlg.DoModal();
+
+    // Zeroing the report string and report counter
+    InfoResetReports();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,219 +60,221 @@ void InfoShowDialog(LPCTSTR lpReport, LPCTSTR lpHeader, UINT nIconId, LPCTSTR lp
 // lpCaption - dialog caption
 // hIcon     - icon for the dialog caption
 //
-void InfoShowReport(LPCTSTR lpHeader, UINT nIconId, LPCTSTR lpCaption, HICON hIcon)
+void
+InfoShowReport(LPCTSTR lpHeader, UINT nIconId, LPCTSTR lpCaption, HICON hIcon)
 {
-	if (!InfoIsReportPresent())
-		return;
+    if (!InfoIsReportPresent())
+        return;
 
-	CInfoDialog dlg(
-		INFO_REPORT_MSG, 
-		lpHeader, 
-		nIconId, 
-		lpCaption, 
-		hIcon);
-	
-	dlg.DoModal();
-	
-	// Zeroing the report string and report counter
-	InfoResetReports();
+    CInfoDialog dlg(INFO_REPORT_MSG, lpHeader, nIconId, lpCaption, hIcon);
+
+    dlg.DoModal();
+
+    // Zeroing the report string and report counter
+    InfoResetReports();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Add numerated message to the report.
 //
-void InfoAddMsg(LPCTSTR lpMsg)
+void
+InfoAddMsg(LPCTSTR lpMsg)
 {
-	INFO_REPORT_NUM++;
+    INFO_REPORT_NUM++;
 
-	CString strNum;
-	strNum.Format(INFO_REPORT_NUM < 10 ? " %d" : "%d", INFO_REPORT_NUM);
+    CString strNum;
+    strNum.Format(INFO_REPORT_NUM < 10 ? " %d" : "%d", INFO_REPORT_NUM);
 
-	INFO_REPORT_MSG += strNum + ". ";
-	INFO_REPORT_MSG += lpMsg;
-	INFO_REPORT_MSG += "\r\n\r\n";
+    INFO_REPORT_MSG += strNum + ". ";
+    INFO_REPORT_MSG += lpMsg;
+    INFO_REPORT_MSG += "\r\n\r\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Add new message to the report.
 //
-void InfoAddNewMsg(LPCTSTR lpMsg)
+void
+InfoAddNewMsg(LPCTSTR lpMsg)
 {
-	INFO_REPORT_NUM = 0;
-	INFO_REPORT_MSG += lpMsg;
-	INFO_REPORT_MSG += "\r\n\r\n";
+    INFO_REPORT_NUM = 0;
+    INFO_REPORT_MSG += lpMsg;
+    INFO_REPORT_MSG += "\r\n\r\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Add message to the report.
 //
-void InfoAddText(LPCTSTR lpMsg)
+void
+InfoAddText(LPCTSTR lpMsg)
 {
-	INFO_REPORT_MSG += lpMsg;
-	INFO_REPORT_MSG += "\r\n\r\n";
+    INFO_REPORT_MSG += lpMsg;
+    INFO_REPORT_MSG += "\r\n\r\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Add message to start of the report.
 //
-void InfoAddCaption(LPCTSTR lpMsg)
+void
+InfoAddCaption(LPCTSTR lpMsg)
 {
-	CString sMsg = lpMsg;
-	sMsg += "\r\n\r\n";
-	INFO_REPORT_MSG.Insert(0, sMsg);
+    CString sMsg = lpMsg;
+    sMsg += "\r\n\r\n";
+    INFO_REPORT_MSG.Insert(0, sMsg);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Clear all report's messages.
 //
-void InfoResetReports()
+void
+InfoResetReports()
 {
-	INFO_REPORT_MSG.Empty();
-	INFO_REPORT_NUM = 0;
+    INFO_REPORT_MSG.Empty();
+    INFO_REPORT_NUM = 0;
 }
 
-BOOL InfoIsReportPresent()
+BOOL
+InfoIsReportPresent()
 {
-	return !INFO_REPORT_MSG.IsEmpty();
+    return !INFO_REPORT_MSG.IsEmpty();
 }
 
-BOOL IsReportNum()
+BOOL
+IsReportNum()
 {
-	return INFO_REPORT_NUM > 0 ? TRUE : FALSE;
+    return INFO_REPORT_NUM > 0 ? TRUE : FALSE;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // CInfoDialog dialog
 
 CInfoDialog::CInfoDialog(LPCTSTR lpReport, LPCTSTR lpHeader, UINT nIconId, LPCTSTR lpCaption, HICON hIcon, CWnd* pParent /*=NULL*/)
-: CDialogX(IDD_DLG_INFO, pParent)
+  : CDialogX(IDD_DLG_INFO, pParent)
 {
-	//{{AFX_DATA_INIT(CInfoDialog)
-		// NOTE: the ClassWizard will add member initialization here
-	//}}AFX_DATA_INIT
-	m_sCaption = lpCaption; // dialog caption
-	m_sHeader  = lpHeader;  // message header
-	m_sReport  = lpReport;  // message
-	m_nIconId  = nIconId;   // type of the standard Windows icon: 0-IDI_ASTERISK, 1-IDI_EXCLAMATION, 2-IDI_HAND
-	m_hIcon    = hIcon;     // icon for the dialog caption
+    //{{AFX_DATA_INIT(CInfoDialog)
+    // NOTE: the ClassWizard will add member initialization here
+    //}}AFX_DATA_INIT
+    m_sCaption = lpCaption; // dialog caption
+    m_sHeader  = lpHeader;  // message header
+    m_sReport  = lpReport;  // message
+    m_nIconId  = nIconId;   // type of the standard Windows icon: 0-IDI_ASTERISK, 1-IDI_EXCLAMATION, 2-IDI_HAND
+    m_hIcon    = hIcon;     // icon for the dialog caption
 
-	SetControlInfo(IDC_STATIC_HEADER, CF_RESIZE_HOR);
-	SetControlInfo(IDC_STATIC_FRAME, CF_RESIZE_BOTH);
-	SetControlInfo(IDC_EDIT_REPORT, CF_RESIZE_BOTH);
-	SetControlInfo(IDC_SAVE, CF_ANCHOR_BOTTOM | CF_ANCHOR_RIGHT);
-	SetControlInfo(IDOK, CF_ANCHOR_BOTTOM | CF_ANCHOR_RIGHT);
+    SetControlInfo(IDC_STATIC_HEADER, CF_RESIZE_HOR);
+    SetControlInfo(IDC_STATIC_FRAME, CF_RESIZE_BOTH);
+    SetControlInfo(IDC_EDIT_REPORT, CF_RESIZE_BOTH);
+    SetControlInfo(IDC_SAVE, CF_ANCHOR_BOTTOM | CF_ANCHOR_RIGHT);
+    SetControlInfo(IDOK, CF_ANCHOR_BOTTOM | CF_ANCHOR_RIGHT);
 }
 
-void CInfoDialog::DoDataExchange(CDataExchange* pDX)
+void
+CInfoDialog::DoDataExchange(CDataExchange* pDX)
 {
-	CDialogX::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CInfoDialog)
-	DDX_Control(pDX, IDOK, m_btnOK);
-	DDX_Control(pDX, IDC_SAVE, m_btnSave);
-	DDX_Control(pDX, IDC_STATIC_HEADER, m_wndHeader);
-	DDX_Control(pDX, IDC_STATIC_ICO, m_wndIco);
-	DDX_Control(pDX, IDC_EDIT_REPORT, m_wndReport);
-	//}}AFX_DATA_MAP
+    CDialogX::DoDataExchange(pDX);
+    //{{AFX_DATA_MAP(CInfoDialog)
+    DDX_Control(pDX, IDOK, m_btnOK);
+    DDX_Control(pDX, IDC_SAVE, m_btnSave);
+    DDX_Control(pDX, IDC_STATIC_HEADER, m_wndHeader);
+    DDX_Control(pDX, IDC_STATIC_ICO, m_wndIco);
+    DDX_Control(pDX, IDC_EDIT_REPORT, m_wndReport);
+    //}}AFX_DATA_MAP
 }
-
 
 BEGIN_MESSAGE_MAP(CInfoDialog, CDialogX)
-	//{{AFX_MSG_MAP(CInfoDialog)
-	ON_WM_DESTROY()
-	ON_BN_CLICKED(IDC_SAVE, OnSave)
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CInfoDialog)
+ON_WM_DESTROY()
+ON_BN_CLICKED(IDC_SAVE, OnSave)
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // CInfoDialog message handlers
 
-BOOL CInfoDialog::OnInitDialog() 
+BOOL
+CInfoDialog::OnInitDialog()
 {
-	CDialogX::OnInitDialog();
+    CDialogX::OnInitDialog();
 
-	LoadPosition(this); // load the dialog window position
+    LoadPosition(this); // load the dialog window position
 
-	// Setup button
-	m_btnOK.SetIcon(IDI_OK);
-	m_btnSave.SetIcon(IDI_SAVE);
+    // Setup button
+    m_btnOK.SetIcon(IDI_OK);
+    m_btnSave.SetIcon(IDI_SAVE);
 
-	if (!m_sCaption.IsEmpty())
-		SetWindowText(m_sCaption);
-	
-	// Set icon to the dialog caption
-	SetIcon(AfxGetApp()->LoadIcon(IDI_INFO), FALSE);
+    if (!m_sCaption.IsEmpty())
+        SetWindowText(m_sCaption);
 
-	// Set standard icon
-	LPCTSTR lpIcon = IDI_ASTERISK; // info
+    // Set icon to the dialog caption
+    SetIcon(AfxGetApp()->LoadIcon(IDI_INFO), FALSE);
 
-	if     (m_nIconId == 1)
-		lpIcon = IDI_EXCLAMATION;  // warning
-	else if (m_nIconId == 2)
-		lpIcon = IDI_HAND;         // error
+    // Set standard icon
+    LPCTSTR lpIcon = IDI_ASTERISK; // info
 
-	m_wndIco.SetIcon(AfxGetApp()->LoadStandardIcon(lpIcon));
+    if (m_nIconId == 1)
+        lpIcon = IDI_EXCLAMATION; // warning
+    else if (m_nIconId == 2)
+        lpIcon = IDI_HAND; // error
 
-	// Set font and size for message header
-	m_wndHeader.SetFontBold().SetFontSize(14).SetTextColor(0x800000);
-	m_wndHeader.SetWindowText(m_sHeader);
+    m_wndIco.SetIcon(AfxGetApp()->LoadStandardIcon(lpIcon));
 
-	m_wndReport.SetWindowText(m_sReport);
+    // Set font and size for message header
+    m_wndHeader.SetFontBold().SetFontSize(14).SetTextColor(0x800000);
+    m_wndHeader.SetWindowText(m_sHeader);
 
-	SetTimer(345, 50, 0);
-	return TRUE;
+    m_wndReport.SetWindowText(m_sReport);
+
+    SetTimer(345, 50, 0);
+    return TRUE;
 }
 
-void CInfoDialog::OnDestroy() 
+void
+CInfoDialog::OnDestroy()
 {
-	CDialogX::OnDestroy();
-	SavePosition(this); // save the dialog window position
+    CDialogX::OnDestroy();
+    SavePosition(this); // save the dialog window position
 }
 
-LPCTSTR CInfoDialog::RegKey()
+LPCTSTR
+CInfoDialog::RegKey()
 {
-	return "Dlg Info";
+    return "Dlg Info";
 }
 
-void CInfoDialog::OnSave()
+void
+CInfoDialog::OnSave()
 {
-	CFileDialogX dlg(FALSE, "txt", "Info.txt",
-		OFN_OVERWRITEPROMPT|OFN_HIDEREADONLY|OFN_PATHMUSTEXIST,
-		_T(uLoadString(IDS_FILTER_TXT)));
+    CFileDialogX dlg(FALSE, "txt", "Info.txt", OFN_OVERWRITEPROMPT | OFN_HIDEREADONLY | OFN_PATHMUSTEXIST, _T(uLoadString(IDS_FILTER_TXT)));
 
-	CString sTitle(uLoadString(IDS_TITLE_TXT));
-	dlg.m_ofn.lpstrTitle = sTitle;
+    CString sTitle(uLoadString(IDS_TITLE_TXT));
+    dlg.m_ofn.lpstrTitle = sTitle;
 
-	CWinApp* pApp = AfxGetApp();
-	CString sPath = pApp->GetProfileString(RegKey(), REG_LAST_OPENED, "");
-	
-	if (!uIsFileExist(sPath))
-		sPath = uSHGetFolderPath(CSIDL_PERSONAL); // try to get "My Documents" directory path
-	
-	dlg.m_ofn.lpstrInitialDir = sPath;
-	
-	if (dlg.DoModal() != IDOK)
-		return;
-	
-	sPath = dlg.GetPathName();
+    CWinApp* pApp = AfxGetApp();
+    CString sPath = pApp->GetProfileString(RegKey(), REG_LAST_OPENED, "");
 
-	pApp->WriteProfileString(RegKey(), REG_LAST_OPENED, sPath);
-	
-	CString sMsg = m_sHeader + "\r\n\r\n" + m_sReport;
-//	CString sMsg = uFormatString(IDS_INFO_HEADER, m_sHeader) + m_sReport;
+    if (!uIsFileExist(sPath))
+        sPath = uSHGetFolderPath(CSIDL_PERSONAL); // try to get "My Documents" directory path
 
-	try
-	{
-		CFile fl(sPath, CFile::modeCreate | CFile::modeReadWrite); // open file
-		
-		fl.SetLength(0);
-		fl.Write(sMsg, sMsg.GetLength());
-		fl.Close();
-	}
-	catch (CFileException* e)
-	{
-		TCHAR szCause[1024];
-		e->GetErrorMessage(szCause, 1024);
-		AfxMessageBox(szCause, MB_ICONERROR);
-		e->Delete();
-	}
+    dlg.m_ofn.lpstrInitialDir = sPath;
+
+    if (dlg.DoModal() != IDOK)
+        return;
+
+    sPath = dlg.GetPathName();
+
+    pApp->WriteProfileString(RegKey(), REG_LAST_OPENED, sPath);
+
+    CString sMsg = m_sHeader + "\r\n\r\n" + m_sReport;
+    //	CString sMsg = uFormatString(IDS_INFO_HEADER, m_sHeader) + m_sReport;
+
+    try {
+        CFile fl(sPath, CFile::modeCreate | CFile::modeReadWrite); // open file
+
+        fl.SetLength(0);
+        fl.Write(sMsg, sMsg.GetLength());
+        fl.Close();
+    } catch (CFileException* e) {
+        TCHAR szCause[1024];
+        e->GetErrorMessage(szCause, 1024);
+        AfxMessageBox(szCause, MB_ICONERROR);
+        e->Delete();
+    }
 }

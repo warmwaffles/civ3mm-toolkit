@@ -12,15 +12,21 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CListCtrlSfEdit list ctrl
-class CListFlcInfoGen : public CListCtrlX  
+class CListFlcInfoGen : public CListCtrlX
 {
-public:
-	CListFlcInfoGen() {};
-	virtual ~CListFlcInfoGen() {};
-	
-protected:
-	virtual LPCTSTR RegKey() { return REG_SF_INFO_DLG; }
-	virtual BOOL IsEditable(int nRow, int nCol) { return FALSE; }
+  public:
+    CListFlcInfoGen(){};
+    virtual ~CListFlcInfoGen(){};
+
+  protected:
+    virtual LPCTSTR RegKey()
+    {
+        return REG_SF_INFO_DLG;
+    }
+    virtual BOOL IsEditable(int nRow, int nCol)
+    {
+        return FALSE;
+    }
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -28,34 +34,36 @@ protected:
 class CFlcInfoDlg;
 class CFlcInfoGen : public CDialogX
 {
-// Construction
-public:
-	CFlcInfoGen(CWnd* pParent = NULL);   // standard constructor
+    // Construction
+  public:
+    CFlcInfoGen(CWnd* pParent = NULL); // standard constructor
 
-// Dialog Data
-	//{{AFX_DATA(CFlcInfoGen)
-	enum { IDD = IDD_TAB_INFO_GEN };
-	CListFlcInfoGen	m_Table;
-	//}}AFX_DATA
+    // Dialog Data
+    //{{AFX_DATA(CFlcInfoGen)
+    enum
+    {
+        IDD = IDD_TAB_INFO_GEN
+    };
+    CListFlcInfoGen m_Table;
+    //}}AFX_DATA
 
-	CFlcInfoDlg*	m_pParent;
+    CFlcInfoDlg* m_pParent;
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CFlcInfoGen)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CFlcInfoGen)
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
 
-// Implementation
-protected:
-
-	// Generated message map functions
-	//{{AFX_MSG(CFlcInfoGen)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnDestroy();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Implementation
+  protected:
+    // Generated message map functions
+    //{{AFX_MSG(CFlcInfoGen)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnDestroy();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

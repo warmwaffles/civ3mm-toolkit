@@ -21,134 +21,136 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#define REG_IMG_DLG		"Dlg ImgPreview"
+#define REG_IMG_DLG "Dlg ImgPreview"
 
 /////////////////////////////////////////////////////////////////////////////
 // CFileImgAllDlg
 
 IMPLEMENT_DYNAMIC(CFileImgAllDlg, CFileDialogX)
 
-CFileImgAllDlg::CFileImgAllDlg(BOOL bOpenFileDialog, LPCTSTR lpszDefExt, LPCTSTR lpszFileName,
-		DWORD dwFlags, LPCTSTR lpszFilter, CWnd* pParentWnd) :
-		CFileDialogX(bOpenFileDialog, lpszDefExt, lpszFileName, dwFlags, lpszFilter, pParentWnd)
+CFileImgAllDlg::CFileImgAllDlg(BOOL bOpenFileDialog,
+                               LPCTSTR lpszDefExt,
+                               LPCTSTR lpszFileName,
+                               DWORD dwFlags,
+                               LPCTSTR lpszFilter,
+                               CWnd* pParentWnd)
+  : CFileDialogX(bOpenFileDialog, lpszDefExt, lpszFileName, dwFlags, lpszFilter, pParentWnd)
 {
-   	// show preview
-	m_bPreview = AfxGetApp()->GetProfileInt(REG_IMG_DLG, REG_PREVIEW, 1);
+    // show preview
+    m_bPreview = AfxGetApp()->GetProfileInt(REG_IMG_DLG, REG_PREVIEW, 1);
 }
 
 BEGIN_MESSAGE_MAP(CFileImgAllDlg, CFileDialogX)
-	//{{AFX_MSG_MAP(CFileImgAllDlg)
-	ON_BN_CLICKED(IDC_PREVIEW_CHECK, OnPreview)
-	ON_WM_SIZE()
-	ON_WM_PAINT()
-	ON_WM_DESTROY()
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CFileImgAllDlg)
+ON_BN_CLICKED(IDC_PREVIEW_CHECK, OnPreview)
+ON_WM_SIZE()
+ON_WM_PAINT()
+ON_WM_DESTROY()
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
-
-BOOL CFileImgAllDlg::OnInitDialog() 
+BOOL
+CFileImgAllDlg::OnInitDialog()
 {
-	GetDlgItem(IDC_PREVIEW_CHECK)->SendMessage(BM_SETCHECK, (m_bPreview) ? 1 : 0);
+    GetDlgItem(IDC_PREVIEW_CHECK)->SendMessage(BM_SETCHECK, (m_bPreview) ? 1 : 0);
 
-	return CFileDialogX::OnInitDialog();
+    return CFileDialogX::OnInitDialog();
 }
 
-void CFileImgAllDlg::OnFileNameChange()
+void
+CFileImgAllDlg::OnFileNameChange()
 {
-	CFileDialogX::OnFileNameChange();
+    CFileDialogX::OnFileNameChange();
 
-	GetDlgItem(IDC_IMG_INFO)->SetWindowText("");
-	
-	try
-	{
-		if (!GetPathName().IsEmpty())
-		{
-			CWaitCursor wait;
-			m_img.LoadFile(GetPathName());
+    GetDlgItem(IDC_IMG_INFO)->SetWindowText("");
 
-			FILEINFO* pFi = m_img.GetImgFileInfo();
+    try {
+        if (!GetPathName().IsEmpty()) {
+            CWaitCursor wait;
+            m_img.LoadFile(GetPathName());
 
-			GetDlgItem(IDC_IMG_INFO)->SetWindowText(uFormatString(IDS_IMG_ALL_INFO, pFi->Width, pFi->Height, pFi->BitsPerPixel));
-		}
-	}
-	catch (CGraphXException *e)
-	{
-		//AfxMessageBox(e->GetErrorMessage(e->GetLastError()));
-		GetDlgItem(IDC_PREVIEW)->SetWindowText(e->GetErrorMessage(e->GetLastError()));
-		e->Delete();
-	}
-	catch (...)
-	{
+            FILEINFO* pFi = m_img.GetImgFileInfo();
+
+            GetDlgItem(IDC_IMG_INFO)->SetWindowText(uFormatString(IDS_IMG_ALL_INFO, pFi->Width, pFi->Height, pFi->BitsPerPixel));
+        }
+    } catch (CGraphXException* e) {
+        //AfxMessageBox(e->GetErrorMessage(e->GetLastError()));
+        GetDlgItem(IDC_PREVIEW)->SetWindowText(e->GetErrorMessage(e->GetLastError()));
+        e->Delete();
+    } catch (...) {
 #ifdef _DEBUG
-		AfxMessageBox("Unknown exception in the CFileImgAllDlg::OnFileNameChange()");
+        AfxMessageBox("Unknown exception in the CFileImgAllDlg::OnFileNameChange()");
 #endif
-	}
+    }
 
-	Invalidate();
+    Invalidate();
 }
 
-void CFileImgAllDlg::OnFolderChange()
+void
+CFileImgAllDlg::OnFolderChange()
 {
-	CFileDialogX::OnFolderChange();
+    CFileDialogX::OnFolderChange();
 
-	m_img.CloseFile();
-	Invalidate();
+    m_img.CloseFile();
+    Invalidate();
 }
 
-void CFileImgAllDlg::OnPreview() 
+void
+CFileImgAllDlg::OnPreview()
 {
-	m_bPreview = !m_bPreview;
+    m_bPreview = !m_bPreview;
 
-	Invalidate();
+    Invalidate();
 }
 
-void CFileImgAllDlg::OnSize(UINT nType, int cx, int cy) 
+void
+CFileImgAllDlg::OnSize(UINT nType, int cx, int cy)
 {
-	CFileDialogX::OnSize(nType, cx, cy);
+    CFileDialogX::OnSize(nType, cx, cy);
 
-	Invalidate();
+    Invalidate();
 }
 
-void CFileImgAllDlg::OnPaint() 
+void
+CFileImgAllDlg::OnPaint()
 {
-	CPaintDC dc(this); // device context for painting
-	CWnd *pWnd = GetDlgItem(IDC_PREVIEW);
+    CPaintDC dc(this); // device context for painting
+    CWnd* pWnd = GetDlgItem(IDC_PREVIEW);
 
-	if (pWnd->GetSafeHwnd())
-	{
-		CRect rc;
-		pWnd->GetWindowRect(rc);
-		ScreenToClient(rc);
-		dc.Draw3dRect(rc, ::GetSysColor(COLOR_BTNSHADOW), ::GetSysColor(COLOR_BTNHILIGHT));
-		
-		if (m_bPreview && m_img.IsLoaded())
-		{
-			rc.DeflateRect(3, 3);
-			m_img.Render(&dc, rc, CGraphXImage::PaintProportion2);
-		}
-	}
+    if (pWnd->GetSafeHwnd()) {
+        CRect rc;
+        pWnd->GetWindowRect(rc);
+        ScreenToClient(rc);
+        dc.Draw3dRect(rc, ::GetSysColor(COLOR_BTNSHADOW), ::GetSysColor(COLOR_BTNHILIGHT));
+
+        if (m_bPreview && m_img.IsLoaded()) {
+            rc.DeflateRect(3, 3);
+            m_img.Render(&dc, rc, CGraphXImage::PaintProportion2);
+        }
+    }
 }
 
-BOOL CFileImgAllDlg::OnFileNameOK()
+BOOL
+CFileImgAllDlg::OnFileNameOK()
 {
-	if (!m_img.IsLoaded())
-	{
-		AfxMessageBox(uFormatString(IDS_IMG_UNKNOWN_FORMAT, GetPathName()));
-		return TRUE;
-	}
+    if (!m_img.IsLoaded()) {
+        AfxMessageBox(uFormatString(IDS_IMG_UNKNOWN_FORMAT, GetPathName()));
+        return TRUE;
+    }
 
-	m_sFilePath = m_img.GetFileName();
-	m_ofnEx.lpstrFile = (LPSTR)(LPCTSTR)m_sFilePath;
+    m_sFilePath       = m_img.GetFileName();
+    m_ofnEx.lpstrFile = (LPSTR)(LPCTSTR)m_sFilePath;
 
-	return CFileDialogX::OnFileNameOK();
+    return CFileDialogX::OnFileNameOK();
 }
 
-void CFileImgAllDlg::OnDestroy() 
+void
+CFileImgAllDlg::OnDestroy()
 {
-	CWinApp* pApp = AfxGetApp();
-	pApp->WriteProfileInt(REG_IMG_DLG, REG_PREVIEW, m_bPreview);
+    CWinApp* pApp = AfxGetApp();
+    pApp->WriteProfileInt(REG_IMG_DLG, REG_PREVIEW, m_bPreview);
 
-	m_img.CloseFile();
+    m_img.CloseFile();
 
-	CFileDialogX::OnDestroy();
+    CFileDialogX::OnDestroy();
 }

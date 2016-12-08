@@ -17,56 +17,59 @@ class CDlgBar;
 
 class CPanelDelay : public CDialog
 {
-	friend class CAnimationView;
-	
-// Construction
-public:
-	CPanelDelay(CWnd* pParent = NULL);   // standard constructor
+    friend class CAnimationView;
 
-// Dialog Data
-	//{{AFX_DATA(CPanelDelay)
-	enum { IDD = IDD_PANEL_DELAY };
-	CSpinButtonCtrl	m_wndDelaySpin;
-	CEditX			m_wndDelay;
-	int				m_nTimerValue;
-	CStatic			m_wndDefTimer;
-	CString			m_sDefTimer;
-	CString			m_sDelay;
-	//}}AFX_DATA
-	
-	CSliderCtrl	m_wndTimerSlider;
-	UINT		m_nDelay;
+    // Construction
+  public:
+    CPanelDelay(CWnd* pParent = NULL); // standard constructor
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CPanelDelay)
-	public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
-	
-public:
-	BOOL IsAttached();
-	void SetView(CAnimationView* pView);
-	void UpdateControlsState();
+    // Dialog Data
+    //{{AFX_DATA(CPanelDelay)
+    enum
+    {
+        IDD = IDD_PANEL_DELAY
+    };
+    CSpinButtonCtrl m_wndDelaySpin;
+    CEditX m_wndDelay;
+    int m_nTimerValue;
+    CStatic m_wndDefTimer;
+    CString m_sDefTimer;
+    CString m_sDelay;
+    //}}AFX_DATA
 
-	CAnimationView*	m_pView;
-	CDlgBar*		m_pParent;
+    CSliderCtrl m_wndTimerSlider;
+    UINT m_nDelay;
 
-// Implementation
-protected:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CPanelDelay)
+  public:
+    virtual BOOL PreTranslateMessage(MSG* pMsg);
 
-	// Generated message map functions
-	//{{AFX_MSG(CPanelDelay)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnReleasedcaptureTimerSlider(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnRadioTimerDef();
-	afx_msg void OnRadioTimerCustom();
-	afx_msg void OnChangeDelay();
-	afx_msg void OnDeltaposSpinDelay(NMHDR* pNMHDR, LRESULT* pResult);
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
+
+  public:
+    BOOL IsAttached();
+    void SetView(CAnimationView* pView);
+    void UpdateControlsState();
+
+    CAnimationView* m_pView;
+    CDlgBar* m_pParent;
+
+    // Implementation
+  protected:
+    // Generated message map functions
+    //{{AFX_MSG(CPanelDelay)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnReleasedcaptureTimerSlider(NMHDR* pNMHDR, LRESULT* pResult);
+    afx_msg void OnRadioTimerDef();
+    afx_msg void OnRadioTimerCustom();
+    afx_msg void OnChangeDelay();
+    afx_msg void OnDeltaposSpinDelay(NMHDR* pNMHDR, LRESULT* pResult);
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

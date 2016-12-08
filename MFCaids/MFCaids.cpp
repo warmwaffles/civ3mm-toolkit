@@ -14,10 +14,10 @@ static char THIS_FILE[] = __FILE__;
 // CMFCaids
 
 BEGIN_MESSAGE_MAP(CMFCaids, CWinApp)
-	//{{AFX_MSG_MAP(CMFCaids)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-		//    DO NOT EDIT what you see in these blocks of generated code!
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(CMFCaids)
+// NOTE - the ClassWizard will add and remove mapping macros here.
+//    DO NOT EDIT what you see in these blocks of generated code!
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -32,22 +32,23 @@ CMFCaids::CMFCaids()
 
 CMFCaids theApp;
 
-// 66f93646-b5b1-4859-8e77-d2c4f748d038 
+// 66f93646-b5b1-4859-8e77-d2c4f748d038
 //const GUID CDECL BASED_CODE _tlid = { 0x66F93646, 0xB5B1, 0x4859,
 //{ 0x8E, 0x77, 0xD2, 0xC4, 0xF7, 0x48, 0xD0, 0x38 } };
 
 /////////////////////////////////////////////////////////////////////////////
 // CMFCaids initialization
 
-BOOL CMFCaids::InitInstance()
+BOOL
+CMFCaids::InitInstance()
 {
-	// Register all OLE server (factories) as running.  This enables the
-	//  OLE libraries to create objects from other applications.
-//	COleObjectFactory::RegisterAll();
-	
-//	srand(time(NULL));
+    // Register all OLE server (factories) as running.  This enables the
+    //  OLE libraries to create objects from other applications.
+    //	COleObjectFactory::RegisterAll();
 
-	return TRUE;
+    //	srand(time(NULL));
+
+    return TRUE;
 }
 /*
 /////////////////////////////////////////////////////////////////////////////

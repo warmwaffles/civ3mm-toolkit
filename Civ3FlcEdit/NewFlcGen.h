@@ -15,50 +15,52 @@
 class CNewFlcDlg;
 class CNewFlcGen : public CDialogX
 {
-// Construction
-public:
-	CNewFlcGen(CWnd* pParent = NULL);   // standard constructor
-	void ApplyChanges();
+    // Construction
+  public:
+    CNewFlcGen(CWnd* pParent = NULL); // standard constructor
+    void ApplyChanges();
 
-// Dialog Data
-	//{{AFX_DATA(CNewFlcGen)
-	enum { IDD = IDD_TAB_NEW_GEN };
-	CEditX	m_wndOutPath;
-	CString	m_sFrmCount;
-	CString	m_sDelay;
-	CString	m_sOutDir;
-	CString	m_sFrmHeight;
-	CString	m_sOutName;
-	CString	m_sPalette;
-	CString	m_sOutType;
-	CString	m_sFrmWidth;
-	CString	m_sOutPath;
-	CString	m_sDirCount;
-	CString	m_sPalType;
-	CString	m_sAnimType;
-	CString	m_sXOffset;
-	CString	m_sYOffset;
-	CString	m_sLastColors;
-	CString	m_sColDepth;
-	//}}AFX_DATA
+    // Dialog Data
+    //{{AFX_DATA(CNewFlcGen)
+    enum
+    {
+        IDD = IDD_TAB_NEW_GEN
+    };
+    CEditX m_wndOutPath;
+    CString m_sFrmCount;
+    CString m_sDelay;
+    CString m_sOutDir;
+    CString m_sFrmHeight;
+    CString m_sOutName;
+    CString m_sPalette;
+    CString m_sOutType;
+    CString m_sFrmWidth;
+    CString m_sOutPath;
+    CString m_sDirCount;
+    CString m_sPalType;
+    CString m_sAnimType;
+    CString m_sXOffset;
+    CString m_sYOffset;
+    CString m_sLastColors;
+    CString m_sColDepth;
+    //}}AFX_DATA
 
-	CNewFlcDlg*	m_pParent;
+    CNewFlcDlg* m_pParent;
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CNewFlcGen)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
-	//}}AFX_VIRTUAL
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CNewFlcGen)
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+                                                     //}}AFX_VIRTUAL
 
-// Implementation
-protected:
-
-	// Generated message map functions
-	//{{AFX_MSG(CNewFlcGen)
-	virtual BOOL OnInitDialog();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    // Implementation
+  protected:
+    // Generated message map functions
+    //{{AFX_MSG(CNewFlcGen)
+    virtual BOOL OnInitDialog();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

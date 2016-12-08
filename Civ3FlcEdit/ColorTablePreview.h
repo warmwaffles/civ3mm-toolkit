@@ -11,67 +11,66 @@
 // CColorTablePreview window
 enum EPreviewType
 {
-	PrevMove	= 0,
-	PrevRangeD	= 1,
-	PrevRangeS	= 2
+    PrevMove   = 0,
+    PrevRangeD = 1,
+    PrevRangeS = 2
 };
 
 class CColorTablePreview : public CColorTable
 {
-public:
-	DECLARE_DYNCREATE(CColorTablePreview);
-// Construction
-public:
+  public:
+    DECLARE_DYNCREATE(CColorTablePreview);
+    // Construction
+  public:
     CColorTablePreview();
     CColorTablePreview(CPoint p, RGBQUADPAL* pPal, CWnd* pParentWnd, UINT nID = 0);
-	virtual void Initialise();
+    virtual void Initialise();
 
-// Attributes
-public:
-	UINT*			m_pFrom;
-    UINT*			m_pTo;
-	UINT*			m_pNumber;
-	BOOL*			m_bAllPalette;
-	EPreviewType	m_PrevType;
+    // Attributes
+  public:
+    UINT* m_pFrom;
+    UINT* m_pTo;
+    UINT* m_pNumber;
+    BOOL* m_bAllPalette;
+    EPreviewType m_PrevType;
 
-// Operations
-public:
-	COLORREF		m_clrFrom;
-	COLORREF		m_clrTo;
-	COLORREF		m_clrRange;
+    // Operations
+  public:
+    COLORREF m_clrFrom;
+    COLORREF m_clrTo;
+    COLORREF m_clrRange;
 
-// Overrides
+    // Overrides
     // ClassWizard generated virtual function overrides
     //{{AFX_VIRTUAL(CColorTablePreview)
     //}}AFX_VIRTUAL
 
-// Implementation
-public:
+    // Implementation
+  public:
     virtual ~CColorTablePreview();
 
-protected:
+  protected:
     virtual void DrawCell(CDC* pDC, int nIndex);
 
-// public attributes
-public:
-	virtual void SetupVariables(UINT& nFrom, UINT&nTo, UINT& nNumber, BOOL& bAllPalette, EPreviewType type);
+    // public attributes
+  public:
+    virtual void SetupVariables(UINT& nFrom, UINT& nTo, UINT& nNumber, BOOL& bAllPalette, EPreviewType type);
 
-// protected attributes
-protected:
-
+    // protected attributes
+  protected:
     // Generated message map functions
-protected:
+  protected:
     //{{AFX_MSG(CColorTablePreview)
-	afx_msg void OnNcDestroy();
+    afx_msg void OnNcDestroy();
     afx_msg void OnPaint();
     afx_msg void OnMouseMove(UINT nFlags, CPoint point);
     afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
     afx_msg BOOL OnQueryNewPalette();
     afx_msg void OnPaletteChanged(CWnd* pFocusWnd);
-	afx_msg void OnActivateApp(BOOL bActive, HTASK hTask);
+    afx_msg void OnActivateApp(BOOL bActive, HTASK hTask);
     afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
-	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
-	//}}AFX_MSG
+    afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
+    //}}AFX_MSG
     DECLARE_MESSAGE_MAP()
 };
 

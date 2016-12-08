@@ -28,4 +28,4 @@
 #include "lvkrn.h"
 #endif
 
-#endif                          /* _L_BITMAP_H_ */
+#endif /* _L_BITMAP_H_ */

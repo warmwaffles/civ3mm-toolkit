@@ -21,17 +21,17 @@
 
 enum ETextOptions
 {
-    toTextLabels    =  0,
-    toTextOnRight   =  1,
-    toNoTextLabels  =  2,
-    toNone          = -1,
+    toTextLabels   = 0,
+    toTextOnRight  = 1,
+    toNoTextLabels = 2,
+    toNone         = -1,
 };
 
 enum EIconOptions
 {
-    ioSmallIcons    =  0,
-    ioLargeIcons    =  1,
-    ioNone          = -1,
+    ioSmallIcons = 0,
+    ioLargeIcons = 1,
+    ioNone       = -1,
 };
 
 /////////////////////////////////////////////////////////////////////////////
@@ -41,42 +41,44 @@ class CCustomizeDialog;
 
 class MFCAIDS_API COptionsDialog : public CDialog
 {
-// Construction
-public:
-    COptionsDialog(ETextOptions eTextOptions,
-                    EIconOptions eIconOptions);
-	BOOL Create(UINT nIDTemplate, CWnd* pParentWnd = NULL);
+    // Construction
+  public:
+    COptionsDialog(ETextOptions eTextOptions, EIconOptions eIconOptions);
+    BOOL Create(UINT nIDTemplate, CWnd* pParentWnd = NULL);
 
-// Dialog Data
+    // Dialog Data
     //{{AFX_DATA(COptionsDialog)
-    enum { IDD = IDD_DLG_CUSTOMIZE };
+    enum
+    {
+        IDD = IDD_DLG_CUSTOMIZE
+    };
     CComboBox m_cbTextOptions;
     CComboBox m_cbIconOptions;
     //}}AFX_DATA
 
-// Overrides
+    // Overrides
     // ClassWizard generated virtual function overrides
     //{{AFX_VIRTUAL(COptionsDialog)
-    protected:
-    virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+  protected:
+    virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
     //}}AFX_VIRTUAL
 
-// Operations
-public:
+    // Operations
+  public:
     BOOL SelectTextOption(ETextOptions eTextOptions);
     BOOL SelectIconOption(EIconOptions eIconOptions);
 
-// Implementation
-protected:
+    // Implementation
+  protected:
     CCustomizeDialog* GetCustomizeDialog() const;
 
-// Implementation data
-protected:
+    // Implementation data
+  protected:
     ETextOptions m_eTextOptions;
     EIconOptions m_eIconOptions;
 
-// Generated message map functions
-protected:
+    // Generated message map functions
+  protected:
     //{{AFX_MSG(COptionsDialog)
     virtual BOOL OnInitDialog();
     afx_msg void OnTextOptions();
@@ -94,36 +96,36 @@ class MFCAIDS_API CCustomizeDialog : public CWnd
 {
     DECLARE_DYNAMIC(CCustomizeDialog);
 
-// Construction
-public:
+    // Construction
+  public:
     CCustomizeDialog(CToolBarX* pToolBar);
 
-// Operations
-public:
+    // Operations
+  public:
     void SetTextOptions(ETextOptions eTextOptions, BOOL bInDialog);
     void SetIconOptions(EIconOptions eIconOptions, BOOL bInDialog);
 
     void AddTextOption(CComboBox& cbTextOptions, ETextOptions eTextOptions, UINT nStringID);
     void AddIconOption(CComboBox& cbIconOptions, EIconOptions eIconOptions, UINT nStringID);
 
-// Overrides
+    // Overrides
     // ClassWizard generated virtual function overrides
     //{{AFX_VIRTUAL(CCustomizeDialog)
-    protected:
+  protected:
     virtual void PostNcDestroy();
     //}}AFX_VIRTUAL
 
-// Implementation
-protected:
+    // Implementation
+  protected:
     CSize GetButtonSize() const;
 
-// Implementation data
-protected:
-    COptionsDialog  m_dlgOptions;
-    CToolBarX*     m_pToolBar;
+    // Implementation data
+  protected:
+    COptionsDialog m_dlgOptions;
+    CToolBarX* m_pToolBar;
 
-// Generated message map functions
-protected:
+    // Generated message map functions
+  protected:
     //{{AFX_MSG(CCustomizeDialog)
     afx_msg void OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
     afx_msg void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
@@ -133,4 +135,4 @@ protected:
 };
 
 /////////////////////////////////////////////////////////////////////////////
-#endif  // !defined(__CUSTOMIZE_DIALOG_H__INCLUDED_)
+#endif // !defined(__CUSTOMIZE_DIALOG_H__INCLUDED_)

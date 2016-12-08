@@ -13,27 +13,27 @@
 
 class MFCAIDS_API CEditX : public CEdit
 {
-	// Construction
-public:
+    // Construction
+  public:
     CEditX();
-	
-	// Implementation
-public:
-	virtual ~CEditX();
-	
-	// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CSkmContAttView)
-public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
+
+    // Implementation
+  public:
+    virtual ~CEditX();
+
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CSkmContAttView)
+  public:
+    virtual BOOL PreTranslateMessage(MSG* pMsg);
     //}}AFX_VIRTUAL
-	
-	// Generated message map functions
-protected:
-	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
+
+    // Generated message map functions
+  protected:
+    virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
     //{{AFX_MSG(CEditX)
-	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
-	//}}AFX_MSG
+    afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
+    //}}AFX_MSG
     DECLARE_MESSAGE_MAP()
 };
 

@@ -15,28 +15,28 @@
 #define MFCAIDS_API __declspec(dllimport)
 #endif
 
-class MFCAIDS_API CFramePosition  
+class MFCAIDS_API CFramePosition
 {
-public:
-	CFramePosition();
-	virtual ~CFramePosition();
-	void SavePosition(CWnd* pWnd);
-	void LoadPosition(CWnd* pWnd, BOOL bMax = FALSE);
-	
-protected:
-	virtual LPCTSTR RegKey();
+  public:
+    CFramePosition();
+    virtual ~CFramePosition();
+    void SavePosition(CWnd* pWnd);
+    void LoadPosition(CWnd* pWnd, BOOL bMax = FALSE);
+
+  protected:
+    virtual LPCTSTR RegKey();
 };
 
-class MFCAIDS_API CNoSizePosition  
+class MFCAIDS_API CNoSizePosition
 {
-public:
-	CNoSizePosition();
-	virtual ~CNoSizePosition();
-	void SavePosition(CWnd* pWnd);
-	void LoadPosition(CWnd* pWnd);
-	
-protected:
-	virtual LPCTSTR RegKey();
+  public:
+    CNoSizePosition();
+    virtual ~CNoSizePosition();
+    void SavePosition(CWnd* pWnd);
+    void LoadPosition(CWnd* pWnd);
+
+  protected:
+    virtual LPCTSTR RegKey();
 };
 
 #endif // !defined(FRAMEPOSITION_H__MFCAIDS__INCLUDED_)

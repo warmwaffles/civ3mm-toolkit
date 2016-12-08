@@ -9,50 +9,49 @@
 
 class CPcx
 {
-public:
-	CPcx();
-	~CPcx();
-	
-	BOOL LoadBgdImgFile(LPCTSTR lpszPathName);
-	void DestroyPcx(void);
-	HRESULT CopyToSurface(CSurface *pSurface);
-	
-	RGBQUADPAL      m_rgbPal;
-	
-protected:
-	typedef struct _PCX_HEADER
-	{
-		char	Manufacturer;
-		char	Version;
-		char	Encoding;
-		char	BitsPerPixel;
-		short	Xmin;
-		short	Ymin;
-		short	Xmax;
-		short	Ymax;
-		short	HDpi;
-		short	VDpi;
-		char	Colormap[48];
-		char	Reserved;
-		char	NPlanes;
-		short	BytesPerLine;
-		short	PaletteInfo;
-		short	HscreenSize;
-		short	VscreenSize;
-		char	Filler[54];
-	} PCX_HEADER;
-	
-	int DecodePcxLine(char *dest, BYTE* &src, int bytes);
-	void SetupBitmapInfo(void);
+  public:
+    CPcx();
+    ~CPcx();
 
-	BITMAPINFO*		m_pBitmapInfo;
-	BYTE*			m_pStorage;
-	BYTE*			m_pData;
-	PCX_HEADER		m_pcxHeader;
+    BOOL LoadBgdImgFile(LPCTSTR lpszPathName);
+    void DestroyPcx(void);
+    HRESULT CopyToSurface(CSurface* pSurface);
 
-	short			m_nWidth;
-	short			m_nHeight;
-	
+    RGBQUADPAL m_rgbPal;
+
+  protected:
+    typedef struct _PCX_HEADER
+    {
+        char Manufacturer;
+        char Version;
+        char Encoding;
+        char BitsPerPixel;
+        short Xmin;
+        short Ymin;
+        short Xmax;
+        short Ymax;
+        short HDpi;
+        short VDpi;
+        char Colormap[48];
+        char Reserved;
+        char NPlanes;
+        short BytesPerLine;
+        short PaletteInfo;
+        short HscreenSize;
+        short VscreenSize;
+        char Filler[54];
+    } PCX_HEADER;
+
+    int DecodePcxLine(char* dest, BYTE*& src, int bytes);
+    void SetupBitmapInfo(void);
+
+    BITMAPINFO* m_pBitmapInfo;
+    BYTE* m_pStorage;
+    BYTE* m_pData;
+    PCX_HEADER m_pcxHeader;
+
+    short m_nWidth;
+    short m_nHeight;
 };
 
 //{{AFX_INSERT_LOCATION}}

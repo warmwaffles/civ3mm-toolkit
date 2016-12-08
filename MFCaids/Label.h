@@ -15,110 +15,113 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // CLabel window
-enum FlashType {None, Text, Background };
+enum FlashType
+{
+    None,
+    Text,
+    Background
+};
 
 class MFCAIDS_API CLabel : public CStatic
 {
-// Construction
-public:
-	CLabel();
-	CLabel& SetBkColor(COLORREF crBkgnd);
-	CLabel& SetTextColor(COLORREF crText);
-	CLabel& SetText(const CString& sText);
-	CLabel& SetFontBold(BOOL bBold = TRUE);
-	CLabel& SetFontName(const CString& sFont);
-	CLabel& SetFontUnderline(BOOL bSet = TRUE);
-	CLabel& SetFontItalic(BOOL bSet = TRUE);
-	CLabel& SetFontSize(int nSize);
-	CLabel& SetSunken(BOOL bSet = TRUE);
-	CLabel& SetBorder(BOOL bSet = TRUE);
-	CLabel& FlashText(BOOL bActivate = TRUE);
-	CLabel& FlashBackground(BOOL bActivate = TRUE);
-	CLabel& SetLink(BOOL bLink = TRUE);
-	CLabel& SetLinkCursor(HCURSOR hCursor);
+    // Construction
+  public:
+    CLabel();
+    CLabel& SetBkColor(COLORREF crBkgnd);
+    CLabel& SetTextColor(COLORREF crText);
+    CLabel& SetText(const CString& sText);
+    CLabel& SetFontBold(BOOL bBold = TRUE);
+    CLabel& SetFontName(const CString& sFont);
+    CLabel& SetFontUnderline(BOOL bSet = TRUE);
+    CLabel& SetFontItalic(BOOL bSet = TRUE);
+    CLabel& SetFontSize(int nSize);
+    CLabel& SetSunken(BOOL bSet = TRUE);
+    CLabel& SetBorder(BOOL bSet = TRUE);
+    CLabel& FlashText(BOOL bActivate = TRUE);
+    CLabel& FlashBackground(BOOL bActivate = TRUE);
+    CLabel& SetLink(BOOL bLink = TRUE);
+    CLabel& SetLinkCursor(HCURSOR hCursor);
 
-// Attributes
-public:
-protected:
-	void ReconstructFont();
-	COLORREF	m_crText;
-	HBRUSH		m_hBrush;
-	HBRUSH		m_hwndBrush;
-	LOGFONT		m_lf;
-	CFont		m_font;
-	CString		m_sText;
-	BOOL		m_bState;
-	BOOL		m_bTimer;
-	BOOL		m_bLink;
-	FlashType	m_Type;
-	HCURSOR		m_hCursor;
-			// Operations
-public:
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CLabel)
-	//}}AFX_VIRTUAL
+    // Attributes
+  public:
+  protected:
+    void ReconstructFont();
+    COLORREF m_crText;
+    HBRUSH m_hBrush;
+    HBRUSH m_hwndBrush;
+    LOGFONT m_lf;
+    CFont m_font;
+    CString m_sText;
+    BOOL m_bState;
+    BOOL m_bTimer;
+    BOOL m_bLink;
+    FlashType m_Type;
+    HCURSOR m_hCursor;
+    // Operations
+  public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CLabel)
+    //}}AFX_VIRTUAL
 
-// Implementation
-public:
-	virtual ~CLabel();
+    // Implementation
+  public:
+    virtual ~CLabel();
 
-	// Generated message map functions
-protected:
-	//{{AFX_MSG(CLabel)
-	afx_msg HBRUSH CtlColor(CDC* pDC, UINT nCtlColor);
-	afx_msg void OnTimer(UINT nIDEvent);
-	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
-	//}}AFX_MSG
+    // Generated message map functions
+  protected:
+    //{{AFX_MSG(CLabel)
+    afx_msg HBRUSH CtlColor(CDC* pDC, UINT nCtlColor);
+    afx_msg void OnTimer(UINT nIDEvent);
+    afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+    afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////
 // CLabelTitle window
 
-typedef UINT (CALLBACK* LPFNDLLFUNC1)(HDC,CONST PTRIVERTEX,DWORD,CONST PVOID,DWORD,DWORD);
+typedef UINT(CALLBACK* LPFNDLLFUNC1)(HDC, CONST PTRIVERTEX, DWORD, CONST PVOID, DWORD, DWORD);
 
 class MFCAIDS_API CLabelTitle : public CStatic
 {
-// Construction
-public:
-	CLabelTitle();
+    // Construction
+  public:
+    CLabelTitle();
 
-// Attributes
-public:
+    // Attributes
+  public:
+    // Operations
+  public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CLabelTitle)
+  protected:
+    //}}AFX_VIRTUAL
 
-// Operations
-public:
+    // Implementation
+  public:
+    CString GetName();
+    void SetName(CString sName);
+    virtual ~CLabelTitle();
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CLabelTitle)
-	protected:
-	//}}AFX_VIRTUAL
+    // Generated message map functions
+  protected:
+    //	LPFNDLLFUNC1 m_dllfunc_GradientFill;
+    //	HINSTANCE m_hInst;
+    CString m_sName;
+    CFont m_font;
+    COLORREF m_colText;
+    COLORREF m_colName;
+    //	COLORREF m_colGrad1;
+    //	COLORREF m_colGrad2;
+    //{{AFX_MSG(CLabelTitle)
+    afx_msg void OnPaint();
+    //}}AFX_MSG
 
-// Implementation
-public:
-	CString GetName();
-	void SetName(CString sName);
-	virtual ~CLabelTitle();
-
-	// Generated message map functions
-protected:
-//	LPFNDLLFUNC1 m_dllfunc_GradientFill;
-//	HINSTANCE m_hInst;
-	CString m_sName;
-	CFont m_font;
-	COLORREF m_colText;
-	COLORREF m_colName;
-//	COLORREF m_colGrad1;
-//	COLORREF m_colGrad2;
-	//{{AFX_MSG(CLabelTitle)
-	afx_msg void OnPaint();
-	//}}AFX_MSG
-
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

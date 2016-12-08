@@ -14,6 +14,6 @@
 #endif
 
 CString MFCAIDS_API Txt2Rtf(LPCTSTR sTxt); // Convert plain text to RTF
-void    MFCAIDS_API MakeCivFormat(CString& sTxt);
+void MFCAIDS_API MakeCivFormat(CString& sTxt);
 
 #endif // !defined(CIV_TEXT_WRAPPER_H__INCLUDED_)

@@ -9,4 +9,4 @@
 
 #include "lterr.h"
 
-#endif                          /* _L_ERROR_H_ */
+#endif /* _L_ERROR_H_ */

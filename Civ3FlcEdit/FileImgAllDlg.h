@@ -16,34 +16,34 @@
 
 class CFileImgAllDlg : public CFileDialogX
 {
-	DECLARE_DYNAMIC(CFileImgAllDlg)
+    DECLARE_DYNAMIC(CFileImgAllDlg)
 
-public:
-	CFileImgAllDlg(BOOL bOpenFileDialog, // TRUE for FileOpen, FALSE for FileSaveAs
-		LPCTSTR lpszDefExt   = NULL,
-		LPCTSTR lpszFileName = NULL,
-		DWORD dwFlags        = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
-		LPCTSTR lpszFilter   = NULL,
-		CWnd* pParentWnd     = NULL);
+  public:
+    CFileImgAllDlg(BOOL bOpenFileDialog, // TRUE for FileOpen, FALSE for FileSaveAs
+                   LPCTSTR lpszDefExt   = NULL,
+                   LPCTSTR lpszFileName = NULL,
+                   DWORD dwFlags        = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
+                   LPCTSTR lpszFilter   = NULL,
+                   CWnd* pParentWnd     = NULL);
 
-	CString m_sFilePath;
+    CString m_sFilePath;
 
-protected:
-	virtual BOOL OnFileNameOK();
-	virtual void OnFolderChange();
-	virtual void OnFileNameChange();
+  protected:
+    virtual BOOL OnFileNameOK();
+    virtual void OnFolderChange();
+    virtual void OnFileNameChange();
 
-	CGraphXImage	m_img;
-	BOOL			m_bPreview;
-	
-	//{{AFX_MSG(CFileImgAllDlg)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnPreview();
-	afx_msg void OnSize(UINT nType, int cx, int cy);
-	afx_msg void OnPaint();
-	afx_msg void OnDestroy();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    CGraphXImage m_img;
+    BOOL m_bPreview;
+
+    //{{AFX_MSG(CFileImgAllDlg)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnPreview();
+    afx_msg void OnSize(UINT nType, int cx, int cy);
+    afx_msg void OnPaint();
+    afx_msg void OnDestroy();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

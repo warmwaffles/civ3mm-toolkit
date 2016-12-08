@@ -18,41 +18,39 @@
 
 class MFCAIDS_API CComboZoom : public CComboBox
 {
-// Construction
-public:
-	CComboZoom();
+    // Construction
+  public:
+    CComboZoom();
 
-// Attributes
-public:
+    // Attributes
+  public:
+    // Operations
+  public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CComboZoom)
+  public:
+    virtual BOOL PreTranslateMessage(MSG* pMsg);
+    //}}AFX_VIRTUAL
 
-// Operations
-public:
+    // Implementation
+  public:
+    void InitComboZoom(int nZoomFactor = 0);
+    void SetParentWnd(CWnd* pWnd);
+    void ZoomOut();
+    void ZoomIn();
+    virtual ~CComboZoom();
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CComboZoom)
-	public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
-	//}}AFX_VIRTUAL
+    // Generated message map functions
+  protected:
+    CFont m_font;
+    CWnd* m_pWnd;
 
-// Implementation
-public:
-	void InitComboZoom(int nZoomFactor = 0);
-	void SetParentWnd(CWnd* pWnd);
-	void ZoomOut();
-	void ZoomIn();
-	virtual ~CComboZoom();
+    //{{AFX_MSG(CComboZoom)
+    afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+    //}}AFX_MSG
 
-	// Generated message map functions
-protected:
-	CFont m_font;
-	CWnd* m_pWnd;
-
-	//{{AFX_MSG(CComboZoom)
-	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
-	//}}AFX_MSG
-
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

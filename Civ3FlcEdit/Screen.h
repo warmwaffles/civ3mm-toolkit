@@ -7,44 +7,56 @@
 
 class CScreen
 {
-public:
-	CScreen();
-	virtual ~CScreen();
+  public:
+    CScreen();
+    virtual ~CScreen();
 
-private:
-	struct Flags
-	{
-		int		width;
-		int		height;
-		BOOL	bWorking;
-//		BOOL	fullScreen;
-//		int		bpp;
-	} flags;
-	
-	HWND				m_hWnd;
+  private:
+    struct Flags
+    {
+        int width;
+        int height;
+        BOOL bWorking;
+        //		BOOL	fullScreen;
+        //		int		bpp;
+    } flags;
 
-	LPDIRECTDRAW		m_lpDD;
-	LPDIRECTDRAWCLIPPER	m_lpClipper;            // the DirectDraw clipper, used for window mode only
+    HWND m_hWnd;
 
-	CSurface*			m_pFrontSurf;
-	CSurface*			m_pBackSurf;
+    LPDIRECTDRAW m_lpDD;
+    LPDIRECTDRAWCLIPPER m_lpClipper; // the DirectDraw clipper, used for window mode only
 
-public:
-	HRESULT Init(HWND hWnd);
-	void Shutdown(void);
-	BOOL IsWorking() { return flags.bWorking; }
+    CSurface* m_pFrontSurf;
+    CSurface* m_pBackSurf;
 
-	HRESULT Fill(DWORD fillColor);
-	HRESULT Flip(void);
+  public:
+    HRESULT Init(HWND hWnd);
+    void Shutdown(void);
+    BOOL IsWorking()
+    {
+        return flags.bWorking;
+    }
 
-	HRESULT CreateWindowedMode(int nWidth, int nHeight);
-	HRESULT CreateWindowedMode();
-//	HRESULT CreateFullScreenMode(int nWidth, int nHeight, int _bpp);
+    HRESULT Fill(DWORD fillColor);
+    HRESULT Flip(void);
 
-	LPDIRECTDRAW GetDD(void) { return m_lpDD; }
+    HRESULT CreateWindowedMode(int nWidth, int nHeight);
+    HRESULT CreateWindowedMode();
+    //	HRESULT CreateFullScreenMode(int nWidth, int nHeight, int _bpp);
 
-	CSurface* GetBack(void) { return m_pBackSurf; }
-	CSurface* GetFront(void) { return m_pFrontSurf; }
+    LPDIRECTDRAW GetDD(void)
+    {
+        return m_lpDD;
+    }
+
+    CSurface* GetBack(void)
+    {
+        return m_pBackSurf;
+    }
+    CSurface* GetFront(void)
+    {
+        return m_pFrontSurf;
+    }
 };
 
 //{{AFX_INSERT_LOCATION}}

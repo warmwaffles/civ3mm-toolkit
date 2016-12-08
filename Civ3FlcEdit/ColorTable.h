@@ -15,30 +15,30 @@
 #include <math.h>
 
 // Defines and init for ColorTable
-#define INVALID_COLOUR		-1
+#define INVALID_COLOUR -1
 
 #ifndef SPI_GETFLATMENU
-#define SPI_GETFLATMENU     0x1022
+#define SPI_GETFLATMENU 0x1022
 #endif
 
 #ifndef SPI_GETDROPSHADOW
-#define SPI_GETDROPSHADOW	0x1024
+#define SPI_GETDROPSHADOW 0x1024
 #endif
 
 #ifndef CS_DROPSHADOW
-#define CS_DROPSHADOW		0x00020000
+#define CS_DROPSHADOW 0x00020000
 #endif
 
 #ifndef ODS_HOTLIGHT
-#define ODS_HOTLIGHT        0x0040
+#define ODS_HOTLIGHT 0x0040
 #endif
 
 #ifndef COLOR_MENUHILIGHT
-#define COLOR_MENUHILIGHT	29
+#define COLOR_MENUHILIGHT 29
 #endif
 
-#define NUM_COL				16
-#define NUM_ROW				16
+#define NUM_COL 16
+#define NUM_ROW 16
 
 /////////////////////////////////////////////////////////////////////////////
 // ColourPopupXP                                         //
@@ -53,77 +53,80 @@ static const CSize s_sizeBoxMargin(0, 0);
 
 class CColorTable : public CWnd
 {
-	friend class CColorTableDlg;
-	friend class CColorReplaceDlg;
-	friend class CReplaceRangeDlg;
-	friend class CColorSelectDlg;
-public:
-	DECLARE_DYNCREATE(CColorTable);
-// Construction
-public:
+    friend class CColorTableDlg;
+    friend class CColorReplaceDlg;
+    friend class CReplaceRangeDlg;
+    friend class CColorSelectDlg;
+
+  public:
+    DECLARE_DYNCREATE(CColorTable);
+    // Construction
+  public:
     CColorTable();
     CColorTable(CPoint p, RGBQUADPAL* pPal, CWnd* pParentWnd, UINT nID = 0);
     virtual void Initialise();
 
-// Attributes
-public:
-
-// Operations
-public:
+    // Attributes
+  public:
+    // Operations
+  public:
     BOOL Create(CPoint p, RGBQUADPAL* pPal, CWnd* pParentWnd, UINT nID = 0);
 
-// Overrides
+    // Overrides
     // ClassWizard generated virtual function overrides
     //{{AFX_VIRTUAL(CColorTable)
-    public:
+  public:
     virtual BOOL PreTranslateMessage(MSG* pMsg);
     //}}AFX_VIRTUAL
 
-// Implementation
-public:
+    // Implementation
+  public:
     virtual ~CColorTable();
 
-protected:
+  protected:
     BOOL GetCellRect(int nIndex, const LPRECT& rect);
     virtual void ChangeSelection(int nIndex);
     virtual void DrawCell(CDC* pDC, int nIndex);
 
-    int  GetIndex(int row, int col) const;
-    int  GetRow(int nIndex) const;
-    int  GetColumn(int nIndex) const;
+    int GetIndex(int row, int col) const;
+    int GetRow(int nIndex) const;
+    int GetColumn(int nIndex) const;
 
-// public attributes
-public:
-	void ChangeSelectedIdx(int nIndex);
-	virtual BOOL SetPalette(RGBQUADPAL* pPal);
-	void ChangeSelectedColor(COLORREF color);
-    COLORREF GetColour(int nIndex)		{ return m_crColours[nIndex].crColour; }
-    LPCTSTR GetColourName(int nIndex)	{ return m_crColours[nIndex].szName; }
-	
+    // public attributes
+  public:
+    void ChangeSelectedIdx(int nIndex);
+    virtual BOOL SetPalette(RGBQUADPAL* pPal);
+    void ChangeSelectedColor(COLORREF color);
+    COLORREF GetColour(int nIndex)
+    {
+        return m_crColours[nIndex].crColour;
+    }
+    LPCTSTR GetColourName(int nIndex)
+    {
+        return m_crColours[nIndex].szName;
+    }
+
     ColourTableEntry m_crColours[COLOR8];
 
-// protected attributes
-protected:
-    int				m_nBoxSize, m_nMargin;
-    int				m_nCurrent;					// current color number
-    int				m_nSelected;				// selected color number
-	COLORREF		m_crCurrent;				// current color
-    COLORREF		m_crSelected;				// selected color
-    CRect			m_WindowRect, m_BoxesRect;
-    CToolTipCtrl*	m_pToolTip;
-    CWnd*			m_pParent;
-	UINT			m_nID;
-    BOOL			m_bChildWindowVisible;
+    // protected attributes
+  protected:
+    int m_nBoxSize, m_nMargin;
+    int m_nCurrent;        // current color number
+    int m_nSelected;       // selected color number
+    COLORREF m_crCurrent;  // current color
+    COLORREF m_crSelected; // selected color
+    CRect m_WindowRect, m_BoxesRect;
+    CToolTipCtrl* m_pToolTip;
+    CWnd* m_pParent;
+    UINT m_nID;
+    BOOL m_bChildWindowVisible;
 
-	COLORREF		m_clrBackground, 
-					m_clrHiLightBorder, 
-					m_clrHiLight,
-					m_clrLoLight;
+    COLORREF m_clrBackground, m_clrHiLightBorder, m_clrHiLight, m_clrLoLight;
 
-	RGBQUADPAL*		m_pPal; // current palette
+    RGBQUADPAL* m_pPal; // current palette
 
     // Generated message map functions
-protected:
+  protected:
     //{{AFX_MSG(CColorTable)
     afx_msg void OnNcDestroy();
     afx_msg void OnPaint();
@@ -131,10 +134,10 @@ protected:
     afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
     afx_msg BOOL OnQueryNewPalette();
     afx_msg void OnPaletteChanged(CWnd* pFocusWnd);
-	afx_msg void OnActivateApp(BOOL bActive, HTASK hTask);
+    afx_msg void OnActivateApp(BOOL bActive, HTASK hTask);
     afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
-	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
-	//}}AFX_MSG
+    afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
+    //}}AFX_MSG
     DECLARE_MESSAGE_MAP()
 };
 
